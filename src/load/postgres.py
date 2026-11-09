@@ -103,7 +103,8 @@ def main() -> int:
         # si sale por una excepción hace ROLLBACK automáticamente.
         with psycopg.connect(**get_pg_params()) as conexion, conexion.cursor() as cursor:
             cursor.execute((ROOT_DIR / "sql" / "01_schema.sql").read_text(encoding="utf-8"))
-            log.info("Esquema economia verificado")
+            cursor.execute((ROOT_DIR / "sql" / "02_views.sql").read_text(encoding="utf-8"))
+            log.info("Esquema economia y vistas verificados")
 
             # Un solo TRUNCATE para las cuatro tablas: PostgreSQL acepta vaciar
             # juntas tablas relacionadas por claves foráneas sin usar CASCADE.

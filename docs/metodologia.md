@@ -49,7 +49,29 @@ Los eventos de `data/reference/eventos.csv` y el precio del cobre se muestran ju
 indicadores como contexto. El análisis no estima cuánto de cada resultado se debe a
 estos factores.
 
-## 5. Neutralidad
+## 5. Métricas del análisis SQL
+
+| Métrica | Definición | Por qué |
+|---|---|---|
+| Variación a 12 meses | `valor / valor del mismo período del año anterior − 1` | Compara meses o trimestres equivalentes, así la estacionalidad se cancela |
+| Valor heredado | Último dato del gobierno anterior | Es el punto de partida que recibió cada gobierno |
+| Cambio vs. heredado | Valor final − valor heredado | Mide el cambio durante todo el mandato, no desde el primer dato propio |
+| Promedio sin transición | Igual que el promedio, excluyendo los períodos que comparten dos gobiernos | Muestra si los períodos compartidos alteran el resultado |
+
+Para los niveles (PIB, IMACEC, cobre) se comparan **tasas de variación**, nunca promedios
+de nivel, porque el nivel crece con el tiempo y siempre favorecería al gobierno más
+reciente.
+
+**Limitaciones conocidas de las consultas:**
+
+- **Eventos superpuestos:** la ventana del estallido social (octubre 2019 a septiembre 2020)
+  incluye el inicio de la pandemia. Sus efectos no se pueden separar con estos datos.
+- **Efecto base:** después de una caída fuerte, la variación a 12 meses del año siguiente
+  sale muy alta solo porque se compara contra un mes deprimido (por ejemplo, 2021 contra 2020).
+- **Desfase en el último gobierno:** con desfase de 6 o 12 meses, los meses finales de
+  Boric todavía no tienen datos publicados, así que su promedio usa menos meses.
+
+## 6. Neutralidad
 
 - Los mismos indicadores, reglas y fuentes para los cinco gobiernos.
 - Solo estadísticas descriptivas, sin juicios de valor ni conclusiones causales.

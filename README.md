@@ -18,7 +18,7 @@ series de deuda bruta y balance fiscal se obtienen a través de la misma API del
 | 1. Extracción | Lista |
 | 2. Limpieza | Lista |
 | 3. Carga en PostgreSQL | Lista |
-| 4. Consultas SQL | Pendiente |
+| 4. Consultas SQL | Lista |
 | 5. Dashboard Power BI | Pendiente |
 | 6. README final | Pendiente |
 
