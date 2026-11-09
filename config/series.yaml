@@ -1,0 +1,48 @@
+# Catálogo de indicadores.
+# Los códigos de serie del Banco Central se confirman en la etapa 1 con la función
+# SearchSeries de la API: no se copian de internet ni se escriben de memoria.
+
+periodo_extraccion:
+  desde: "2005-01-01"   # Un año antes de Bachelet I, para calcular variaciones a 12 meses
+  hasta: null           # null = hasta el último dato disponible
+
+bcch:
+  pib:
+    descripcion: "Producto Interno Bruto, volumen a precios del año anterior encadenado"
+    frecuencia: QUARTERLY
+    codigo: ""          # POR CONFIRMAR con SearchSeries
+  imacec:
+    descripcion: "Indicador Mensual de Actividad Económica"
+    frecuencia: MONTHLY
+    codigo: ""
+  ipc:
+    descripcion: "Índice de Precios al Consumidor"
+    frecuencia: MONTHLY
+    codigo: ""
+  tpm:
+    descripcion: "Tasa de Política Monetaria"
+    frecuencia: DAILY
+    codigo: ""
+  desempleo:
+    descripcion: "Tasa de desocupación nacional (fuente original: INE)"
+    frecuencia: MONTHLY
+    codigo: ""
+  tipo_cambio:
+    descripcion: "Dólar observado"
+    frecuencia: DAILY
+    codigo: ""
+  cobre:
+    descripcion: "Precio del cobre, Bolsa de Metales de Londres (USD por libra)"
+    frecuencia: DAILY
+    codigo: ""
+
+dipres:
+  # DIPRES no tiene API: publica archivos Excel que se descargan a data/raw/dipres/
+  deuda_bruta:
+    descripcion: "Deuda bruta del Gobierno Central (% del PIB)"
+    frecuencia: ANNUAL
+    url_fuente: ""      # POR COMPLETAR al descargar
+  balance_fiscal:
+    descripcion: "Balance efectivo del Gobierno Central (% del PIB)"
+    frecuencia: ANNUAL
+    url_fuente: ""

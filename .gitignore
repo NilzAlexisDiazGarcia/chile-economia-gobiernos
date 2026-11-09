@@ -1,0 +1,30 @@
+# --- Credenciales: NUNCA a Git ---
+.env
+
+# --- Entorno virtual y caché de Python ---
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# --- Datos generados (se regeneran con los scripts) ---
+# Se ignora el contenido pero se conservan las carpetas mediante .gitkeep
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# --- Logs de ejecución ---
+logs/*
+!logs/.gitkeep
+
+# --- Power BI: archivos locales del formato .pbip que no se versionan ---
+dashboard/**/.pbi/localSettings.json
+dashboard/**/.pbi/cache.abf
+
+# --- Editores y sistema operativo ---
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.ipynb_checkpoints/

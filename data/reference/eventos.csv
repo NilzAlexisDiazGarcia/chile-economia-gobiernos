@@ -1,0 +1,5 @@
+id_evento,evento,tipo,fecha_inicio,fecha_fin,precision_fecha,nota,fuente
+1,Crisis financiera global,externo,2008-09-15,2009-06-30,aproximada,"Inicio: quiebra de Lehman Brothers. Fin: término de la recesión en EE.UU.; el impacto en Chile puede diferir.",POR COMPLETAR
+2,Terremoto y tsunami 27F,desastre natural,2010-02-27,2010-02-27,exacta,"Ocurre 12 días antes del cambio de mando; la reconstrucción continúa en el gobierno siguiente.",POR COMPLETAR
+3,Estallido social,social,2019-10-18,2020-03-18,aproximada,"No hay una fecha de término oficial; se usa como corte el inicio del estado de catástrofe por la pandemia.",POR COMPLETAR
+4,Pandemia COVID-19,sanitario,2020-03-03,2021-09-30,aproximada,"Inicio: primer caso confirmado en Chile. Fin: término del estado de excepción constitucional de catástrofe.",POR COMPLETAR
