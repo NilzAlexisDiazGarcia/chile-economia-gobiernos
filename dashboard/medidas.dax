@@ -1,0 +1,121 @@
+// =============================================================================
+// Medidas DAX del dashboard.
+// Crear en Power BI: tabla "Medidas" (Inicio > Escribir datos > tabla vacía),
+// luego Nueva medida y pegar cada bloque.
+//
+// Nombres de tablas tal como quedan al importar desde PostgreSQL:
+//   economia v_pbi_observacion   -> renombrar a: Observaciones
+//   economia dim_gobierno        -> renombrar a: Gobiernos
+//   economia dim_indicador       -> renombrar a: Indicadores
+//   economia dim_evento          -> renombrar a: Eventos
+//
+// Todas las medidas suponen que el selector de desfase deja UN solo valor
+// visible. Si no hay selección, AVERAGE sigue siendo correcto (las tres copias
+// de cada fecha tienen el mismo valor), pero el gobierno asignado se mezcla.
+// =============================================================================
+
+
+// ---------------------------------------------------------------- Básicas ----
+
+Valor Promedio =
+AVERAGE ( Observaciones[valor] )
+
+Var 12m Promedio =
+AVERAGE ( Observaciones[var_12m_pct] )
+
+// Cuenta períodos distintos, no filas (cada fecha está repetida por desfase).
+Periodos =
+DISTINCTCOUNT ( Observaciones[fecha] )
+
+
+// ------------------------------------------------- Inicio y fin de mandato ----
+
+// Último dato asignado al gobierno del contexto actual (por ejemplo, la fila de
+// una matriz). Ignora el selector de transición: el último dato de un mandato
+// existe aunque ese período sea compartido.
+Valor Final =
+VAR UltimaFecha =
+    CALCULATE (
+        MAX ( Observaciones[fecha] ),
+        REMOVEFILTERS ( Observaciones[es_transicion] )
+    )
+RETURN
+    CALCULATE (
+        AVERAGE ( Observaciones[valor] ),
+        REMOVEFILTERS ( Observaciones[es_transicion] ),
+        Observaciones[fecha] = UltimaFecha
+    )
+
+// Último dato del gobierno ANTERIOR: lo que el gobierno "recibió".
+// El gobierno anterior es el que termina el día en que este empieza.
+// REMOVEFILTERS ( Gobiernos ) quita el filtro del gobierno actual (y el filtro
+// en_alcance del informe, para que Bachelet I pueda ver el último dato de Lagos).
+// Igual que v_resumen_gobierno en SQL: así ambos resultados son comparables.
+Valor Heredado =
+VAR InicioGobierno = MIN ( Gobiernos[fecha_inicio] )
+VAR UltimaFechaAnterior =
+    CALCULATE (
+        MAX ( Observaciones[fecha] ),
+        REMOVEFILTERS ( Gobiernos ),
+        REMOVEFILTERS ( Observaciones[es_transicion] ),
+        Gobiernos[fecha_fin] = InicioGobierno
+    )
+RETURN
+    CALCULATE (
+        AVERAGE ( Observaciones[valor] ),
+        REMOVEFILTERS ( Gobiernos ),
+        REMOVEFILTERS ( Observaciones[es_transicion] ),
+        Gobiernos[fecha_fin] = InicioGobierno,
+        Observaciones[fecha] = UltimaFechaAnterior
+    )
+
+Cambio vs Heredado =
+[Valor Final] - [Valor Heredado]
+
+
+// ------------------------------------------- Una medida por indicador ----
+// Permiten armar una tabla con varios indicadores como columnas.
+
+Crecimiento PIB % =
+CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
+
+Crecimiento IMACEC % =
+CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
+
+Inflacion Promedio % =
+CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
+
+Desempleo Promedio % =
+CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
+
+Desempleo Cambio pp =
+CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
+
+Deuda Cambio pp =
+CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
+
+Balance Fiscal Promedio % =
+CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
+
+Cobre Promedio USD lb =
+CALCULATE ( [Valor Promedio], Observaciones[indicador] = "cobre" )
+
+Cobre Var 12m % =
+CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
+
+
+// ------------------------------------------------------------ Textos ----
+
+// Subtítulo dinámico que recuerda qué supuesto de rezago se está viendo.
+Texto Desfase =
+VAR Meses = SELECTEDVALUE ( Observaciones[desfase_meses], -1 )
+RETURN
+    SWITCH (
+        TRUE (),
+        Meses = 0, "Asignación por mayoría de días, sin desfase",
+        Meses > 0, "Cada dato se atribuye al gobierno de " & Meses & " meses antes",
+        "Selecciona un solo desfase"
+    )
+
+Fuente =
+"Fuente: Banco Central de Chile (BDE) y DIPRES vía BDE. Elaboración propia."

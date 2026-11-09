@@ -1,0 +1,16 @@
+{
+  "name": "Chile Economia - Neutral",
+  "dataColors": [
+    "#4A6D7C",
+    "#B08D57",
+    "#6B8E5A",
+    "#8A6F9A",
+    "#C2703D",
+    "#7F7F7F",
+    "#3E8E8E",
+    "#A65E6E"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#2B2B2B",
+  "tableAccent": "#4A6D7C"
+}

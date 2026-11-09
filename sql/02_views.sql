@@ -5,6 +5,7 @@
 -- un cambio de columnas no choca con la definición anterior.
 -- =============================================================================
 
+DROP VIEW IF EXISTS economia.v_pbi_observacion;
 DROP VIEW IF EXISTS economia.v_resumen_gobierno;
 DROP VIEW IF EXISTS economia.v_variacion_12m;
 DROP VIEW IF EXISTS economia.v_observacion;
@@ -127,3 +128,46 @@ LEFT JOIN variacion v ON v.id_gobierno = b.id_gobierno AND v.indicador = b.indic
 WHERE g.en_alcance
 GROUP BY g.id_gobierno, g.etiqueta, b.indicador, h.valor_heredado,
          v.var_12m_promedio, v.var_12m_promedio_sin_transicion;
+
+-- -----------------------------------------------------------------------------
+-- v_pbi_observacion: tabla de hechos para Power BI.
+--
+-- Cada observación aparece 3 veces, una por desfase (0, 6 y 12 meses), con el
+-- gobierno reasignado según ese desfase (misma lógica que la consulta 07).
+-- En Power BI, un selector de desfase deja visible una sola de las tres copias.
+-- Con desfase 0, id_gobierno y es_transicion coinciden con la regla principal.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_pbi_observacion AS
+WITH desfases (desfase_meses) AS (
+    VALUES (0), (6), (12)
+),
+desplazado AS (
+    SELECT
+        o.indicador,
+        o.fecha,
+        o.valor,
+        d.desfase_meses,
+        (o.fecha             - make_interval(months => d.desfase_meses))::date AS inicio_desplazado,
+        (o.fecha_fin_periodo - make_interval(months => d.desfase_meses))::date AS fin_desplazado,
+        (o.punto_medio       - make_interval(months => d.desfase_meses))::date AS medio_desplazado
+    FROM economia.v_observacion o
+    CROSS JOIN desfases d
+)
+SELECT
+    p.indicador,
+    p.fecha,
+    p.valor,
+    v.var_12m_pct,
+    p.desfase_meses,
+    g.id_gobierno,
+    -- Transición: algún cambio de mando cae dentro del período desplazado.
+    EXISTS (
+        SELECT 1 FROM economia.dim_gobierno c
+        WHERE c.fecha_inicio > p.inicio_desplazado
+          AND c.fecha_inicio < p.fin_desplazado
+    ) AS es_transicion
+FROM desplazado p
+JOIN economia.dim_gobierno g
+  ON daterange(g.fecha_inicio, g.fecha_fin, '[)') @> p.medio_desplazado
+LEFT JOIN economia.v_variacion_12m v
+  ON v.indicador = p.indicador AND v.fecha = p.fecha;
