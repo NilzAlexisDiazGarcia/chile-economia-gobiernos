@@ -6,6 +6,7 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
 
 # --- Datos generados (se regeneran con los scripts) ---
 # Se ignora el contenido pero se conservan las carpetas mediante .gitkeep

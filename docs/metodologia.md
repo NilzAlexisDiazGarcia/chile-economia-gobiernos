@@ -6,7 +6,10 @@ El cambio de mando presidencial ocurre el 11 de marzo. En `data/reference/gobier
 `fecha_inicio` es **inclusiva** y `fecha_fin` es **exclusiva**: el 11 de marzo pertenece
 al gobierno entrante.
 
-Los datos posteriores al 2026-03-10 se extraen, pero quedan fuera del alcance del análisis.
+La tabla también incluye el gobierno anterior (Lagos) y el siguiente (Kast) con
+`en_alcance = false`. Así, **toda** observación queda asignada a un gobierno (incluido el
+año base 2005 y los datos posteriores al 2026-03-10), y el filtro de alcance se aplica de
+forma explícita en el análisis, en vez de descartar filas en silencio durante la limpieza.
 
 ## 2. Asignación de datos a gobiernos
 
