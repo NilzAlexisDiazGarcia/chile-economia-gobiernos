@@ -22,7 +22,7 @@ SELECT
       WHERE v.indicador = 'imacec' AND v.fecha >= w.inicio_antes AND v.fecha < w.inicio_durante)  AS imacec_antes,
     (SELECT ROUND(AVG(v.var_12m_pct), 2) FROM economia.v_variacion_12m v
       WHERE v.indicador = 'imacec' AND v.fecha >= w.inicio_durante AND v.fecha <= w.fin_durante)   AS imacec_durante,
-    (SELECT MIN(v.var_12m_pct) FROM economia.v_variacion_12m v
+    (SELECT ROUND(MIN(v.var_12m_pct), 2) FROM economia.v_variacion_12m v
       WHERE v.indicador = 'imacec' AND v.fecha >= w.inicio_durante AND v.fecha <= w.fin_durante)   AS imacec_peor_mes,
     -- Desocupación (promedio antes, máximo durante)
     (SELECT ROUND(AVG(o.valor), 2) FROM economia.fact_observacion o

@@ -3,6 +3,10 @@
 --
 -- Se borran y se recrean en cada carga (en orden inverso de dependencia), así
 -- un cambio de columnas no choca con la definición anterior.
+--
+-- Las vistas NO redondean: entregan los valores exactos. Se redondea solo al
+-- presentar (consultas de sql/analisis/ y formato de Power BI). Redondear en
+-- dos pasos produce errores: 2,98498 -> 2,9850 -> 2,99, cuando lo correcto es 2,98.
 -- =============================================================================
 
 DROP VIEW IF EXISTS economia.v_pbi_observacion;
@@ -66,7 +70,7 @@ SELECT
     fecha,
     valor,
     valor_anterior,
-    ROUND((valor / valor_anterior - 1) * 100, 2) AS var_12m_pct,
+    (valor / valor_anterior - 1) * 100 AS var_12m_pct,
     id_gobierno,
     es_transicion
 FROM serie
@@ -101,8 +105,8 @@ variacion AS (
     SELECT
         id_gobierno,
         indicador,
-        ROUND(AVG(var_12m_pct), 2)                                   AS var_12m_promedio,
-        ROUND(AVG(var_12m_pct) FILTER (WHERE NOT es_transicion), 2)  AS var_12m_promedio_sin_transicion
+        AVG(var_12m_pct)                                   AS var_12m_promedio,
+        AVG(var_12m_pct) FILTER (WHERE NOT es_transicion)  AS var_12m_promedio_sin_transicion
     FROM economia.v_variacion_12m
     GROUP BY id_gobierno, indicador
 )
@@ -116,7 +120,7 @@ SELECT
     MAX(b.valor) FILTER (WHERE b.orden_desc = 1)     AS valor_final,
     MAX(b.valor) FILTER (WHERE b.orden_desc = 1)
         - h.valor_heredado                           AS cambio_vs_heredado,
-    ROUND(AVG(b.valor), 4)                           AS promedio,
+    AVG(b.valor)                                     AS promedio,
     MIN(b.valor)                                     AS minimo,
     MAX(b.valor)                                     AS maximo,
     v.var_12m_promedio,

@@ -8,7 +8,7 @@ SELECT
     MAX(ROUND(promedio, 2))           FILTER (WHERE indicador = 'cobre')       AS cobre_prom_usd_lb,
     MAX(ROUND(valor_heredado, 2))     FILTER (WHERE indicador = 'cobre')       AS cobre_heredado,
     MAX(ROUND(valor_final, 2))        FILTER (WHERE indicador = 'cobre')       AS cobre_final,
-    MAX(var_12m_promedio)             FILTER (WHERE indicador = 'cobre')       AS cobre_var12m_prom,
+    MAX(ROUND(var_12m_promedio, 2))   FILTER (WHERE indicador = 'cobre')       AS cobre_var12m_prom,
     MAX(ROUND(valor_heredado, 0))     FILTER (WHERE indicador = 'tipo_cambio') AS dolar_heredado,
     MAX(ROUND(valor_final, 0))        FILTER (WHERE indicador = 'tipo_cambio') AS dolar_final,
     MAX(ROUND(promedio, 0))           FILTER (WHERE indicador = 'tipo_cambio') AS dolar_prom
