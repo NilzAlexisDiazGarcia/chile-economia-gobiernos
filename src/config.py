@@ -37,3 +37,14 @@ def get_required_env(name: str) -> str:
 def get_bcch_credentials() -> tuple[str, str]:
     """Credenciales de la API del Banco Central (usuario, clave)."""
     return get_required_env("BCCH_USER"), get_required_env("BCCH_PASS")
+
+
+def get_pg_params() -> dict:
+    """Parámetros de conexión a PostgreSQL, listos para psycopg.connect(**params)."""
+    return {
+        "host": get_required_env("PG_HOST"),
+        "port": int(get_required_env("PG_PORT")),
+        "dbname": get_required_env("PG_DB"),
+        "user": get_required_env("PG_USER"),
+        "password": get_required_env("PG_PASS"),
+    }
