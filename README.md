@@ -8,7 +8,8 @@ y el precio del cobre como contexto.
 
 **Stack:** Python (requests, pandas) · PostgreSQL · SQL · Power BI · Git
 
-**Fuentes:** Banco Central de Chile (API BDE) · Dirección de Presupuestos (DIPRES)
+**Fuentes:** Banco Central de Chile (API BDE) · Dirección de Presupuestos (DIPRES), cuyas
+series de deuda bruta y balance fiscal se obtienen a través de la misma API del Banco Central
 
 ## Estado
 

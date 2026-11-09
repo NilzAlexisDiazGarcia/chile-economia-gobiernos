@@ -46,13 +46,19 @@ bcch:
     frecuencia: MONTHLY    # la serie diaria solo parte en 2012
     codigo: "F019.PPB.PRE.40.M"
 
-dipres:
-  # DIPRES no tiene API: publica archivos Excel que se descargan a data/raw/dipres/
+  # --- Estadísticas fiscales ---
+  # Fuente original: DIPRES. Se obtienen vía la BDE del Banco Central porque DIPRES
+  # publica la deuda bruta solo en informes PDF trimestrales, no como serie continua.
+  # Validación (2026-11-09): balance 2025 = -2,80% del PIB, igual al 2,8% que informa DIPRES.
   deuda_bruta:
-    descripcion: "Deuda bruta del Gobierno Central (% del PIB)"
-    frecuencia: ANNUAL
-    url_fuente: ""      # POR COMPLETAR al descargar
+    descripcion: "Deuda bruta del Gobierno Central"
+    unidad: "Porcentaje del PIB"
+    frecuencia: QUARTERLY
+    codigo: "F051.D7.PPB.C.Z.Z.T"
+    fuente_original: "DIPRES"
   balance_fiscal:
-    descripcion: "Balance efectivo del Gobierno Central (% del PIB)"
+    descripcion: "Balance global devengado del Gobierno Central (equivale al balance efectivo de DIPRES)"
+    unidad: "Porcentaje del PIB"
     frecuencia: ANNUAL
-    url_fuente: ""
+    codigo: "F051.G21.PPI.C.Z.Z.A"
+    fuente_original: "DIPRES"
