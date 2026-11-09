@@ -7,34 +7,44 @@ periodo_extraccion:
   hasta: null           # null = hasta el último dato disponible
 
 bcch:
+  # Códigos confirmados con SearchSeries y probados con GetSeries el 2026-11-09.
+  # Criterio: series "empalmadas" (sin quiebres por cambio de año base) que
+  # cubran todo el período 2005-2026 con un solo código.
   pib:
-    descripcion: "Producto Interno Bruto, volumen a precios del año anterior encadenado"
+    descripcion: "PIB, volumen a precios del año anterior encadenado, serie empalmada, referencia 2018"
+    unidad: "Miles de millones de pesos encadenados"
     frecuencia: QUARTERLY
-    codigo: ""          # POR CONFIRMAR con SearchSeries
+    codigo: "F032.PIB.FLU.R.CLP.EP18.Z.Z.0.T"
   imacec:
-    descripcion: "Indicador Mensual de Actividad Económica"
+    descripcion: "Imacec empalmado, serie original (sin desestacionalizar)"
+    unidad: "Índice 2018=100"
     frecuencia: MONTHLY
-    codigo: ""
+    codigo: "F032.IMC.IND.Z.Z.EP18.Z.Z.0.M"
   ipc:
-    descripcion: "Índice de Precios al Consumidor"
+    descripcion: "IPC general, variación anual (12 meses), empalme BCCh base 2023"
+    unidad: "Porcentaje"
     frecuencia: MONTHLY
-    codigo: ""
+    codigo: "G073.IPC.V12.2023.M"
   tpm:
     descripcion: "Tasa de Política Monetaria"
+    unidad: "Porcentaje"
     frecuencia: DAILY
-    codigo: ""
+    codigo: "F022.TPM.TIN.D001.NO.Z.D"
   desempleo:
-    descripcion: "Tasa de desocupación nacional (fuente original: INE)"
+    descripcion: "Tasa de desocupación nacional, serie histórica (fuente original: INE)"
+    unidad: "Porcentaje"
     frecuencia: MONTHLY
-    codigo: ""
+    codigo: "F049.DES.TAS.HIST.10.M"
   tipo_cambio:
-    descripcion: "Dólar observado"
+    descripcion: "Tipo de cambio nominal, dólar observado"
+    unidad: "Pesos por dólar"
     frecuencia: DAILY
-    codigo: ""
+    codigo: "F073.TCO.PRE.Z.D"
   cobre:
-    descripcion: "Precio del cobre, Bolsa de Metales de Londres (USD por libra)"
-    frecuencia: DAILY
-    codigo: ""
+    descripcion: "Precio del cobre refinado, Bolsa de Metales de Londres (BML)"
+    unidad: "Dólares por libra"
+    frecuencia: MONTHLY    # la serie diaria solo parte en 2012
+    codigo: "F019.PPB.PRE.40.M"
 
 dipres:
   # DIPRES no tiene API: publica archivos Excel que se descargan a data/raw/dipres/
