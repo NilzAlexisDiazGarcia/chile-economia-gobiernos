@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "6416550845b72cbc0007",
   "position": {
-    "x": 1313.75,
-    "y": 0,
+    "x": 1332.5,
+    "y": 157.5,
     "z": 3000,
-    "height": 203.75,
-    "width": 606.25,
+    "height": 102.5,
+    "width": 587.5,
     "tabOrder": 3000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "Observaciones"
                     }
                   },
-                  "Property": "Incluir períodos de transición"
+                  "Property": "Tipo de período"
                 }
               },
-              "queryRef": "Observaciones.es_transicion",
-              "nativeQueryRef": "Incluir períodos de transición",
+              "queryRef": "Observaciones.Tipo de período",
+              "nativeQueryRef": "Tipo de período",
               "active": true
             }
           ]

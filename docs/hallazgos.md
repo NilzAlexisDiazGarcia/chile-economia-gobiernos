@@ -8,6 +8,26 @@ Las reglas de asignación y las limitaciones están en [metodologia.md](metodolo
 Salvo que se diga otra cosa, las cifras usan la asignación principal (mayoría de días, sin
 desfase) e incluyen los períodos de transición.
 
+## Síntesis
+
+Entre 2006 y 2026 la economía chilena cambió de régimen, y ese cambio atraviesa a los
+cinco gobiernos:
+
+1. **Menos crecimiento.** El PIB creció 4,3 % anual en promedio entre 2006 y 2014, y
+   2,1 % entre 2014 y 2026. Ningún período posterior a 2014 promedia más de 3 %.
+2. **Más deuda.** La deuda bruta del Gobierno Central pasó de 6 % a 42 % del PIB y subió
+   en los cinco períodos. Los superávits fiscales de 2006–2008 (entre 4 % y 8 % del PIB) no
+   se repitieron: desde 2009 solo hubo superávit en 2011, 2012 y 2022, todos bajo 1,3 %.
+3. **Inflación más volátil.** La inflación estuvo dentro del rango meta del Banco Central
+   (2 % a 4 %) en el 48 % de los meses. Sus dos máximos (2008 y 2022) coinciden con alzas
+   mundiales de precios.
+
+Lo que distingue a cada gobierno es **el punto de partida y el contexto**: dos de ellos
+enfrentaron las mayores contracciones del período (2009 y 2020), los precios del cobre
+fueron muy distintos entre un período y otro, y dos gobiernos recibieron la economía
+saliendo de una crisis (en 2010 y en 2022). El reporte muestra ese contexto junto a cada
+resultado y no estima cuánto de cada resultado se debe a las políticas de cada gobierno.
+
 ## 1. Crecimiento: el promedio más alto se registró en 2010–2014, en un contexto de rebote
 
 | Gobierno | PIB, var. anual prom. (%) | IMACEC, var. anual prom. (%) |
@@ -60,6 +80,22 @@ a un gobierno:
   en 2022.
 - La Tasa de Política Monetaria la fija el Banco Central, que es autónomo. Su máximo
   (11,25 %) se dio en el mismo período que el máximo de inflación.
+
+Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
+
+| Gobierno | Meses en rango | Inflación prom. − meta (pp) |
+|---|---:|---:|
+| Bachelet I | 38 % | +1,03 |
+| Piñera I | 67 % | −0,43 |
+| Bachelet II | 35 % | +0,64 |
+| Piñera II | 73 % | +0,27 |
+| Boric | 27 % | +3,59 |
+
+- La meta es una referencia externa a los gobiernos: la fija y la persigue el Banco Central.
+  Por eso sirve para comparar períodos sin usar un criterio propio.
+- En los períodos con menos meses en el rango, la inflación estuvo sobre la meta: en 2008
+  (alza mundial de alimentos y energía), en 2014–2016 (hasta 5,7 %, en años de
+  depreciación del peso) y en 2021–2023 (alza mundial de inflación).
 
 ## 4. Desempleo: el máximo fue en 2020 y la única baja neta ocurrió en 2010–2014
 
@@ -116,9 +152,12 @@ a un gobierno:
 | Terremoto 27F (2010) | −0,84 | 0,31 | 9,23 |
 | Estallido social (2019) | 2,33 | −15,98 | 13,09 |
 | Pandemia COVID-19 (2020) | 0,81 | −15,98 | 13,09 |
+| Alza mundial de inflación (2021–2023) | −6,87 | −2,87 | 10,35 |
 
 - El peor mes del estallido y de la pandemia es el mismo porque sus ventanas se superponen.
   Ese −16 % corresponde a la pandemia: el análisis no puede separar ambos efectos.
+- El IMACEC "antes" del alza mundial de inflación es negativo porque esos 12 meses son los
+  de la pandemia.
 - El terremoto ocurrió cuando la economía venía saliendo de la recesión. Por eso el IMACEC
   "antes" es negativo.
 

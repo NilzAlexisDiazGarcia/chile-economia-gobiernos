@@ -57,6 +57,38 @@ table Indicadores
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Nombre corto y legible para segmentadores y títulos.
+	column Nombre =
+			SWITCH (
+			    Indicadores[indicador],
+			    "pib", "PIB",
+			    "imacec", "IMACEC",
+			    "ipc", "Inflación (IPC)",
+			    "tpm", "Tasa de Política Monetaria",
+			    "desempleo", "Desempleo",
+			    "tipo_cambio", "Tipo de cambio",
+			    "cobre", "Precio del cobre",
+			    "deuda_bruta", "Deuda bruta",
+			    "balance_fiscal", "Balance fiscal",
+			    Indicadores[indicador]
+			)
+		dataType: string
+		summarizeBy: none
+		sortByColumn: Orden
+
+	/// Orden de presentación: actividad, precios, empleo, fiscal, externo.
+	column Orden =
+			SWITCH (
+			    Indicadores[indicador],
+			    "pib", 1, "imacec", 2, "ipc", 3, "tpm", 4, "desempleo", 5,
+			    "deuda_bruta", 6, "balance_fiscal", 7, "cobre", 8, "tipo_cambio", 9,
+			    99
+			)
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+
 	partition Indicadores = m
 		mode: import
 		source =

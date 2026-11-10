@@ -31,7 +31,7 @@ table Gobiernos
 
 	column fecha_inicio
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd-mm-yyyy
 		lineageTag: 6225dd84-8a29-4a57-8d70-e173d68a740a
 		summarizeBy: none
 		sourceColumn: fecha_inicio
@@ -42,7 +42,7 @@ table Gobiernos
 
 	column fecha_fin
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd-mm-yyyy
 		lineageTag: 253d7eb6-af57-453b-86fb-1d4e317b7312
 		summarizeBy: none
 		sourceColumn: fecha_fin

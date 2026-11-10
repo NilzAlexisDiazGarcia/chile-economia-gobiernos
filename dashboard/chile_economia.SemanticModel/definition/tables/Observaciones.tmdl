@@ -1,130 +1,312 @@
 table Observaciones
 	lineageTag: c4ab8d0f-0d79-44c2-bd80-0d49ede21411
 
+	/// Promedio simple de los valores en el contexto (gobierno, indicador, fechas).
 	measure 'Valor Promedio' =
-			
 			AVERAGE ( Observaciones[valor] )
+		formatString: 0.00
+		displayFolder: 1. Base
 		lineageTag: b326b955-4dca-4363-a2bf-e3330defae57
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Promedio de las variaciones respecto del mismo período del año anterior. Solo existe para PIB, IMACEC y cobre.
 	measure 'Var 12m Promedio' =
-			
 			AVERAGE ( Observaciones[var_12m_pct] )
+		formatString: 0.00
+		displayFolder: 1. Base
 		lineageTag: b6b6651c-9ee7-433f-ab4e-aa0ae576807f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Cantidad de períodos distintos. Cuenta fechas y no filas, porque cada fecha se repite una vez por desfase.
 	measure Periodos =
-			
 			DISTINCTCOUNT ( Observaciones[fecha] )
 		formatString: 0
+		displayFolder: 1. Base
 		lineageTag: 424621c8-5085-4299-b632-7ec0d7c5fab7
 
+	/// Último dato asignado al gobierno del contexto. Ignora el filtro de tipo de período: el último dato de un mandato existe aunque sea compartido.
 	measure 'Valor Final' =
-			
 			VAR UltimaFecha =
 			    CALCULATE (
 			        MAX ( Observaciones[fecha] ),
-			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] )
+			        REMOVEFILTERS ( Observaciones[Tipo de período] )
 			    )
 			RETURN
 			    CALCULATE (
 			        AVERAGE ( Observaciones[valor] ),
-			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        REMOVEFILTERS ( Observaciones[Tipo de período] ),
 			        Observaciones[fecha] = UltimaFecha
 			    )
+		formatString: 0.00
+		displayFolder: 1. Base
 		lineageTag: 6cb5af52-0bae-4f4b-885e-d974163159d2
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Último dato del gobierno anterior: el punto de partida que recibió el gobierno del contexto. Igual que v_resumen_gobierno en SQL.
 	measure 'Valor Heredado' =
-			
 			VAR InicioGobierno = MIN ( Gobiernos[fecha_inicio] )
 			VAR UltimaFechaAnterior =
 			    CALCULATE (
 			        MAX ( Observaciones[fecha] ),
 			        REMOVEFILTERS ( Gobiernos ),
-			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        REMOVEFILTERS ( Observaciones[Tipo de período] ),
 			        Gobiernos[fecha_fin] = InicioGobierno
 			    )
 			RETURN
 			    CALCULATE (
 			        AVERAGE ( Observaciones[valor] ),
 			        REMOVEFILTERS ( Gobiernos ),
-			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        REMOVEFILTERS ( Observaciones[Tipo de período] ),
 			        Gobiernos[fecha_fin] = InicioGobierno,
 			        Observaciones[fecha] = UltimaFechaAnterior
 			    )
+		formatString: 0.00
+		displayFolder: 1. Base
 		lineageTag: 7aa735cd-781f-410b-97a0-70eaaeec1b98
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Valor final menos valor heredado: cuánto cambió el indicador durante el mandato.
 	measure 'Cambio vs Heredado' =
-			
 			[Valor Final] - [Valor Heredado]
+		formatString: 0.00
+		displayFolder: 1. Base
 		lineageTag: 3cc49ea2-c25c-4c63-96ce-e0fd53e1b0af
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Variación anual promedio del PIB trimestral (%).
 	measure 'Crecimiento PIB %' =
-			
 			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: aade441f-b6ea-43d8-8505-8a13b71c2cb0
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Variación anual promedio del IMACEC mensual (%).
 	measure 'Crecimiento IMACEC %' =
-			
 			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: 8b77cf6a-fbde-4300-831a-f41e6426072e
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Inflación anual promedio (IPC, variación en 12 meses, %).
 	measure 'Inflacion Promedio %' =
-			
 			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: cb6cf1de-b507-4ff6-b0fc-849d3fff4b76
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Tasa de desempleo promedio (%).
 	measure 'Desempleo Promedio %' =
-			
 			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: 1281718b-3cc3-4dbb-9d8a-e31c77f7ff71
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Cambio de la tasa de desempleo entre lo heredado y el final del mandato (puntos porcentuales).
 	measure 'Desempleo Cambio pp' =
-			
 			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: 74c20f18-1d64-4ec1-90f0-53c862ccaef9
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Cambio de la deuda bruta entre lo heredado y el final del mandato (puntos porcentuales del PIB).
 	measure 'Deuda Cambio pp' =
-			
 			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: 844e438d-f61e-451e-a9a1-f6529ac3d4c5
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	/// Balance fiscal promedio del Gobierno Central (% del PIB). Negativo = déficit.
+	measure 'Balance Fiscal Promedio %' =
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
+		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
 
+	/// Precio promedio del cobre (dólares nominales por libra).
 	measure 'Cobre Promedio USD lb' =
-			
 			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "cobre" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: acf925c1-01ae-4ec3-88c6-4958a6811f21
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
+	/// Variación anual promedio del precio del cobre (%).
 	measure 'Cobre Var 12m %' =
-			
 			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 		lineageTag: f3b9a444-fef0-418c-85aa-6ac64d8ce85f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	/// Tasa de Política Monetaria promedio (%). La fija el Banco Central, que es autónomo.
+	measure 'TPM Promedio %' =
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tpm" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
 
+	/// Tipo de cambio promedio (pesos por dólar).
+	measure 'Dolar Promedio CLP' =
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tipo_cambio" )
+		formatString: 0
+		displayFolder: 2. Indicadores
+
+	/// Texto "heredado → final" del indicador del contexto, con un decimal. Usar con un filtro de indicador.
+	measure 'Recibio Entrego' =
+			VAR Heredado = [Valor Heredado]
+			VAR Final = [Valor Final]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Final ),
+			        FORMAT ( Heredado, "0.0" ) & "  →  " & FORMAT ( Final, "0.0" )
+			    )
+		displayFolder: 3. Ficha por gobierno
+
+	/// Cambio con signo y unidad, por ejemplo "+6,2 pp".
+	measure 'Cambio Texto' =
+			VAR Cambio = [Cambio vs Heredado]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Cambio ),
+			        IF ( Cambio > 0, "+", "" ) & FORMAT ( Cambio, "0.0" ) & " pp"
+			    )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'Desempleo Recibio Entrego' =
+			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "desempleo" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'Desempleo Cambio Texto' =
+			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "desempleo" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'Deuda Recibio Entrego' =
+			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_bruta" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'Deuda Cambio Texto' =
+			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "deuda_bruta" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'TPM Recibio Entrego' =
+			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "tpm" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'TPM Cambio Texto' =
+			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "tpm" )
+		displayFolder: 3. Ficha por gobierno
+
+	measure 'Dolar Recibio Entrego' =
+			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "tipo_cambio" )
+			VAR Final = CALCULATE ( [Valor Final], Observaciones[indicador] = "tipo_cambio" )
+			RETURN
+			    IF ( NOT ISBLANK ( Final ), FORMAT ( Heredado, "0" ) & "  →  " & FORMAT ( Final, "0" ) )
+		displayFolder: 3. Ficha por gobierno
+
+	/// Meta de inflación del Banco Central de Chile: 3 % anual, con un rango de tolerancia de 2 % a 4 %.
+	measure 'Meta Inflacion %' = 3
+		formatString: 0.0
+		displayFolder: 3. Ficha por gobierno
+
+	/// Inflación anual más alta registrada en el contexto (%).
+	measure 'Inflacion Maxima %' =
+			CALCULATE ( MAX ( Observaciones[valor] ), Observaciones[indicador] = "ipc" )
+		formatString: 0.00
+		displayFolder: 3. Ficha por gobierno
+
+	/// Inflación promedio menos la meta de 3 % (puntos porcentuales). Positivo = sobre la meta.
+	measure 'Inflacion Brecha vs Meta pp' =
+			[Inflacion Promedio %] - [Meta Inflacion %]
+		formatString: 0.00
+		displayFolder: 3. Ficha por gobierno
+
+	/// Meses con inflación fuera del rango de tolerancia de 2 % a 4 %.
+	measure 'Meses Inflacion Fuera de Rango' =
+			CALCULATE (
+			    DISTINCTCOUNT ( Observaciones[fecha] ),
+			    Observaciones[indicador] = "ipc",
+			    Observaciones[valor] < 2 || Observaciones[valor] > 4
+			)
+		formatString: 0
+		displayFolder: 3. Ficha por gobierno
+
+	/// Porcentaje de meses con inflación dentro del rango de tolerancia de 2 % a 4 %.
+	measure '% Meses Inflacion en Rango' =
+			VAR Total = CALCULATE ( [Periodos], Observaciones[indicador] = "ipc" )
+			RETURN
+			    DIVIDE ( Total - [Meses Inflacion Fuera de Rango], Total )
+		formatString: 0%
+		displayFolder: 3. Ficha por gobierno
+
+	/// Eventos de contexto que se superponen con el mandato seleccionado, en orden cronológico, uno por línea.
+	measure 'Eventos del Periodo' =
+			VAR Inicio = MIN ( Gobiernos[fecha_inicio] )
+			VAR Fin = MAX ( Gobiernos[fecha_fin] )
+			VAR Lista =
+			    FILTER (
+			        Eventos,
+			        Eventos[fecha_inicio] < Fin && Eventos[fecha_fin] >= Inicio
+			    )
+			RETURN
+			    IF (
+			        HASONEVALUE ( Gobiernos[etiqueta] ),
+			        COALESCE (
+			            CONCATENATEX (
+			                Lista,
+			                "• " & Eventos[evento] & " (" & FORMAT ( Eventos[fecha_inicio], "mmm yyyy" ) & ")",
+			                UNICHAR ( 10 ),
+			                Eventos[fecha_inicio], ASC
+			            ),
+			            "Sin eventos de contexto registrados en este período"
+			        )
+			    )
+		displayFolder: 3. Ficha por gobierno
+
+	/// Encabezado de la ficha: gobierno, presidente y fechas del mandato.
+	measure 'Titulo Ficha' =
+			IF (
+			    HASONEVALUE ( Gobiernos[etiqueta] ),
+			    SELECTEDVALUE ( Gobiernos[etiqueta] ) & "  ·  " & SELECTEDVALUE ( Gobiernos[presidente] )
+			        & "  ·  " & FORMAT ( MIN ( Gobiernos[fecha_inicio] ), "mmm yyyy" )
+			        & " – " & FORMAT ( MAX ( Gobiernos[fecha_fin] ), "mmm yyyy" ),
+			    "Selecciona un gobierno"
+			)
+		displayFolder: 3. Ficha por gobierno
+
+	/// Crecimiento promedio del PIB en los dos primeros gobiernos (2006–2014).
+	measure 'Crecimiento PIB 2006-2014' =
+			CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 2, 3 } )
+		formatString: 0.0
+		displayFolder: 4. Resumen ejecutivo
+
+	/// Crecimiento promedio del PIB en los tres gobiernos siguientes (2014–2026).
+	measure 'Crecimiento PIB 2014-2026' =
+			CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 4, 5, 6 } )
+		formatString: 0.0
+		displayFolder: 4. Resumen ejecutivo
+
+	/// Valor que recibió el primer gobierno del análisis (marzo de 2006). Usar con un filtro de indicador.
+	measure 'Inicio Periodo Completo' =
+			CALCULATE ( [Valor Heredado], Gobiernos[etiqueta] = "Bachelet I" )
+		formatString: 0.0
+		displayFolder: 4. Resumen ejecutivo
+
+	/// Último dato del último gobierno del análisis (marzo de 2026). Usar con un filtro de indicador.
+	measure 'Fin Periodo Completo' =
+			CALCULATE ( [Valor Final], Gobiernos[etiqueta] = "Boric" )
+		formatString: 0.0
+		displayFolder: 4. Resumen ejecutivo
+
+	measure 'Deuda 2006 a 2026' =
+			VAR Inicio = CALCULATE ( [Inicio Periodo Completo], Observaciones[indicador] = "deuda_bruta" )
+			VAR Fin = CALCULATE ( [Fin Periodo Completo], Observaciones[indicador] = "deuda_bruta" )
+			RETURN FORMAT ( Inicio, "0" ) & " % → " & FORMAT ( Fin, "0" ) & " %"
+		displayFolder: 4. Resumen ejecutivo
+
+	measure 'Desempleo 2006 a 2026' =
+			VAR Inicio = CALCULATE ( [Inicio Periodo Completo], Observaciones[indicador] = "desempleo" )
+			VAR Fin = CALCULATE ( [Fin Periodo Completo], Observaciones[indicador] = "desempleo" )
+			RETURN FORMAT ( Inicio, "0.0" ) & " % → " & FORMAT ( Fin, "0.0" ) & " %"
+		displayFolder: 4. Resumen ejecutivo
+
+	measure 'Crecimiento PIB Antes y Despues 2014' =
+			FORMAT ( [Crecimiento PIB 2006-2014], "0.0" ) & " % → " & FORMAT ( [Crecimiento PIB 2014-2026], "0.0" ) & " %"
+		displayFolder: 4. Resumen ejecutivo
+
+	/// Subtítulo dinámico que recuerda qué supuesto de rezago se está viendo.
 	measure 'Texto Desfase' =
-			
 			VAR Meses = SELECTEDVALUE ( Observaciones[desfase_meses], -1 )
 			RETURN
 			    SWITCH (
@@ -133,22 +315,48 @@ table Observaciones
 			        Meses > 0, "Cada dato se atribuye al gobierno de " & Meses & " meses antes",
 			        "Selecciona un solo desfase"
 			    )
+		displayFolder: 5. Textos y formato
 		lineageTag: a492b9b1-57e3-4e66-8899-a79929ad5242
 
 	measure Fuente =
-			
 			"Fuente: Banco Central de Chile (BDE) y DIPRES vía BDE. Elaboración propia."
+		displayFolder: 5. Textos y formato
 		lineageTag: c04e7c34-2919-4942-988e-2e08362ec537
 
-	measure 'Balance Fiscal Promedio %' =
-			
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
-		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
+	/// Título dinámico para los gráficos de series: nombre del indicador y su unidad.
+	measure 'Titulo Serie' =
+			IF (
+			    HASONEVALUE ( Indicadores[indicador] ),
+			    SELECTEDVALUE ( Indicadores[Nombre] ) & " (" & SELECTEDVALUE ( Indicadores[unidad] ) & ")",
+			    "Selecciona un indicador"
+			)
+		displayFolder: 5. Textos y formato
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	/// Título dinámico del gráfico de variación anual, con aviso cuando el indicador no la tiene.
+	measure 'Titulo Var 12m' =
+			IF (
+			    ISBLANK ( [Var 12m Promedio] ),
+			    "Variación anual: disponible solo para PIB, IMACEC y cobre",
+			    SELECTEDVALUE ( Indicadores[Nombre] ) & ": variación respecto del mismo período del año anterior (%)"
+			)
+		displayFolder: 5. Textos y formato
+
+	/// Color fijo de cada gobierno, igual al orden del tema. Para formato condicional de barras y tarjetas.
+	measure 'Color Gobierno' =
+			SWITCH (
+			    SELECTEDVALUE ( Gobiernos[etiqueta] ),
+			    "Bachelet I", "#4A6D7C",
+			    "Piñera I", "#B08D57",
+			    "Bachelet II", "#6B8E5A",
+			    "Piñera II", "#8A6F9A",
+			    "Boric", "#C2703D",
+			    "#7F7F7F"
+			)
+		displayFolder: 5. Textos y formato
 
 	column indicador
 		dataType: string
+		isHidden
 		lineageTag: 2bfc012a-9305-4ae9-aa4d-ecf9446bf47c
 		summarizeBy: none
 		sourceColumn: indicador
@@ -157,7 +365,7 @@ table Observaciones
 
 	column fecha
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mmm yyyy
 		lineageTag: 5fa17437-70e6-4246-87cf-beb75944a056
 		summarizeBy: none
 		sourceColumn: fecha
@@ -168,48 +376,52 @@ table Observaciones
 
 	column valor
 		dataType: double
+		isHidden
 		lineageTag: 7cf0eaf1-8159-4f64-b0f9-5cb313eaad03
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: valor
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column var_12m_pct
 		dataType: double
+		isHidden
 		lineageTag: 4db77e75-77e7-443a-b94b-d2c51a1c5443
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: var_12m_pct
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Supuesto de rezago: 0, 6 o 12 meses. Usar en un segmentador de selección única.
 	column desfase_meses
 		dataType: int64
 		formatString: 0
 		lineageTag: dd28c37a-e2b4-4eae-85c7-7c3e9cd6497f
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: desfase_meses
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column id_gobierno
 		dataType: int64
 		formatString: 0
+		isHidden
 		lineageTag: dc66c098-6c98-46d1-be2e-eb6986d12879
 		summarizeBy: none
 		sourceColumn: id_gobierno
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Incluir períodos de transición'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+	/// "Período de un solo gobierno" o "Período compartido (transición)", según si el período contiene un cambio de mando.
+	column 'Tipo de período'
+		dataType: string
 		lineageTag: 0f54cded-030f-478d-815f-d7da4b68060e
 		summarizeBy: none
-		sourceColumn: Incluir períodos de transición
+		sourceColumn: Tipo de período
 
 		annotation SummarizationSetBy = Automatic
 
@@ -219,9 +431,13 @@ table Observaciones
 				let
 				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
 				  #"Navegación 1" = Origen{[Schema = "economia", Item = "v_pbi_observacion"]}[Data],
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Navegación 1",{{"es_transicion", "Incluir períodos de transición"}})
+				  #"Columnas con nombre cambiado" = Table.RenameColumns(#"Navegación 1",{{"es_transicion", "Tipo de período"}}),
+				  #"Tipo de período como texto" = Table.TransformColumns(
+				      #"Columnas con nombre cambiado",
+				      {{"Tipo de período", each if _ then "Período compartido (transición)" else "Período de un solo gobierno", type text}}
+				  )
 				in
-				  #"Columnas con nombre cambiado"
+				  #"Tipo de período como texto"
 
 	annotation PBI_ResultType = Table
 

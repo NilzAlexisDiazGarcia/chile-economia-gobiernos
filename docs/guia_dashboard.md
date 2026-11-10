@@ -67,7 +67,10 @@ Además:
 
 1. **Vista → Temas → Buscar temas** → `dashboard/tema.json`.
 2. **Inicio → Especificar datos** → crea una tabla vacía llamada `Medidas`.
-3. Crea cada medida de `dashboard/medidas.dax` con **Nueva medida** y pega su código.
+3. Las medidas ya vienen en el proyecto. Su código está en
+   `dashboard/chile_economia.SemanticModel/definition/tables/Observaciones.tmdl`, organizado
+   en carpetas y con una descripción por medida. Para cambiarlas, edítalas en Power BI o en
+   ese archivo, con Power BI cerrado.
 4. Borra la columna vacía de la tabla `Medidas`. Power BI la mostrará como tabla de medidas.
 
 ## 6. Filtros del informe

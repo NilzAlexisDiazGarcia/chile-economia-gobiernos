@@ -3,7 +3,7 @@
   "name": "a1f628580210c309c911",
   "position": {
     "x": 0,
-    "y": 101.25,
+    "y": 157.5,
     "z": 2000,
     "height": 102.5,
     "width": 1332.5,
@@ -33,8 +33,39 @@
         }
       }
     },
+    "objects": {
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
         {
           "properties": {
             "show": {

@@ -28,7 +28,7 @@ table Eventos
 
 	column fecha_inicio
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd-mm-yyyy
 		lineageTag: ffefecd3-ff26-413a-8157-6edaf7f7399f
 		summarizeBy: none
 		sourceColumn: fecha_inicio
@@ -39,7 +39,7 @@ table Eventos
 
 	column fecha_fin
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd-mm-yyyy
 		lineageTag: 2179d4ec-15bf-4e6e-b661-6ede24d112b0
 		summarizeBy: none
 		sourceColumn: fecha_fin

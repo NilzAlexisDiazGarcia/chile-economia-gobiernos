@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d5150034bab510692127",
   "position": {
-    "x": 0,
-    "y": 203.75,
+    "x": 10,
+    "y": 260,
     "z": 1000,
-    "height": 212.5,
-    "width": 1313.75,
+    "height": 260,
+    "width": 1910,
     "tabOrder": 1000
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Gobiernos.etiqueta",
-              "nativeQueryRef": "etiqueta",
-              "active": true
+              "nativeQueryRef": "Gobierno",
+              "active": true,
+              "displayName": "Gobierno"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "Observaciones.Crecimiento PIB %",
-              "nativeQueryRef": "Crecimiento PIB %"
+              "nativeQueryRef": "PIB, var. anual (%)",
+              "displayName": "PIB, var. anual (%)"
             },
             {
               "field": {
@@ -60,7 +62,8 @@
                 }
               },
               "queryRef": "Observaciones.Crecimiento IMACEC %",
-              "nativeQueryRef": "Crecimiento IMACEC %"
+              "nativeQueryRef": "IMACEC, var. anual (%)",
+              "displayName": "IMACEC, var. anual (%)"
             },
             {
               "field": {
@@ -74,7 +77,8 @@
                 }
               },
               "queryRef": "Observaciones.Inflacion Promedio %",
-              "nativeQueryRef": "Inflacion Promedio %"
+              "nativeQueryRef": "Inflación prom. (%)",
+              "displayName": "Inflación prom. (%)"
             },
             {
               "field": {
@@ -88,7 +92,8 @@
                 }
               },
               "queryRef": "Observaciones.Desempleo Promedio %",
-              "nativeQueryRef": "Desempleo Promedio %"
+              "nativeQueryRef": "Desempleo prom. (%)",
+              "displayName": "Desempleo prom. (%)"
             },
             {
               "field": {
@@ -102,7 +107,8 @@
                 }
               },
               "queryRef": "Observaciones.Desempleo Cambio pp",
-              "nativeQueryRef": "Desempleo Cambio pp"
+              "nativeQueryRef": "Desempleo, cambio (pp)",
+              "displayName": "Desempleo, cambio (pp)"
             },
             {
               "field": {
@@ -116,7 +122,8 @@
                 }
               },
               "queryRef": "Observaciones.Deuda Cambio pp",
-              "nativeQueryRef": "Deuda Cambio pp"
+              "nativeQueryRef": "Deuda, cambio (pp del PIB)",
+              "displayName": "Deuda, cambio (pp del PIB)"
             },
             {
               "field": {
@@ -130,7 +137,8 @@
                 }
               },
               "queryRef": "Observaciones.Balance Fiscal Promedio %",
-              "nativeQueryRef": "Balance Fiscal Promedio %"
+              "nativeQueryRef": "Balance fiscal prom. (% PIB)",
+              "displayName": "Balance fiscal prom. (% PIB)"
             },
             {
               "field": {
@@ -144,7 +152,8 @@
                 }
               },
               "queryRef": "Observaciones.Cobre Promedio USD lb",
-              "nativeQueryRef": "Cobre Promedio USD lb"
+              "nativeQueryRef": "Cobre prom. (USD/lb)",
+              "displayName": "Cobre prom. (USD/lb)"
             }
           ]
         }
@@ -155,6 +164,47 @@
         {
           "properties": {
             "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"

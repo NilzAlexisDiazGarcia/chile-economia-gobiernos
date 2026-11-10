@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c10a471eb2d846b3481a",
   "position": {
-    "x": 585,
+    "x": 0,
     "y": 0,
     "z": 4000,
     "height": 216.25,
-    "width": 1335,
+    "width": 1920,
     "tabOrder": 4000
   },
   "visual": {
@@ -91,6 +91,57 @@
           }
         ]
       }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "410.4280745774922D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Eventos.fecha_fin.Variation.Jerarquía de fechas.Año"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "450.5288942070972D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Eventos.fecha_inicio.Variation.Jerarquía de fechas.Año"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "311.5000548944445D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Eventos.evento"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

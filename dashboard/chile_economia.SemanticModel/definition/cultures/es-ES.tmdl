@@ -1,2 +1,3203 @@
 cultureInfo es-ES
 
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "evento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "evento": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "evento.id_evento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "id_evento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id evento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id_evento": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification evento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity evento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier evento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential evento": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "evento.evento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "evento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "evento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "evento name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "evento.tipo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "tipo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "evento.fecha_inicio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "fecha_inicio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha inicio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_inicio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "evento.fecha_fin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "fecha_fin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha fin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_fin": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "fecha appendage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha limb": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha organ": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha member": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha flipper": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fecha paddle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fecha projection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha propeller": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha rudder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha stabilizer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "evento.precision_fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "precision_fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "precision fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "precision_fecha": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "evento.notum": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "nota"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notum": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "evento.fuente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Eventos",
+			          "ConceptualProperty": "fuente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fuente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gobierno": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gobierno": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gobierno.id_gobierno": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "id_gobierno"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id gobierno": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id_gobierno": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "gobierno.presidente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "presidente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "presidente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "gobierno.etiqueta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "etiqueta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etiqueta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Gobierno": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gobierno.fecha_inicio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "fecha_inicio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha inicio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_inicio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "gobierno.fecha_fin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "fecha_fin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha fin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fecha_fin": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "fecha appendage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha limb": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha organ": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha member": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "fecha flipper": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fecha paddle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "fecha projection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha propeller": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha rudder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "fecha stabilizer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "gobierno.en_alcance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Gobiernos",
+			          "ConceptualProperty": "en_alcance"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "en alcance": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "en_alcance": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "indicadore": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.indicador": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "indicador"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "indicador": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.descripcion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "descripcion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descripcion": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.unidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "unidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "unidad": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.frecuencia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "frecuencia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "frecuencia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.codigo_serie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "codigo_serie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo serie": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "codigo_serie": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.fuente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "fuente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fuente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadore.fuente_original": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "fuente_original"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fuente original": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fuente_original": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fuente archetype": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "fuente exemplar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "fuente template": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "observacione": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "observacione": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.indicador": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "indicador"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "indicador": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "observacione.valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "courage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bravery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "heroism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fearlessness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gallantry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "lionheartedness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pluck": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "nerve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.var_1_2m_pct": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "var_12m_pct"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var 1 2m pct": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var_12m_pct": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.desfase_mese": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "desfase_meses"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desfase mese": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "desfase_meses": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.id_gobierno": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "id_gobierno"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "id gobierno": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "id_gobierno": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "identification gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential gobierno": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.incluir_períodos_de_transición": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Incluir períodos de transición"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "incluir períodos de transición": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "incluir período de transición": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.valor_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Valor Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.var_12m_promedio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Var 12m Promedio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var 12m promedio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.periodos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Periodos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "periodos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.valor_final": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Valor Final"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor final": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "final": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "concluding": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "closing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "ultimate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "finishing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "absolute": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "valor decider": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.valor_heredado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Valor Heredado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor heredado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.cambio_vs_heredado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Cambio vs Heredado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cambio vs heredado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.crecimiento_PIB_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Crecimiento PIB %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "crecimiento PIB %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "crecimiento pib percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "crecimiento pib pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "PIB, var. anual (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.crecimiento_IMACEC_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Crecimiento IMACEC %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "crecimiento IMACEC %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "crecimiento imacec percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "crecimiento imacec pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "IMACEC, var. anual (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Crecimiento promedio del IMACEC (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.inflacion_promedio_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Inflacion Promedio %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "inflacion promedio %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "inflacion promedio percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "inflacion promedio pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "Inflación prom. (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.desempleo_promedio_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Desempleo Promedio %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desempleo promedio %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "desempleo promedio percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "desempleo promedio pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "Desempleo prom. (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.desempleo_cambio_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Desempleo Cambio pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desempleo cambio pp": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Desempleo, cambio (pp)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.deuda_cambio_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda Cambio pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "deuda cambio pp": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Deuda, cambio (pp del PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.cobre_promedio_USD_lb": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Cobre Promedio USD lb"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cobre promedio USD lb": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Cobre prom. (USD/lb)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.cobre_var_12m_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Cobre Var 12m %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cobre var 12m %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cobre var 12m percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "cobre var 12m pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.texto_desfase": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Texto Desfase"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto desfase": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.fuente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Fuente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fuente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "observacione.balance_fiscal_promedio_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Balance Fiscal Promedio %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "balance fiscal promedio %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "balance fiscal promedio percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "balance fiscal promedio pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "Balance fiscal prom. (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "observacione_has_gobierno": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "gobierno"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_gobiernos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "observacione"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_observaciones"
+			        }
+			      ]
+			    },
+			    "observacione_has_balance_fiscal_promedio_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.balance_fiscal_promedio_": {
+			          "Target": {
+			            "Entity": "observacione.balance_fiscal_promedio_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.balance_fiscal_promedio_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_balance_fiscal_promedio_"
+			        }
+			      ]
+			    },
+			    "observacione_has_fuente": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.fuente": {
+			          "Target": {
+			            "Entity": "observacione.fuente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.fuente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_fuente"
+			        }
+			      ]
+			    },
+			    "observacione_has_texto_desfase": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.texto_desfase": {
+			          "Target": {
+			            "Entity": "observacione.texto_desfase"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.texto_desfase"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_texto_desfase"
+			        }
+			      ]
+			    },
+			    "observacione_has_cobre_var_12m_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.cobre_var_12m_": {
+			          "Target": {
+			            "Entity": "observacione.cobre_var_12m_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.cobre_var_12m_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_cobre_var_12m_"
+			        }
+			      ]
+			    },
+			    "observacione_has_cobre_promedio_USD_lb": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.cobre_promedio_USD_lb": {
+			          "Target": {
+			            "Entity": "observacione.cobre_promedio_USD_lb"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.cobre_promedio_USD_lb"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_cobre_promedio_USD_lb"
+			        }
+			      ]
+			    },
+			    "observacione_has_deuda_cambio_pp": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.deuda_cambio_pp": {
+			          "Target": {
+			            "Entity": "observacione.deuda_cambio_pp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.deuda_cambio_pp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_deuda_cambio_pp"
+			        }
+			      ]
+			    },
+			    "observacione_has_desempleo_cambio_pp": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.desempleo_cambio_pp": {
+			          "Target": {
+			            "Entity": "observacione.desempleo_cambio_pp"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.desempleo_cambio_pp"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_desempleo_cambio_pp"
+			        }
+			      ]
+			    },
+			    "observacione_has_desempleo_promedio_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.desempleo_promedio_": {
+			          "Target": {
+			            "Entity": "observacione.desempleo_promedio_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.desempleo_promedio_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_desempleo_promedio_"
+			        }
+			      ]
+			    },
+			    "observacione_has_inflacion_promedio_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.inflacion_promedio_": {
+			          "Target": {
+			            "Entity": "observacione.inflacion_promedio_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.inflacion_promedio_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_inflacion_promedio_"
+			        }
+			      ]
+			    },
+			    "observacione_has_crecimiento_IMACEC_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.crecimiento_IMACEC_": {
+			          "Target": {
+			            "Entity": "observacione.crecimiento_IMACEC_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.crecimiento_IMACEC_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_crecimiento_IMACEC_"
+			        }
+			      ]
+			    },
+			    "observacione_has_crecimiento_PIB_": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.crecimiento_PIB_": {
+			          "Target": {
+			            "Entity": "observacione.crecimiento_PIB_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.crecimiento_PIB_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_crecimiento_PIB_"
+			        }
+			      ]
+			    },
+			    "observacione_has_cambio_vs_heredado": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.cambio_vs_heredado": {
+			          "Target": {
+			            "Entity": "observacione.cambio_vs_heredado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.cambio_vs_heredado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_cambio_vs_heredado"
+			        }
+			      ]
+			    },
+			    "observacione_has_valor_heredado": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.valor_heredado": {
+			          "Target": {
+			            "Entity": "observacione.valor_heredado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.valor_heredado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_valor_heredado"
+			        }
+			      ]
+			    },
+			    "observacione_has_valor_final": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.valor_final": {
+			          "Target": {
+			            "Entity": "observacione.valor_final"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.valor_final"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_valor_final"
+			        }
+			      ]
+			    },
+			    "observacione_has_periodos": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.periodos": {
+			          "Target": {
+			            "Entity": "observacione.periodos"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.periodos"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_periodos"
+			        }
+			      ]
+			    },
+			    "observacione_has_var_12m_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.var_12m_promedio": {
+			          "Target": {
+			            "Entity": "observacione.var_12m_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.var_12m_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_var_12m_promedio"
+			        }
+			      ]
+			    },
+			    "observacione_has_valor_promedio": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.valor_promedio": {
+			          "Target": {
+			            "Entity": "observacione.valor_promedio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.valor_promedio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_valor_promedio"
+			        }
+			      ]
+			    },
+			    "observacione_has_incluir_períodos_de_transición": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.incluir_períodos_de_transición": {
+			          "Target": {
+			            "Entity": "observacione.incluir_períodos_de_transición"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.incluir_períodos_de_transición"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_incluir_períodos_de_transicións"
+			        }
+			      ]
+			    },
+			    "observacione_has_desfase_mese": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.desfase_mese": {
+			          "Target": {
+			            "Entity": "observacione.desfase_mese"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.desfase_mese"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_desfase_meses"
+			        }
+			      ]
+			    },
+			    "observacione_has_var_1_2m_pct": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.var_1_2m_pct": {
+			          "Target": {
+			            "Entity": "observacione.var_1_2m_pct"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.var_1_2m_pct"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_var_1_2m_pcts"
+			        }
+			      ]
+			    },
+			    "observacione_has_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.valor": {
+			          "Target": {
+			            "Entity": "observacione.valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_valor"
+			        }
+			      ]
+			    },
+			    "observacione_has_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "observacione.fecha": {
+			          "Target": {
+			            "Entity": "observacione.fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "observacione.fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_fechas"
+			        }
+			      ]
+			    },
+			    "indicadore_has_fuente_original": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.fuente_original": {
+			          "Target": {
+			            "Entity": "indicadore.fuente_original"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.fuente_original"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_fuente_originals"
+			        }
+			      ]
+			    },
+			    "indicadore_has_fuente": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.fuente": {
+			          "Target": {
+			            "Entity": "indicadore.fuente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.fuente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_fuentes"
+			        }
+			      ]
+			    },
+			    "indicadore_has_codigo_serie": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.codigo_serie": {
+			          "Target": {
+			            "Entity": "indicadore.codigo_serie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.codigo_serie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_codigo_series"
+			        }
+			      ]
+			    },
+			    "indicadore_has_frecuencia": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.frecuencia": {
+			          "Target": {
+			            "Entity": "indicadore.frecuencia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.frecuencia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_frecuencias"
+			        }
+			      ]
+			    },
+			    "indicadore_has_unidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.unidad": {
+			          "Target": {
+			            "Entity": "indicadore.unidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.unidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_unidads"
+			        }
+			      ]
+			    },
+			    "indicadore_has_descripcion": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.descripcion": {
+			          "Target": {
+			            "Entity": "indicadore.descripcion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.descripcion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_descripcions"
+			        }
+			      ]
+			    },
+			    "indicadore_has_indicador": {
+			      "Binding": {
+			        "ConceptualEntity": "Indicadores"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        },
+			        "indicadore.indicador": {
+			          "Target": {
+			            "Entity": "indicadore.indicador"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "indicadore.indicador"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_indicadors"
+			        }
+			      ]
+			    },
+			    "gobierno_has_en_alcance": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.en_alcance": {
+			          "Target": {
+			            "Entity": "gobierno.en_alcance"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.en_alcance"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_en_alcances"
+			        }
+			      ]
+			    },
+			    "gobierno_has_fecha_fin": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.fecha_fin": {
+			          "Target": {
+			            "Entity": "gobierno.fecha_fin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.fecha_fin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_fecha_fins"
+			        }
+			      ]
+			    },
+			    "gobierno_has_fecha_inicio": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.fecha_inicio": {
+			          "Target": {
+			            "Entity": "gobierno.fecha_inicio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.fecha_inicio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_fecha_inicios"
+			        }
+			      ]
+			    },
+			    "gobierno_has_etiqueta": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.etiqueta": {
+			          "Target": {
+			            "Entity": "gobierno.etiqueta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.etiqueta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_etiquetas"
+			        }
+			      ]
+			    },
+			    "gobierno_has_presidente": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.presidente": {
+			          "Target": {
+			            "Entity": "gobierno.presidente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.presidente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_presidentes"
+			        }
+			      ]
+			    },
+			    "gobierno_has_id_gobierno": {
+			      "Binding": {
+			        "ConceptualEntity": "Gobiernos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "gobierno": {
+			          "Target": {
+			            "Entity": "gobierno"
+			          }
+			        },
+			        "gobierno.id_gobierno": {
+			          "Target": {
+			            "Entity": "gobierno.id_gobierno"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "gobierno"
+			            },
+			            "Object": {
+			              "Role": "gobierno.id_gobierno"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "gobiernos_have_id_gobiernos"
+			        }
+			      ]
+			    },
+			    "evento_has_fuente": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.fuente": {
+			          "Target": {
+			            "Entity": "evento.fuente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.fuente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_fuentes"
+			        }
+			      ]
+			    },
+			    "evento_has_notum": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.notum": {
+			          "Target": {
+			            "Entity": "evento.notum"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.notum"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_nota"
+			        }
+			      ]
+			    },
+			    "evento_has_precision_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.precision_fecha": {
+			          "Target": {
+			            "Entity": "evento.precision_fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.precision_fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_precision_fechas"
+			        }
+			      ]
+			    },
+			    "evento_has_fecha_fin": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.fecha_fin": {
+			          "Target": {
+			            "Entity": "evento.fecha_fin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.fecha_fin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_fecha_fins"
+			        }
+			      ]
+			    },
+			    "evento_has_fecha_inicio": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.fecha_inicio": {
+			          "Target": {
+			            "Entity": "evento.fecha_inicio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.fecha_inicio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_fecha_inicios"
+			        }
+			      ]
+			    },
+			    "evento_has_tipo": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.tipo": {
+			          "Target": {
+			            "Entity": "evento.tipo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.tipo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_tipos"
+			        }
+			      ]
+			    },
+			    "evento_has_evento": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.evento": {
+			          "Target": {
+			            "Entity": "evento.evento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.evento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_eventos"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Name": {
+			              "Role": "evento.evento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_are_names_IDs_of_eventos"
+			        }
+			      ]
+			    },
+			    "evento_has_id_evento": {
+			      "Binding": {
+			        "ConceptualEntity": "Eventos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "evento": {
+			          "Target": {
+			            "Entity": "evento"
+			          }
+			        },
+			        "evento.id_evento": {
+			          "Target": {
+			            "Entity": "evento.id_evento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "evento"
+			            },
+			            "Object": {
+			              "Role": "evento.id_evento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "eventos_have_id_eventos"
+			        }
+			      ]
+			    },
+			    "observacione_has_indicadore": {
+			      "Binding": {
+			        "ConceptualEntity": "Observaciones"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "observacione": {
+			          "Target": {
+			            "Entity": "observacione"
+			          }
+			        },
+			        "indicadore": {
+			          "Target": {
+			            "Entity": "indicadore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "observacione"
+			            },
+			            "Object": {
+			              "Role": "indicadore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "observaciones_have_indicadores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadore"
+			            },
+			            "Object": {
+			              "Role": "observacione"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_have_observaciones"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "625ffbfaab75193d7460",
   "position": {
-    "x": 0,
-    "y": 0,
+    "x": 10,
+    "y": 56.25,
     "z": 0,
     "height": 101.25,
-    "width": 1313.75,
+    "width": 1910,
     "tabOrder": 0
   },
   "visual": {
@@ -126,6 +126,19 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Desfase supuesto (meses)'"
                 }
               }
             }
