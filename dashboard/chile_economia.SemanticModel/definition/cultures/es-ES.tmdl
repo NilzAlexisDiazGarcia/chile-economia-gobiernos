@@ -1099,7 +1099,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Observaciones",
-			          "ConceptualProperty": "Incluir períodos de transición"
+			          "ConceptualProperty": "Tipo de período"
 			        }
 			      },
 			      "State": "Generated",
