@@ -1,0 +1,8 @@
+relationship AutoDetected_fddcb92d-d14b-4d49-b570-b82a4872a4a5
+	fromColumn: Observaciones.id_gobierno
+	toColumn: Gobiernos.id_gobierno
+
+relationship AutoDetected_b3f07778-7f2c-4bb6-a5f3-a928eae2464c
+	fromColumn: Observaciones.indicador
+	toColumn: Indicadores.indicador
+

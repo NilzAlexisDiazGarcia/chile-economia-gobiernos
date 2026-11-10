@@ -138,7 +138,14 @@ Cuadros de texto con:
 ## 9. Guardar y versionar
 
 1. **Archivo → Guardar como →** carpeta `dashboard/`, nombre `chile_economia`, tipo
-   **Power BI Project (.pbip)**.
+   **Power BI Project (.pbip)**. Se crean `chile_economia.pbip` y las carpetas
+   `chile_economia.Report` (páginas y objetos visuales) y `chile_economia.SemanticModel`
+   (tablas, relaciones y medidas en formato TMDL).
 2. Toma capturas de cada página y guárdalas en `dashboard/capturas/`; irán en el README.
+   Para que salga solo el lienzo: cierra los paneles Formato, Compilar y Datos (flechas
+   **»**), haz clic en una zona vacía del lienzo y usa **Windows + Shift + S** con recorte
+   rectangular. La captura queda en el portapapeles: guárdala desde la notificación de
+   Recortes con **Ctrl+S**.
 3. Revisa con `git status` que **no** aparezcan `cache.abf` ni `localSettings.json`, que
-   están en el `.gitignore`.
+   están en el `.gitignore`. El proyecto no guarda datos ni claves: al abrirlo, Power BI
+   pide las credenciales de PostgreSQL y recarga los datos desde las vistas.

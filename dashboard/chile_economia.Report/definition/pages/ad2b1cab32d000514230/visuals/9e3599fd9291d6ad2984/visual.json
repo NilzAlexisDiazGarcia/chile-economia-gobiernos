@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "9e3599fd9291d6ad2984",
+  "position": {
+    "x": 0,
+    "y": 660,
+    "z": 2,
+    "height": 420,
+    "width": 1920,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Gobiernos"
+                    }
+                  },
+                  "Property": "etiqueta"
+                }
+              },
+              "queryRef": "Gobiernos.etiqueta",
+              "nativeQueryRef": "etiqueta",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Cobre Promedio USD lb"
+                }
+              },
+              "queryRef": "Observaciones.Cobre Promedio USD lb",
+              "nativeQueryRef": "Cobre Promedio USD lb"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Precio promedio del cobre (USD por libra)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

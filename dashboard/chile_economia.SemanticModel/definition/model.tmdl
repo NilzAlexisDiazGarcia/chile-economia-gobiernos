@@ -1,0 +1,22 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CL
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Eventos","Gobiernos","Indicadores","Observaciones"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Eventos
+ref table Gobiernos
+ref table Indicadores
+ref table Observaciones
+
+ref cultureInfo es-ES
+

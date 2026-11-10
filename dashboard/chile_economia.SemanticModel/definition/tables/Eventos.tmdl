@@ -1,0 +1,85 @@
+table Eventos
+	lineageTag: 574cde0d-78b9-415e-995f-12d1e08dffe1
+
+	column id_evento
+		dataType: int64
+		formatString: 0
+		lineageTag: 57b32913-a036-4ca9-a9b4-fd2905b498fe
+		summarizeBy: sum
+		sourceColumn: id_evento
+
+		annotation SummarizationSetBy = Automatic
+
+	column evento
+		dataType: string
+		lineageTag: b5e48e3e-1a29-4177-b391-620bbf97972d
+		summarizeBy: none
+		sourceColumn: evento
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: d7e593bd-b03f-4c03-bd50-ed8d9b2aea2e
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_inicio
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ffefecd3-ff26-413a-8157-6edaf7f7399f
+		summarizeBy: none
+		sourceColumn: fecha_inicio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fecha_fin
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2179d4ec-15bf-4e6e-b661-6ede24d112b0
+		summarizeBy: none
+		sourceColumn: fecha_fin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column precision_fecha
+		dataType: string
+		lineageTag: 610c04ce-d93b-4c8a-a492-1a7c6284ec1a
+		summarizeBy: none
+		sourceColumn: precision_fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column nota
+		dataType: string
+		lineageTag: 544a6f54-881d-43dd-b685-b76dbc667072
+		summarizeBy: none
+		sourceColumn: nota
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: e896dc06-3c3f-40dd-8930-41abb279cd7c
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Eventos = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "dim_evento"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

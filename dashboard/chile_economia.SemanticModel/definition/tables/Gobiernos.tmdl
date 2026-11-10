@@ -1,0 +1,73 @@
+table Gobiernos
+	lineageTag: cb08f674-b02b-453f-a556-5e7c294b10bc
+
+	column id_gobierno
+		dataType: int64
+		formatString: 0
+		lineageTag: 499b7b8f-fe46-44c6-95ed-b9c2abbcff66
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column presidente
+		dataType: string
+		lineageTag: 87a16d12-71cd-4357-8d14-f0800f5aa71b
+		summarizeBy: none
+		sourceColumn: presidente
+
+		annotation SummarizationSetBy = Automatic
+
+	column etiqueta
+		dataType: string
+		lineageTag: dbefd8d3-97e4-4368-9561-f7fd885efab7
+		summarizeBy: none
+		sourceColumn: etiqueta
+		sortByColumn: id_gobierno
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_inicio
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6225dd84-8a29-4a57-8d70-e173d68a740a
+		summarizeBy: none
+		sourceColumn: fecha_inicio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fecha_fin
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 253d7eb6-af57-453b-86fb-1d4e317b7312
+		summarizeBy: none
+		sourceColumn: fecha_fin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column en_alcance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d6b93e33-1439-4fce-a432-0d5db6f3ac6a
+		summarizeBy: none
+		sourceColumn: en_alcance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Gobiernos = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "dim_gobierno"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 381.38305001469382,
+            "y": 390
+          },
+          "nodeIndex": "Eventos",
+          "nodeLineageTag": "574cde0d-78b9-415e-995f-12d1e08dffe1",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 754.38305001469371,
+            "y": 4
+          },
+          "nodeIndex": "Gobiernos",
+          "nodeLineageTag": "cb08f674-b02b-453f-a556-5e7c294b10bc",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 90
+          },
+          "nodeIndex": "Indicadores",
+          "nodeLineageTag": "0e42a126-d897-457c-9239-5e64eebd1fd7",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 335.20156119318528,
+            "y": 0
+          },
+          "nodeIndex": "Observaciones",
+          "nodeLineageTag": "c4ab8d0f-0d79-44c2-bd80-0d49ede21411",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

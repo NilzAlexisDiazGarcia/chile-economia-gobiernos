@@ -1,0 +1,227 @@
+table Observaciones
+	lineageTag: c4ab8d0f-0d79-44c2-bd80-0d49ede21411
+
+	measure 'Valor Promedio' =
+			
+			AVERAGE ( Observaciones[valor] )
+		lineageTag: b326b955-4dca-4363-a2bf-e3330defae57
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var 12m Promedio' =
+			
+			AVERAGE ( Observaciones[var_12m_pct] )
+		lineageTag: b6b6651c-9ee7-433f-ab4e-aa0ae576807f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Periodos =
+			
+			DISTINCTCOUNT ( Observaciones[fecha] )
+		formatString: 0
+		lineageTag: 424621c8-5085-4299-b632-7ec0d7c5fab7
+
+	measure 'Valor Final' =
+			
+			VAR UltimaFecha =
+			    CALCULATE (
+			        MAX ( Observaciones[fecha] ),
+			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] )
+			    )
+			RETURN
+			    CALCULATE (
+			        AVERAGE ( Observaciones[valor] ),
+			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        Observaciones[fecha] = UltimaFecha
+			    )
+		lineageTag: 6cb5af52-0bae-4f4b-885e-d974163159d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor Heredado' =
+			
+			VAR InicioGobierno = MIN ( Gobiernos[fecha_inicio] )
+			VAR UltimaFechaAnterior =
+			    CALCULATE (
+			        MAX ( Observaciones[fecha] ),
+			        REMOVEFILTERS ( Gobiernos ),
+			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        Gobiernos[fecha_fin] = InicioGobierno
+			    )
+			RETURN
+			    CALCULATE (
+			        AVERAGE ( Observaciones[valor] ),
+			        REMOVEFILTERS ( Gobiernos ),
+			        REMOVEFILTERS ( Observaciones[Incluir períodos de transición] ),
+			        Gobiernos[fecha_fin] = InicioGobierno,
+			        Observaciones[fecha] = UltimaFechaAnterior
+			    )
+		lineageTag: 7aa735cd-781f-410b-97a0-70eaaeec1b98
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cambio vs Heredado' =
+			
+			[Valor Final] - [Valor Heredado]
+		lineageTag: 3cc49ea2-c25c-4c63-96ce-e0fd53e1b0af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Crecimiento PIB %' =
+			
+			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
+		lineageTag: aade441f-b6ea-43d8-8505-8a13b71c2cb0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Crecimiento IMACEC %' =
+			
+			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
+		lineageTag: 8b77cf6a-fbde-4300-831a-f41e6426072e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Inflacion Promedio %' =
+			
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
+		lineageTag: cb6cf1de-b507-4ff6-b0fc-849d3fff4b76
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Desempleo Promedio %' =
+			
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
+		lineageTag: 1281718b-3cc3-4dbb-9d8a-e31c77f7ff71
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Desempleo Cambio pp' =
+			
+			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
+		lineageTag: 74c20f18-1d64-4ec1-90f0-53c862ccaef9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Deuda Cambio pp' =
+			
+			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
+		lineageTag: 844e438d-f61e-451e-a9a1-f6529ac3d4c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cobre Promedio USD lb' =
+			
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "cobre" )
+		lineageTag: acf925c1-01ae-4ec3-88c6-4958a6811f21
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cobre Var 12m %' =
+			
+			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
+		lineageTag: f3b9a444-fef0-418c-85aa-6ac64d8ce85f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Texto Desfase' =
+			
+			VAR Meses = SELECTEDVALUE ( Observaciones[desfase_meses], -1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        Meses = 0, "Asignación por mayoría de días, sin desfase",
+			        Meses > 0, "Cada dato se atribuye al gobierno de " & Meses & " meses antes",
+			        "Selecciona un solo desfase"
+			    )
+		lineageTag: a492b9b1-57e3-4e66-8899-a79929ad5242
+
+	measure Fuente =
+			
+			"Fuente: Banco Central de Chile (BDE) y DIPRES vía BDE. Elaboración propia."
+		lineageTag: c04e7c34-2919-4942-988e-2e08362ec537
+
+	measure 'Balance Fiscal Promedio %' =
+			
+			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
+		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column indicador
+		dataType: string
+		lineageTag: 2bfc012a-9305-4ae9-aa4d-ecf9446bf47c
+		summarizeBy: none
+		sourceColumn: indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5fa17437-70e6-4246-87cf-beb75944a056
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column valor
+		dataType: double
+		lineageTag: 7cf0eaf1-8159-4f64-b0f9-5cb313eaad03
+		summarizeBy: sum
+		sourceColumn: valor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column var_12m_pct
+		dataType: double
+		lineageTag: 4db77e75-77e7-443a-b94b-d2c51a1c5443
+		summarizeBy: sum
+		sourceColumn: var_12m_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column desfase_meses
+		dataType: int64
+		formatString: 0
+		lineageTag: dd28c37a-e2b4-4eae-85c7-7c3e9cd6497f
+		summarizeBy: sum
+		sourceColumn: desfase_meses
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_gobierno
+		dataType: int64
+		formatString: 0
+		lineageTag: dc66c098-6c98-46d1-be2e-eb6986d12879
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incluir períodos de transición'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0f54cded-030f-478d-815f-d7da4b68060e
+		summarizeBy: none
+		sourceColumn: Incluir períodos de transición
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Observaciones = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "v_pbi_observacion"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Navegación 1",{{"es_transicion", "Incluir períodos de transición"}})
+				in
+				  #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+

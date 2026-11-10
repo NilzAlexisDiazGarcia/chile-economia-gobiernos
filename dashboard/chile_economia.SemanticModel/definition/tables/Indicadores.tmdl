@@ -1,0 +1,70 @@
+table Indicadores
+	lineageTag: 0e42a126-d897-457c-9239-5e64eebd1fd7
+
+	column indicador
+		dataType: string
+		lineageTag: ff799e0f-1443-42f8-8990-4ffae7a24b9f
+		summarizeBy: none
+		sourceColumn: indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column descripcion
+		dataType: string
+		lineageTag: 2724fc2f-00c6-4898-a8ce-8c9805507afd
+		summarizeBy: none
+		sourceColumn: descripcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad
+		dataType: string
+		lineageTag: b63bea79-b667-4066-9505-2fe799523d22
+		summarizeBy: none
+		sourceColumn: unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column frecuencia
+		dataType: string
+		lineageTag: 633ad52d-675e-48e4-92f3-f980a815c37f
+		summarizeBy: none
+		sourceColumn: frecuencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_serie
+		dataType: string
+		lineageTag: f85b27f5-d836-4835-9dbb-6651a665cd6e
+		summarizeBy: none
+		sourceColumn: codigo_serie
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: 279696e1-81d4-4c2b-bd87-2d71be71637f
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente_original
+		dataType: string
+		lineageTag: aba687fb-4a93-4737-852a-0fcf688ab508
+		summarizeBy: none
+		sourceColumn: fuente_original
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Indicadores = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "dim_indicador"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+
