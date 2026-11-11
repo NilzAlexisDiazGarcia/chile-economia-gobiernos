@@ -9,6 +9,7 @@
 -- dos pasos produce errores: 2,98498 -> 2,9850 -> 2,99, cuando lo correcto es 2,98.
 -- =============================================================================
 
+DROP VIEW IF EXISTS economia.v_pbi_comparacion;
 DROP VIEW IF EXISTS economia.v_pbi_observacion;
 DROP VIEW IF EXISTS economia.v_resumen_gobierno;
 DROP VIEW IF EXISTS economia.v_variacion_12m;
@@ -175,3 +176,34 @@ JOIN economia.dim_gobierno g
   ON daterange(g.fecha_inicio, g.fecha_fin, '[)') @> p.medio_desplazado
 LEFT JOIN economia.v_variacion_12m v
   ON v.indicador = p.indicador AND v.fecha = p.fecha;
+
+-- -----------------------------------------------------------------------------
+-- v_pbi_comparacion: Chile frente a sus pares, una fila por año e indicador.
+--
+-- pares: promedio simple de los países marcados como pares en dim_zona (Perú,
+-- Colombia, México y Brasil). Promedio simple y no ponderado: cada país cuenta
+-- como una referencia, sin que Brasil o México pesen más por su tamaño.
+-- n_pares: cuántos pares tienen dato ese año (el Banco Mundial no entregó
+-- Colombia), para que el lector sepa sobre cuántos países se calculó.
+-- Se excluyen las proyecciones del FMI.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_pbi_comparacion AS
+SELECT
+    f.indicador,
+    f.anio,
+    make_date(f.anio, 1, 1)                                   AS fecha,
+    f.id_gobierno,
+    MAX(f.unidad)                                             AS unidad,
+    MAX(f.fuente)                                             AS fuente,
+    MAX(f.valor) FILTER (WHERE f.zona = 'CHL')                AS chile,
+    AVG(f.valor) FILTER (WHERE z.es_par)                      AS pares,
+    COUNT(*)     FILTER (WHERE z.es_par)                      AS n_pares,
+    MAX(f.valor) FILTER (WHERE f.zona = 'WE')                 AS america_latina,
+    MAX(f.valor) FILTER (WHERE f.zona = 'WEOWORLD')           AS mundo,
+    MAX(f.valor) FILTER (WHERE f.zona = 'CHL')
+        - AVG(f.valor) FILTER (WHERE z.es_par)                AS diferencia_pares
+FROM economia.fact_internacional f
+JOIN economia.dim_zona z USING (zona)
+WHERE NOT f.es_proyeccion
+GROUP BY f.indicador, f.anio, f.id_gobierno
+HAVING MAX(f.valor) FILTER (WHERE f.zona = 'CHL') IS NOT NULL;

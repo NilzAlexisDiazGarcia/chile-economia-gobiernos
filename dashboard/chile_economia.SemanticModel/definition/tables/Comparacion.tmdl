@@ -1,0 +1,261 @@
+table Comparacion
+	lineageTag: 6689bd08-010b-4253-b362-7bf2c1e3e67d
+
+	/// Crecimiento promedio anual de Chile según el FMI. Difiere levemente del dato mensual del Banco Central.
+	measure 'Crecimiento Chile Anual %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "crecimiento_pib" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: ba38ef82-b788-4c9b-90f5-6d0439c341c5
+
+	/// Promedio simple de Perú, Colombia, México y Brasil.
+	measure 'Crecimiento Pares %' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "crecimiento_pib" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 236e17ff-ab99-4cbe-b385-83dea1f7f0af
+
+	measure 'Crecimiento America Latina %' = CALCULATE ( AVERAGE ( Comparacion[america_latina] ), Comparacion[indicador] = "crecimiento_pib" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: f6b1fa3b-1b69-40a2-be59-4d31990babab
+
+	measure 'Crecimiento Mundo %' = CALCULATE ( AVERAGE ( Comparacion[mundo] ), Comparacion[indicador] = "crecimiento_pib" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: c2e885b7-6a74-441c-a40c-14870b5a9bd7
+
+	/// Chile menos el promedio de los pares, en puntos porcentuales. Positivo: Chile creció más.
+	measure 'Crecimiento vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "crecimiento_pib" )
+		formatString: +0.00;-0.00;0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 0ef22d3a-7c07-4754-b5f0-3434fb6c63c4
+
+	measure 'Inflacion Chile Anual %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "inflacion_promedio" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 0711eae4-0a5f-478a-9ac5-99e06514a8db
+
+	measure 'Inflacion Pares %' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "inflacion_promedio" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 2b3f57c4-f060-4c68-ac82-72e33497fcb7
+
+	measure 'Inflacion Mundo %' = CALCULATE ( AVERAGE ( Comparacion[mundo] ), Comparacion[indicador] = "inflacion_promedio" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 1ed2915d-db93-473c-95b9-b645afe863d2
+
+	/// Chile menos el promedio de los pares. Negativo: Chile tuvo menos inflación.
+	measure 'Inflacion vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "inflacion_promedio" )
+		formatString: +0.00;-0.00;0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 4551afb7-6865-4d3e-803b-c3f0b8ec5bbf
+
+	/// Deuda bruta del gobierno general (FMI). No es la misma definición que la del Gobierno Central (DIPRES).
+	measure 'Deuda Chile FMI %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "deuda_gobierno_general" )
+		formatString: 0.0
+		displayFolder: 6. Comparación con pares
+		lineageTag: dca3dc0d-e243-4b47-8ae9-9a4f1676cea9
+
+	measure 'Deuda Pares %' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "deuda_gobierno_general" )
+		formatString: 0.0
+		displayFolder: 6. Comparación con pares
+		lineageTag: fb1ec171-d231-41dd-b82d-147484352702
+
+	/// Balance del gobierno general de Chile menos el de los pares. Positivo: Chile tuvo mejor balance.
+	measure 'Balance vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "balance_gobierno_general" )
+		formatString: +0.00;-0.00;0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 5774a136-02a7-400c-b8bf-d4b416958f6a
+
+	/// Banco Mundial (WGI), escala de -2,5 a 2,5. Índice de percepción: los cambios pequeños no son concluyentes.
+	measure 'Control Corrupcion Chile' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "control_corrupcion" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: fa6d89c6-b95e-4aec-9d49-138a5866632b
+
+	/// Promedio de Perú, México y Brasil: el Banco Mundial no entregó datos de Colombia.
+	measure 'Control Corrupcion Pares' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "control_corrupcion" )
+		formatString: 0.00
+		displayFolder: 6. Comparación con pares
+		lineageTag: 386e15ca-73ec-4ec0-bb1d-3a67f8fbe809
+
+	/// Frase para la ficha: cuánto creció Chile frente a sus pares.
+	measure 'Texto Crecimiento vs Pares' =
+			VAR d = [Crecimiento vs Pares pp]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( d ),
+			        FORMAT ( d, "+0.0;-0.0;0.0" ) & " pp"
+			    )
+		displayFolder: 6. Comparación con pares
+		lineageTag: bbc2f7bd-711a-4ecc-aa7e-41f2ead53b5c
+
+	/// Frase para la ficha: inflación de Chile frente a sus pares.
+	measure 'Texto Inflacion vs Pares' =
+			VAR d = [Inflacion vs Pares pp]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( d ),
+			        FORMAT ( d, "+0.0;-0.0;0.0" ) & " pp"
+			    )
+		displayFolder: 6. Comparación con pares
+		lineageTag: 6b843625-c228-45e4-9e7d-519015185009
+
+	/// Citas textuales del Banco Central y del FMI para el gobierno seleccionado.
+	measure 'Explicacion del Periodo' =
+			IF (
+			    HASONEVALUE ( Gobiernos[etiqueta] ),
+			    COALESCE (
+			        CONCATENATEX (
+			            Explicaciones,
+			            Explicaciones[anio] & " · " & Explicaciones[tema] & ": " & Explicaciones[cita]
+			                & UNICHAR ( 10 ) & "Fuente: " & Explicaciones[fuente],
+			            UNICHAR ( 10 ) & UNICHAR ( 10 ),
+			            Explicaciones[anio], ASC
+			        ),
+			        "Sin explicaciones oficiales registradas para este período"
+			    )
+			)
+		displayFolder: 6. Comparación con pares
+		lineageTag: 71da4b70-8bc1-4d6a-bb9d-27d9d9254521
+
+	measure 'Fuente Comparacion' = "Fuente: FMI, World Economic Outlook (octubre de 2026); Banco Mundial, WGI. Pares: Perú, Colombia, México y Brasil. Datos anuales: cada año se asigna al gobierno que gobernó la mayor parte de él."
+		displayFolder: 6. Comparación con pares
+		lineageTag: de0f2f51-7263-4955-b226-c85e08ee4d53
+
+	column indicador
+		dataType: string
+		isHidden
+		lineageTag: 61ea8489-2ca9-4dbb-b17e-d0d150122d89
+		summarizeBy: none
+		sourceColumn: indicador
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: d9a2c87e-7d61-4b48-8bf4-5cdffc87be37
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: yyyy
+		lineageTag: d4f1ac24-3e88-4097-83f1-38cd8778817b
+		summarizeBy: none
+		sourceColumn: fecha
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_gobierno
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f8c73026-e9be-4406-bded-04c13750e6c1
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad
+		dataType: string
+		lineageTag: 1f7d48fd-1b2b-411c-903e-78b81fa1c4c8
+		summarizeBy: none
+		sourceColumn: unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: 094b499c-dec4-453c-a00e-2e7aea9eb2a5
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	column chile
+		dataType: double
+		formatString: 0.00
+		lineageTag: 08635c79-2fc3-41df-b658-b4687e082a6b
+		summarizeBy: none
+		sourceColumn: chile
+
+		annotation SummarizationSetBy = Automatic
+
+	column pares
+		dataType: double
+		formatString: 0.00
+		lineageTag: b6690c58-dac1-428c-a24d-c9a46a8be99d
+		summarizeBy: none
+		sourceColumn: pares
+
+		annotation SummarizationSetBy = Automatic
+
+	column america_latina
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9707cbf0-3e70-4899-855a-71140dceec28
+		summarizeBy: none
+		sourceColumn: america_latina
+
+		annotation SummarizationSetBy = Automatic
+
+	column mundo
+		dataType: double
+		formatString: 0.00
+		lineageTag: bc781931-58a3-4eef-8704-df72bde27c1d
+		summarizeBy: none
+		sourceColumn: mundo
+
+		annotation SummarizationSetBy = Automatic
+
+	column diferencia_pares
+		dataType: double
+		formatString: 0.00
+		lineageTag: 7de95cc7-f242-424a-8f8c-0762e7424e72
+		summarizeBy: none
+		sourceColumn: diferencia_pares
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_pares
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d3397ff-8729-4b32-93b8-e1f604d74f68
+		summarizeBy: none
+		sourceColumn: n_pares
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Nombre legible del indicador.
+	column 'Nombre Indicador' =
+			SWITCH (
+			    Comparacion[indicador],
+			    "crecimiento_pib", "Crecimiento del PIB",
+			    "inflacion_promedio", "Inflación promedio",
+			    "desempleo", "Desempleo",
+			    "deuda_gobierno_general", "Deuda bruta (gobierno general)",
+			    "balance_gobierno_general", "Balance fiscal (gobierno general)",
+			    "control_corrupcion", "Control de la corrupción",
+			    Comparacion[indicador]
+			)
+		dataType: string
+		lineageTag: dc8a9fd4-ec46-41b7-97ff-774e9db76681
+		summarizeBy: none
+
+	partition Comparacion = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "v_pbi_comparacion"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

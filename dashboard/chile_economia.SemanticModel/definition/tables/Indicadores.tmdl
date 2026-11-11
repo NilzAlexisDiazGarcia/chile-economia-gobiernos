@@ -73,6 +73,7 @@ table Indicadores
 			    Indicadores[indicador]
 			)
 		dataType: string
+		lineageTag: 2ceadbec-24e2-4f8b-ace7-67b5cdc6b7d2
 		summarizeBy: none
 		sortByColumn: Orden
 
@@ -85,8 +86,9 @@ table Indicadores
 			    99
 			)
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
+		lineageTag: 394d6bf1-60fe-4f02-90e9-9debc803fa25
 		summarizeBy: none
 
 	partition Indicadores = m

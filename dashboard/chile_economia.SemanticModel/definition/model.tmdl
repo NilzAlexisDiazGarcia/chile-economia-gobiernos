@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Eventos","Gobiernos","Indicadores","Observaciones"]
+annotation PBI_QueryOrder = ["Eventos","Gobiernos","Indicadores","Observaciones","Comparacion","Explicaciones"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -17,6 +17,8 @@ ref table Eventos
 ref table Gobiernos
 ref table Indicadores
 ref table Observaciones
+ref table Comparacion
+ref table Explicaciones
 
 ref cultureInfo es-ES
 

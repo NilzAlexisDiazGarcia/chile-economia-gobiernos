@@ -14,9 +14,10 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
-# Excepción: el resultado limpio SÍ se versiona (datos públicos, ~660 KB).
+# Excepción: los resultados limpios SÍ se versionan (datos públicos, < 1 MB).
 # Permite cargar PostgreSQL y abrir el dashboard sin cuenta de la API del BCCh.
 !data/processed/observaciones.csv
+!data/processed/internacional.csv
 
 # --- Logs de ejecución ---
 logs/*

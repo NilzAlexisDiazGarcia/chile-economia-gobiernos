@@ -21,10 +21,16 @@ bcch:
     frecuencia: MONTHLY
     codigo: "F032.IMC.IND.Z.Z.EP18.Z.Z.0.M"
   ipc:
-    descripcion: "IPC general, variación anual (12 meses), empalme BCCh base 2023"
+    # Serie oficial publicada por el INE (variación 12 meses, información histórica).
+    # Se usaba antes el empalme del Banco Central a base 2023 (G073.IPC.V12.2023.M), pero
+    # la auditoría de datos (src/analysis/auditoria.py) mostró que difiere hasta 1,3 pp de
+    # lo publicado en los años de cambio de base del IPC (2009, 2013, 2018, 2023-2024).
+    # La meta del Banco Central se evalúa contra la cifra oficial, así que se usa esta.
+    descripcion: "IPC general, variación 12 meses, cifra oficial publicada por el INE"
     unidad: "Porcentaje"
     frecuencia: MONTHLY
-    codigo: "G073.IPC.V12.2023.M"
+    codigo: "F074.IPC.IND.Z.EP09.C.M"
+    fuente_original: "INE"
   tpm:
     descripcion: "Tasa de Política Monetaria"
     unidad: "Porcentaje"

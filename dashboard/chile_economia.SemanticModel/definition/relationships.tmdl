@@ -6,3 +6,11 @@ relationship AutoDetected_b3f07778-7f2c-4bb6-a5f3-a928eae2464c
 	fromColumn: Observaciones.indicador
 	toColumn: Indicadores.indicador
 
+relationship 1a6734d7-63a8-49f0-beaf-aeb32a546b40
+	fromColumn: Comparacion.id_gobierno
+	toColumn: Gobiernos.id_gobierno
+
+relationship 7d677d08-2598-4cce-b9dc-06f06c9a8adb
+	fromColumn: Explicaciones.id_gobierno
+	toColumn: Gobiernos.id_gobierno
+

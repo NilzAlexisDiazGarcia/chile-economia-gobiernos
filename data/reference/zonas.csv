@@ -1,0 +1,8 @@
+zona,nombre_zona,tipo,es_par
+CHL,Chile,pais,false
+PER,Perú,pais,true
+COL,Colombia,pais,true
+MEX,México,pais,true
+BRA,Brasil,pais,true
+WE,América Latina y el Caribe,agregado,false
+WEOWORLD,Mundo,agregado,false

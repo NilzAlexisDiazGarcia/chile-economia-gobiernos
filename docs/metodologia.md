@@ -43,13 +43,42 @@ decisiones. No existe un rezago único; depende del instrumento:
 agregará un parámetro de desfase (0, 6 o 12 meses) para ver cómo cambian las
 comparaciones según el supuesto de rezago, sin imponer uno.
 
-## 4. Contexto
+## 4. Fuente de la inflación
+
+Se usa la variación a 12 meses del IPC **oficial publicada por el INE** (serie
+`F074.IPC.IND.Z.EP09.C.M` de la BDE), y no el empalme del Banco Central a la canasta de
+2023. El empalme modifica la variación anual en los años de cambio de base del IPC, hasta
+en 1,3 pp. La meta del Banco Central se evalúa contra la cifra oficial. La auditoría de
+datos (`python -m src.analysis.auditoria`) contrasta la serie con cifras publicadas por el
+INE.
+
+## 5. Contexto
 
 Los eventos de `data/reference/eventos.csv` y el precio del cobre se muestran junto a los
 indicadores como contexto. El análisis no estima cuánto de cada resultado se debe a
 estos factores.
 
-## 5. Métricas del análisis SQL
+**Comparación con pares** (detalle en [contexto_comparado.md](contexto_comparado.md)):
+
+- **Fuentes:** datos anuales del FMI (World Economic Outlook, octubre de 2026) y del Banco
+  Mundial (control de la corrupción, WGI).
+- **Pares:** Perú, Colombia, México y Brasil, países de la región con metas de inflación.
+  Se usa su promedio simple.
+- **Asignación anual:** cada año va al gobierno que gobernó la mayor parte de él, con la
+  misma regla de mayoría de días. Por eso las cifras anuales de Chile difieren levemente de
+  las mensuales: por ejemplo, el crecimiento de Bachelet II es 1,80 % con datos anuales y
+  1,90 % con datos trimestrales.
+- **Lo que no se compara:**
+  - El desempleo entre países, porque cada país lo mide distinto.
+  - La inflación contra el agregado de América Latina, que distorsionan Argentina y
+    Venezuela.
+- **Deuda y balance:** el FMI los mide para el gobierno general, y el resto del proyecto
+  para el Gobierno Central.
+- **Explicaciones oficiales:** `data/reference/explicaciones.csv` reúne citas textuales del
+  Banco Central y del FMI, con su fuente y enlace. Explican cada período en palabras de
+  esas instituciones, no del autor.
+
+## 6. Métricas del análisis SQL
 
 | Métrica | Definición | Por qué |
 |---|---|---|
@@ -71,7 +100,7 @@ reciente.
 - **Desfase en el último gobierno:** con desfase de 6 o 12 meses, los meses finales de
   Boric todavía no tienen datos publicados, así que su promedio usa menos meses.
 
-## 6. Neutralidad
+## 7. Neutralidad
 
 - Los mismos indicadores, reglas y fuentes para los cinco gobiernos.
 - Solo estadísticas descriptivas, sin juicios de valor ni conclusiones causales.

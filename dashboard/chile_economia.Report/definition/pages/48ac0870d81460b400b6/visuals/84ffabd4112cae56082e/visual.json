@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "84ffabd4112cae56082e",
   "position": {
-    "x": 0,
-    "y": 216.25,
+    "x": 40,
+    "y": 130,
     "z": 0,
-    "height": 371.25,
-    "width": 883.75,
+    "height": 70,
+    "width": 600,
     "tabOrder": 0
   },
   "visual": {
@@ -23,11 +23,12 @@
                       "Entity": "Indicadores"
                     }
                   },
-                  "Property": "descripcion"
+                  "Property": "Nombre"
                 }
               },
-              "queryRef": "Indicadores.descripcion",
-              "nativeQueryRef": "descripcion",
+              "queryRef": "Indicadores.Nombre",
+              "nativeQueryRef": "Indicador",
+              "displayName": "Indicador",
               "active": true
             }
           ]
@@ -41,7 +42,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -73,7 +74,7 @@
                                   "Source": "i"
                                 }
                               },
-                              "Property": "descripcion"
+                              "Property": "Nombre"
                             }
                           }
                         ],
@@ -81,7 +82,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Imacec empalmado, serie original (sin desestacionalizar)'"
+                                "Value": "'IMACEC'"
                               }
                             }
                           ]
@@ -107,8 +108,88 @@
             }
           }
         }
+      ],
+      "header": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Indicador'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

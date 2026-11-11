@@ -1,4 +1,5 @@
-"""Etapa 3: carga las tablas de referencia y las observaciones en PostgreSQL.
+"""Etapa 3: carga las tablas de referencia, las observaciones y los datos
+internacionales en PostgreSQL.
 
 Uso (desde la raíz del repositorio):
     python -m src.load.postgres
@@ -26,6 +27,7 @@ from src.config import (
     ROOT_DIR,
     get_pg_params,
 )
+from src.transform.asignar_gobierno import agregar_fin_periodo, asignar_gobierno
 
 log = logging.getLogger("carga")
 
@@ -65,6 +67,30 @@ def leer_indicadores() -> pd.DataFrame:
     return pd.DataFrame(filas)
 
 
+def asignar_gobierno_anual(df: pd.DataFrame, gobiernos: pd.DataFrame) -> pd.Series:
+    """Gobierno de Chile que gobernó la mayor parte de cada año (columna anio).
+
+    Reutiliza la regla de mayoría de días de las observaciones mensuales, tratando
+    cada año como una observación de frecuencia anual.
+    """
+    anios = pd.DataFrame({
+        "fecha": pd.to_datetime(df["anio"].astype(str) + "-01-01"),
+        "frecuencia": "ANNUAL",
+    })
+    return asignar_gobierno(agregar_fin_periodo(anios), gobiernos)["id_gobierno"].values
+
+
+def leer_internacional(gobiernos: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Datos del FMI y del Banco Mundial, y citas oficiales, con su gobierno asignado."""
+    internacional = pd.read_csv(PROCESSED_DIR / "internacional.csv")[
+        ["indicador", "zona", "anio", "valor", "unidad", "fuente", "es_proyeccion"]
+    ]
+    internacional["id_gobierno"] = asignar_gobierno_anual(internacional, gobiernos)
+    explicaciones = pd.read_csv(REFERENCE_DIR / "explicaciones.csv")
+    explicaciones["id_gobierno"] = asignar_gobierno_anual(explicaciones, gobiernos)
+    return internacional, explicaciones
+
+
 def insertar(cursor: psycopg.Cursor, tabla: str, df: pd.DataFrame) -> None:
     """Carga un DataFrame con COPY, el método de carga masiva de PostgreSQL.
 
@@ -87,6 +113,8 @@ def main() -> int:
     gobiernos = pd.read_csv(REFERENCE_DIR / "gobiernos.csv", parse_dates=["fecha_inicio", "fecha_fin"])
     eventos = pd.read_csv(REFERENCE_DIR / "eventos.csv", parse_dates=["fecha_inicio", "fecha_fin"])
     indicadores = leer_indicadores()
+    zonas = pd.read_csv(REFERENCE_DIR / "zonas.csv")
+    internacional, explicaciones = leer_internacional(gobiernos)
     observaciones = pd.read_csv(
         PROCESSED_DIR / "observaciones.csv", parse_dates=["fecha", "fecha_fin_periodo"]
     )[COLUMNAS_OBSERVACION]
@@ -96,6 +124,9 @@ def main() -> int:
         "dim_evento": len(eventos),
         "dim_indicador": len(indicadores),
         "fact_observacion": len(observaciones),
+        "dim_zona": len(zonas),
+        "fact_internacional": len(internacional),
+        "dim_explicacion": len(explicaciones),
     }
 
     try:
@@ -106,11 +137,12 @@ def main() -> int:
             cursor.execute((ROOT_DIR / "sql" / "02_views.sql").read_text(encoding="utf-8"))
             log.info("Esquema economia y vistas verificados")
 
-            # Un solo TRUNCATE para las cuatro tablas: PostgreSQL acepta vaciar
+            # Un solo TRUNCATE para todas las tablas: PostgreSQL acepta vaciar
             # juntas tablas relacionadas por claves foráneas sin usar CASCADE.
             cursor.execute(
                 "TRUNCATE economia.fact_observacion, economia.dim_indicador, "
-                "economia.dim_gobierno, economia.dim_evento"
+                "economia.dim_gobierno, economia.dim_evento, economia.fact_internacional, "
+                "economia.dim_zona, economia.dim_explicacion"
             )
 
             # Orden: primero las dimensiones, después los hechos que las referencian.
@@ -118,6 +150,9 @@ def main() -> int:
             insertar(cursor, "dim_indicador", indicadores)
             insertar(cursor, "dim_evento", eventos)
             insertar(cursor, "fact_observacion", observaciones)
+            insertar(cursor, "dim_zona", zonas)
+            insertar(cursor, "fact_internacional", internacional)
+            insertar(cursor, "dim_explicacion", explicaciones)
 
             # Verificación antes del COMMIT: si algo no cuadra, se revierte todo.
             for tabla, filas_esperadas in esperado.items():

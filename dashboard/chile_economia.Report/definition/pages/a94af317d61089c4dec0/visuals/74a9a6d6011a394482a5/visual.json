@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "74a9a6d6011a394482a5",
   "position": {
-    "x": 30,
-    "y": 72.5,
+    "x": 40,
+    "y": 20,
     "z": 0,
-    "height": 720,
-    "width": 1561.25,
+    "height": 1000,
+    "width": 1840,
     "tabOrder": 0
   },
   "visual": {
@@ -38,37 +38,16 @@
               {
                 "textRuns": [
                   {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
                     "value": "Asignación por gobierno.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " El cambio de mando es el 11 de marzo. Cada dato se asigna al gobierno que gobernó la mayoría de los días de su período. Los períodos que comparten dos gobiernos se marcan como “de transición” y pueden excluirse.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -86,13 +65,13 @@
                     "value": "Desfase.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " Las políticas tardan en reflejarse en los datos. El selector de desfase atribuye cada dato al gobierno de 6 o 12 meses antes. El dashboard no elige un desfase correcto: muestra cuánto cambian las comparaciones según el supuesto.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -110,13 +89,13 @@
                     "value": "Tasa de Política Monetaria.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " La decide el Banco Central de Chile, que es autónomo del gobierno.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -134,13 +113,13 @@
                     "value": "Contexto.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " El precio del cobre y los eventos (crisis financiera de 2008, terremoto de 2010, estallido social de 2019 y pandemia de 2020) se muestran como contexto. El análisis no estima cuánto de cada resultado se explica por ellos.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -158,13 +137,13 @@
                     "value": "Limitaciones.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " Las ventanas del estallido y de la pandemia se superponen. Tras una caída fuerte, la variación anual del año siguiente sale alta por efecto base. Con desfase, los últimos meses del último gobierno todavía no tienen datos publicados.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -182,13 +161,85 @@
                     "value": "Fuente:",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
                     }
                   },
                   {
                     "value": " Banco Central de Chile (Base de Datos Estadísticos) y DIPRES, vía la misma base. Elaboración propia. Análisis descriptivo, sin conclusiones causales.",
                     "textStyle": {
-                      "fontSize": "20pt"
+                      "fontSize": "15pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Eventos.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt"
+                    }
+                  },
+                  {
+                    "value": " Shocks de alcance global o nacional con fechas documentadas por una fuente oficial (data/reference/eventos.csv).",
+                    "textStyle": {
+                      "fontSize": "15pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Comparación con pares.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt"
+                    }
+                  },
+                  {
+                    "value": " Datos anuales del FMI (World Economic Outlook, octubre de 2026) y del Banco Mundial (WGI). Pares: Perú, Colombia, México y Brasil. Cada año se asigna al gobierno que gobernó la mayor parte de él; por eso las cifras anuales de Chile difieren levemente de las mensuales. Deuda y balance corresponden al gobierno general, una definición distinta de la del Gobierno Central.",
+                    "textStyle": {
+                      "fontSize": "15pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Explicaciones oficiales.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt"
+                    }
+                  },
+                  {
+                    "value": " Las citas de la Ficha por gobierno son textuales, del Banco Central de Chile y del FMI, con su fuente (data/reference/explicaciones.csv).",
+                    "textStyle": {
+                      "fontSize": "15pt"
                     }
                   }
                 ]
@@ -198,6 +249,143 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E3E3E3'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

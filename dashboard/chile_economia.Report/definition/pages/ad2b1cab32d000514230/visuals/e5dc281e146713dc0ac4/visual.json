@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e5dc281e146713dc0ac4",
   "position": {
-    "x": 0,
-    "y": 216.25,
+    "x": 40,
+    "y": 210,
     "z": 1000,
-    "height": 443.75,
-    "width": 1920,
+    "height": 400,
+    "width": 1840,
     "tabOrder": 1000
   },
   "visual": {
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Observaciones.Crecimiento IMACEC %",
-              "nativeQueryRef": "Crecimiento IMACEC %"
+              "nativeQueryRef": "IMACEC, var. anual (%)",
+              "displayName": "IMACEC, var. anual (%)"
             }
           ]
         },
@@ -64,7 +65,8 @@
                 }
               },
               "queryRef": "Observaciones.Cobre Var 12m %",
-              "nativeQueryRef": "Cobre Var 12m %"
+              "nativeQueryRef": "Cobre, var. anual (%), eje derecho",
+              "displayName": "Cobre, var. anual (%), eje derecho"
             }
           ]
         }
@@ -89,13 +91,160 @@
       }
     },
     "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
       "title": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2B2B2B'"
+                    }
+                  }
+                }
+              }
+            },
             "text": {
               "expr": {
                 "Literal": {
                   "Value": "'Variación anual: IMACEC y precio del cobre (%)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E3E3E3'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
                 }
               }
             }

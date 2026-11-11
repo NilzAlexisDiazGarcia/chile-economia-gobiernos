@@ -69,13 +69,15 @@ a un gobierno:
 
 | Gobierno | IPC prom. (%) | IPC máx. (%) | TPM mín.–máx. (%) |
 |---|---:|---:|---|
-| Bachelet I | 4,03 | 9,83 | 0,50–8,25 |
-| Piñera I | 2,57 | 4,44 | 0,50–5,25 |
-| Bachelet II | 3,64 | 5,68 | 2,50–4,25 |
-| Piñera II | 3,27 | 7,82 | 0,50–5,50 |
-| Boric | 6,59 | 14,08 | 4,50–11,25 |
+| Bachelet I | 4,33 | 9,9 | 0,50–8,25 |
+| Piñera I | 2,54 | 4,4 | 0,50–5,25 |
+| Bachelet II | 3,64 | 5,7 | 2,50–4,25 |
+| Piñera II | 3,29 | 7,8 | 0,50–5,50 |
+| Boric | 6,72 | 14,1 | 4,50–11,25 |
 
-- Los dos máximos de inflación (9,8 % en 2008 y 14,1 % en 2022) coinciden con alzas
+El IPC es la variación a 12 meses oficial publicada por el INE, con un decimal.
+
+- Los dos máximos de inflación (9,9 % en octubre de 2008 y 14,1 % en agosto de 2022) coinciden con alzas
   internacionales de precios: de alimentos y energía en 2008, y posteriores a la pandemia
   en 2022.
 - La Tasa de Política Monetaria la fija el Banco Central, que es autónomo. Su máximo
@@ -85,11 +87,11 @@ Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
 
 | Gobierno | Meses en rango | Inflación prom. − meta (pp) |
 |---|---:|---:|
-| Bachelet I | 38 % | +1,03 |
-| Piñera I | 67 % | −0,43 |
-| Bachelet II | 35 % | +0,64 |
-| Piñera II | 73 % | +0,27 |
-| Boric | 27 % | +3,59 |
+| Bachelet I | 38 % | +1,33 |
+| Piñera I | 67 % | −0,46 |
+| Bachelet II | 38 % | +0,64 |
+| Piñera II | 75 % | +0,29 |
+| Boric | 21 % | +3,72 |
 
 - La meta es una referencia externa a los gobiernos: la fija y la persigue el Banco Central.
   Por eso sirve para comparar períodos sin usar un criterio propio.
@@ -160,6 +162,28 @@ Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
   de la pandemia.
 - El terremoto ocurrió cuando la economía venía saliendo de la recesión. Por eso el IMACEC
   "antes" es negativo.
+
+## 8. Frente a sus pares, la lectura de dos períodos cambia
+
+Diferencia entre Chile y el promedio de Perú, Colombia, México y Brasil, con datos anuales
+del FMI (detalle y fuentes en [contexto_comparado.md](contexto_comparado.md)):
+
+| Gobierno | Crecimiento del PIB (pp) | Inflación (pp) | Balance fiscal (pp) |
+|---|---:|---:|---:|
+| Bachelet I | −0,31 | +0,13 | +5,01 |
+| Piñera I | +0,63 | −1,44 | +2,01 |
+| Bachelet II | +0,11 | −0,98 | +1,57 |
+| Piñera II | +1,09 | −0,63 | −0,01 |
+| Boric | −0,61 | +0,77 | +3,11 |
+
+- **Bachelet II** tiene el crecimiento más bajo en cifras absolutas, pero la región creció
+  aún menos, y Chile quedó levemente sobre sus pares.
+- **Piñera II** incluye la caída de 2020, que fue mundial. Frente a sus pares es el período
+  con la mayor diferencia de crecimiento a favor de Chile.
+- **Boric** tuvo crecimiento e inflación en contra frente a sus pares, y un déficit fiscal
+  bastante menor que el de ellos.
+- **Ningún período destaca en todos los indicadores.** Por eso el reporte no construye un
+  ranking.
 
 ## Cómo reproducir estas cifras
 

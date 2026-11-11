@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 381.38305001469382,
-            "y": 390
+            "x": 498.5700252891649,
+            "y": 511.1594151142836
           },
           "nodeIndex": "Eventos",
           "nodeLineageTag": "574cde0d-78b9-415e-995f-12d1e08dffe1",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 0,
-            "y": 90
+            "y": 338.27748998828605
           },
           "nodeIndex": "Indicadores",
           "nodeLineageTag": "0e42a126-d897-457c-9239-5e64eebd1fd7",
@@ -59,10 +59,36 @@
             "width": 234
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1002.6310914563803,
+            "y": 324.00783423325282
+          },
+          "nodeIndex": "Comparacion",
+          "nodeLineageTag": "6689bd08-010b-4253-b362-7bf2c1e3e67d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1399.8456268910388,
+            "y": 83.854364965810092
+          },
+          "nodeIndex": "Explicaciones",
+          "nodeLineageTag": "7c301dd4-2871-43d3-8bed-553eaae85cb4",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 100,
+      "zoomValue": 50.346892102823169,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

@@ -147,6 +147,16 @@ cultureInfo es-ES
 			            "State": "Generated",
 			            "Weight": 0.7
 			          }
+			        },
+			        {
+			          "Inicio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -277,6 +287,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.461
 			          }
+			        },
+			        {
+			          "Fin": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -316,6 +336,16 @@ cultureInfo es-ES
 			        {
 			          "notum": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Nota": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1026,6 +1056,16 @@ cultureInfo es-ES
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Desfase (meses)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1130,6 +1170,16 @@ cultureInfo es-ES
 			        {
 			          "valor promedio": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Deuda bruta (% del PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1323,6 +1373,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Crecimiento del PIB (% anual)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1361,6 +1421,16 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
+			          "Crecimiento promedio del IMACEC (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "IMACEC, var. anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
@@ -1371,7 +1441,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Crecimiento promedio del IMACEC (%)": {
+			          "IMACEC (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1418,6 +1488,26 @@ cultureInfo es-ES
 			        },
 			        {
 			          "Inflación prom. (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Inflación promedio (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Inflación anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1549,6 +1639,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Cobre promedio (USD por libra)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1584,6 +1684,16 @@ cultureInfo es-ES
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "Cobre, var. anual (%), eje derecho": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1656,6 +1766,625 @@ cultureInfo es-ES
 			        },
 			        {
 			          "Balance fiscal prom. (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.deuda_2006_a_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda 2006 a 2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda bruta (% del PIB): 2006 → 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.desempleo_2006_a_2026": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Desempleo 2006 a 2026"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Desempleo (%): 2006 → 2026": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.meses_inflacion_en_rango": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "% Meses Inflacion en Rango"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Meses con inflación entre 2 % y 4 %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Meses en el rango meta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.crecimiento_pib_antes_y_despues_2014": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Crecimiento PIB Antes y Despues 2014"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Crecimiento del PIB (% anual): 2006–14 → 2014–26": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.desempleo_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Desempleo Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Desempleo (%): recibió → entregó": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.tpm_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "TPM Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TPM (%): recibió → entregó": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.desempleo_cambio_texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Desempleo Cambio Texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cambio del desempleo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.deuda_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda (% PIB): recibió → entregó": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.dolar_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Dolar Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dólar (CLP): recibió → entregó": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.eventos_del_periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Eventos del Periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Eventos externos y nacionales del período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.dolar_promedio_clp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Dolar Promedio CLP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dólar (CLP)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.texto_crecimiento_vs_pares": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Texto Crecimiento vs Pares"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Crecimiento vs. pares": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.texto_inflacion_vs_pares": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Texto Inflacion vs Pares"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Inflación vs. pares": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.inflacion_vs_pares_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Inflacion vs Pares pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Chile − pares (pp)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Año": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.crecimiento_chile_anual_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Crecimiento Chile Anual %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Chile": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.crecimiento_pares_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Crecimiento Pares %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pares (promedio)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.crecimiento_mundo_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Crecimiento Mundo %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mundo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.crecimiento_vs_pares_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Crecimiento vs Pares pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Chile − pares (pp)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.deuda_chile_fmi_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Deuda Chile FMI %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda Chile": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.deuda_pares_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Deuda Pares %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda pares": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.balance_vs_pares_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Balance vs Pares pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Balance vs. pares": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.control_corrupcion_chile": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Control Corrupcion Chile"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Corrup. Chile": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.control_corrupcion_pares": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Control Corrupcion Pares"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Corrup. pares": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "explicaciones.anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Explicaciones",
+			          "ConceptualProperty": "anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Año": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "explicaciones.tema": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Explicaciones",
+			          "ConceptualProperty": "tema"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tema": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "explicaciones.cita": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Explicaciones",
+			          "ConceptualProperty": "cita"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qué dijeron": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "explicaciones.fuente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Explicaciones",
+			          "ConceptualProperty": "fuente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Fuente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores.nombre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Indicadores",
+			          "ConceptualProperty": "Nombre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Indicador": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

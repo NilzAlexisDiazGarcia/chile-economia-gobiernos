@@ -2,22 +2,19 @@ table Observaciones
 	lineageTag: c4ab8d0f-0d79-44c2-bd80-0d49ede21411
 
 	/// Promedio simple de los valores en el contexto (gobierno, indicador, fechas).
-	measure 'Valor Promedio' =
-			AVERAGE ( Observaciones[valor] )
+	measure 'Valor Promedio' = AVERAGE ( Observaciones[valor] )
 		formatString: 0.00
 		displayFolder: 1. Base
 		lineageTag: b326b955-4dca-4363-a2bf-e3330defae57
 
 	/// Promedio de las variaciones respecto del mismo período del año anterior. Solo existe para PIB, IMACEC y cobre.
-	measure 'Var 12m Promedio' =
-			AVERAGE ( Observaciones[var_12m_pct] )
+	measure 'Var 12m Promedio' = AVERAGE ( Observaciones[var_12m_pct] )
 		formatString: 0.00
 		displayFolder: 1. Base
 		lineageTag: b6b6651c-9ee7-433f-ab4e-aa0ae576807f
 
 	/// Cantidad de períodos distintos. Cuenta fechas y no filas, porque cada fecha se repite una vez por desfase.
-	measure Periodos =
-			DISTINCTCOUNT ( Observaciones[fecha] )
+	measure Periodos = DISTINCTCOUNT ( Observaciones[fecha] )
 		formatString: 0
 		displayFolder: 1. Base
 		lineageTag: 424621c8-5085-4299-b632-7ec0d7c5fab7
@@ -62,86 +59,93 @@ table Observaciones
 		lineageTag: 7aa735cd-781f-410b-97a0-70eaaeec1b98
 
 	/// Valor final menos valor heredado: cuánto cambió el indicador durante el mandato.
-	measure 'Cambio vs Heredado' =
-			[Valor Final] - [Valor Heredado]
+	measure 'Cambio vs Heredado' = [Valor Final] - [Valor Heredado]
 		formatString: 0.00
 		displayFolder: 1. Base
 		lineageTag: 3cc49ea2-c25c-4c63-96ce-e0fd53e1b0af
 
 	/// Variación anual promedio del PIB trimestral (%).
-	measure 'Crecimiento PIB %' =
-			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
+	measure 'Crecimiento PIB %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: aade441f-b6ea-43d8-8505-8a13b71c2cb0
 
 	/// Variación anual promedio del IMACEC mensual (%).
-	measure 'Crecimiento IMACEC %' =
-			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
+	measure 'Crecimiento IMACEC %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: 8b77cf6a-fbde-4300-831a-f41e6426072e
 
 	/// Inflación anual promedio (IPC, variación en 12 meses, %).
-	measure 'Inflacion Promedio %' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
+	measure 'Inflacion Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: cb6cf1de-b507-4ff6-b0fc-849d3fff4b76
 
 	/// Tasa de desempleo promedio (%).
-	measure 'Desempleo Promedio %' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
+	measure 'Desempleo Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: 1281718b-3cc3-4dbb-9d8a-e31c77f7ff71
 
 	/// Cambio de la tasa de desempleo entre lo heredado y el final del mandato (puntos porcentuales).
-	measure 'Desempleo Cambio pp' =
-			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
+	measure 'Desempleo Cambio pp' = CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: 74c20f18-1d64-4ec1-90f0-53c862ccaef9
 
 	/// Cambio de la deuda bruta entre lo heredado y el final del mandato (puntos porcentuales del PIB).
-	measure 'Deuda Cambio pp' =
-			CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
+	measure 'Deuda Cambio pp' = CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: 844e438d-f61e-451e-a9a1-f6529ac3d4c5
 
-	/// Balance fiscal promedio del Gobierno Central (% del PIB). Negativo = déficit.
-	measure 'Balance Fiscal Promedio %' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
-		formatString: 0.00
-		displayFolder: 2. Indicadores
-		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
-
 	/// Precio promedio del cobre (dólares nominales por libra).
-	measure 'Cobre Promedio USD lb' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "cobre" )
+	measure 'Cobre Promedio USD lb' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "cobre" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: acf925c1-01ae-4ec3-88c6-4958a6811f21
 
 	/// Variación anual promedio del precio del cobre (%).
-	measure 'Cobre Var 12m %' =
-			CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
+	measure 'Cobre Var 12m %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
 		lineageTag: f3b9a444-fef0-418c-85aa-6ac64d8ce85f
 
-	/// Tasa de Política Monetaria promedio (%). La fija el Banco Central, que es autónomo.
-	measure 'TPM Promedio %' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tpm" )
+	/// Subtítulo dinámico que recuerda qué supuesto de rezago se está viendo.
+	measure 'Texto Desfase' =
+			VAR Meses = SELECTEDVALUE ( Observaciones[desfase_meses], -1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        Meses = 0, "Asignación por mayoría de días, sin desfase",
+			        Meses > 0, "Cada dato se atribuye al gobierno de " & Meses & " meses antes",
+			        "Selecciona un solo desfase"
+			    )
+		displayFolder: 5. Textos y formato
+		lineageTag: a492b9b1-57e3-4e66-8899-a79929ad5242
+
+	measure Fuente = "Fuente: Banco Central de Chile (BDE) y DIPRES vía BDE. Elaboración propia."
+		displayFolder: 5. Textos y formato
+		lineageTag: c04e7c34-2919-4942-988e-2e08362ec537
+
+	/// Balance fiscal promedio del Gobierno Central (% del PIB). Negativo = déficit.
+	measure 'Balance Fiscal Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
 		formatString: 0.00
 		displayFolder: 2. Indicadores
+		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
+
+	/// Tasa de Política Monetaria promedio (%). La fija el Banco Central, que es autónomo.
+	measure 'TPM Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tpm" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
+		lineageTag: 6ebe10ac-cb4b-440a-8bcc-4c0e5e3a53a1
 
 	/// Tipo de cambio promedio (pesos por dólar).
-	measure 'Dolar Promedio CLP' =
-			CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tipo_cambio" )
+	measure 'Dolar Promedio CLP' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "tipo_cambio" )
 		formatString: 0
 		displayFolder: 2. Indicadores
+		lineageTag: 231b344f-bfdd-4324-8068-5396e5f6c293
 
 	/// Texto "heredado → final" del indicador del contexto, con un decimal. Usar con un filtro de indicador.
 	measure 'Recibio Entrego' =
@@ -153,6 +157,7 @@ table Observaciones
 			        FORMAT ( Heredado, "0.0" ) & "  →  " & FORMAT ( Final, "0.0" )
 			    )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: d097adea-c522-46e0-90dd-b1ed47c4b80a
 
 	/// Cambio con signo y unidad, por ejemplo "+6,2 pp".
 	measure 'Cambio Texto' =
@@ -163,30 +168,31 @@ table Observaciones
 			        IF ( Cambio > 0, "+", "" ) & FORMAT ( Cambio, "0.0" ) & " pp"
 			    )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: fb9932d6-3bdb-4208-a88d-dc3f87a674eb
 
-	measure 'Desempleo Recibio Entrego' =
-			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "desempleo" )
+	measure 'Desempleo Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "desempleo" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: e1445372-2585-4738-a24e-9f0f057a572d
 
-	measure 'Desempleo Cambio Texto' =
-			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "desempleo" )
+	measure 'Desempleo Cambio Texto' = CALCULATE ( [Cambio Texto], Observaciones[indicador] = "desempleo" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 16cd778a-e0ba-44bc-bd27-1c59c4f60902
 
-	measure 'Deuda Recibio Entrego' =
-			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_bruta" )
+	measure 'Deuda Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_bruta" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 12c8be21-1efc-4d1c-b147-354dadc575e1
 
-	measure 'Deuda Cambio Texto' =
-			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "deuda_bruta" )
+	measure 'Deuda Cambio Texto' = CALCULATE ( [Cambio Texto], Observaciones[indicador] = "deuda_bruta" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 8ec92f32-b4fd-4665-b3bc-d4e9755a6088
 
-	measure 'TPM Recibio Entrego' =
-			CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "tpm" )
+	measure 'TPM Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "tpm" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: d3e70e86-eb68-49e8-b1d7-e6f318a90ac0
 
-	measure 'TPM Cambio Texto' =
-			CALCULATE ( [Cambio Texto], Observaciones[indicador] = "tpm" )
+	measure 'TPM Cambio Texto' = CALCULATE ( [Cambio Texto], Observaciones[indicador] = "tpm" )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: a4e1b207-fd4d-46fb-8b50-381524c1265c
 
 	measure 'Dolar Recibio Entrego' =
 			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "tipo_cambio" )
@@ -194,23 +200,25 @@ table Observaciones
 			RETURN
 			    IF ( NOT ISBLANK ( Final ), FORMAT ( Heredado, "0" ) & "  →  " & FORMAT ( Final, "0" ) )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 7a260ae8-a6cf-4e03-a312-5ad507ab43cb
 
 	/// Meta de inflación del Banco Central de Chile: 3 % anual, con un rango de tolerancia de 2 % a 4 %.
 	measure 'Meta Inflacion %' = 3
 		formatString: 0.0
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 7d9a2a72-44df-4ad4-8529-b74fbad805f4
 
 	/// Inflación anual más alta registrada en el contexto (%).
-	measure 'Inflacion Maxima %' =
-			CALCULATE ( MAX ( Observaciones[valor] ), Observaciones[indicador] = "ipc" )
+	measure 'Inflacion Maxima %' = CALCULATE ( MAX ( Observaciones[valor] ), Observaciones[indicador] = "ipc" )
 		formatString: 0.00
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 8e193c33-522a-43e0-b7f4-4f1f8f26f98a
 
 	/// Inflación promedio menos la meta de 3 % (puntos porcentuales). Positivo = sobre la meta.
-	measure 'Inflacion Brecha vs Meta pp' =
-			[Inflacion Promedio %] - [Meta Inflacion %]
+	measure 'Inflacion Brecha vs Meta pp' = [Inflacion Promedio %] - [Meta Inflacion %]
 		formatString: 0.00
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 6bc48f33-68d8-4c49-bdb2-b20841b179d1
 
 	/// Meses con inflación fuera del rango de tolerancia de 2 % a 4 %.
 	measure 'Meses Inflacion Fuera de Rango' =
@@ -221,6 +229,7 @@ table Observaciones
 			)
 		formatString: 0
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 705d749f-c56c-4065-8ffd-fe18f1ed7f9e
 
 	/// Porcentaje de meses con inflación dentro del rango de tolerancia de 2 % a 4 %.
 	measure '% Meses Inflacion en Rango' =
@@ -229,6 +238,7 @@ table Observaciones
 			    DIVIDE ( Total - [Meses Inflacion Fuera de Rango], Total )
 		formatString: 0%
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 034608ba-5e98-4bf4-944d-f98bcddb61ed
 
 	/// Eventos de contexto que se superponen con el mandato seleccionado, en orden cronológico, uno por línea.
 	measure 'Eventos del Periodo' =
@@ -253,6 +263,7 @@ table Observaciones
 			        )
 			    )
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 7d65c30c-b91c-4944-9739-62dc3f2dc483
 
 	/// Encabezado de la ficha: gobierno, presidente y fechas del mandato.
 	measure 'Titulo Ficha' =
@@ -264,64 +275,49 @@ table Observaciones
 			    "Selecciona un gobierno"
 			)
 		displayFolder: 3. Ficha por gobierno
+		lineageTag: 3e6844bc-3f06-41d0-b49c-4c074a032c60
 
 	/// Crecimiento promedio del PIB en los dos primeros gobiernos (2006–2014).
-	measure 'Crecimiento PIB 2006-2014' =
-			CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 2, 3 } )
+	measure 'Crecimiento PIB 2006-2014' = CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 2, 3 } )
 		formatString: 0.0
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: 6f44d8eb-cee8-4903-9a97-8272795f57ca
 
 	/// Crecimiento promedio del PIB en los tres gobiernos siguientes (2014–2026).
-	measure 'Crecimiento PIB 2014-2026' =
-			CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 4, 5, 6 } )
+	measure 'Crecimiento PIB 2014-2026' = CALCULATE ( [Crecimiento PIB %], Gobiernos[id_gobierno] IN { 4, 5, 6 } )
 		formatString: 0.0
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: b05398bc-58b5-4d92-87b8-4f1760977461
 
 	/// Valor que recibió el primer gobierno del análisis (marzo de 2006). Usar con un filtro de indicador.
-	measure 'Inicio Periodo Completo' =
-			CALCULATE ( [Valor Heredado], Gobiernos[etiqueta] = "Bachelet I" )
+	measure 'Inicio Periodo Completo' = CALCULATE ( [Valor Heredado], Gobiernos[etiqueta] = "Bachelet I" )
 		formatString: 0.0
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: 0b12dcb5-4e72-4fec-b359-16b583f2b8ea
 
 	/// Último dato del último gobierno del análisis (marzo de 2026). Usar con un filtro de indicador.
-	measure 'Fin Periodo Completo' =
-			CALCULATE ( [Valor Final], Gobiernos[etiqueta] = "Boric" )
+	measure 'Fin Periodo Completo' = CALCULATE ( [Valor Final], Gobiernos[etiqueta] = "Boric" )
 		formatString: 0.0
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: f10bbace-de1b-4711-96e2-9dacd0b5bf19
 
 	measure 'Deuda 2006 a 2026' =
 			VAR Inicio = CALCULATE ( [Inicio Periodo Completo], Observaciones[indicador] = "deuda_bruta" )
 			VAR Fin = CALCULATE ( [Fin Periodo Completo], Observaciones[indicador] = "deuda_bruta" )
 			RETURN FORMAT ( Inicio, "0" ) & " % → " & FORMAT ( Fin, "0" ) & " %"
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: 410eae4c-f799-454b-8ea6-cb61bc7abf1e
 
 	measure 'Desempleo 2006 a 2026' =
 			VAR Inicio = CALCULATE ( [Inicio Periodo Completo], Observaciones[indicador] = "desempleo" )
 			VAR Fin = CALCULATE ( [Fin Periodo Completo], Observaciones[indicador] = "desempleo" )
 			RETURN FORMAT ( Inicio, "0.0" ) & " % → " & FORMAT ( Fin, "0.0" ) & " %"
 		displayFolder: 4. Resumen ejecutivo
+		lineageTag: af37ce74-c288-4478-9d9c-4aee8ff48569
 
-	measure 'Crecimiento PIB Antes y Despues 2014' =
-			FORMAT ( [Crecimiento PIB 2006-2014], "0.0" ) & " % → " & FORMAT ( [Crecimiento PIB 2014-2026], "0.0" ) & " %"
+	measure 'Crecimiento PIB Antes y Despues 2014' = FORMAT ( [Crecimiento PIB 2006-2014], "0.0" ) & " % → " & FORMAT ( [Crecimiento PIB 2014-2026], "0.0" ) & " %"
 		displayFolder: 4. Resumen ejecutivo
-
-	/// Subtítulo dinámico que recuerda qué supuesto de rezago se está viendo.
-	measure 'Texto Desfase' =
-			VAR Meses = SELECTEDVALUE ( Observaciones[desfase_meses], -1 )
-			RETURN
-			    SWITCH (
-			        TRUE (),
-			        Meses = 0, "Asignación por mayoría de días, sin desfase",
-			        Meses > 0, "Cada dato se atribuye al gobierno de " & Meses & " meses antes",
-			        "Selecciona un solo desfase"
-			    )
-		displayFolder: 5. Textos y formato
-		lineageTag: a492b9b1-57e3-4e66-8899-a79929ad5242
-
-	measure Fuente =
-			"Fuente: Banco Central de Chile (BDE) y DIPRES vía BDE. Elaboración propia."
-		displayFolder: 5. Textos y formato
-		lineageTag: c04e7c34-2919-4942-988e-2e08362ec537
+		lineageTag: 22b37488-8632-4465-8a9c-ab00392ccaf2
 
 	/// Título dinámico para los gráficos de series: nombre del indicador y su unidad.
 	measure 'Titulo Serie' =
@@ -331,6 +327,7 @@ table Observaciones
 			    "Selecciona un indicador"
 			)
 		displayFolder: 5. Textos y formato
+		lineageTag: 7b54ee60-294f-4a6a-9f26-0d0a4e48cc39
 
 	/// Título dinámico del gráfico de variación anual, con aviso cuando el indicador no la tiene.
 	measure 'Titulo Var 12m' =
@@ -340,6 +337,7 @@ table Observaciones
 			    SELECTEDVALUE ( Indicadores[Nombre] ) & ": variación respecto del mismo período del año anterior (%)"
 			)
 		displayFolder: 5. Textos y formato
+		lineageTag: 0dd2399f-458e-432c-8532-a6cc40eb5d46
 
 	/// Color fijo de cada gobierno, igual al orden del tema. Para formato condicional de barras y tarjetas.
 	measure 'Color Gobierno' =
@@ -353,6 +351,7 @@ table Observaciones
 			    "#7F7F7F"
 			)
 		displayFolder: 5. Textos y formato
+		lineageTag: 6be202a4-b8b8-4769-8e41-a05ba402e521
 
 	column indicador
 		dataType: string
@@ -408,8 +407,8 @@ table Observaciones
 
 	column id_gobierno
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: dc66c098-6c98-46d1-be2e-eb6986d12879
 		summarizeBy: none
 		sourceColumn: id_gobierno

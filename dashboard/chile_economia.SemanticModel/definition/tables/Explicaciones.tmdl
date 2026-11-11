@@ -1,0 +1,76 @@
+table Explicaciones
+	lineageTag: 7c301dd4-2871-43d3-8bed-553eaae85cb4
+
+	column id_explicacion
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2e37b4d1-f04e-45b0-a9c0-03719ad8e085
+		summarizeBy: none
+		sourceColumn: id_explicacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c65c555-dbb1-4fdf-aece-65adf138a6f1
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column tema
+		dataType: string
+		lineageTag: eb5d6906-dbaf-4a81-be8a-71dc601deee2
+		summarizeBy: none
+		sourceColumn: tema
+
+		annotation SummarizationSetBy = Automatic
+
+	column cita
+		dataType: string
+		lineageTag: 931fbeeb-d3da-479b-b600-d14226a9511e
+		summarizeBy: none
+		sourceColumn: cita
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: a9e43f20-2a16-458f-9162-277c5a27de6d
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 44a9514e-545c-4bbd-88af-2b0e70fc5109
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_gobierno
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 931d50d6-630b-4921-8c37-0e0578e3be81
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Explicaciones = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "dim_explicacion"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

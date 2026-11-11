@@ -85,3 +85,49 @@ CREATE TABLE IF NOT EXISTS economia.fact_observacion (
 -- por indicador. Este índice acelera las consultas que agrupan por gobierno.
 CREATE INDEX IF NOT EXISTS ix_observacion_gobierno
     ON economia.fact_observacion (id_gobierno, indicador);
+
+-- =============================================================================
+-- Comparación internacional (datos anuales del FMI y del Banco Mundial)
+-- =============================================================================
+
+-- -----------------------------------------------------------------------------
+-- Dimensión: zonas (Chile, países pares y agregados regionales)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS economia.dim_zona (
+    zona         VARCHAR(10)  PRIMARY KEY,         -- código del FMI (ISO3 o agregado)
+    nombre_zona  VARCHAR(60)  NOT NULL UNIQUE,
+    tipo         VARCHAR(10)  NOT NULL
+        CONSTRAINT ck_zona_tipo CHECK (tipo IN ('pais', 'agregado')),
+    es_par       BOOLEAN      NOT NULL             -- entra en el promedio de pares
+);
+
+-- -----------------------------------------------------------------------------
+-- Hechos: una fila por indicador, zona y año
+-- id_gobierno: gobierno de Chile que gobernó la mayor parte de ese año, con la
+-- misma regla de mayoría de días que las observaciones mensuales.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS economia.fact_internacional (
+    indicador      VARCHAR(40)   NOT NULL,
+    zona           VARCHAR(10)   NOT NULL REFERENCES economia.dim_zona (zona),
+    anio           SMALLINT      NOT NULL,
+    valor          NUMERIC(14,6) NOT NULL,
+    unidad         VARCHAR(60)   NOT NULL,
+    fuente         VARCHAR(100)  NOT NULL,
+    es_proyeccion  BOOLEAN       NOT NULL,
+    id_gobierno    SMALLINT      NOT NULL REFERENCES economia.dim_gobierno (id_gobierno),
+
+    CONSTRAINT pk_internacional PRIMARY KEY (indicador, zona, anio)
+);
+
+-- -----------------------------------------------------------------------------
+-- Dimensión: explicaciones oficiales (citas textuales del Banco Central y el FMI)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS economia.dim_explicacion (
+    id_explicacion  SMALLINT     PRIMARY KEY,
+    anio            SMALLINT     NOT NULL,
+    tema            VARCHAR(60)  NOT NULL,
+    cita            TEXT         NOT NULL,
+    fuente          VARCHAR(200) NOT NULL,
+    url             TEXT         NOT NULL,
+    id_gobierno     SMALLINT     NOT NULL REFERENCES economia.dim_gobierno (id_gobierno)
+);

@@ -3,6 +3,14 @@
 Especificación de diseño para llevar el dashboard a su versión final. Complementa
 [guia_dashboard.md](guia_dashboard.md), que explica la conexión y el modelo.
 
+> **Estado:** las 8 páginas ya están construidas según esta especificación. Las páginas
+> nuevas se generaron con código, directo en los archivos PBIR, y las existentes se
+> ajustaron al mismo diseño. Quedan pendientes dos pasos manuales en Power BI:
+> - El navegador de páginas.
+> - Las líneas constantes X de los eventos en "Series en el tiempo" y "Contexto externo".
+>
+> Esta guía queda como referencia del diseño y para hacer cambios a mano.
+
 **Antes de empezar:** abre `dashboard/chile_economia.pbip` y haz clic en **Inicio →
 Actualizar**. El modelo cambió (columnas y medidas nuevas) y Power BI tiene que recargar
 los datos.
@@ -21,6 +29,15 @@ Los cambios se hicieron directo en los archivos TMDL, así que no hay que crear 
 - **Columnas técnicas ocultas:** `indicador`, `valor`, `var_12m_pct` e `id_gobierno`.
 - **Fechas** de Eventos y Gobiernos en formato `dd-mm-aaaa`.
 - **Evento nuevo:** "Alza mundial de inflación" (2021–2023).
+- **Tabla `Comparacion`:** Chile frente a sus pares por año, con datos del FMI y del Banco
+  Mundial. Sus medidas están en la carpeta `6. Comparación con pares`. No depende del
+  desfase, porque los datos son anuales.
+- **Tabla `Explicaciones`:** citas textuales del Banco Central y del FMI de cada período.
+  La medida `Explicacion del Periodo` las muestra para el gobierno seleccionado.
+
+**Si al actualizar aparece un error en `Comparacion` o `Explicaciones`:** primero corre
+`python -m src.load.postgres`, que crea la vista `v_pbi_comparacion` y la tabla
+`dim_explicacion`. Si el error sigue, envíame el mensaje exacto.
 
 ## 2. Sistema de diseño (igual en todas las páginas)
 
@@ -60,12 +77,12 @@ tema. En gráficos de barras: **Formato → Columnas → Color → fx → Valor 
 encabezado de cada página. Crea un botón por página y se actualiza solo.
 
 **Segmentador de desfase:** sincronizado en todas las páginas **excepto** en
-"Sensibilidad al desfase" (**Ver → Sincronizar segmentaciones**).
+"Sensibilidad al desfase" y "Chile frente a sus pares" (**Ver → Sincronizar segmentaciones**).
 
 ## 3. Páginas
 
 Orden final: Resumen · Comparación · Ficha por gobierno · Series en el tiempo · Contexto
-externo · Sensibilidad al desfase · Metodología.
+externo · Chile frente a sus pares · Sensibilidad al desfase · Metodología.
 
 ### 3.1 Resumen (nueva, primera página)
 
@@ -117,6 +134,11 @@ La pieza central: cada gobierno con lo que recibió, lo que entregó y el contex
 - **Fila 2, cuatro tarjetas:** TPM (`TPM Recibio Entrego` + `TPM Cambio Texto`), balance
   fiscal (`Balance Fiscal Promedio %`), cobre (`Cobre Promedio USD lb` + `Cobre Var 12m %`)
   y dólar (`Dolar Recibio Entrego`).
+- **Fila 3, dos tarjetas "Frente a sus pares":** `Texto Crecimiento vs Pares` (etiqueta
+  "Crecimiento del PIB vs. Perú, Colombia, México y Brasil") y `Texto Inflacion vs Pares`
+  (etiqueta "Inflación vs. los mismos países").
+- **Cuadro "Qué dijeron el Banco Central y el FMI"** bajo el de eventos: tarjeta con
+  `Explicacion del Periodo` (11 pt, ajuste de texto activado).
 - **Cuadro "Contexto del período"** a la derecha: tarjeta con `Eventos del Periodo`
   (13 pt, ajuste de texto activado), con el título "Eventos externos y nacionales del período".
 - **Dos gráficos abajo:**
@@ -156,7 +178,38 @@ Como todo depende del segmentador, la misma página sirve para los cinco gobiern
   con `Dolar Promedio CLP`.
 - Título del gráfico de cobre: "Precio promedio del cobre (USD nominales por libra)".
 
-### 3.6 Sensibilidad al desfase (nueva)
+### 3.6 Chile frente a sus pares (nueva)
+
+Responde si cada resultado fue propio de Chile o compartido con la región. Va después de
+Contexto externo.
+
+- Título de página: "Chile frente a sus pares: Perú, Colombia, México y Brasil".
+- **Esta página no lleva el segmentador de desfase:** los datos son anuales.
+- **Dos gráficos de barras, uno al lado del otro**, eje X `Gobiernos[etiqueta]`, color
+  `Color Gobierno`, etiquetas de datos y línea constante Y en 0:
+  - `Crecimiento vs Pares pp`, con el título "Crecimiento del PIB: Chile menos el promedio
+    de sus pares (pp)".
+  - `Inflacion vs Pares pp`, con el título "Inflación: Chile menos el promedio de sus pares
+    (pp)".
+- **Gráfico de líneas abajo:** eje X `Comparacion[anio]`, valores
+  `Crecimiento Chile Anual %`, `Crecimiento Pares %` y `Crecimiento Mundo %`. Título
+  "Crecimiento anual del PIB: Chile, pares y mundo (%)". Chile en línea gruesa oscura
+  (`#2B2B2B`), y pares y mundo en gris claro, para que Chile resalte.
+- **Matriz a la derecha:** filas `Gobiernos[etiqueta]`, valores `Deuda Chile FMI %`,
+  `Deuda Pares %`, `Balance vs Pares pp`, `Control Corrupcion Chile` y
+  `Control Corrupcion Pares`. Renombra los encabezados: "Deuda Chile (% PIB)", "Deuda pares
+  (% PIB)", "Balance vs. pares (pp)", "Control de la corrupción, Chile" y "… pares".
+- **Cuadro de texto de lectura**, bajo los gráficos de barras:
+  "Barras sobre 0: Chile creció más (o tuvo más inflación) que el promedio de sus pares.
+  La comparación separa una parte del contexto externo, pero no mide el efecto de las
+  políticas de cada gobierno. El control de la corrupción es un índice de percepción del
+  Banco Mundial (−2,5 a 2,5): los cambios pequeños no son concluyentes."
+- **Pie de página:** `Fuente Comparacion` en vez de `Fuente`.
+
+**Verificación:** `Crecimiento vs Pares pp` debe dar +0,63 en Piñera I y −0,61 en Boric;
+`Inflacion vs Pares pp` debe dar −1,44 en Piñera I y +0,77 en Boric.
+
+### 3.7 Sensibilidad al desfase (nueva)
 
 Demuestra que el análisis revisa sus propios supuestos.
 
@@ -170,18 +223,24 @@ Demuestra que el análisis revisa sus propios supuestos.
   las cifras cambian, pero el período más alto y el más bajo se mantienen. La diferencia
   entre los dos primeros baja de 2,0 a 0,7 puntos con 12 meses de desfase."
 
-### 3.7 Metodología (página 4 actual)
+### 3.8 Metodología (página 4 actual)
 
 - Agrega la "Síntesis" de [hallazgos.md](hallazgos.md) arriba del texto actual.
 - Agrega una línea: "Eventos: shocks de alcance global o nacional con fechas documentadas
   por una fuente oficial (ver data/reference/eventos.csv)."
+- Agrega un párrafo: "Comparación con pares: datos anuales del FMI (World Economic Outlook,
+  octubre de 2026) y del Banco Mundial (WGI). Cada año se asigna al gobierno que gobernó la
+  mayor parte de él, por eso las cifras anuales de Chile difieren levemente de las
+  mensuales del Banco Central. Deuda y balance corresponden al gobierno general, una
+  definición distinta de la del Gobierno Central que usa el resto del reporte."
 
 ## 4. Revisión final antes de exportar
 
 - [ ] Ningún nombre técnico a la vista (`etiqueta`, `descripcion`, `desfase_meses`, `True/False`).
 - [ ] Ningún subtítulo automático.
 - [ ] El mismo color para cada gobierno en todas las páginas.
-- [ ] Desfase 0 seleccionado en todas las páginas, salvo en Sensibilidad.
+- [ ] Desfase 0 seleccionado en todas las páginas, salvo en Sensibilidad y en Chile frente a sus pares.
 - [ ] La Ficha, con Piñera I, muestra crecimiento 5,43 y desempleo "8,5 → 6,2".
+- [ ] La página de pares, con Piñera I, muestra +0,63 en crecimiento y −1,44 en inflación.
 - [ ] **Archivo → Exportar → PDF** como `dashboard/chile_economia.pdf`.
 - [ ] Capturas nuevas en `dashboard/capturas/` (una por página).

@@ -123,7 +123,7 @@ Cuadros de texto con:
 
 - La regla de asignación (mayoría de días, 11 de marzo) y qué significa el desfase.
 - Que la TPM la decide el Banco Central autónomo.
-- Las limitaciones (sección 5 de `docs/metodologia.md`).
+- Las limitaciones (sección 6 de `docs/metodologia.md`).
 - La medida `Fuente`.
 
 ## 8. Reglas de neutralidad en el diseño
