@@ -16,8 +16,10 @@ cinco gobiernos:
 1. **Menos crecimiento.** El PIB creció 4,3 % anual en promedio entre 2006 y 2014, y
    2,1 % entre 2014 y 2026. Ningún período posterior a 2014 promedia más de 3 %.
 2. **Más deuda.** La deuda bruta del Gobierno Central pasó de 6 % a 42 % del PIB y subió
-   en los cinco períodos. Los superávits fiscales de 2006–2008 (entre 4 % y 8 % del PIB) no
-   se repitieron: desde 2009 solo hubo superávit en 2011, 2012 y 2022, todos bajo 1,3 %.
+   en los cinco períodos. La deuda neta, que descuenta los activos del Fisco, pasó de −19 %
+   del PIB en 2008 (el Fisco era acreedor neto) a 26 % a comienzos de 2026. Los superávits
+   efectivos de 2006–2008 (entre 3,9 % y 7,8 % del PIB) se explicaron sobre todo por el cobre
+   alto: en términos estructurales, el balance de esos años fue de −1,0 % a +1,4 %.
 3. **Inflación más volátil.** La inflación estuvo dentro del rango meta del Banco Central
    (2 % a 4 %) en el 48 % de los meses. Sus dos máximos (2008 y 2022) coinciden con alzas
    mundiales de precios.
@@ -45,6 +47,31 @@ resultado y no estima cuánto de cada resultado se debe a las políticas de cada
 - En Piñera II, el promedio de 2,64 % junta la caída de 2020 (−16 % en el peor mes) con el
   rebote de 2021 (+20 %). Un promedio esconde esa volatilidad; el gráfico de la página 2 del
   dashboard la muestra.
+
+### Cuánto se puede concluir con cuatro años por gobierno
+
+Cada gobierno tiene solo cuatro años, y un año extremo pesa mucho en el promedio.
+Crecimiento anual del PIB (año calendario asignado a cada gobierno):
+
+| Gobierno | Años | Promedio (%) | Mínimo y máximo (%) | Error estándar (pp) |
+|---|---|---:|---|---:|
+| Bachelet I | 2006–2009 | 3,47 | −1,1 a 6,0 | 1,60 |
+| Piñera I | 2010–2013 | 5,38 | 3,3 a 6,2 | 0,70 |
+| Bachelet II | 2014–2017 | 1,76 | 1,4 a 2,2 | 0,16 |
+| Piñera II | 2018–2021 | 2,46 | −6,1 a 11,3 | 3,63 |
+| Boric | 2022–2025 | 2,00 | 0,7 a 2,8 | 0,47 |
+
+- **De las 10 comparaciones posibles entre pares de gobiernos, solo 2 muestran una
+  diferencia mayor que su incertidumbre** (más de dos errores estándar): Piñera I creció más
+  que Bachelet II y que Boric.
+- **Las diferencias entre Bachelet II, Piñera II y Boric no se pueden distinguir con estos
+  datos.** El promedio de Piñera II está dominado por la caída de 2020 y el rebote de 2021.
+- **El cambio de régimen se ve mejor con la mediana,** que no depende de los años extremos:
+  5,5 % en 2006–2013 y 1,9 % en 2014–2025. Con el promedio (4,4 % contra 2,1 %), las crisis
+  de 2009 y 2020 agregan tanta variabilidad que la diferencia no alcanza a superar el margen.
+- Es una regla práctica, no un test formal: con cuatro datos por gobierno y años que se
+  influyen entre sí, ninguna prueba estadística es concluyente. Por eso el reporte no ordena
+  a los gobiernos.
 
 ## 2. El supuesto de desfase cambia las cifras, pero no el orden de los extremos
 
@@ -113,22 +140,32 @@ Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
 - Piñera I es el único período que termina con menos desempleo que el que recibió. Empezó
   desde un nivel alto, posterior a la crisis de 2009.
 
-## 5. Deuda pública: subió en los cinco períodos
+## 5. Deuda y balance fiscal: la deuda subió en los cinco períodos
 
-| Gobierno | Deuda heredada (% PIB) | Deuda final (% PIB) | Cambio (pp) | Balance prom. (% PIB) |
-|---|---:|---:|---:|---:|
-| Bachelet I | 6,4 | 6,5 | +0,1 | +3,67 |
-| Piñera I | 6,5 | 12,7 | +6,2 | +0,20 |
-| Bachelet II | 12,7 | 23,6 | +10,9 | −2,32 |
-| Piñera II | 23,6 | 36,2 | +12,6 | −4,88 |
-| Boric | 36,2 | 42,4 | +6,2 | −1,73 |
+| Gobierno | Deuda bruta: heredada → final (% PIB) | Deuda neta: heredada → final (% PIB) | Balance efectivo prom. (% PIB) | Balance estructural prom. (% PIB) |
+|---|---|---|---:|---:|
+| Bachelet I | 6,4 → 6,5 | −1,6 → −9,8 | +3,67 | −0,40 |
+| Piñera I | 6,5 → 12,7 | −9,8 → −6,2 | +0,20 | −0,99 |
+| Bachelet II | 12,7 → 23,6 | −6,2 → 5,0 | −2,32 | −0,78 |
+| Piñera II | 23,6 → 36,2 | 5,0 → 19,7 | −4,88 | −4,03 |
+| Boric | 36,2 → 42,4 | 19,7 → 26,1 | −1,73 | −2,33 |
 
-- La deuda bruta pasó de 6 % a 42 % del PIB en veinte años. Es una tendencia que atraviesa a
-  todos los gobiernos, no un quiebre puntual.
-- El alza más grande (+12,6 pp) y el déficit promedio más profundo (−4,9 % del PIB)
-  incluyen el gasto de la pandemia en 2020 y 2021.
-- Bachelet I es el único período con superávit promedio, en años de precios del cobre
-  altos. Aun así, incluye el déficit de 2009 (−4,4 %).
+- **Deuda bruta y deuda neta.** La deuda bruta pasó de 6 % a 42 % del PIB. La deuda neta
+  descuenta los activos financieros del Fisco, como los fondos soberanos: en 2008 llegó a
+  −19 % del PIB, es decir, el Fisco tenía más activos que deudas. Es positiva desde fines
+  de 2016.
+  Las dos suben en los cinco períodos, salvo la neta en Bachelet I.
+- **Balance efectivo y estructural.** El balance efectivo depende del ciclo económico y del
+  precio del cobre. El estructural los descuenta y es la meta de la regla fiscal chilena, así
+  que se acerca más a la gestión fiscal de cada gobierno:
+  - El superávit efectivo de Bachelet I (+3,67 %) fue un déficit estructural pequeño
+    (−0,40 %): los ingresos del cobre explican la diferencia.
+  - En Piñera I, el balance efectivo (+0,20 %) también fue mejor que el estructural (−0,99 %).
+  - En Bachelet II, Piñera II y Boric los dos balances fueron negativos.
+- **El déficit estructural más profundo** (−10,6 % en 2021) corresponde al gasto de la
+  pandemia. Por eso el promedio de Piñera II es el más bajo en ambas medidas.
+- El balance estructural tiene cambios de metodología a lo largo del período; la serie es la
+  que publica la DIPRES a través del Banco Central.
 
 ## 6. Contexto externo: el cobre y el dólar
 

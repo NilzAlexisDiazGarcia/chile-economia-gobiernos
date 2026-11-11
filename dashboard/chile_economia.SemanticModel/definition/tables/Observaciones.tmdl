@@ -147,6 +147,30 @@ table Observaciones
 		displayFolder: 2. Indicadores
 		lineageTag: 231b344f-bfdd-4324-8068-5396e5f6c293
 
+	/// Balance estructural promedio (% del PIB): la meta de la regla fiscal. Descuenta el efecto del ciclo y del cobre.
+	measure 'Balance Estructural Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_estructural" )
+		formatString: 0.00
+		displayFolder: 2. Indicadores
+		lineageTag: cee98c46-eee2-4e54-9890-e80c11b5b76e
+
+	/// Cambio de la deuda neta del Gobierno Central durante el mandato (pp del PIB). Descuenta los activos del Fisco.
+	measure 'Deuda Neta Cambio pp' = CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_neta" )
+		formatString: +0.0;-0.0;0.0
+		displayFolder: 2. Indicadores
+		lineageTag: 7792b489-fbd9-4fea-9c3e-0c5e0bb8e0d4
+
+	/// Menor variación anual trimestral del PIB durante el período (%).
+	measure 'Crecimiento PIB Minimo %' = CALCULATE ( MIN ( Observaciones[var_12m_pct] ), Observaciones[indicador] = "pib" )
+		formatString: 0.0
+		displayFolder: 2. Indicadores
+		lineageTag: 650ea529-4013-4519-a3ec-d4a2bf428cd4
+
+	/// Mayor variación anual trimestral del PIB durante el período (%).
+	measure 'Crecimiento PIB Maximo %' = CALCULATE ( MAX ( Observaciones[var_12m_pct] ), Observaciones[indicador] = "pib" )
+		formatString: 0.0
+		displayFolder: 2. Indicadores
+		lineageTag: 8ab3c68d-a820-43cf-872c-62a72cd3f374
+
 	/// Texto "heredado → final" del indicador del contexto, con un decimal. Usar con un filtro de indicador.
 	measure 'Recibio Entrego' =
 			VAR Heredado = [Valor Heredado]
@@ -185,6 +209,22 @@ table Observaciones
 	measure 'Deuda Cambio Texto' = CALCULATE ( [Cambio Texto], Observaciones[indicador] = "deuda_bruta" )
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 8ec92f32-b4fd-4665-b3bc-d4e9755a6088
+
+	measure 'Deuda Neta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_neta" )
+		displayFolder: 3. Ficha por gobierno
+		lineageTag: 939f3e6e-e702-46b7-91a0-a641e5476f80
+
+	/// Rango de la variación anual del PIB, trimestre a trimestre: muestra cuánto esconde el promedio.
+	measure 'Rango Crecimiento PIB' =
+			VAR Minimo = [Crecimiento PIB Minimo %]
+			VAR Maximo = [Crecimiento PIB Maximo %]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Minimo ),
+			        FORMAT ( Minimo, "0.0" ) & "  a  " & FORMAT ( Maximo, "0.0" )
+			    )
+		displayFolder: 3. Ficha por gobierno
+		lineageTag: e7dcd811-ceac-4de0-aaf6-c84e5ae309aa
 
 	measure 'TPM Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "tpm" )
 		displayFolder: 3. Ficha por gobierno

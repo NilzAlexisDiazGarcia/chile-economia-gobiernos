@@ -1497,7 +1497,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación promedio (%)": {
+			          "Inflación anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1507,7 +1507,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación anual (%)": {
+			          "Inflación promedio (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1632,16 +1632,6 @@ cultureInfo es-ES
 			        },
 			        {
 			          "Cobre prom. (USD/lb)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Cobre promedio (USD por libra)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1880,7 +1870,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Desempleo (%): recibió → entregó": {
+			          "Desempleo (%): inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1901,7 +1891,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "TPM (%): recibió → entregó": {
+			          "TPM (%): inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1943,7 +1933,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Deuda (% PIB): recibió → entregó": {
+			          "Deuda (% PIB): inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1964,7 +1954,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Dólar (CLP): recibió → entregó": {
+			          "Dólar (CLP): inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2027,7 +2017,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Crecimiento vs. pares": {
+			          "Crecimiento vs. pares (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2048,7 +2038,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Inflación vs. pares": {
+			          "Inflación vs. pares (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

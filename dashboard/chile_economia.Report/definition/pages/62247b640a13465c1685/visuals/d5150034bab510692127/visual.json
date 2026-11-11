@@ -122,8 +122,23 @@
                 }
               },
               "queryRef": "Observaciones.Deuda Cambio pp",
-              "nativeQueryRef": "Deuda, cambio (pp del PIB)",
-              "displayName": "Deuda, cambio (pp del PIB)"
+              "nativeQueryRef": "Deuda bruta, cambio (pp)",
+              "displayName": "Deuda bruta, cambio (pp)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Deuda Neta Cambio pp"
+                }
+              },
+              "queryRef": "Observaciones.Deuda Neta Cambio pp",
+              "nativeQueryRef": "Deuda neta, cambio (pp)",
+              "displayName": "Deuda neta, cambio (pp)"
             },
             {
               "field": {
@@ -137,8 +152,23 @@
                 }
               },
               "queryRef": "Observaciones.Balance Fiscal Promedio %",
-              "nativeQueryRef": "Balance fiscal prom. (% PIB)",
-              "displayName": "Balance fiscal prom. (% PIB)"
+              "nativeQueryRef": "Balance efectivo prom. (% PIB)",
+              "displayName": "Balance efectivo prom. (% PIB)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Balance Estructural Promedio %"
+                }
+              },
+              "queryRef": "Observaciones.Balance Estructural Promedio %",
+              "nativeQueryRef": "Balance estructural prom. (% PIB)",
+              "displayName": "Balance estructural prom. (% PIB)"
             },
             {
               "field": {
@@ -179,7 +209,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "13D"
                 }
               }
             }
@@ -192,7 +222,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "13D"
                 }
               }
             }
@@ -205,7 +235,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },

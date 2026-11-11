@@ -99,6 +99,26 @@ reciente.
   sale muy alta solo porque se compara contra un mes deprimido (por ejemplo, 2021 contra 2020).
 - **Desfase en el último gobierno:** con desfase de 6 o 12 meses, los meses finales de
   Boric todavía no tienen datos publicados, así que su promedio usa menos meses.
+- **Pocos datos por gobierno:** cada gobierno tiene cuatro años. Las diferencias de
+  crecimiento entre varios de ellos son menores que su incertidumbre (sección 1 de
+  [hallazgos.md](hallazgos.md)), y por eso el reporte no ordena a los gobiernos.
+- **Desempleo en trimestres móviles:** el INE mide el desempleo en promedios móviles de tres
+  meses, así que el dato de cada mes refleja también los dos anteriores. La encuesta cambió
+  de metodología en 2010 y se recalibró en 2020; se usa la serie histórica empalmada.
+- **Balance estructural:** su metodología de cálculo cambió durante el período. Se usa la
+  serie que publica la DIPRES.
+- **Cobre y dólar en términos nominales:** los niveles de períodos distantes no son
+  directamente comparables; las variaciones sí.
+
+**Extensiones posibles, fuera del alcance actual:**
+
+| Extensión | Para qué serviría | Disponibilidad |
+|---|---|---|
+| Tipo de cambio real | Medir competitividad, descontando la inflación de Chile y del exterior | Serie `F073.TCR.IND.199101.M` en la BDE |
+| Cobre en dólares reales | Comparar niveles entre períodos distantes | Requiere el IPC de EE.UU. |
+| Inversión (formación bruta de capital fijo) | El FMI atribuye la desaceleración de 2014 a su caída | Cuentas nacionales en la BDE |
+| Salarios reales, pobreza y desigualdad | Medir bienestar, no solo macroeconomía | Series del INE con cambios de base, y la encuesta CASEN |
+| Contrafactual formal (control sintético) | Estimar qué habría pasado sin cada gobierno | Requiere un panel amplio de países |
 
 ## 7. Neutralidad
 

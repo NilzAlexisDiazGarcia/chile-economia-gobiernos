@@ -38,6 +38,8 @@ RANGOS_VALIDOS = {
     "cobre": (1, 7),                # dólares por libra
     "deuda_bruta": (0, 100),        # % del PIB
     "balance_fiscal": (-15, 15),    # % del PIB
+    "balance_estructural": (-15, 15),  # % del PIB
+    "deuda_neta": (-50, 100),       # % del PIB; negativo = Fisco acreedor neto
 }
 
 log = logging.getLogger("limpieza")

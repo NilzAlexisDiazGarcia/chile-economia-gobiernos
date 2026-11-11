@@ -207,7 +207,7 @@ def auditar_resumen(pd_res: pd.DataFrame) -> None:
         d = (u[f"{c}_pd"].astype(float) - u[f"{c}_sql"].astype(float)).abs().max(skipna=True)
         peor = max(peor, d if pd.notna(d) else 0)
     # La base guarda 6 decimales (NUMERIC(14,6)): diferencias menores a 1e-5 son de almacenamiento.
-    registrar("E. Métricas por gobierno: pandas = vista SQL", len(u) == 45 and peor < 1e-5,
+    registrar("E. Métricas por gobierno: pandas = vista SQL", len(u) == len(CONFIG) * len(EN_ALCANCE) and peor < 1e-5,
               f"{len(u)} combinaciones gobierno-indicador, dif. máx. {peor:.1e}")
 
 
@@ -261,6 +261,21 @@ def auditar_documentos(res: pd.DataFrame) -> None:
         chequeos += [(f"Cobre prom. {g}", cp, val("cobre", g, "promedio"), 0.005),
                      (f"Cobre var. 12m {g}", cv, val("cobre", g, "var_12m_promedio"), 0.05),
                      (f"Dólar prom. {g}", dol, val("tipo_cambio", g, "promedio"), 0.5)]
+    # Deuda neta y balance estructural (sección 5)
+    for g, (nh, nf, be) in zip(gobs, [(-1.6, -9.8, -0.40), (-9.8, -6.2, -0.99), (-6.2, 5.0, -0.78),
+                                       (5.0, 19.7, -4.03), (19.7, 26.1, -2.33)]):
+        chequeos += [(f"Deuda neta heredada {g}", nh, val("deuda_neta", g, "valor_heredado"), 0.05),
+                     (f"Deuda neta final {g}", nf, val("deuda_neta", g, "valor_final"), 0.05),
+                     (f"Balance estructural prom. {g}", be, val("balance_estructural", g, "promedio"), 0.005)]
+    # Incertidumbre del crecimiento anual (sección 1): promedio y error estándar por gobierno
+    pib_t = serie("pib").assign(anio=lambda d: d["fecha"].dt.year).groupby("anio")["valor"].agg(["sum", "count"])
+    pib_t = pib_t.loc[pib_t["count"] == 4, "sum"]
+    anual = (pib_t / pib_t.shift(1) - 1) * 100
+    for g, (a0, prom, ee) in zip(gobs, [(2006, 3.47, 1.60), (2010, 5.38, 0.70), (2014, 1.76, 0.16),
+                                         (2018, 2.46, 3.63), (2022, 2.00, 0.47)]):
+        x = anual.loc[a0:a0 + 3]
+        chequeos += [(f"PIB anual prom. {g}", prom, x.mean(), 0.005),
+                     (f"PIB anual error est. {g}", ee, x.std() / 2, 0.005)]
     # Sensibilidad al desfase (sección 2)
     for meses, valores in [(6, [3.36, 4.83, 2.21, 2.51, 1.29]), (12, [3.53, 4.20, 2.25, 2.11, 1.54])]:
         calc = desfase_pandas(meses)

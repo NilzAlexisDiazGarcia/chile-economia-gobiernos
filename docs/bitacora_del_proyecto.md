@@ -10,12 +10,13 @@ por qué, qué problemas aparecieron y cómo se resolvieron. Complementa a
 | Etapa | Resultado | Herramientas |
 |---|---|---|
 | 0. Diseño | Pregunta, alcance, reglas de asignación y de neutralidad | Markdown, Git |
-| 1. Extracción | 9 series del Banco Central, crudas y sin modificar | Python, API BDE |
-| 2. Limpieza | 12.128 observaciones en formato largo, cada una con su gobierno | pandas, pytest |
+| 1. Extracción | 11 series del Banco Central, crudas y sin modificar | Python, API BDE |
+| 2. Limpieza | 12.231 observaciones en formato largo, cada una con su gobierno | pandas, pytest |
 | 3. Carga | Modelo estrella en PostgreSQL, con carga transaccional | PostgreSQL, psycopg |
 | 4. Análisis | 4 vistas y 8 consultas de análisis | SQL |
 | 5. Dashboard | Informe de 8 páginas, versionado como texto | Power BI (.pbip, TMDL, PBIR) |
 | 5b. Contexto comparado | Chile frente a sus pares y explicaciones oficiales | API del FMI y del Banco Mundial |
+| 5c. Rigor económico | Balance estructural, deuda neta e incertidumbre de los promedios | Python, SQL, DAX |
 
 ---
 
@@ -52,7 +53,7 @@ fijen antes de ver los resultados y se apliquen igual a todos.
 ## Etapa 1. Extracción (`src/extract/`)
 
 **Qué se hizo:** un cliente de la API de la Base de Datos Estadísticos (BDE) del Banco
-Central (`bcch.py`) descarga 9 series definidas en `config/series.yaml` y guarda cada
+Central (`bcch.py`) descarga las series definidas en `config/series.yaml` y guarda cada
 respuesta **cruda y sin modificar** en `data/raw/bcch/`.
 
 | Indicador | Frecuencia | Fuente original |
@@ -60,6 +61,7 @@ respuesta **cruda y sin modificar** en `data/raw/bcch/`.
 | PIB, IMACEC, IPC, TPM, tipo de cambio, cobre | Diaria, mensual o trimestral | Banco Central |
 | Desempleo | Mensual | INE, vía Banco Central |
 | Deuda bruta y balance fiscal | Trimestral y anual | DIPRES, vía Banco Central |
+| Deuda neta y balance estructural (etapa 5c) | Trimestral y anual | DIPRES, vía Banco Central |
 
 **Decisiones:**
 
@@ -82,7 +84,7 @@ revisa ese campo y falla con un mensaje claro, en vez de guardar una respuesta v
 ## Etapa 2. Limpieza y asignación (`src/transform/`)
 
 **Qué se hizo:** `clean.py` convierte las respuestas crudas en un solo archivo en formato
-largo, `data/processed/observaciones.csv`, con 12.128 filas y una fila por indicador y
+largo, `data/processed/observaciones.csv`, con 12.231 filas y una fila por indicador y
 fecha. `asignar_gobierno.py` aplica la regla de mayoría de días.
 
 **Decisiones:**
@@ -239,6 +241,33 @@ lo mismo que si la región crece mucho.
 
 ---
 
+## Etapa 5c. Revisión económica
+
+**Motivo:** una revisión del proyecto con criterio de economista encontró tres vacíos que un
+profesional del rubro notaría:
+
+| Vacío | Por qué importa | Solución |
+|---|---|---|
+| Solo había balance efectivo | Depende del ciclo y del cobre; mezcla la gestión fiscal con la suerte | Se agregó el **balance estructural**, la meta de la regla fiscal chilena |
+| Solo había deuda bruta | Chile tiene fondos soberanos; la deuda bruta exagera el endeudamiento | Se agregó la **deuda neta**, que descuenta los activos del Fisco |
+| Los promedios no mostraban su incertidumbre | Con cuatro años por gobierno, un año extremo cambia todo | Rango trimestral en la Ficha, y error estándar y comparaciones entre pares en los hallazgos |
+
+**Lo que mostró:**
+
+- **Superávit efectivo y estructural:** el superávit efectivo de Bachelet I (+3,67 % del PIB)
+  fue un déficit estructural pequeño (−0,40 %); la diferencia la explican los ingresos del
+  cobre.
+- **Deuda neta:** pasó de −19 % del PIB en 2008, cuando el Fisco era acreedor neto, a 26 % a
+  comienzos de 2026.
+- **Incertidumbre:** de 10 comparaciones de crecimiento entre pares de gobiernos, solo 2
+  superan su incertidumbre: Piñera I frente a Bachelet II y frente a Boric. Esto refuerza la
+  decisión de no ordenar a los gobiernos.
+
+Las dos series nuevas vienen de la misma API del Banco Central (fuente original: DIPRES),
+con tests y verificación en la auditoría. Las mejoras de menor prioridad, como el tipo de
+cambio real, la inversión o los salarios, quedaron documentadas como extensiones en
+[metodologia.md](metodologia.md).
+
 ## Verificación de cifras
 
 Cada afirmación de [hallazgos.md](hallazgos.md) se revisó contra los datos antes de
@@ -256,16 +285,16 @@ PIB de Piñera I es 5,43 % en ambos.
 ### Auditoría de exactitud (`src/analysis/auditoria.py`)
 
 Un script verifica cada cifra por un camino distinto al que la produjo. Resultado actual:
-**29 de 29 verificaciones correctas.**
+**31 de 31 verificaciones correctas.**
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|
-| A. Crudo → limpio | Cada valor del CSV contra la respuesta original de la API (9 series) | Idénticos, con el código de serie correcto |
-| B. Asignación | La regla de mayoría de días, reimplementada con el punto medio del período | 0 diferencias en 12.128 filas |
+| A. Crudo → limpio | Cada valor del CSV contra la respuesta original de la API (11 series) | Idénticos, con el código de serie correcto |
+| B. Asignación | La regla de mayoría de días, reimplementada con el punto medio del período | 0 diferencias en 12.231 filas |
 | C. Base de datos | PostgreSQL contra los CSV | Idénticos |
 | D. Fuentes independientes | Chile contra el FMI (2006–2025) y la inflación contra 14 cifras publicadas por el INE | Diferencias de 0,23 pp o menos; las excepciones están explicadas |
-| E. Recálculo sin SQL | 45 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
-| F. Documentos | 95 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
+| E. Recálculo sin SQL | 55 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
+| F. Documentos | 120 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
 
 **Hallazgo de la auditoría: la serie de inflación no era la oficial.** La primera versión
 usaba un IPC "empalmado" por el Banco Central a la canasta de 2023. Al contrastarlo con las

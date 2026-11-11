@@ -68,3 +68,22 @@ bcch:
     frecuencia: ANNUAL
     codigo: "F051.G21.PPI.C.Z.Z.A"
     fuente_original: "DIPRES"
+
+  # --- Agregadas tras la revisión económica (2026-11-11) ---
+  # El balance estructural es la meta de la regla fiscal chilena: descuenta el efecto del
+  # ciclo económico y del precio del cobre sobre los ingresos. El balance efectivo mezcla
+  # la gestión fiscal con esos factores externos.
+  balance_estructural:
+    descripcion: "Balance estructural (cíclicamente ajustado) del Gobierno Central"
+    unidad: "Porcentaje del PIB"
+    frecuencia: ANNUAL
+    codigo: "F051.G11.PPB.C.Z.CLP.A"
+    fuente_original: "DIPRES"
+  # La deuda neta descuenta los activos financieros del Fisco (entre ellos los fondos
+  # soberanos FEES y FRP). Un valor negativo significa que el Fisco es acreedor neto.
+  deuda_neta:
+    descripcion: "Deuda neta del Gobierno Central"
+    unidad: "Porcentaje del PIB"
+    frecuencia: QUARTERLY
+    codigo: "F051.D9.PPB.C.Z.Z.T"
+    fuente_original: "DIPRES"
