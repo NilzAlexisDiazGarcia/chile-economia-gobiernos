@@ -11,14 +11,13 @@ Verificaciones:
     E. Recálculo sin SQL: las métricas por gobierno, calculadas en pandas, contra las vistas SQL.
     F. Documentos: cada cifra de hallazgos.md y contexto_comparado.md contra el recálculo.
     G. Dashboard: los valores que muestra Power BI contra el cálculo sin DAX.
-    H. Balance de cada gobierno: los seis criterios, recalculados sin SQL.
+    H. Balance de cada gobierno: los ocho criterios, recalculados sin SQL.
     I. Datos fiscales: balance estructural y fondos soberanos contra la DIPRES, el CFA y Hacienda.
 
 Termina con código 1 si alguna verificación falla.
 """
 import json
 import sys
-from pathlib import Path
 
 import pandas as pd
 import psycopg
@@ -333,7 +332,8 @@ def auditar_documentos(res: pd.DataFrame) -> None:
          cerca(100 * en_rango[ipc["id_gobierno"].isin(EN_ALCANCE)].mean(), 48, 0.5),
          f"{100 * en_rango[ipc['id_gobierno'].isin(EN_ALCANCE)].mean():.1f} %"),
         ("Máximos de inflación en 2008 y 2022",
-         {ipc.loc[ipc['id_gobierno'] == 2, 'valor'].idxmax(), ipc.loc[ipc['id_gobierno'] == 6, 'valor'].idxmax()} is not None,
+         ipc.loc[ipc["valor"][ipc["id_gobierno"] == 2].idxmax(), "fecha"].year == 2008
+         and ipc.loc[ipc["valor"][ipc["id_gobierno"] == 6].idxmax(), "fecha"].year == 2022,
          f"{ipc.loc[ipc['valor'][ipc['id_gobierno'] == 2].idxmax(), 'fecha']:%m-%Y} y "
          f"{ipc.loc[ipc['valor'][ipc['id_gobierno'] == 6].idxmax(), 'fecha']:%m-%Y}"),
     ]
@@ -450,6 +450,7 @@ def auditar_evaluacion() -> None:
     esperado = {}
     metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv").set_index("id_gobierno")
     ipc = serie("ipc")
+    salarios = pd.concat([var12("remuneraciones_reales_hist"), var12("remuneraciones_reales")])
     for g in EN_ALCANCE:
         fs = serie("fees")
         fs_ini = fs.loc[fs["id_gobierno"] == g - 1, "valor"]
@@ -462,8 +463,7 @@ def auditar_evaluacion() -> None:
             (g, 5): vd.final("deuda_neta", g) <= vd.heredado("deuda_neta", g),
             (g, 6): vd.final("fees", g) >= fs_ini,
             (g, 7): pobreza_fin(g) < pobreza_ini(g),
-            (g, 8): pd.concat([var12("remuneraciones_reales_hist"), var12("remuneraciones_reales")])
-                      .loc[lambda d: d["id_gobierno"] == g, "var"].mean() > 0,
+            (g, 8): salarios.loc[salarios["id_gobierno"] == g, "var"].mean() > 0,
         })
     malos = [f"{ETQ[r.id_gobierno]} criterio {r.orden}" for r in sql.itertuples()
              if bool(r.favorable) != bool(esperado[(r.id_gobierno, r.orden)])]

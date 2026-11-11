@@ -1,4 +1,4 @@
-# Etapa 1 - Extracción (se agregan más dependencias en las etapas siguientes)
+# Etapa 1 - Extracción
 requests==2.32.3
 pandas==2.2.3
 numpy==2.1.3   # fijada: pandas 2.2.3 no es compatible con versiones más nuevas de numpy

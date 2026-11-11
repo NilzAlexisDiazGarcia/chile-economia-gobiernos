@@ -79,7 +79,8 @@ millones de dólares de cada año:
 | Piñera II | 14.851 → 6.406 | 10.049 → 7.130 | 24.900 → 13.537 | 23,6 → 36,2 | 5,0 → 19,7 |
 | Boric | 6.406 → 3.944 | 7.130 → 10.328 | 13.537 → 14.272 | 36,2 → 42,4 | 19,7 → 26,1 |
 
-- **Bachelet I:** los fondos se crearon en 2007. En marzo de 2007 el total era de US$ 7.751
+- **Bachelet I:** los fondos se crearon con la Ley de Responsabilidad Fiscal de 2006, y la serie
+  del Banco Central comienza en marzo de 2007, cuando el total era de US$ 7.751
   millones y llegó a US$ 22.718 millones a fines de 2008. En 2009 se usaron unos US$ 9.000
   millones del FEES para enfrentar la crisis.
 - **Piñera II:** el FEES bajó de US$ 12.233 millones a fines de 2019 a US$ 2.457 millones a

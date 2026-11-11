@@ -76,7 +76,7 @@ La explicación completa, gobierno por gobierno y con cada fuente, está en
 que más depende del gobierno, y se compara con la meta que cada uno fijó en su propio
 decreto. Con la meta vigente al final del período **solo Piñera I la cumplió**; con la meta
 del decreto inicial, **ninguno**. Los incumplimientos de 2009 y 2021 coincidieron con la
-crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los seis criterios, aplicados
+crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los ocho criterios, aplicados
 a los cinco gobiernos:
 
 | Criterio | Bachelet I | Piñera I | Bachelet II | Piñera II | Boric |
@@ -121,7 +121,7 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 |---|---|
 | Resumen | El cambio de régimen en cuatro cifras |
 | Conclusiones | Por qué Chile dejó de crecer y se endeudó, con sus causas y fuentes |
-| Balance de cada gobierno | Aciertos y problemas con seis criterios uniformes, metas fiscales y arcas fiscales |
+| Balance de cada gobierno | Aciertos y problemas con ocho criterios uniformes, metas fiscales y arcas fiscales |
 | Comparación | Los indicadores principales de los cinco gobiernos, lado a lado |
 | Ficha por gobierno | Qué recibió y qué entregó cada gobierno, en qué contexto y qué dijeron el Banco Central y el FMI |
 | Series en el tiempo | Cada indicador mes a mes |
