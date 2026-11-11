@@ -33,7 +33,7 @@ vienen de las instituciones técnicas que se citan, no del autor.
 - **La productividad lleva unos 16 años estancada,** según la CNEP: por la desaceleración
   mundial, la rigidez laboral, los permisos para invertir y la menor ley del mineral.
 - **Terminó el auge del cobre y cayó la inversión minera** (FMI).
-- **La capacidad de crecer se redujo a la mitad:** de cerca de 5 % estimado en 2011 a 2 % hoy
+- **La capacidad de crecer se redujo a la mitad:** de cerca de 5 % estimado en 2011 a cerca de 2 % en las estimaciones actuales
   (DIPRES y Banco Central).
 - **El ingreso por habitante casi se estancó:** creció 3,4 % al año entre 2006 y 2013, y 1,0 %
   entre 2014 y 2025, con caídas en 2017, 2019, 2020 y 2023.
@@ -67,8 +67,9 @@ La explicación completa, gobierno por gobierno y con cada fuente, está en
   los meses. Sus dos máximos (2008 y 2022) coinciden con alzas mundiales de precios.
 
 **2. El contexto cambia la lectura de varios resultados.**
-- El superávit fiscal de Bachelet I (**+3,7 % del PIB**) fue un pequeño déficit en términos
-  estructurales (**−0,4 %**): lo explicaron los ingresos del cobre.
+- En promedio, el superávit fiscal efectivo de Bachelet I (**+3,7 % del PIB**) fue un pequeño
+  déficit estructural (**−0,4 %**): la diferencia la explican los ingresos del cobre. Hubo
+  superávit estructural en 2006–2007 y déficit en 2008–2009.
 - Bachelet II tiene el crecimiento más bajo en cifras absolutas, pero la región creció aún
   menos, y Chile quedó levemente sobre sus pares.
 - La caída de 2020 fue mundial. Frente a Perú, Colombia, México y Brasil, Piñera II es el
@@ -80,8 +81,8 @@ La explicación completa, gobierno por gobierno y con cada fuente, está en
 que más depende del gobierno, y se compara con la meta que cada uno fijó en su propio
 decreto. Con la meta vigente al final del período **solo Piñera I la cumplió**; con la meta
 del decreto inicial, **ninguno de los tres que la fijaron para su último año** (Piñera I y
-Bachelet II la fijaron para el año siguiente). Los incumplimientos de 2009 y 2021 coincidieron con la
-crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los ocho criterios, aplicados
+Bachelet II la fijaron para el año siguiente). Los incumplimientos de 2009 y 2021
+coincidieron con la crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los ocho criterios, aplicados
 a los cinco gobiernos:
 
 | Criterio | Bachelet I | Piñera I | Bachelet II | Piñera II | Boric |
@@ -97,8 +98,8 @@ a los cinco gobiernos:
 
 **4. Aun así, no hay un "mejor gobierno".** Con cuatro años por gobierno, de las
 10 comparaciones de crecimiento entre pares de gobiernos solo 2 superan su incertidumbre:
-Piñera I creció más que Bachelet II y que Boric. Además, los criterios no pesan lo mismo: el reporte muestra los aciertos y problemas de
-cada uno, pero no los suma en un puntaje.
+Piñera I creció más que Bachelet II y que Boric. Además, los criterios no pesan lo mismo:
+el reporte muestra los aciertos y problemas de cada uno, pero no los suma en un puntaje.
 
 El detalle de cada cifra está en [docs/hallazgos.md](docs/hallazgos.md) y la comparación
 internacional en [docs/contexto_comparado.md](docs/contexto_comparado.md).
@@ -178,7 +179,7 @@ flowchart LR
 | Carga | Modelo estrella con restricciones y carga transaccional | `src/load/`, `sql/01_schema.sql` |
 | Análisis | Vistas reutilizables y ocho consultas por tema | `sql/02_views.sql`, `sql/analisis/` |
 | Dashboard | Proyecto `.pbip`: modelo y páginas versionados como texto | `dashboard/` |
-| Calidad | 43 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
+| Calidad | 44 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
 
 ### Decisiones clave
 
@@ -257,7 +258,7 @@ src/transform/              Limpieza y asignación por gobierno
 src/load/                   Carga en PostgreSQL
 src/analysis/               Consultas, auditoría y valores esperados del dashboard
 sql/                        Esquema, vistas y consultas de análisis
-tests/                      Tests de la asignación y de los datos internacionales
+tests/                      Tests de la asignación, los datos internacionales y las metas fiscales
 dashboard/                  Proyecto de Power BI (.pbip), tema y capturas
 dashboard/generador/        Script que genera las páginas del reporte (PBIR) desde código
 docs/                       Metodología, hallazgos, bitácora y auditoría
@@ -282,11 +283,12 @@ docs/                       Metodología, hallazgos, bitácora y auditoría
 
 ## Extensiones posibles
 
-Tipo de cambio real, cobre en dólares reales, inversión, salarios reales y un contrafactual
-formal (control sintético). El detalle de cada una está en
+Tipo de cambio real, cobre en dólares reales, inversión y un contrafactual formal (control
+sintético). El detalle de cada una está en
 [docs/metodologia.md](docs/metodologia.md).
 
 ## Licencia
 
 El código está bajo licencia MIT (ver [LICENSE](LICENSE)). Los datos pertenecen a sus
-fuentes originales: Banco Central de Chile, INE, DIPRES, FMI y Banco Mundial.
+fuentes originales: Banco Central de Chile, INE, DIPRES, Consejo Fiscal Autónomo,
+Ministerio de Desarrollo Social, FMI y Banco Mundial.

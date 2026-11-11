@@ -44,3 +44,24 @@ Generado por `python -m src.transform.clean`. Formato largo: una fila por indica
 | `fecha_inicio`, `fecha_fin` | Período del evento |
 | `precision_fecha` | `exacta` o `aproximada` |
 | `nota`, `fuente` | Justificación de las fechas y su fuente |
+
+## `data/processed/internacional.csv`
+
+Generado por `python -m src.extract.internacional`. Datos anuales del FMI y del Banco Mundial.
+
+| Columna | Descripción |
+|---|---|
+| `fuente` | Fuente y edición de los datos |
+| `indicador`, `unidad` | Clave del indicador (ej.: `crecimiento_pib`) y su unidad |
+| `zona`, `nombre_zona` | Código y nombre del país o agregado (ver `zonas.csv`) |
+| `anio`, `valor` | Año y valor |
+| `es_proyeccion` | `True` si el FMI lo publica como proyección; se excluye del análisis |
+
+## Otras tablas de referencia (`data/reference/`)
+
+| Archivo | Contenido |
+|---|---|
+| `zonas.csv` | Chile, sus cuatro pares, América Latina y el mundo; `es_par` marca los pares |
+| `explicaciones.csv` | Citas textuales del Banco Central y del FMI por año y tema, con fuente y enlace |
+| `metas_fiscales.csv` | Decreto inicial, meta inicial, modificaciones, meta vigente y resultado del último año completo de cada gobierno. `cumple_meta_inicial` vale "No aplica" cuando el decreto fijaba la meta para el año siguiente |
+| `pobreza_casen.csv` | Pobreza por ingresos de cada CASEN con la metodología de 2013 (serie comparable), con fuente y enlace |

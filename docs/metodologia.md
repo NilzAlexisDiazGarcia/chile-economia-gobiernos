@@ -22,7 +22,7 @@ En la práctica:
 
 - Marzo (10 días del saliente, 21 del entrante): gobierno **entrante**.
 - Primer trimestre (unos 69 de 90 días del saliente): gobierno **saliente**.
-- Año de transición (unos 70 días del saliente, 295 del entrante): gobierno **entrante**.
+- Año de transición (unos 69 días del saliente, 296 del entrante): gobierno **entrante**.
 
 Todo período que contiene un 11 de marzo de cambio de mando se marca con
 `es_transicion = true`, para poder excluirlo del análisis.
@@ -39,9 +39,9 @@ decisiones. No existe un rezago único; depende del instrumento:
 | Política monetaria (TPM) | 12–24 meses sobre la inflación | La TPM la decide el Banco Central, que es **autónomo** del gobierno |
 | Reformas estructurales | Varios años | Su efecto puede extenderse a gobiernos posteriores |
 
-**Decisión:** la asignación de datos no se modifica por el rezago. En el dashboard se
-agregará un parámetro de desfase (0, 6 o 12 meses) para ver cómo cambian las
-comparaciones según el supuesto de rezago, sin imponer uno.
+**Decisión:** la asignación de datos no se modifica por el rezago. El dashboard tiene un
+selector de desfase (0, 6 o 12 meses) para ver cómo cambian las comparaciones según el
+supuesto de rezago, sin imponer uno.
 
 ## 4. Fuente de la inflación
 
@@ -96,7 +96,8 @@ estos factores.
   - Pobreza por ingresos entregada menor que la recibida (CASEN, serie comparable).
   - Salario real con variación anual promedio positiva.
 - **La meta fiscal se compara con la del propio gobierno:** la vigente al final y la de su
-  decreto inicial. Las cifras son de la DIPRES con la metodología actual (2006–2021) y del
+  decreto inicial. La inicial se evalúa solo si el decreto fijaba un valor para el último año
+  completo; si la fijaba para el año siguiente (Piñera I y Bachelet II), se indica "No aplica". Las cifras son de la DIPRES con la metodología actual (2006–2021) y del
   CFA (2022–2025).
 - **Cada criterio indica quién lo controla principalmente:** el gobierno, el Banco Central o
   una mezcla con el ciclo y el contexto externo.
@@ -114,7 +115,7 @@ estos factores.
 | Métrica | Definición | Por qué |
 |---|---|---|
 | Variación a 12 meses | `valor / valor del mismo período del año anterior − 1` | Compara meses o trimestres equivalentes, así la estacionalidad se cancela |
-| Valor heredado | Último dato del gobierno anterior | Es el punto de partida que recibió cada gobierno |
+| Valor heredado | Último dato del gobierno anterior: febrero en las series mensuales, el primer trimestre del año del cambio de mando en las trimestrales y la última CASEN en la pobreza | Es el punto de partida que recibió cada gobierno |
 | Cambio vs. heredado | Valor final − valor heredado | Mide el cambio durante todo el mandato, no desde el primer dato propio |
 | Promedio sin transición | Igual que el promedio, excluyendo los períodos que comparten dos gobiernos | Muestra si los períodos compartidos alteran el resultado |
 
@@ -140,7 +141,6 @@ reciente.
   serie que publica la DIPRES.
 - **Cobre y dólar en términos nominales:** los niveles de períodos distantes no son
   directamente comparables; las variaciones sí.
-
 - **PIB por habitante:** se calcula con el crecimiento del PIB y de la población del FMI,
   porque la inmigración de 2015–2019 elevó el crecimiento de la población.
 - **Pobreza:** la CASEN se mide cada dos o tres años. Cada medición se asigna al gobierno del
@@ -159,5 +159,6 @@ reciente.
 ## 7. Neutralidad
 
 - Los mismos indicadores, reglas y fuentes para los cinco gobiernos.
-- Solo estadísticas descriptivas, sin juicios de valor ni conclusiones causales.
+- Solo estadísticas descriptivas, sin juicios de valor. Las causas que se mencionan vienen de
+  instituciones técnicas (Banco Central, FMI, DIPRES, CFA y CNEP), con su fuente.
 - Las limitaciones quedan documentadas en este archivo.

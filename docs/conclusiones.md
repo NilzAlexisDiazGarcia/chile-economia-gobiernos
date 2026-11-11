@@ -12,8 +12,7 @@ del proyecto y están verificadas por la auditoría (`python -m src.analysis.aud
 > Según el Banco Central, el FMI, la DIPRES y la CNEP, fue un cambio estructural, que comenzó
 > con el fin del auge del cobre y la caída de la productividad. Ningún gobierno lo revirtió:
 > los cinco terminaron su período con déficit estructural, y la deuda neta subió en cuatro de
-> ellos. Al mismo tiempo, la pobreza bajó con fuerza, porque los ingresos y las
-> transferencias siguieron creciendo aun con poco crecimiento.**
+> ellos. Al mismo tiempo, la pobreza bajó con fuerza.**
 
 ---
 
@@ -34,7 +33,7 @@ el PIB total creció más que el ingreso de cada persona.
 
 ### Las causas, según las fuentes técnicas
 
-**1. La productividad se estancó.** Es la causa de fondo. Según la CNEP, la productividad total
+**1. La productividad se estancó.** Según la CNEP, la productividad total
 de factores lleva unos 16 años sin aportar al crecimiento: en 2024 varió entre −0,2 % y 0,1 %.
 La CNEP atribuye el estancamiento a:
 - La desaceleración de la productividad mundial.
@@ -61,8 +60,8 @@ que la economía permite hoy.
 - **2021:** el Banco Central atribuye la depreciación del peso a "factores idiosincráticos",
   como la elevada incertidumbre y el mayor riesgo percibido en Chile.
 
-**En síntesis:** Chile crecía por el cobre y por una productividad que avanzaba. Las dos cosas
-se acabaron entre 2008 y 2014, y nada las reemplazó.
+**En síntesis, según estas fuentes:** Chile crecía por el cobre y por una productividad que
+avanzaba. Las dos cosas se acabaron entre 2008 y 2014, y nada las reemplazó.
 
 ---
 
@@ -81,8 +80,7 @@ se acabaron entre 2008 y 2014, y nada las reemplazó.
 
 ### Las causas, según las fuentes técnicas
 
-**1. Se gastó, en forma permanente, más de lo que entraba en forma permanente.** Es la causa
-principal y atraviesa a todos los gobiernos.
+**1. Se gastó, en forma permanente, más de lo que entraba en forma permanente.**
 - Entre 2008 y 2023, el gasto público promedió 23,8 % del PIB, frente a ingresos
   estructurales de 22 % (CFA, informe del 23 de abril de 2024).
 - En los datos del proyecto, el balance efectivo fue negativo en 14 de los 17 años entre
@@ -133,8 +131,9 @@ Criterios uniformes en [hallazgos.md](hallazgos.md), sección 9, y metas fiscale
 **Problemas:**
 - No cumplió su meta fiscal en 2008 ni en 2009. En 2008 gastó por sobre lo presupuestado y en
   2009 aplicó un plan de estímulo deliberado contra la crisis (DIPRES).
-- La inflación llegó a 9,9 % en 2008. Su origen fue "principalmente externo", por los precios
-  de los alimentos y los combustibles (Banco Central).
+- La inflación llegó a 9,9 % en 2008. Según el Banco Central, su origen fue externo (los
+  precios de los alimentos y los combustibles), aunque "responde también a desarrollos
+  internos".
 - El desempleo subió con la recesión de 2009.
 
 **Por qué:** le tocó la mejor parte del ciclo del cobre, y también la peor crisis mundial en
@@ -150,8 +149,9 @@ décadas.
 - Cumplió su meta fiscal vigente.
 
 **Problemas:**
-- La meta que cumplió se había flexibilizado al inicio: con la de su decreto inicial, que
-  fijaba equilibrio, no la habría cumplido.
+- La meta que cumplió se flexibilizó en 2011, de equilibrio a −1 % para 2014 (Decreto 1.357),
+  tras la corrección metodológica de la Comisión Corbo. Su meta inicial era para 2014, así que
+  no se evalúa con su último año completo.
 - La deuda neta subió, de −9,8 % a −6,2 % del PIB.
 
 **Por qué:** parte del crecimiento fue rebote desde la recesión de 2009 y gasto de

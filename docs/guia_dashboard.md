@@ -1,5 +1,10 @@
 # Guía para construir el dashboard en Power BI
 
+> **Para usar el dashboard no hace falta seguir esta guía.** El proyecto ya trae el modelo
+> completo (9 tablas, con sus relaciones y medidas) y las 10 páginas: basta abrir
+> `dashboard/chile_economia.pbip` y hacer clic en **Inicio → Actualizar**. Esta guía documenta
+> cómo se construyó la primera versión, con cuatro tablas, y sirve para rehacerlo a mano.
+
 Antes de empezar: PostgreSQL debe estar corriendo y la base cargada
 (`python -m src.load.postgres`).
 

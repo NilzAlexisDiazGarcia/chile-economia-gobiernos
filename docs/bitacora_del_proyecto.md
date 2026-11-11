@@ -256,8 +256,8 @@ profesional del rubro notaría:
 
 **Lo que mostró:**
 
-- **Superávit efectivo y estructural:** el superávit efectivo de Bachelet I (+3,67 % del PIB)
-  fue un déficit estructural pequeño (−0,40 %); la diferencia la explican los ingresos del
+- **Superávit efectivo y estructural:** en promedio, el superávit efectivo de Bachelet I
+  (+3,67 % del PIB) fue un déficit estructural pequeño (−0,40 %); la diferencia la explican los ingresos del
   cobre.
 - **Deuda neta:** pasó de −19 % del PIB en 2008, cuando el Fisco era acreedor neto, a 26 % a
   comienzos de 2026.
@@ -288,8 +288,8 @@ mismas reglas, fijadas antes de mirar los resultados.
   una verificación nueva en la auditoría, que recalcula las 30 evaluaciones sin SQL.
 
 **Resultado principal:** con la meta vigente, solo Piñera I cumplió su meta fiscal; con la
-meta del decreto inicial, ninguno de los tres que la fijaron para su último año. Ambas lecturas se muestran, junto con el contexto de
-cada incumplimiento.
+meta del decreto inicial, ninguno de los tres que la fijaron para su último año. Ambas
+lecturas se muestran, junto con el contexto de cada incumplimiento.
 
 ## Etapa 5f. Conclusiones: por qué Chile creció menos y se endeudó
 
@@ -344,6 +344,26 @@ la deuda neta, que descuenta los fondos.
 - **Generador de páginas en el repositorio:** `dashboard/generador/`.
 - **Auditoría:** nueva sección J; 52 de 52 verificaciones correctas.
 
+## Etapa 5h. Revisión externa y repaso final
+
+Una revisión externa del proyecto, contrastada punto por punto con los datos y con fuentes
+primarias, llevó a estas correcciones:
+
+- **Tesis sin causas propias:** la frase "los gobiernos no causaron ese cambio, pero sí lo
+  agravaron" afirmaba una causa que el método no demuestra, y "todos gastaron más de lo que
+  generaban" no se cumplía en 2006–2007. La tesis actual atribuye las causas a sus fuentes y
+  deja como resultado propio lo que muestran los datos: los cinco gobiernos terminaron con
+  déficit estructural y la deuda neta subió en cuatro. "Dejó de crecer" pasó a "creció menos".
+- **Meta inicial del mismo año:** Piñera I y Bachelet II fijaron su meta inicial para 2014 y
+  2018, el año siguiente a su último año completo, así que figuran como "No aplica".
+- **Fecha corregida:** el Decreto 1.357 de Piñera I es de octubre de 2011, no de 2010.
+- **Fechas de referencia:** la pobreza muestra el año de cada CASEN, y el pie del Balance
+  explica de qué fecha es cada dato "recibido".
+- **Un error de redacción:** el balance de Bachelet II decía que la inflación terminó peor
+  que como la recibió; bajó de 3,2 % a 2,0 %. Lo que subió fue el desempleo.
+- **Cifras desactualizadas** del README y de esta bitácora (series, filas, cifras
+  verificadas y páginas), y guías antiguas marcadas como históricas.
+
 ## Verificación de cifras
 
 Cada afirmación de [hallazgos.md](hallazgos.md) se revisó contra los datos antes de
@@ -369,9 +389,12 @@ Un script verifica cada cifra por un camino distinto al que la produjo. Resultad
 | B. Asignación | La regla de mayoría de días, reimplementada con el punto medio del período | 0 diferencias en 18.568 filas |
 | C. Base de datos | PostgreSQL contra los CSV | Idénticos |
 | D. Fuentes independientes | Chile contra el FMI (2006–2025) y la inflación contra 14 cifras publicadas por el INE | Diferencias de 0,23 pp o menos; las excepciones están explicadas |
-| E. Recálculo sin SQL | 55 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
+| E. Recálculo sin SQL | 96 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
 | F. Documentos | 142 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
 | G. Dashboard | 79 valores leídos en Power BI (Resumen, Comparación y dos Fichas), contra la lógica de cada medida reproducida en Python (`valores_dashboard.py`) | Todos coinciden |
+| H. Balance de cada gobierno | Las 40 evaluaciones (ocho criterios por cinco gobiernos), recalculadas en pandas contra la vista SQL | Todas coinciden |
+| I. Datos fiscales | Balance estructural de la BDE contra la DIPRES y el CFA (20 años), 4 saldos de los fondos soberanos y los resultados de las metas fiscales | Coinciden; las diferencias de 2009 y 2022 se deben a la versión de las cifras y están explicadas |
+| J. Costo de la deuda | 20 valores de tasas e intereses recalculados sin SQL, y 6 cifras citadas en los documentos | Todos coinciden |
 
 **Hallazgo de la auditoría: la serie de inflación no era la oficial.** La primera versión
 usaba un IPC "empalmado" por el Banco Central a la canasta de 2023. Al contrastarlo con las

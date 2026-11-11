@@ -20,7 +20,7 @@ así, no mide el efecto de las políticas de cada gobierno: sigue siendo una des
 - **Zonas:** Chile, América Latina y el Caribe, el mundo y cuatro pares regionales con metas
   de inflación: Perú, Colombia, México y Brasil.
 - **Asignación anual:** cada año va al gobierno que gobernó la mayor parte de él. Como el
-  cambio de mando es el 11 de marzo, el año en que asume un gobierno es suyo (unos 295
+  cambio de mando es el 11 de marzo, el año en que asume un gobierno es suyo (unos 296
   días). Bachelet I: 2006–2009; Piñera I: 2010–2013; Bachelet II: 2014–2017; Piñera II:
   2018–2021; Boric: 2022–2025.
 - **Datos del FMI, no del Banco Central:** el FMI mide deuda y balance del **gobierno
@@ -41,7 +41,7 @@ python -m src.load.postgres
 python -m src.analysis.ejecutar_consultas 08
 ```
 
-## 1. Crecimiento: tres períodos sobre los pares, uno similar y uno bajo
+## 1. Crecimiento: tres períodos sobre los pares y dos bajo ellos
 
 | Gobierno | Chile | América Latina | Mundo | Pares (4) | Chile − pares (pp) |
 |---|---:|---:|---:|---:|---:|

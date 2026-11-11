@@ -12,10 +12,12 @@ desfase) e incluyen los períodos de transición.
 ## Síntesis
 
 **Los grandes cambios de la economía chilena entre 2006 y 2026 fueron estructurales y los
-compartieron los cinco gobiernos, según las fuentes técnicas citadas: ninguno los revirtió.** Dentro
-de ese marco, cada gobierno tuvo aciertos y problemas propios, que se miden con las mismas
-reglas en la sección 9. El más claro de los que dependen del gobierno es la meta fiscal:
-con la meta vigente, solo Piñera I la cumplió, y con la meta del decreto inicial, ninguno de los tres que la fijaron para su último año (Piñera I y Bachelet II la fijaron para el año siguiente).
+compartieron los cinco gobiernos, según las fuentes técnicas citadas: ninguno los revirtió.**
+Dentro de ese marco, cada gobierno tuvo aciertos y problemas propios, que se miden con las
+mismas reglas en la sección 9. El más claro de los que dependen del gobierno es la meta
+fiscal: con la meta vigente, solo Piñera I la cumplió, y con la meta del decreto inicial,
+ninguno de los tres que la fijaron para su último año (Piñera I y Bachelet II la fijaron para
+el año siguiente).
 
 Entre 2006 y 2026 la economía chilena cambió de régimen, y ese cambio atraviesa a los
 cinco gobiernos:
@@ -52,8 +54,8 @@ resultado y no estima cuánto de cada resultado se debe a las políticas de cada
   y a la reconstrucción.
 - Desde 2014, ningún período promedia más de 3 % de crecimiento anual.
 - En Piñera II, el promedio de 2,64 % junta la caída de 2020 (−16 % en el peor mes) con el
-  rebote de 2021 (+20 %). Un promedio esconde esa volatilidad; el gráfico de la página 2 del
-  dashboard la muestra.
+  rebote de 2021 (+20 %). Un promedio esconde esa volatilidad; la página "Series en el tiempo"
+  del dashboard la muestra.
 
 ### Cuánto se puede concluir con cuatro años por gobierno
 
@@ -162,16 +164,17 @@ Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
 - **Deuda bruta y deuda neta.** La deuda bruta pasó de 6 % a 42 % del PIB. La deuda neta
   descuenta los activos financieros del Fisco, como los fondos soberanos: en 2008 llegó a
   −19 % del PIB, es decir, el Fisco tenía más activos que deudas. Es positiva desde fines
-  de 2016.
-  Las dos suben en los cinco períodos, salvo la neta en Bachelet I.
+  de 2016. Las dos suben en los cinco períodos, salvo la neta en Bachelet I.
 - **Balance efectivo y estructural.** El balance efectivo depende del ciclo económico y del
   precio del cobre. El estructural los descuenta y es la meta de la regla fiscal chilena, así
   que se acerca más a la gestión fiscal de cada gobierno:
-  - El superávit efectivo de Bachelet I (+3,67 %) fue un déficit estructural pequeño
-    (−0,40 %): los ingresos del cobre explican la diferencia.
+  - En promedio, el superávit efectivo de Bachelet I (+3,67 %) fue un déficit estructural
+    pequeño (−0,40 %): los ingresos del cobre explican la diferencia. Hubo superávit
+    estructural en 2006–2007 y déficit en 2008–2009.
   - En Piñera I, el balance efectivo (+0,20 %) también fue mejor que el estructural (−0,99 %).
   - En Bachelet II, Piñera II y Boric los dos balances fueron negativos.
-- **El déficit estructural más profundo** (−10,6 % en 2021) corresponde al gasto de la
+- **El déficit estructural más profundo** (−10,6 % en 2021 en la serie del Banco Central;
+  −10,7 % en la revisión de la DIPRES que se usa para las metas) corresponde al gasto de la
   pandemia. Por eso el promedio de Piñera II es el más bajo en ambas medidas.
 - El balance estructural tiene cambios de metodología a lo largo del período; la serie es la
   que publica la DIPRES a través del Banco Central.
@@ -190,7 +193,8 @@ Meses con inflación dentro del rango meta del Banco Central (3 % ± 1 punto):
   menor precio promedio.
 - El precio del cobre está en dólares nominales, sin ajustar por inflación de EE.UU. Por eso
   los niveles de períodos distantes no son directamente comparables. La variación anual sí lo es.
-- El dólar subió de 531 a 916 pesos entre 2006 y 2026, con el mayor salto en 2018–2022.
+- El dólar subió de 531 a 916 pesos entre marzo de 2006 y marzo de 2026, con el mayor salto
+  en 2018–2022.
 
 ## 7. Eventos: la pandemia generó la mayor caída de actividad
 
@@ -262,19 +266,19 @@ o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
   en 2009 gastó deliberadamente contra la crisis, con ese mismo ahorro. Tuvo inflación alta
   (2008) y el desempleo subió con la recesión.
 - **Piñera I:** el único que cumplió su meta fiscal vigente, con crecimiento sobre sus pares,
-  inflación en la meta y una baja del desempleo. Pero su meta se había flexibilizado al
-  inicio, cuando la corrección de la Comisión Corbo elevó el déficit medido, y no habría
-  cumplido la de su decreto inicial. Además, la deuda neta subió.
-- **Bachelet II:** creció levemente sobre sus pares en un contexto regional malo. Pero no cumplió su meta fiscal en 2017 (−2,0 % contra −1,05 %), sin un shock
-  extraordinario, la deuda neta pasó a ser positiva y el FEES bajó levemente (en parte por
-  el tipo de cambio, porque se invierte también en euros y yenes). La inflación y el desempleo
-  terminaron peor que como los recibió.
+  inflación en la meta y una baja del desempleo. Pero su meta se flexibilizó en 2011, de
+  equilibrio a −1 % para 2014, cuando la corrección de la Comisión Corbo elevó el déficit
+  medido. Además, la deuda neta subió.
+- **Bachelet II:** creció levemente sobre sus pares en un contexto regional malo. Pero no
+  cumplió su meta fiscal en 2017 (−2,0 % contra −1,05 %), sin un shock extraordinario, la
+  deuda neta pasó a ser positiva y el FEES bajó levemente (en parte por el tipo de cambio,
+  porque se invierte también en euros y yenes). El desempleo terminó más alto que el que
+  recibió, y la inflación estuvo sobre el rango meta en 2014–2016.
 - **Piñera II:** creció sobre sus pares en la crisis más profunda del período y tuvo inflación
   en la meta. Pero en 2021 tuvo el mayor déficit estructural desde que existe la regla
   (−10,7 %), con la pandemia como contexto, y entregó el FEES en menos de la mitad de lo
   recibido, tras usarlo en la pandemia.
-- **Boric:** cumplió su meta fiscal en 2022. Pero no la cumplió
-  en 2024 ni en 2025, sin un shock extraordinario: según el CFA, por errores reiterados en
+- **Boric:** cumplió su meta fiscal en 2022. Pero no la cumplió en 2024 ni en 2025, sin un shock extraordinario: según el CFA, por errores reiterados en
   la proyección de ingresos. Tuvo crecimiento bajo sus pares e inflación fuera de la meta la
   mayor parte del tiempo, y el desempleo subió. El FEES bajó de US$ 6.406 a 3.944 millones sin
   una crisis, mientras la deuda bruta subió de 36,2 % a 42,4 % del PIB. El total de los fondos se
@@ -312,10 +316,10 @@ Crecimiento anual promedio (FMI; por habitante = PIB dividido por la población)
 | Gobierno | Pobreza por ingresos (%, CASEN): recibió → entregó | Salario real (variación anual promedio) |
 |---|---|---:|
 | Bachelet I | 29,1 (2006) → 25,3 (2009) | +2,4 % |
-| Piñera I | 25,3 → 14,4 (2013) | +3,2 % |
-| Bachelet II | 14,4 → 8,6 (2017) | +1,8 % |
-| Piñera II | 8,6 → 10,8 (2020) | +1,3 % |
-| Boric | 10,8 → 4,9 (2024) | +1,5 % |
+| Piñera I | 25,3 (2009) → 14,4 (2013) | +3,2 % |
+| Bachelet II | 14,4 (2013) → 8,6 (2017) | +1,8 % |
+| Piñera II | 8,6 (2017) → 10,8 (2020) | +1,3 % |
+| Boric | 10,8 (2020) → 4,9 (2024) | +1,5 % |
 
 - **La pobreza bajó en cuatro de los cinco gobiernos.** Solo subió en la pandemia (2020).
 - **Las cifras son de la metodología de 2013,** la serie comparable. La CASEN 2024 adoptó una
