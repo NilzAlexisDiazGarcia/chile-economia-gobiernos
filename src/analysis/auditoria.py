@@ -12,6 +12,7 @@ Verificaciones:
     F. Documentos: cada cifra de hallazgos.md y contexto_comparado.md contra el recálculo.
     G. Dashboard: los valores que muestra Power BI contra el cálculo sin DAX.
     H. Balance de cada gobierno: los seis criterios, recalculados sin SQL.
+    I. Datos fiscales: balance estructural y fondos soberanos contra la DIPRES, el CFA y Hacienda.
 
 Termina con código 1 si alguna verificación falla.
 """
@@ -438,6 +439,43 @@ def auditar_evaluacion() -> None:
               "todas coinciden" if not malos else ", ".join(malos))
 
 
+# Balance estructural publicado por la DIPRES, con la metodología actual: "Cumplimiento de las
+# metas de regla fiscal en Chile: revisión histórica" (diciembre de 2022), cuadros 5.2 a 5.5.
+# 2022-2025: CFA y DIPRES (cierres oficiales informados en cada año).
+BE_DIPRES = {2006: 1.4, 2007: 1.1, 2008: -1.0, 2009: -3.4, 2010: -2.1, 2011: -1.0, 2012: -0.4,
+             2013: -0.5, 2014: -0.5, 2015: 0.5, 2016: -1.1, 2017: -2.0, 2018: -1.4, 2019: -1.4,
+             2020: -2.7, 2021: -10.7, 2022: 0.2, 2023: -2.7, 2024: -3.3, 2025: -3.6}
+# Diferencias conocidas entre la serie de la BDE y la cifra publicada: la BDE usa una
+# compilación de cuentas nacionales más reciente para el PIB del denominador.
+BE_DIFERENCIAS = {2009: "BDE -3,1; DIPRES -3,4 (PIB de la compilación de referencia 2003)",
+                  2022: "BDE 0,5; cierre informado 0,2 (diferencia de versión de las cifras; la fuente no la explica)"}
+
+# Saldos de los fondos soberanos publicados por Hacienda y la DIPRES (millones de US$, fin de año).
+FONDOS_PUBLICADOS = {("fees", "2008-12"): 20211, ("frp", "2008-12"): 2507,
+                     ("fees", "2021-12"): 2457, ("frp", "2021-12"): 7473}
+
+
+def auditar_fiscal() -> None:
+    be = serie("balance_estructural").assign(anio=lambda d: d["fecha"].dt.year).set_index("anio")["valor"]
+    malos = {a: (round(be[a], 2), v) for a, v in BE_DIPRES.items()
+             if a not in BE_DIFERENCIAS and abs(be[a] - v) > 0.15}
+    registrar(f"I. Balance estructural de la BDE contra la DIPRES y el CFA ({len(BE_DIPRES)} años)", not malos,
+              "coinciden salvo " + "; ".join(f"{a}: {t}" for a, t in BE_DIFERENCIAS.items())
+              if not malos else str(malos))
+    malos = []
+    for (ind, mes), publicado in FONDOS_PUBLICADOS.items():
+        v = serie(ind).set_index("fecha")["valor"][mes].iloc[0]
+        if abs(v - publicado) > 1:
+            malos.append(f"{ind} {mes}: BDE {v:.0f}, publicado {publicado}")
+    registrar(f"I. Fondos soberanos: {len(FONDOS_PUBLICADOS)} saldos contra lo publicado por Hacienda y la DIPRES",
+              not malos, "todos coinciden" if not malos else "; ".join(malos))
+    metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv")
+    malos = [f"{r.id_gobierno}: {r.resultado} vs {BE_DIPRES[r.anio_evaluado]}" for r in metas.itertuples()
+             if abs(r.resultado - BE_DIPRES[r.anio_evaluado]) > 0.05]
+    registrar("I. Resultados de metas_fiscales.csv contra la DIPRES y el CFA", not malos,
+              "todos coinciden" if not malos else "; ".join(malos))
+
+
 def main() -> int:
     print("== A. Crudo -> limpio"); auditar_crudo()
     print("== B. Asignación"); auditar_asignacion()
@@ -448,6 +486,7 @@ def main() -> int:
     print("== F. Documentos"); auditar_documentos(res)
     print("== G. Dashboard"); auditar_dashboard()
     print("== H. Balance de cada gobierno"); auditar_evaluacion()
+    print("== I. Datos fiscales contra fuentes publicadas"); auditar_fiscal()
     fallas = [r for r in resultados if not r[1]]
     print(f"\n{len(resultados) - len(fallas)} de {len(resultados)} verificaciones correctas.")
     return 1 if fallas else 0
