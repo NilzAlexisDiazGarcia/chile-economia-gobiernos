@@ -47,8 +47,8 @@
                 }
               },
               "queryRef": "Observaciones.Crecimiento PIB %",
-              "nativeQueryRef": "PIB, var. anual (%)",
-              "displayName": "PIB, var. anual (%)"
+              "nativeQueryRef": "PIB (%)",
+              "displayName": "PIB (%)"
             },
             {
               "field": {
@@ -62,8 +62,8 @@
                 }
               },
               "queryRef": "Observaciones.Crecimiento IMACEC %",
-              "nativeQueryRef": "IMACEC, var. anual (%)",
-              "displayName": "IMACEC, var. anual (%)"
+              "nativeQueryRef": "IMACEC (%)",
+              "displayName": "IMACEC (%)"
             },
             {
               "field": {
@@ -77,8 +77,8 @@
                 }
               },
               "queryRef": "Observaciones.Inflacion Promedio %",
-              "nativeQueryRef": "Inflación prom. (%)",
-              "displayName": "Inflación prom. (%)"
+              "nativeQueryRef": "Inflación (%)",
+              "displayName": "Inflación (%)"
             },
             {
               "field": {
@@ -92,8 +92,8 @@
                 }
               },
               "queryRef": "Observaciones.Desempleo Promedio %",
-              "nativeQueryRef": "Desempleo prom. (%)",
-              "displayName": "Desempleo prom. (%)"
+              "nativeQueryRef": "Desempleo (%)",
+              "displayName": "Desempleo (%)"
             },
             {
               "field": {
@@ -152,8 +152,8 @@
                 }
               },
               "queryRef": "Observaciones.Balance Fiscal Promedio %",
-              "nativeQueryRef": "Balance efectivo prom. (% PIB)",
-              "displayName": "Balance efectivo prom. (% PIB)"
+              "nativeQueryRef": "Balance efectivo (% PIB)",
+              "displayName": "Balance efectivo (% PIB)"
             },
             {
               "field": {
@@ -167,8 +167,8 @@
                 }
               },
               "queryRef": "Observaciones.Balance Estructural Promedio %",
-              "nativeQueryRef": "Balance estructural prom. (% PIB)",
-              "displayName": "Balance estructural prom. (% PIB)"
+              "nativeQueryRef": "Balance estructural (% PIB)",
+              "displayName": "Balance estructural (% PIB)"
             },
             {
               "field": {
@@ -182,8 +182,8 @@
                 }
               },
               "queryRef": "Observaciones.Cobre Promedio USD lb",
-              "nativeQueryRef": "Cobre prom. (USD/lb)",
-              "displayName": "Cobre prom. (USD/lb)"
+              "nativeQueryRef": "Cobre (USD/lb)",
+              "displayName": "Cobre (USD/lb)"
             }
           ]
         }
@@ -209,7 +209,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             }
@@ -222,7 +222,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             }
@@ -235,7 +235,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "11D"
                 }
               }
             },
@@ -295,7 +295,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Promedios y cambios por gobierno'"
+                  "Value": "'Promedios y cambios por gobierno (crecimiento e inflación: variación anual promedio)'"
                 }
               }
             }

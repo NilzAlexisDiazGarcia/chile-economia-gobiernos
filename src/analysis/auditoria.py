@@ -10,6 +10,7 @@ Verificaciones:
     D. Fuente independiente: las series de Chile contra los datos del FMI.
     E. Recálculo sin SQL: las métricas por gobierno, calculadas en pandas, contra las vistas SQL.
     F. Documentos: cada cifra de hallazgos.md y contexto_comparado.md contra el recálculo.
+    G. Dashboard: los valores que muestra Power BI contra el cálculo sin DAX.
 
 Termina con código 1 si alguna verificación falla.
 """
@@ -349,6 +350,66 @@ def auditar_documentos(res: pd.DataFrame) -> None:
     registrar(f"F. Chile − pares: {total} cifras", not malos, "todas coinciden" if not malos else "; ".join(malos))
 
 
+# Valores leídos en el dashboard de Power BI (capturas del 11-11-2026, desfase 0).
+# Se excluyen la TPM y los eventos, cuyo formato cambió después de esas capturas.
+DASHBOARD_LEIDO = {
+    "ficha": {
+        2: {"Crecimiento del PIB (% anual)": "3,23", "Rango trimestral del PIB (%)": "-2,8  a  6,3",
+            "Inflación promedio (%)": "4,33", "Meses en el rango meta": "38%",
+            "Desempleo (%): inicio → fin": "7,8  →  8,5", "Cambio del desempleo": "+0,7 pp",
+            "Deuda bruta % PIB: inicio → fin": "6,4  →  6,5", "Deuda neta % PIB: inicio → fin": "-1,6  →  -9,8",
+            "Balance efectivo prom. % PIB": "3,67", "Balance estructural prom. % PIB": "-0,40",
+            "Dólar (CLP): inicio → fin": "531  →  513", "Cobre prom. (USD/lb)": "2,98",
+            "Crecimiento vs. pares, FMI (pp)": "-0,3 pp", "Inflación vs. pares, FMI (pp)": "+0,1 pp",
+            "Balance vs. pares, FMI (pp)": "+5,01"},
+        5: {"Crecimiento del PIB (% anual)": "2,65", "Rango trimestral del PIB (%)": "-15,0  a  18,4",
+            "Inflación promedio (%)": "3,29", "Meses en el rango meta": "75%",
+            "Desempleo (%): inicio → fin": "7,0  →  7,5", "Cambio del desempleo": "+0,5 pp",
+            "Deuda bruta % PIB: inicio → fin": "23,6  →  36,2", "Deuda neta % PIB: inicio → fin": "5,0  →  19,7",
+            "Balance efectivo prom. % PIB": "-4,88", "Balance estructural prom. % PIB": "-4,03",
+            "Dólar (CLP): inicio → fin": "605  →  804", "Cobre prom. (USD/lb)": "3,23",
+            "Crecimiento vs. pares, FMI (pp)": "+1,1 pp", "Inflación vs. pares, FMI (pp)": "-0,6 pp",
+            "Balance vs. pares, FMI (pp)": "-0,01"},
+    },
+    "comparacion": {
+        "PIB, var. anual (%)": ["3,23", "5,43", "1,90", "2,65", "1,64"],
+        "IMACEC, var. anual (%)": ["3,35", "5,38", "1,85", "2,64", "1,77"],
+        "Inflación prom. (%)": ["4,33", "2,54", "3,64", "3,29", "6,72"],
+        "Desempleo prom. (%)": ["8,13", "7,02", "6,63", "8,58", "8,41"],
+        "Desempleo, cambio (pp)": ["0,73", "-2,35", "0,83", "0,49", "0,83"],
+        "Deuda bruta, cambio (pp)": ["0,15", "6,22", "10,86", "12,62", "6,21"],
+        "Balance efectivo prom. (% PIB)": ["3,67", "0,20", "-2,32", "-4,88", "-1,73"],
+        "Cobre prom. (USD/lb)": ["2,98", "3,59", "2,65", "3,23", "4,19"],
+        "Dólar prom. (CLP)": ["533", "495", "640", "734", "905"],
+    },
+    "resumen": {"Crecimiento del PIB": "4,3 % → 2,1 %", "Deuda bruta": "6 % → 42 %",
+                "Desempleo": "7,8 % → 8,3 %", "Meses con inflación entre 2 % y 4 %": "48%"},
+}
+
+
+def auditar_dashboard() -> None:
+    from src.analysis import valores_dashboard as vd
+    malos, total = [], 0
+    for g, campos in DASHBOARD_LEIDO["ficha"].items():
+        esperado = vd.ficha(g)
+        for k, leido in campos.items():
+            total += 1
+            if esperado[k].replace(" ", "") != leido.replace(" ", ""):
+                malos.append(f"Ficha {ETQ[g]} {k}: dashboard {leido}, cálculo {esperado[k]}")
+    for k, leidos in DASHBOARD_LEIDO["comparacion"].items():
+        for g, leido in zip(EN_ALCANCE, leidos):
+            total += 1
+            calc = vd.comparacion(g)[k]
+            if calc != leido:
+                malos.append(f"Comparación {ETQ[g]} {k}: dashboard {leido}, cálculo {calc}")
+    for k, leido in DASHBOARD_LEIDO["resumen"].items():
+        total += 1
+        if vd.resumen()[k] != leido:
+            malos.append(f"Resumen {k}: dashboard {leido}, cálculo {vd.resumen()[k]}")
+    registrar(f"G. Dashboard: {total} valores leídos en Power BI contra el cálculo sin DAX", not malos,
+              "todos coinciden" if not malos else "; ".join(malos))
+
+
 def main() -> int:
     print("== A. Crudo -> limpio"); auditar_crudo()
     print("== B. Asignación"); auditar_asignacion()
@@ -357,6 +418,7 @@ def main() -> int:
     print("== E. Recálculo sin SQL")
     res = resumen_pandas(); auditar_resumen(res)
     print("== F. Documentos"); auditar_documentos(res)
+    print("== G. Dashboard"); auditar_dashboard()
     fallas = [r for r in resultados if not r[1]]
     print(f"\n{len(resultados) - len(fallas)} de {len(resultados)} verificaciones correctas.")
     return 1 if fallas else 0

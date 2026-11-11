@@ -51,7 +51,9 @@ resultado y no estima cuánto de cada resultado se debe a las políticas de cada
 ### Cuánto se puede concluir con cuatro años por gobierno
 
 Cada gobierno tiene solo cuatro años, y un año extremo pesa mucho en el promedio.
-Crecimiento anual del PIB (año calendario asignado a cada gobierno):
+Crecimiento anual del PIB (año calendario asignado a cada gobierno). Por usar años
+completos, los promedios difieren algo de la tabla anterior, que promedia los trimestres
+asignados a cada gobierno; por ejemplo, Bachelet I tiene 3,47 % aquí y 3,23 % arriba:
 
 | Gobierno | Años | Promedio (%) | Mínimo y máximo (%) | Error estándar (pp) |
 |---|---|---:|---|---:|

@@ -1497,7 +1497,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación anual (%)": {
+			          "Inflación promedio (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1507,7 +1507,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación promedio (%)": {
+			          "Inflación anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1605,7 +1605,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Deuda, cambio (pp del PIB)": {
+			          "Deuda bruta, cambio (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1755,7 +1755,17 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Balance fiscal prom. (% PIB)": {
+			          "Balance efectivo prom. (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Balance efectivo prom. % PIB": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1933,7 +1943,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Deuda (% PIB): inicio → fin": {
+			          "Deuda bruta % PIB: inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2227,6 +2237,16 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
+			          "Balance vs. pares (pp)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Balance vs. pares": {
 			            "State": "Suggested",
 			            "Source": {
@@ -2375,6 +2395,100 @@ cultureInfo es-ES
 			      "Terms": [
 			        {
 			          "Indicador": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.deuda_neta_cambio_pp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda Neta Cambio pp"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda neta, cambio (pp)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.balance_estructural_promedio_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Balance Estructural Promedio %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Balance estructural prom. (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Balance estructural prom. % PIB": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.deuda_neta_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda Neta Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda neta % PIB: inicio → fin": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.rango_crecimiento_pib": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Rango Crecimiento PIB"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rango trimestral del PIB (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

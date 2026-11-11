@@ -285,7 +285,7 @@ PIB de Piñera I es 5,43 % en ambos.
 ### Auditoría de exactitud (`src/analysis/auditoria.py`)
 
 Un script verifica cada cifra por un camino distinto al que la produjo. Resultado actual:
-**31 de 31 verificaciones correctas.**
+**32 de 32 verificaciones correctas.**
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|
@@ -295,6 +295,7 @@ Un script verifica cada cifra por un camino distinto al que la produjo. Resultad
 | D. Fuentes independientes | Chile contra el FMI (2006–2025) y la inflación contra 14 cifras publicadas por el INE | Diferencias de 0,23 pp o menos; las excepciones están explicadas |
 | E. Recálculo sin SQL | 55 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
 | F. Documentos | 120 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
+| G. Dashboard | 79 valores leídos en Power BI (Resumen, Comparación y dos Fichas), contra la lógica de cada medida reproducida en Python (`valores_dashboard.py`) | Todos coinciden |
 
 **Hallazgo de la auditoría: la serie de inflación no era la oficial.** La primera versión
 usaba un IPC "empalmado" por el Banco Central a la canasta de 2023. Al contrastarlo con las
@@ -322,6 +323,19 @@ Ninguna conclusión cambió.
   oficiales. Por ejemplo, el INE informó 4,5 % en febrero de 2024, igual que el proyecto, y
   una cifra "referencial" de 3,6 % con la canasta nueva.
 
+**Auditoría final del dashboard, con criterio económico.** Además de verificar que cada
+número coincida, se revisó si cada dato cuenta bien lo que pasó. Se corrigieron tres
+problemas que no eran errores de cálculo:
+
+| Problema | Por qué inducía a error | Corrección |
+|---|---|---|
+| La TPM se mostraba con un decimal | El Banco Central la mueve en pasos de 0,25: "4,8 %" nunca existió; era 4,75 % | Dos decimales |
+| La Ficha de Piñera I decía "sin eventos" | Asumió 12 días después del terremoto y saliendo de la recesión de 2009 | Se muestran también los eventos de los 12 meses previos, marcados "antes de asumir" |
+| Las tarjetas "vs. pares" no decían su fuente | Usan años calendario del FMI, no los trimestres del Banco Central de la tarjeta vecina | La etiqueta dice "FMI" |
+
+Los valores que debe mostrar cada tarjeta, para los cinco gobiernos, están en
+[valores_dashboard.md](valores_dashboard.md).
+
 **Citas oficiales:** las 13 frases citadas del Banco Central y del FMI se verificaron palabra
 por palabra en los documentos originales, con su página.
 
@@ -336,6 +350,7 @@ python -m src.extract.internacional
 python -m src.load.postgres
 python -m src.analysis.ejecutar_consultas
 python -m src.analysis.auditoria
+python -m src.analysis.valores_dashboard
 python -m pytest
 ```
 
