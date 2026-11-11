@@ -1,0 +1,86 @@
+table Evaluacion
+	lineageTag: 1750635c-3a99-4655-b657-f21162abbd78
+
+	/// Resultado de cada criterio con su marca: ✓ favorable o ✗ desfavorable según la referencia.
+	measure 'Resultado Evaluacion' =
+			IF (
+			    HASONEVALUE ( Evaluacion[criterio] ) && HASONEVALUE ( Gobiernos[etiqueta] ),
+			    IF ( SELECTEDVALUE ( Evaluacion[favorable] ), "✓  ", "✗  " )
+			        & SELECTEDVALUE ( Evaluacion[resultado] )
+			)
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 39c93b98-2c78-4178-b6c8-749c94c24de3
+
+	column id_gobierno
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 52bdee21-032d-4cd1-8942-e5f35fac91a6
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column orden
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 262ad0db-7846-4c6f-a4f4-9f9ca2b2144a
+		summarizeBy: none
+		sourceColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column criterio
+		dataType: string
+		lineageTag: 3d8723e3-bb1d-41d5-aaee-56a0ea0c3ffa
+		summarizeBy: none
+		sourceColumn: criterio
+		sortByColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column quien_controla
+		dataType: string
+		lineageTag: ce8aaf3a-ad06-4bf8-813f-ed0c4ffcdff4
+		summarizeBy: none
+		sourceColumn: quien_controla
+
+		annotation SummarizationSetBy = Automatic
+
+	column referencia
+		dataType: string
+		lineageTag: e5c5f1ff-4460-4332-bc85-04db89f9cdcf
+		summarizeBy: none
+		sourceColumn: referencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column resultado
+		dataType: string
+		lineageTag: 9c2b3192-9019-4599-83ae-9d1c3e7fe08e
+		summarizeBy: none
+		sourceColumn: resultado
+
+		annotation SummarizationSetBy = Automatic
+
+	column favorable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5b642650-785b-4134-8c76-ed12ec4b6fac
+		summarizeBy: none
+		sourceColumn: favorable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Evaluacion = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "v_pbi_evaluacion"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

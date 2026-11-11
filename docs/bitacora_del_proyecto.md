@@ -268,6 +268,27 @@ con tests y verificación en la auditoría. Las mejoras de menor prioridad, como
 cambio real, la inversión o los salarios, quedaron documentadas como extensiones en
 [metodologia.md](metodologia.md).
 
+## Etapa 5e. Balance de cada gobierno
+
+**Motivo:** el análisis mostraba los datos y sus límites, pero no concluía. La neutralidad no
+exige callar los aciertos y los problemas de cada gobierno, sino medirlos a todos con las
+mismas reglas, fijadas antes de mirar los resultados.
+
+**Qué se hizo:**
+- **Investigación de las metas fiscales** de los cinco gobiernos en fuentes primarias: los
+  decretos, la revisión histórica de la DIPRES (2022), la Biblioteca del Congreso y el CFA. Al
+  contrastar las fuentes se corrigieron dos datos de la prensa: el decreto inicial de Piñera I
+  fijaba equilibrio (0 %), no −1 %, y la meta de 2021 modificada fue −4,7 %, no −4,3 %.
+- **Saldos de los fondos soberanos** (FEES y FRP) desde 2007, de la API del Banco Central.
+- **Seis criterios uniformes** en la vista `v_pbi_evaluacion`, con quién controla cada variable.
+- **Página nueva en el dashboard,** "Balance de cada gobierno", segunda después del Resumen.
+- **Tests de consistencia** (cumplir la meta equivale a un resultado igual o mejor que ella) y
+  una verificación nueva en la auditoría, que recalcula las 30 evaluaciones sin SQL.
+
+**Resultado principal:** con la meta vigente, solo Piñera I cumplió su meta fiscal; con la
+meta del decreto inicial, ninguno. Ambas lecturas se muestran, junto con el contexto de
+cada incumplimiento.
+
 ## Verificación de cifras
 
 Cada afirmación de [hallazgos.md](hallazgos.md) se revisó contra los datos antes de
@@ -285,7 +306,7 @@ PIB de Piñera I es 5,43 % en ambos.
 ### Auditoría de exactitud (`src/analysis/auditoria.py`)
 
 Un script verifica cada cifra por un camino distinto al que la produjo. Resultado actual:
-**32 de 32 verificaciones correctas.**
+**36 de 36 verificaciones correctas.**
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|

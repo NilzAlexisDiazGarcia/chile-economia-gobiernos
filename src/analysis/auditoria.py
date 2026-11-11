@@ -11,6 +11,7 @@ Verificaciones:
     E. Recálculo sin SQL: las métricas por gobierno, calculadas en pandas, contra las vistas SQL.
     F. Documentos: cada cifra de hallazgos.md y contexto_comparado.md contra el recálculo.
     G. Dashboard: los valores que muestra Power BI contra el cálculo sin DAX.
+    H. Balance de cada gobierno: los seis criterios, recalculados sin SQL.
 
 Termina con código 1 si alguna verificación falla.
 """
@@ -192,7 +193,9 @@ def resumen_pandas() -> pd.DataFrame:
             filas.append({
                 "id_gobierno": g, "indicador": ind,
                 "promedio": sg["valor"].mean(), "minimo": sg["valor"].min(), "maximo": sg["valor"].max(),
-                "valor_final": sg["valor"].iloc[-1], "valor_heredado": anterior["valor"].iloc[-1],
+                "valor_final": sg["valor"].iloc[-1],
+                # Sin datos del gobierno anterior (fondos soberanos antes de 2007): sin heredado.
+                "valor_heredado": anterior["valor"].iloc[-1] if len(anterior) else None,
                 "var_12m_promedio": v.loc[v["id_gobierno"] == g, "var"].mean() if v is not None else None,
             })
     return pd.DataFrame(filas)
@@ -410,6 +413,31 @@ def auditar_dashboard() -> None:
               "todos coinciden" if not malos else "; ".join(malos))
 
 
+def auditar_evaluacion() -> None:
+    """La evaluación de aciertos y problemas, recalculada sin SQL a partir de los datos."""
+    from src.analysis import valores_dashboard as vd
+    sql = consulta("SELECT id_gobierno, orden, favorable FROM economia.v_pbi_evaluacion")
+    esperado = {}
+    metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv").set_index("id_gobierno")
+    ipc = serie("ipc")
+    for g in EN_ALCANCE:
+        fs = serie("fondos_soberanos")
+        fs_ini = fs.loc[fs["id_gobierno"] == g - 1, "valor"]
+        fs_ini = fs_ini.iloc[-1] if len(fs_ini) else fs.loc[fs["id_gobierno"] == g, "valor"].iloc[0]
+        esperado.update({
+            (g, 1): vd.pares("crecimiento_pib", g) >= 0,
+            (g, 2): ipc.loc[ipc["id_gobierno"] == g, "valor"].between(2, 4).mean() >= 0.5,
+            (g, 3): vd.final("desempleo", g) < vd.heredado("desempleo", g),
+            (g, 4): metas.loc[g, "resultado"] >= metas.loc[g, "meta_vigente"],
+            (g, 5): vd.final("deuda_neta", g) <= vd.heredado("deuda_neta", g),
+            (g, 6): vd.final("fondos_soberanos", g) >= fs_ini,
+        })
+    malos = [f"{ETQ[r.id_gobierno]} criterio {r.orden}" for r in sql.itertuples()
+             if bool(r.favorable) != bool(esperado[(r.id_gobierno, r.orden)])]
+    registrar(f"H. Balance de cada gobierno: {len(sql)} evaluaciones recalculadas", not malos and len(sql) == 30,
+              "todas coinciden" if not malos else ", ".join(malos))
+
+
 def main() -> int:
     print("== A. Crudo -> limpio"); auditar_crudo()
     print("== B. Asignación"); auditar_asignacion()
@@ -419,6 +447,7 @@ def main() -> int:
     res = resumen_pandas(); auditar_resumen(res)
     print("== F. Documentos"); auditar_documentos(res)
     print("== G. Dashboard"); auditar_dashboard()
+    print("== H. Balance de cada gobierno"); auditar_evaluacion()
     fallas = [r for r in resultados if not r[1]]
     print(f"\n{len(resultados) - len(fallas)} de {len(resultados)} verificaciones correctas.")
     return 1 if fallas else 0

@@ -40,6 +40,9 @@ RANGOS_VALIDOS = {
     "balance_fiscal": (-15, 15),    # % del PIB
     "balance_estructural": (-15, 15),  # % del PIB
     "deuda_neta": (-50, 100),       # % del PIB; negativo = Fisco acreedor neto
+    "fees": (0, 40_000),            # millones de dólares
+    "frp": (0, 40_000),             # millones de dólares
+    "fondos_soberanos": (0, 80_000),  # millones de dólares
 }
 
 log = logging.getLogger("limpieza")

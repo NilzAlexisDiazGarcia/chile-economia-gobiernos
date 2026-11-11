@@ -10,6 +10,12 @@ desfase) e incluyen los períodos de transición.
 
 ## Síntesis
 
+**Los grandes cambios de la economía chilena entre 2006 y 2026 fueron estructurales y los
+compartieron los cinco gobiernos: ninguno los produjo ni los revirtió por sí solo.** Dentro
+de ese marco, cada gobierno tuvo aciertos y problemas propios, que se miden con las mismas
+reglas en la sección 9. El más claro de los que dependen del gobierno es la meta fiscal:
+con la meta vigente, solo Piñera I la cumplió, y con la meta del decreto inicial, ninguno.
+
 Entre 2006 y 2026 la economía chilena cambió de régimen, y ese cambio atraviesa a los
 cinco gobiernos:
 
@@ -223,6 +229,58 @@ del FMI (detalle y fuentes en [contexto_comparado.md](contexto_comparado.md)):
   bastante menor que el de ellos.
 - **Ningún período destaca en todos los indicadores.** Por eso el reporte no construye un
   ranking.
+
+## 9. Balance de cada gobierno: aciertos y problemas con las mismas reglas
+
+Seis criterios, los mismos para los cinco gobiernos, cada uno frente a una referencia que
+no elige el autor: los países pares, la meta del Banco Central, lo que cada gobierno recibió
+o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
+[metas_fiscales.md](metas_fiscales.md).
+
+| Criterio | Bachelet I | Piñera I | Bachelet II | Piñera II | Boric |
+|---|---|---|---|---|---|
+| Crecimiento frente a sus pares | ✗ −0,3 pp | ✓ +0,6 pp | ✓ +0,1 pp | ✓ +1,1 pp | ✗ −0,6 pp |
+| Inflación en el rango meta | ✗ 38 % | ✓ 67 % | ✗ 38 % | ✓ 75 % | ✗ 21 % |
+| Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
+| Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
+| Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
+| Fondos soberanos (US$ millones) | ✓ 7.751 → 14.643 | ✓ 14.643 → 23.273 | ✓ 23.273 → 24.900 | ✗ 24.900 → 13.537 | ✓ 13.537 → 14.272 |
+
+| Criterio | Quién lo controla principalmente |
+|---|---|
+| Meta fiscal, deuda neta y fondos soberanos | El gobierno |
+| Inflación | El Banco Central, que es autónomo |
+| Crecimiento y desempleo | Una mezcla del gobierno, el ciclo y el contexto externo |
+
+**Aciertos y problemas de cada gobierno:**
+
+- **Bachelet I:** acumuló ahorro, dejó al Fisco como acreedor neto (deuda neta de −9,8 %
+  del PIB) y creó los fondos soberanos. Pero no cumplió su meta fiscal en 2008 ni en 2009:
+  en 2009 gastó deliberadamente contra la crisis, con ese mismo ahorro. Tuvo inflación alta
+  (2008) y el desempleo subió con la recesión.
+- **Piñera I:** el único que cumplió su meta fiscal vigente, con crecimiento sobre sus pares,
+  inflación en la meta y una baja del desempleo. Pero su meta se había flexibilizado al
+  inicio, cuando la corrección de la Comisión Corbo elevó el déficit medido, y no habría
+  cumplido la de su decreto inicial. Además, la deuda neta subió.
+- **Bachelet II:** creció levemente sobre sus pares en un contexto regional malo y aumentó
+  los fondos. Pero no cumplió su meta fiscal en 2017 (−2,0 % contra −1,05 %), sin un shock
+  extraordinario, y la deuda neta pasó a ser positiva. La inflación y el desempleo
+  terminaron peor que como los recibió.
+- **Piñera II:** creció sobre sus pares en la crisis más profunda del período y tuvo inflación
+  en la meta. Pero en 2021 tuvo el mayor déficit estructural desde que existe la regla
+  (−10,7 %), con la pandemia como contexto, y fue el único que entregó menos fondos
+  soberanos de los que recibió.
+- **Boric:** cumplió su meta fiscal en 2022 y los fondos se mantuvieron. Pero no la cumplió
+  en 2024 ni en 2025, sin un shock extraordinario: según el CFA, por errores reiterados en
+  la proyección de ingresos. Tuvo crecimiento bajo sus pares e inflación fuera de la meta la
+  mayor parte del tiempo, y el desempleo subió.
+
+**Lo que no dice esta tabla:**
+- **No es un puntaje.** Los criterios no pesan lo mismo, y sumarlos sería arbitrario.
+- **Un ✗ no significa siempre una mala decisión.** Usar el ahorro en una crisis (2009, 2020)
+  es el propósito de los fondos.
+- **Las diferencias de crecimiento** entre la mayoría de los gobiernos están dentro de su
+  incertidumbre (sección 1).
 
 ## Cómo reproducir estas cifras
 

@@ -115,6 +115,7 @@ def main() -> int:
     indicadores = leer_indicadores()
     zonas = pd.read_csv(REFERENCE_DIR / "zonas.csv")
     internacional, explicaciones = leer_internacional(gobiernos)
+    metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv")
     observaciones = pd.read_csv(
         PROCESSED_DIR / "observaciones.csv", parse_dates=["fecha", "fecha_fin_periodo"]
     )[COLUMNAS_OBSERVACION]
@@ -127,6 +128,7 @@ def main() -> int:
         "dim_zona": len(zonas),
         "fact_internacional": len(internacional),
         "dim_explicacion": len(explicaciones),
+        "dim_meta_fiscal": len(metas),
     }
 
     try:
@@ -142,7 +144,7 @@ def main() -> int:
             cursor.execute(
                 "TRUNCATE economia.fact_observacion, economia.dim_indicador, "
                 "economia.dim_gobierno, economia.dim_evento, economia.fact_internacional, "
-                "economia.dim_zona, economia.dim_explicacion"
+                "economia.dim_zona, economia.dim_explicacion, economia.dim_meta_fiscal"
             )
 
             # Orden: primero las dimensiones, después los hechos que las referencian.
@@ -153,6 +155,7 @@ def main() -> int:
             insertar(cursor, "dim_zona", zonas)
             insertar(cursor, "fact_internacional", internacional)
             insertar(cursor, "dim_explicacion", explicaciones)
+            insertar(cursor, "dim_meta_fiscal", metas)
 
             # Verificación antes del COMMIT: si algo no cuadra, se revierte todo.
             for tabla, filas_esperadas in esperado.items():

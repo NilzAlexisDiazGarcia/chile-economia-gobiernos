@@ -1,0 +1,148 @@
+table MetasFiscales
+	lineageTag: 10b28f1a-c0d4-4eba-bbd0-c41b7e2aa8d7
+
+	column id_gobierno
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 12f3a1d7-2a36-4c9c-99fb-6efbd646aa9f
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column decreto_inicial
+		dataType: string
+		lineageTag: 18dc4782-471d-4195-85ec-7808bff7157c
+		summarizeBy: none
+		sourceColumn: decreto_inicial
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta_inicial
+		dataType: string
+		lineageTag: 662844e0-8f0b-4f18-b6a1-c301dba9e9df
+		summarizeBy: none
+		sourceColumn: meta_inicial
+
+		annotation SummarizationSetBy = Automatic
+
+	column modificaciones
+		dataType: string
+		lineageTag: 70bb8eab-50f8-4aef-8da4-5bcfd114a971
+		summarizeBy: none
+		sourceColumn: modificaciones
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio_evaluado
+		dataType: int64
+		formatString: 0
+		lineageTag: be7f18d1-6f00-4b04-b39a-7fbb4fe49229
+		summarizeBy: none
+		sourceColumn: anio_evaluado
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta_vigente
+		dataType: double
+		formatString: 0.0
+		lineageTag: 71eba49c-f85d-4479-a27e-3f66e2c3fa26
+		summarizeBy: none
+		sourceColumn: meta_vigente
+
+		annotation SummarizationSetBy = Automatic
+
+	column resultado
+		dataType: double
+		formatString: 0.0
+		lineageTag: 768c6a38-060d-4804-95d5-b61c489b0087
+		summarizeBy: none
+		sourceColumn: resultado
+
+		annotation SummarizationSetBy = Automatic
+
+	column cumple_meta_vigente
+		dataType: string
+		lineageTag: f6ba393f-2220-411c-949a-e1e0218c54ec
+		summarizeBy: none
+		sourceColumn: cumple_meta_vigente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cumple_meta_inicial
+		dataType: string
+		lineageTag: 3d944b88-6331-4207-a55b-eb4fc4cd7f34
+		summarizeBy: none
+		sourceColumn: cumple_meta_inicial
+
+		annotation SummarizationSetBy = Automatic
+
+	column anios_cumplidos
+		dataType: string
+		lineageTag: 06deec68-eec8-4a1b-969c-262f863a65bb
+		summarizeBy: none
+		sourceColumn: anios_cumplidos
+
+		annotation SummarizationSetBy = Automatic
+
+	column anios_incumplidos
+		dataType: string
+		lineageTag: 36361af8-dd23-4189-b88e-d177c1ee6e28
+		summarizeBy: none
+		sourceColumn: anios_incumplidos
+
+		annotation SummarizationSetBy = Automatic
+
+	column shock_extraordinario
+		dataType: string
+		lineageTag: dbd634ca-8d03-4371-9620-9e422db523f9
+		summarizeBy: none
+		sourceColumn: shock_extraordinario
+
+		annotation SummarizationSetBy = Automatic
+
+	column explicacion
+		dataType: string
+		lineageTag: d0e10840-8c47-440c-9230-30c012f81b71
+		summarizeBy: none
+		sourceColumn: explicacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuente
+		dataType: string
+		lineageTag: 0e813dc1-a639-493f-b446-0aec7277da1d
+		summarizeBy: none
+		sourceColumn: fuente
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 74cc296f-c9d8-4584-84f6-6e367df28ddc
+		summarizeBy: none
+		sourceColumn: url
+		dataCategory: WebUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Meta vigente y resultado del último año completo del gobierno.
+	column 'Meta y resultado' =
+			MetasFiscales[anio_evaluado] & ": meta " & FORMAT ( MetasFiscales[meta_vigente], "0.0" )
+			    & " % → resultado " & FORMAT ( MetasFiscales[resultado], "0.0" ) & " %"
+		dataType: string
+		lineageTag: ac0fdbb9-5e74-446e-bd94-b5281750e9de
+		summarizeBy: none
+
+	partition MetasFiscales = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "dim_meta_fiscal"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

@@ -399,6 +399,45 @@ table Observaciones
 		displayFolder: 2. Indicadores
 		lineageTag: 8ab3c68d-a820-43cf-872c-62a72cd3f374
 
+	/// Fondo de Estabilización Económica y Social: saldo recibido y entregado (millones de dólares). Los fondos existen desde marzo de 2007.
+	measure 'FEES Recibio Entrego' =
+			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "fees" )
+			VAR Final = CALCULATE ( [Valor Final], Observaciones[indicador] = "fees" )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Final ),
+			        IF ( ISBLANK ( Heredado ), "—", FORMAT ( Heredado, "#,##0" ) )
+			            & "  →  " & FORMAT ( Final, "#,##0" )
+			    )
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 629b9fe7-21b3-4a75-8a60-e9c7e7fb415a
+
+	/// Fondo de Reserva de Pensiones: saldo recibido y entregado (millones de dólares). Los fondos existen desde marzo de 2007.
+	measure 'FRP Recibio Entrego' =
+			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "frp" )
+			VAR Final = CALCULATE ( [Valor Final], Observaciones[indicador] = "frp" )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Final ),
+			        IF ( ISBLANK ( Heredado ), "—", FORMAT ( Heredado, "#,##0" ) )
+			            & "  →  " & FORMAT ( Final, "#,##0" )
+			    )
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 9caf4b55-f236-4b6e-98fb-8ae4783e86a6
+
+	/// FEES y FRP sumados: saldo recibido y entregado (millones de dólares). Los fondos existen desde marzo de 2007.
+	measure 'Fondos Soberanos Recibio Entrego' =
+			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "fondos_soberanos" )
+			VAR Final = CALCULATE ( [Valor Final], Observaciones[indicador] = "fondos_soberanos" )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Final ),
+			        IF ( ISBLANK ( Heredado ), "—", FORMAT ( Heredado, "#,##0" ) )
+			            & "  →  " & FORMAT ( Final, "#,##0" )
+			    )
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 70f5f116-bb57-4eca-a5e1-9a8e729e7604
+
 	measure 'Deuda Neta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_neta" )
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 939f3e6e-e702-46b7-91a0-a641e5476f80

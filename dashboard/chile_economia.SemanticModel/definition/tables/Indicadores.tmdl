@@ -72,6 +72,9 @@ table Indicadores
 			    "balance_fiscal", "Balance fiscal efectivo",
 			    "balance_estructural", "Balance fiscal estructural",
 			    "deuda_neta", "Deuda neta",
+			    "fees", "Fondo de Estabilización (FEES)",
+			    "frp", "Fondo de Reserva de Pensiones (FRP)",
+			    "fondos_soberanos", "Fondos soberanos (total)",
 			    Indicadores[indicador]
 			)
 		dataType: string
@@ -85,7 +88,7 @@ table Indicadores
 			    Indicadores[indicador],
 			    "pib", 1, "imacec", 2, "ipc", 3, "tpm", 4, "desempleo", 5,
 			    "deuda_bruta", 6, "deuda_neta", 7, "balance_fiscal", 8, "balance_estructural", 9,
-			    "cobre", 10, "tipo_cambio", 11,
+			    "cobre", 10, "tipo_cambio", 11, "fees", 12, "frp", 13, "fondos_soberanos", 14,
 			    99
 			)
 		dataType: int64

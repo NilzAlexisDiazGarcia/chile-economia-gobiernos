@@ -22,6 +22,11 @@ recibió y lo que pasó en los países vecinos) y no atribuye causas.
 
 ## Lo que muestran los datos
 
+> **Los grandes cambios de la economía chilena entre 2006 y 2026 fueron estructurales y los
+> compartieron los cinco gobiernos: ninguno los produjo ni los revirtió por sí solo. Dentro
+> de ese marco, cada gobierno tuvo aciertos y problemas propios, medidos con las mismas
+> reglas para todos.**
+
 **1. La economía cambió de régimen, y el cambio atraviesa a los cinco gobiernos.**
 - El PIB creció **4,3 %** anual en promedio entre 2006 y 2014, y **2,1 %** entre 2014 y 2026.
 - La deuda bruta del Gobierno Central pasó de **6 % a 42 % del PIB**.
@@ -40,9 +45,26 @@ recibió y lo que pasó en los países vecinos) y no atribuye causas.
 - En 2022–2025, el crecimiento de Chile quedó bajo el de sus pares y la inflación sobre la
   de ellos, mientras el déficit fiscal fue bastante menor.
 
-**3. Los datos no permiten ordenar a los gobiernos.** Con cuatro años por gobierno, de las
+**3. Cada gobierno tuvo aciertos y problemas, y el más claro es la meta fiscal.** Es lo
+que más depende del gobierno, y se compara con la meta que cada uno fijó en su propio
+decreto. Con la meta vigente al final del período **solo Piñera I la cumplió**; con la meta
+del decreto inicial, **ninguno**. Los incumplimientos de 2009 y 2021 coincidieron con la
+crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los seis criterios, aplicados
+a los cinco gobiernos:
+
+| Criterio | Bachelet I | Piñera I | Bachelet II | Piñera II | Boric |
+|---|---|---|---|---|---|
+| Crecimiento frente a sus pares | ✗ −0,3 pp | ✓ +0,6 pp | ✓ +0,1 pp | ✓ +1,1 pp | ✗ −0,6 pp |
+| Inflación en el rango meta | ✗ 38 % | ✓ 67 % | ✗ 38 % | ✓ 75 % | ✗ 21 % |
+| Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
+| Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
+| Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
+| Fondos soberanos (US$ millones) | ✓ 7.751 → 14.643 | ✓ 14.643 → 23.273 | ✓ 23.273 → 24.900 | ✗ 24.900 → 13.537 | ✓ 13.537 → 14.272 |
+
+**4. Aun así, no hay un "mejor gobierno".** Con cuatro años por gobierno, de las
 10 comparaciones de crecimiento entre pares de gobiernos solo 2 superan su incertidumbre:
-Piñera I creció más que Bachelet II y que Boric. Por eso el reporte no construye un ranking.
+Piñera I creció más que Bachelet II y que Boric. Además, los criterios no pesan lo mismo: el reporte muestra los aciertos y problemas de
+cada uno, pero no los suma en un puntaje.
 
 El detalle de cada cifra está en [docs/hallazgos.md](docs/hallazgos.md) y la comparación
 internacional en [docs/contexto_comparado.md](docs/contexto_comparado.md).
@@ -62,12 +84,13 @@ Todas las limitaciones están en [docs/metodologia.md](docs/metodologia.md).
 
 ## El dashboard
 
-Ocho páginas en Power BI, con el mismo diseño, el mismo color para cada gobierno en todas
+Nueve páginas en Power BI, con el mismo diseño, el mismo color para cada gobierno en todas
 las páginas y orden cronológico, nunca de "mejor" a "peor".
 
 | Página | Qué responde |
 |---|---|
 | Resumen | El cambio de régimen en cuatro cifras |
+| Balance de cada gobierno | Aciertos y problemas con seis criterios uniformes, metas fiscales y arcas fiscales |
 | Comparación | Los indicadores principales de los cinco gobiernos, lado a lado |
 | Ficha por gobierno | Qué recibió y qué entregó cada gobierno, en qué contexto y qué dijeron el Banco Central y el FMI |
 | Series en el tiempo | Cada indicador mes a mes |
@@ -76,17 +99,20 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 | Sensibilidad al desfase | Cuánto cambian las conclusiones según el rezago supuesto |
 | Metodología | Las reglas del análisis y sus límites |
 
-![Ficha por gobierno](dashboard/capturas/03_ficha_por_gobierno.webp)
+![Balance de cada gobierno](dashboard/capturas/02_balance_de_cada_gobierno.webp)
 
-![Chile frente a sus pares](dashboard/capturas/06_chile_frente_a_sus_pares.webp)
+![Ficha por gobierno](dashboard/capturas/04_ficha_por_gobierno.webp)
+
+![Chile frente a sus pares](dashboard/capturas/07_chile_frente_a_sus_pares.webp)
 
 <details>
 <summary>Ver las demás páginas</summary>
 
-![Series en el tiempo](dashboard/capturas/04_series_en_el_tiempo.webp)
-![Contexto externo](dashboard/capturas/05_contexto_externo.webp)
-![Sensibilidad al desfase](dashboard/capturas/07_sensibilidad_al_desfase.webp)
-![Metodología](dashboard/capturas/08_metodologia.png)
+![Comparación](dashboard/capturas/03_comparacion.webp)
+![Series en el tiempo](dashboard/capturas/05_series_en_el_tiempo.webp)
+![Contexto externo](dashboard/capturas/06_contexto_externo.webp)
+![Sensibilidad al desfase](dashboard/capturas/08_sensibilidad_al_desfase.webp)
+![Metodología](dashboard/capturas/09_metodologia.png)
 
 </details>
 
@@ -101,8 +127,8 @@ flowchart LR
     B --> C[Python<br/>limpieza y asignación<br/>por gobierno]
     C --> D[(PostgreSQL<br/>modelo estrella)]
     D --> E[SQL<br/>vistas y consultas]
-    E --> G[Power BI<br/>8 páginas]
-    C -.-> H[Auditoría<br/>32 verificaciones]
+    E --> G[Power BI<br/>9 páginas]
+    C -.-> H[Auditoría<br/>36 verificaciones]
     D -.-> H
     G -.-> H
 ```
@@ -114,7 +140,7 @@ flowchart LR
 | Carga | Modelo estrella con restricciones y carga transaccional | `src/load/`, `sql/01_schema.sql` |
 | Análisis | Vistas reutilizables y ocho consultas por tema | `sql/02_views.sql`, `sql/analisis/` |
 | Dashboard | Proyecto `.pbip`: modelo y páginas versionados como texto | `dashboard/` |
-| Calidad | 31 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
+| Calidad | 43 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
 
 ### Decisiones clave
 
@@ -127,12 +153,13 @@ flowchart LR
 | Balance estructural junto al efectivo | El efectivo depende del cobre y del ciclo; el estructural es la meta de la regla fiscal |
 | Comparación con Perú, Colombia, México y Brasil | Separa una parte del contexto externo del resultado propio de Chile |
 | Citas textuales del Banco Central y del FMI | Explicar cada período en palabras de las instituciones técnicas, no del autor |
-| Sin ranking de gobiernos | Ningún período destaca en todos los indicadores, y la mayoría de las diferencias no supera su incertidumbre |
+| Cada gobierno frente a su propia meta fiscal | Es el criterio más neutral: la vara la fijó el mismo gobierno |
+| Aciertos y problemas, sin puntaje total | Los criterios no pesan lo mismo, y la mayoría de las diferencias de crecimiento no supera su incertidumbre |
 
 ## Calidad de los datos
 
 La auditoría ([`src/analysis/auditoria.py`](src/analysis/auditoria.py)) verifica cada cifra
-por un camino distinto al que la produjo. Resultado: **32 de 32 verificaciones correctas.**
+por un camino distinto al que la produjo. Resultado: **36 de 36 verificaciones correctas.**
 
 - Cada valor del CSV es idéntico a la respuesta original de la API.
 - La asignación a gobiernos se reimplementó con otro método: 0 diferencias en 12.231 filas.
@@ -198,7 +225,9 @@ docs/                       Metodología, hallazgos, bitácora y auditoría
 
 - **Banco Central de Chile,** Base de Datos Estadísticos (API BDE): PIB, IMACEC, TPM, dólar,
   cobre y desempleo (INE). También las series fiscales de la DIPRES: deuda bruta y neta, y
-  balance efectivo y estructural.
+  balance efectivo y estructural. Saldos del FEES y del FRP (Ministerio de Hacienda).
+- **DIPRES y Consejo Fiscal Autónomo:** metas fiscales de cada gobierno y su cumplimiento
+  ([docs/metas_fiscales.md](docs/metas_fiscales.md)).
 - **INE:** IPC, variación a 12 meses oficial, obtenido vía la BDE.
 - **FMI,** World Economic Outlook (octubre de 2026): comparación con países pares.
 - **Banco Mundial,** Worldwide Governance Indicators: control de la corrupción.

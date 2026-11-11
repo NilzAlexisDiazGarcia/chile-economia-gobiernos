@@ -9,6 +9,7 @@
 -- dos pasos produce errores: 2,98498 -> 2,9850 -> 2,99, cuando lo correcto es 2,98.
 -- =============================================================================
 
+DROP VIEW IF EXISTS economia.v_pbi_evaluacion;
 DROP VIEW IF EXISTS economia.v_pbi_comparacion;
 DROP VIEW IF EXISTS economia.v_pbi_observacion;
 DROP VIEW IF EXISTS economia.v_resumen_gobierno;
@@ -207,3 +208,82 @@ JOIN economia.dim_zona z USING (zona)
 WHERE NOT f.es_proyeccion
 GROUP BY f.indicador, f.anio, f.id_gobierno
 HAVING MAX(f.valor) FILTER (WHERE f.zona = 'CHL') IS NOT NULL;
+
+-- -----------------------------------------------------------------------------
+-- v_pbi_evaluacion: aciertos y problemas de cada gobierno con criterios uniformes.
+--
+-- Seis criterios, los mismos para los cinco gobiernos, cada uno contra una referencia
+-- explícita que no elige el autor. "quien_controla" indica qué actor maneja
+-- principalmente cada variable: un mal resultado en inflación, que maneja el Banco
+-- Central autónomo, no se lee igual que no cumplir la meta fiscal propia.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_pbi_evaluacion AS
+WITH r AS (
+    SELECT id_gobierno, indicador, valor_heredado, valor_inicial, valor_final
+    FROM economia.v_resumen_gobierno
+),
+num AS (
+    SELECT
+        g.id_gobierno,
+        (SELECT AVG(c.diferencia_pares) FROM economia.v_pbi_comparacion c
+          WHERE c.id_gobierno = g.id_gobierno AND c.indicador = 'crecimiento_pib')          AS crec_pares,
+        (SELECT AVG(CASE WHEN o.valor BETWEEN 2 AND 4 THEN 1.0 ELSE 0.0 END)
+           FROM economia.fact_observacion o
+          WHERE o.id_gobierno = g.id_gobierno AND o.indicador = 'ipc')                     AS ipc_en_rango,
+        (SELECT valor_heredado FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'desempleo')  AS des_ini,
+        (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'desempleo')  AS des_fin,
+        (SELECT valor_heredado FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_ini,
+        (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_fin,
+        -- Los fondos existen desde marzo de 2007: para Bachelet I se usa su primer saldo.
+        (SELECT COALESCE(valor_heredado, valor_inicial) FROM r
+          WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fondos_soberanos')          AS fs_ini,
+        (SELECT valor_final FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fondos_soberanos') AS fs_fin,
+        m.meta_vigente, m.resultado, m.cumple_meta_vigente, m.anio_evaluado
+    FROM economia.dim_gobierno g
+    JOIN economia.dim_meta_fiscal m USING (id_gobierno)
+    WHERE g.en_alcance
+),
+f AS (  -- formato con coma decimal
+    SELECT *,
+        replace(to_char(crec_pares, 'SG0.0'), '.', ',')     AS t_crec,
+        replace(to_char(des_ini, 'FM990.0'), '.', ',')      AS t_des_ini,
+        replace(to_char(des_fin, 'FM990.0'), '.', ',')      AS t_des_fin,
+        replace(to_char(dn_ini, 'FM990.0'), '.', ',')       AS t_dn_ini,
+        replace(to_char(dn_fin, 'FM990.0'), '.', ',')       AS t_dn_fin,
+        replace(to_char(meta_vigente, 'FM990.0'), '.', ',') AS t_meta,
+        replace(to_char(resultado, 'FM990.0'), '.', ',')    AS t_res,
+        replace(to_char(fs_ini, 'FM999G999'), ',', '.')     AS t_fs_ini,
+        replace(to_char(fs_fin, 'FM999G999'), ',', '.')     AS t_fs_fin
+    FROM num
+)
+SELECT id_gobierno, 1 AS orden, 'Crecimiento vs. pares (pp)' AS criterio,
+       'Mixto: gobierno, ciclo y contexto externo' AS quien_controla,
+       'Promedio de Perú, Colombia, México y Brasil (FMI)' AS referencia,
+       t_crec || ' pp' AS resultado,
+       crec_pares >= 0 AS favorable
+FROM f
+UNION ALL
+SELECT id_gobierno, 2, 'Meses con inflación en la meta', 'Banco Central (autónomo)',
+       'Rango de 2 % a 4 % la mayoría de los meses',
+       round(ipc_en_rango * 100)::int || ' %', ipc_en_rango >= 0.5
+FROM f
+UNION ALL
+SELECT id_gobierno, 3, 'Desempleo (%): recibió → entregó', 'Mixto: gobierno, ciclo y contexto externo',
+       'Entregar menos desempleo del recibido',
+       t_des_ini || ' → ' || t_des_fin, des_fin < des_ini
+FROM f
+UNION ALL
+SELECT id_gobierno, 4, 'Meta fiscal propia (% PIB)', 'Gobierno',
+       'Balance estructural del último año completo frente a la meta vigente',
+       t_res || ' (meta ' || t_meta || ', ' || anio_evaluado || ')', cumple_meta_vigente = 'Sí'
+FROM f
+UNION ALL
+SELECT id_gobierno, 5, 'Deuda neta (% PIB): recibió → entregó', 'Gobierno',
+       'Entregar igual o menos deuda neta que la recibida (% del PIB)',
+       t_dn_ini || ' → ' || t_dn_fin, dn_fin <= dn_ini
+FROM f
+UNION ALL
+SELECT id_gobierno, 6, 'Fondos soberanos (US$ mill.): recibió → entregó', 'Gobierno (y rentabilidad de los mercados)',
+       'Entregar igual o más ahorro que el recibido (FEES + FRP)',
+       t_fs_ini || ' → ' || t_fs_fin, fs_fin >= fs_ini
+FROM f;

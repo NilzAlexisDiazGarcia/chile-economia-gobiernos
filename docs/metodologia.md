@@ -78,6 +78,22 @@ estos factores.
   Banco Central y del FMI, con su fuente y enlace. Explican cada período en palabras de
   esas instituciones, no del autor.
 
+**Balance de cada gobierno** (vista `v_pbi_evaluacion`, detalle en [metas_fiscales.md](metas_fiscales.md)):
+
+- **Seis criterios uniformes,** cada uno favorable si cumple una referencia fijada de antemano:
+  - Crecimiento sobre el promedio de los pares.
+  - Inflación en el rango meta la mayoría de los meses.
+  - Desempleo entregado menor que el recibido.
+  - Balance estructural del último año completo igual o mejor que la meta vigente.
+  - Deuda neta entregada igual o menor que la recibida.
+  - Fondos soberanos entregados iguales o mayores que los recibidos.
+- **La meta fiscal se compara con la del propio gobierno:** la vigente al final y la de su
+  decreto inicial. Las cifras son de la DIPRES con la metodología actual (2006–2021) y del
+  CFA (2022–2025).
+- **Cada criterio indica quién lo controla principalmente:** el gobierno, el Banco Central o
+  una mezcla con el ciclo y el contexto externo.
+- **No hay puntaje total,** porque los criterios no son comparables entre sí.
+
 ## 6. Métricas del análisis SQL
 
 | Métrica | Definición | Por qué |

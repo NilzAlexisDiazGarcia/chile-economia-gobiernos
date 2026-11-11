@@ -131,3 +131,25 @@ CREATE TABLE IF NOT EXISTS economia.dim_explicacion (
     url             TEXT         NOT NULL,
     id_gobierno     SMALLINT     NOT NULL REFERENCES economia.dim_gobierno (id_gobierno)
 );
+
+-- -----------------------------------------------------------------------------
+-- Dimensión: metas fiscales de cada gobierno (decretos de política fiscal)
+-- Fuente: DIPRES, "Cumplimiento de las metas de regla fiscal en Chile" (2022), y CFA.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS economia.dim_meta_fiscal (
+    id_gobierno           SMALLINT     PRIMARY KEY REFERENCES economia.dim_gobierno (id_gobierno),
+    decreto_inicial       VARCHAR(60)  NOT NULL,
+    meta_inicial          TEXT         NOT NULL,
+    modificaciones        TEXT         NOT NULL,
+    anio_evaluado         SMALLINT     NOT NULL,
+    meta_vigente          NUMERIC(5,2) NOT NULL,   -- % del PIB, último año completo
+    resultado             NUMERIC(5,2) NOT NULL,   -- % del PIB, metodología de la fuente
+    cumple_meta_vigente   VARCHAR(2)   NOT NULL CHECK (cumple_meta_vigente IN ('Sí', 'No')),
+    cumple_meta_inicial   VARCHAR(2)   NOT NULL CHECK (cumple_meta_inicial IN ('Sí', 'No')),
+    anios_cumplidos       VARCHAR(60)  NOT NULL,
+    anios_incumplidos     VARCHAR(60)  NOT NULL,
+    shock_extraordinario  VARCHAR(80)  NOT NULL,
+    explicacion           TEXT         NOT NULL,
+    fuente                VARCHAR(200) NOT NULL,
+    url                   TEXT         NOT NULL
+);

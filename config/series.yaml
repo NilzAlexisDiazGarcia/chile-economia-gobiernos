@@ -87,3 +87,25 @@ bcch:
     frecuencia: QUARTERLY
     codigo: "F051.D9.PPB.C.Z.Z.T"
     fuente_original: "DIPRES"
+
+  # --- Fondos soberanos (agregados el 2026-11-11) ---
+  # Saldos a fin de mes, en millones de dólares de cada año. Cambian por aportes, retiros y
+  # rentabilidad. Existen desde marzo de 2007 (antes había un Fondo de Compensación del Cobre).
+  fees:
+    descripcion: "Fondo de Estabilización Económica y Social (FEES), activos totales"
+    unidad: "Millones de dólares"
+    frecuencia: MONTHLY
+    codigo: "F051.C17.STO.C.Z.USD.M"
+    fuente_original: "Ministerio de Hacienda"
+  frp:
+    descripcion: "Fondo de Reserva de Pensiones (FRP), activos totales"
+    unidad: "Millones de dólares"
+    frecuencia: MONTHLY
+    codigo: "F051.C15.STO.C.Z.USD.M"
+    fuente_original: "Ministerio de Hacienda"
+  fondos_soberanos:
+    descripcion: "Fondos soberanos (FEES y FRP), activos totales"
+    unidad: "Millones de dólares"
+    frecuencia: MONTHLY
+    codigo: "F051.C19.STO.C.Z.USD.M"
+    fuente_original: "Ministerio de Hacienda"

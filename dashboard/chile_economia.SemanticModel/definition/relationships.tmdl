@@ -14,3 +14,11 @@ relationship 7d677d08-2598-4cce-b9dc-06f06c9a8adb
 	fromColumn: Explicaciones.id_gobierno
 	toColumn: Gobiernos.id_gobierno
 
+relationship 9981878d-e2ae-4e02-92e5-2de80f10cd9b
+	fromColumn: Evaluacion.id_gobierno
+	toColumn: Gobiernos.id_gobierno
+
+relationship 7393a5e1-2074-4468-9d1d-8af1bf217831
+	fromColumn: MetasFiscales.id_gobierno
+	toColumn: Gobiernos.id_gobierno
+
