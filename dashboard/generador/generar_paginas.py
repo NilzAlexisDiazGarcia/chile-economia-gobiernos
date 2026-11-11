@@ -635,7 +635,7 @@ def pagina_conclusiones():
         "fuerza.", {"fontSize": "15pt", "color": TEXTO, "fontWeight": "bold"})]], fondo=True)
     anio = columna(C, "anio")
     p.agregar(
-        "columnChart", MARGEN, 225, 900, 485,
+        "columnChart", MARGEN, 225, 900, 455,
         query={"queryState": {"Category": {"projections": [proy(anio, "Año", activa=True)]},
                               "Series": {"projections": [proy(GOB, "Gobierno")]},
                               "Y": {"projections": [proy(medida(C, "Crecimiento per Capita Chile %"),
@@ -646,7 +646,7 @@ def pagina_conclusiones():
         vco=contenedor(titulo="El ingreso por habitante casi se estancó: 3,4 % anual en 2006–2013 y 1,0 % en 2014–2025"))
     fecha = columna(O, "fecha")
     p.agregar(
-        "lineChart", 980, 225, 900, 485,
+        "lineChart", 980, 225, 900, 455,
         query={"queryState": {"Category": {"projections": [proy(fecha, "Fecha", activa=True)]},
                               "Series": {"projections": [proy(GOB, "Gobierno")]},
                               "Y": {"projections": [proy(medida(O, "Valor Promedio"), "Deuda neta (% del PIB)")]}}},
@@ -658,7 +658,7 @@ def pagina_conclusiones():
     nor = {"fontSize": "12pt", "color": TEXTO}
     tit = {"fontWeight": "bold", "fontSize": "15pt", "color": TEXTO}
     w = (1840 - 2 * 20) / 3
-    p.texto(MARGEN, 725, w, 285, [
+    p.texto(MARGEN, 695, w, 317, [
         [("Por qué dejó de crecer", tit)],
         [("1. La productividad se estancó: ", neg), ("lleva unos 16 años sin aportar al crecimiento (CNEP), por la "
           "desaceleración mundial, la rigidez laboral, los permisos para invertir y la menor ley del mineral.", nor)],
@@ -667,19 +667,19 @@ def pagina_conclusiones():
           "(DIPRES y Banco Central).", nor)],
         [("4. Hubo incertidumbre local: ", neg), ("por las reformas de 2014 (FMI) y en 2021 (Banco Central).", nor)],
     ], fondo=True)
-    p.texto(MARGEN + w + 20, 725, w, 285, [
+    p.texto(MARGEN + w + 20, 695, w, 317, [
         [("Por qué se endeudó", tit)],
-        [("1. Gasto permanente mayor que el ingreso permanente: ", neg), ("23,8 % frente a 22 % del PIB en 2008–2023 (CFA), "
-          "y déficit en 14 de los 17 años desde 2009.", nor)],
+        [("1. Gasto permanente mayor que el ingreso permanente: ", neg), ("23,8 % y 22 % del PIB en 2008–2023 (CFA); "
+          "déficit en 14 de 17 años desde 2009.", nor)],
         [("2. El menor crecimiento redujo la recaudación esperada: ", neg), ("crecer poco y endeudarse se "
           "alimentan entre sí (DIPRES).", nor)],
-        [("3. Dos shocks: ", neg), ("la crisis de 2009 y la pandemia, que llevó el déficit estructural a −10,7 % "
-          "en 2021.", nor)],
+        [("3. Dos shocks: ", neg), ("la crisis de 2009 y la pandemia (déficit estructural de −10,7 % en 2021).", nor)],
         [("4. Metas fiscales cambiadas a discreción: ", neg), ("la meta inicial de cada gobierno se cumplió en 9 de 21 "
           "años (DIPRES).", nor)],
-        [("5. Ingresos sobrestimados: ", neg), ("en 2024–2025, según el CFA.", nor)],
+        [("5. Deuda más cara: ", neg), ("intereses de 0,47 % del PIB en 2008 a 1,24 % en 2025 (BCCh).", nor)],
+        [("6. Ingresos sobrestimados: ", neg), ("en 2024–2025, según el CFA.", nor)],
     ], fondo=True)
-    p.texto(MARGEN + 2 * (w + 20), 725, w, 285, [
+    p.texto(MARGEN + 2 * (w + 20), 695, w, 317, [
         [("Lo que mejoró y lo que queda pendiente", tit)],
         [("La pobreza bajó de 29,1 % a 4,9 % ", neg), ("entre 2006 y 2024 (CASEN, serie comparable). Bajó en todos "
           "los gobiernos salvo en la pandemia, y los salarios reales subieron casi todos los años.", nor)],
