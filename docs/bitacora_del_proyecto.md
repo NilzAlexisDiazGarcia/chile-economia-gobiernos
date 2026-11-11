@@ -10,11 +10,11 @@ por qué, qué problemas aparecieron y cómo se resolvieron. Complementa a
 | Etapa | Resultado | Herramientas |
 |---|---|---|
 | 0. Diseño | Pregunta, alcance, reglas de asignación y de neutralidad | Markdown, Git |
-| 1. Extracción | 11 series del Banco Central, crudas y sin modificar | Python, API BDE |
-| 2. Limpieza | 12.231 observaciones en formato largo, cada una con su gobierno | pandas, pytest |
+| 1. Extracción | 20 series del Banco Central, crudas y sin modificar (11 en la primera versión) | Python, API BDE |
+| 2. Limpieza | 18.568 observaciones en formato largo (12.231 en la primera versión), cada una con su gobierno | pandas, pytest |
 | 3. Carga | Modelo estrella en PostgreSQL, con carga transaccional | PostgreSQL, psycopg |
 | 4. Análisis | 4 vistas y 8 consultas de análisis | SQL |
-| 5. Dashboard | Informe de 8 páginas, versionado como texto | Power BI (.pbip, TMDL, PBIR) |
+| 5. Dashboard | Informe de 10 páginas (8 en la primera versión), versionado como texto | Power BI (.pbip, TMDL, PBIR) |
 | 5b. Contexto comparado | Chile frente a sus pares y explicaciones oficiales | API del FMI y del Banco Mundial |
 | 5c. Rigor económico | Balance estructural, deuda neta e incertidumbre de los promedios | Python, SQL, DAX |
 | 5e. Balance de cada gobierno | Metas fiscales, fondos soberanos y ocho criterios uniformes | Investigación, SQL |
@@ -288,10 +288,10 @@ mismas reglas, fijadas antes de mirar los resultados.
   una verificación nueva en la auditoría, que recalcula las 30 evaluaciones sin SQL.
 
 **Resultado principal:** con la meta vigente, solo Piñera I cumplió su meta fiscal; con la
-meta del decreto inicial, ninguno. Ambas lecturas se muestran, junto con el contexto de
+meta del decreto inicial, ninguno de los tres que la fijaron para su último año. Ambas lecturas se muestran, junto con el contexto de
 cada incumplimiento.
 
-## Etapa 5f. Conclusiones: por qué Chile dejó de crecer y se endeudó
+## Etapa 5f. Conclusiones: por qué Chile creció menos y se endeudó
 
 **Motivo:** el análisis describía bien qué pasó, pero no explicaba por qué. Una revisión con
 criterio de economista identificó además dos vacíos que podían cambiar conclusiones.
@@ -365,12 +365,12 @@ Un script verifica cada cifra por un camino distinto al que la produjo. Resultad
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|
-| A. Crudo → limpio | Cada valor del CSV contra la respuesta original de la API (11 series) | Idénticos, con el código de serie correcto |
-| B. Asignación | La regla de mayoría de días, reimplementada con el punto medio del período | 0 diferencias en 12.231 filas |
+| A. Crudo → limpio | Cada valor del CSV contra la respuesta original de la API (20 series) | Idénticos, con el código de serie correcto |
+| B. Asignación | La regla de mayoría de días, reimplementada con el punto medio del período | 0 diferencias en 18.568 filas |
 | C. Base de datos | PostgreSQL contra los CSV | Idénticos |
 | D. Fuentes independientes | Chile contra el FMI (2006–2025) y la inflación contra 14 cifras publicadas por el INE | Diferencias de 0,23 pp o menos; las excepciones están explicadas |
 | E. Recálculo sin SQL | 55 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
-| F. Documentos | 120 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
+| F. Documentos | 142 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
 | G. Dashboard | 79 valores leídos en Power BI (Resumen, Comparación y dos Fichas), contra la lógica de cada medida reproducida en Python (`valores_dashboard.py`) | Todos coinciden |
 
 **Hallazgo de la auditoría: la serie de inflación no era la oficial.** La primera versión

@@ -22,13 +22,17 @@ Cifras de balance estructural de la DIPRES, con la **metodología actual** para 
 años: *Cumplimiento de las metas de regla fiscal en Chile: revisión histórica* (diciembre de
 2022). Para 2022–2025 se usan las del Consejo Fiscal Autónomo (CFA) y la DIPRES. Se evalúa
 contra dos referencias: **la meta vigente**, después de las modificaciones, y **la meta del
-decreto inicial**, la que cada gobierno fijó al asumir.
+decreto inicial**, la que cada gobierno fijó al asumir. La meta inicial se evalúa solo cuando
+el decreto fijaba un valor para ese mismo año: para Bachelet I (1 % cada año), Piñera II
+(−1,2 % para 2021, por la senda de 0,2 pp por año) y Boric (−1,05 % para 2025, por la senda
+de 0,75 pp por año). Piñera I y Bachelet II la fijaron para el año siguiente a su último año
+completo (2014 y 2018), así que no se les asigna un "cumplió" o "no cumplió".
 
 | Gobierno | Decreto inicial y su meta | Modificaciones | Último año completo: meta vigente → resultado | Cumplió la meta vigente | Cumplió la meta inicial |
 |---|---|---|---|---|---|
 | Bachelet I | Decreto 1259 (2006): superávit de 1 % del PIB al año | 0,5 % para 2008; 0 % por la crisis (2009) | 2009: 0 % → **−3,4 %** | No | No |
-| Piñera I | Decreto 637 (junio de 2010): equilibrio (0 %) al final del período | Decreto 1.357 (octubre de 2010): converger a −1 % en 2014, tras la corrección metodológica de la Comisión Corbo | 2013: −1 % (senda) → **−0,5 %** | **Sí** | No |
-| Bachelet II | Decreto 892 (2014): equilibrio (0 %) en 2018 | Decreto 1.378 (octubre de 2015): bajar el déficit 0,25 pp por año, hasta −0,8 % en 2018, por el menor precio del cobre y el menor crecimiento | 2017: senda de −1,05 % → **−2,0 %** | No | No |
+| Piñera I | Decreto 637 (junio de 2010): equilibrio (0 %) en 2014 (fin del período) | Decreto 1.357 (octubre de 2011): converger a −1 % en 2014, tras la corrección metodológica de la Comisión Corbo | 2013: −1 % (senda) → **−0,5 %** | **Sí** | No aplica: su meta era para 2014 |
+| Bachelet II | Decreto 892 (2014): equilibrio (0 %) en 2018 | Decreto 1.378 (octubre de 2015): bajar el déficit 0,25 pp por año, hasta −0,8 % en 2018, por el menor precio del cobre y el menor crecimiento | 2017: senda de −1,05 % → **−2,0 %** | No | No aplica: su meta era para 2018 |
 | Piñera II | Decreto 743 (julio de 2018): de −1,8 % en 2018 a −1 % en 2022 (−1,2 % para 2021) | Decreto 253 (marzo de 2020): −2,5 % para 2021. Decreto 1.579 (septiembre de 2020): −4,7 % para 2021, por la pandemia | 2021: −4,7 % → **−10,7 %** | No (cláusula de escape "de facto") | No |
 | Boric | Decreto de 2022: de −3,3 % en 2022 a −0,3 % en 2026 (−0,75 pp por año) | Decreto de 2024: −1,9 % para 2024, −1,1 % para 2025 y −0,5 % para 2026. Modificación de 2025: −1,6 % para 2025 | 2025: −1,6 % → **−3,6 %** | No | No |
 
@@ -50,9 +54,12 @@ cumplió, porque compara contra la meta actualizada en su informe de finanzas p�
 1. **Con la meta vigente al final del período, solo Piñera I cumplió.** Su meta se había
    modificado al inicio del gobierno, cuando la Comisión Corbo corrigió la forma de medir el
    balance y el déficit de 2009 pasó de −1,2 % a −3,1 %.
-2. **Con la meta del decreto inicial, ninguno de los cinco cumplió.** Según la DIPRES, en 21
-   años de regla fiscal se cumplió la meta vigente en 14 años, pero la meta inicial de cada
-   gobierno solo en 9.
+2. **Con la meta del decreto inicial, ninguno de los tres que la fijaron para su último año
+   cumplió** (Bachelet I, Piñera II y Boric). Según la DIPRES, en 21 años de regla fiscal se
+   cumplió la meta vigente en 14 años, pero la meta inicial de cada gobierno solo en 9. El
+   Diario Financiero cuenta a Piñera I como el único que cumplió su meta inicial, porque toma
+   como inicial el −1 % del Decreto 1.357 de 2011; con el Decreto 637 de 2010, la meta era el
+   equilibrio en 2014.
 3. **Todos los gobiernos modificaron su meta.** La DIPRES advierte que, sin cláusulas de
    escape formales, las metas "han sido modificadas a discreción de la autoridad".
 
@@ -61,7 +68,7 @@ cumplió, porque compara contra la meta actualizada en su informe de finanzas p�
 | Gobierno | Explicación oficial (DIPRES y CFA) | ¿Hubo un shock extraordinario? |
 |---|---|---|
 | Bachelet I | 2008: gasto por sobre lo presupuestado, para fortalecer la inversión pública, compensar la inflación a los más vulnerables y atender emergencias. 2009: plan de estímulo fiscal contra la crisis, financiado con el ahorro del FEES acumulado en 2006–2008 | Sí, en 2009: crisis financiera global |
-| Piñera I | Cumplió en 2011–2013. En 2010 no cumplió, por el gasto del Plan de Reconstrucción tras el terremoto. Su meta se había flexibilizado al inicio, cuando la corrección metodológica elevó el déficit medido | Sí, en 2010: terremoto |
+| Piñera I | Cumplió en 2011–2013. En 2010 no cumplió, por el gasto del Plan de Reconstrucción tras el terremoto. Su meta se había flexibilizado en 2011, cuando la corrección metodológica elevó el déficit medido | Sí, en 2010: terremoto |
 | Bachelet II | Cumplió en 2014–2016, gracias a ajustes cíclicos amplios. En 2017 no cumplió: menores ingresos estructurales y gasto por sobre lo presupuestado. La meta se había rebajado en 2015 por la caída del cobre y del PIB tendencial | No: deterioro gradual del contexto |
 | Piñera II | Cumplió en 2018–2020, con metas modificadas en 2020. En 2021, el mayor déficit estructural desde que existe la regla, por el gasto de la pandemia: una cláusula de escape "de facto", porque la ley no la contemplaba | Sí: estallido social y pandemia |
 | Boric | Cumplió en 2022. En 2024 y 2025 no cumplió: según el CFA, por errores reiterados en la proyección de ingresos, gasto por sobre lo comprometido y medidas correctivas poco efectivas; un desvío "elevado en términos históricos para un año sin eventos extraordinarios" | No |
@@ -139,6 +146,10 @@ Piñera II y de 2,2 % a 1,0 % con Boric.
 - **El decreto de Bachelet I:** Decreto 1259 (BCN Ley Chile), con superávit de 1 % del PIB al año.
 - **Las metas de Piñera II para 2021:** −1,2 % original, −2,5 % (Decreto 253) y −4,7 %
   (Decreto 1.579), según el CFA y la DIPRES.
-- **El decreto inicial de Piñera I:** el 637 fijaba equilibrio (0 %); la meta de −1 % viene del
-  Decreto 1.357. Esto corrige la versión anterior de este documento, que atribuía la meta de
+- **El decreto inicial de Piñera I:** el 637 fijaba equilibrio (0 %) en 2014; la meta de −1 %
+  viene del Decreto 1.357, firmado el 30 de septiembre y publicado el 21 de octubre de 2011
+  (BCN Ley Chile). Una versión anterior de este documento lo fechaba en 2010.
+- **Cifras distintas según la versión:** el Diario Financiero (junio de 2026) informa −11,4 %
+  para 2021 y −3,7 % para 2025, con actualizaciones posteriores; aquí se usan las de la DIPRES
+  (2022) y el CFA (marzo de 2026): −10,7 % y −3,6 %. Esto corrige la versión anterior de este documento, que atribuía la meta de
   −1 % al Decreto 637.

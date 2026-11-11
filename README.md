@@ -18,17 +18,18 @@ gobierno fue propio de Chile y cuánto fue contexto?
 
 El análisis es **descriptivo y neutral**: aplica las mismas reglas a los cinco gobiernos,
 compara contra referencias externas (la meta del Banco Central, lo que cada gobierno
-recibió y lo que pasó en los países vecinos) y no atribuye causas.
+recibió y lo que pasó en los países vecinos). Las cifras son resultados propios; las causas
+vienen de las instituciones técnicas que se citan, no del autor.
 
 ## La conclusión
 
-> **Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer poco y endeudarse. Fue
-> un cambio estructural, que comenzó con el fin del auge del cobre y la caída de la
-> productividad, y que ningún gobierno revirtió. Los gobiernos no causaron ese cambio, pero sí
-> lo agravaron: todos gastaron, en forma permanente, más de lo que la economía generaba en
-> forma permanente. Al mismo tiempo, la pobreza bajó con fuerza.**
+> **Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer menos y endeudarse.
+> Según el Banco Central, el FMI, la DIPRES y la CNEP, fue un cambio estructural, que comenzó
+> con el fin del auge del cobre y la caída de la productividad. Ningún gobierno lo revirtió:
+> los cinco terminaron su período con déficit estructural, y la deuda neta subió en cuatro de
+> ellos. Al mismo tiempo, la pobreza bajó con fuerza.**
 
-**Por qué dejó de crecer:**
+**Por qué creció menos** (según las fuentes citadas)**:**
 - **La productividad lleva unos 16 años estancada,** según la CNEP: por la desaceleración
   mundial, la rigidez laboral, los permisos para invertir y la menor ley del mineral.
 - **Terminó el auge del cobre y cayó la inversión minera** (FMI).
@@ -37,7 +38,7 @@ recibió y lo que pasó en los países vecinos) y no atribuye causas.
 - **El ingreso por habitante casi se estancó:** creció 3,4 % al año entre 2006 y 2013, y 1,0 %
   entre 2014 y 2025, con caídas en 2017, 2019, 2020 y 2023.
 
-**Por qué se endeudó:**
+**Por qué se endeudó** (según las fuentes citadas)**:**
 - **El gasto superó a los ingresos permanentes:** 23,8 % del PIB frente a 22 % en promedio
   entre 2008 y 2023 (CFA). Hubo déficit efectivo en 14 de los 17 años entre 2009 y 2025.
 - **El menor crecimiento redujo la recaudación esperada.** El bajo crecimiento y la deuda se
@@ -78,7 +79,8 @@ La explicación completa, gobierno por gobierno y con cada fuente, está en
 **3. Cada gobierno tuvo aciertos y problemas, y el más claro es la meta fiscal.** Es lo
 que más depende del gobierno, y se compara con la meta que cada uno fijó en su propio
 decreto. Con la meta vigente al final del período **solo Piñera I la cumplió**; con la meta
-del decreto inicial, **ninguno**. Los incumplimientos de 2009 y 2021 coincidieron con la
+del decreto inicial, **ninguno de los tres que la fijaron para su último año** (Piñera I y
+Bachelet II la fijaron para el año siguiente). Los incumplimientos de 2009 y 2021 coincidieron con la
 crisis financiera y la pandemia; los de 2017 y 2024–2025, no. Los ocho criterios, aplicados
 a los cinco gobiernos:
 
@@ -90,7 +92,7 @@ a los cinco gobiernos:
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
 | Fondo para crisis FEES (% del PIB) | ✓ 4,7 → 6,2 | ✓ 6,2 → 6,4 | ✗ 6,4 → 4,9 | ✗ 4,9 → 2,2 | ✗ 2,2 → 1,0 |
-| Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
+| Pobreza (%, CASEN; año de la encuesta) | ✓ 29,1 (2006) → 25,3 (2009) | ✓ 25,3 (2009) → 14,4 (2013) | ✓ 14,4 (2013) → 8,6 (2017) | ✗ 8,6 (2017) → 10,8 (2020) | ✓ 10,8 (2020) → 4,9 (2024) |
 | Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
 **4. Aun así, no hay un "mejor gobierno".** Con cuatro años por gobierno, de las
@@ -123,7 +125,7 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 | Página | Qué responde |
 |---|---|
 | Resumen | El cambio de régimen en cuatro cifras |
-| Conclusiones | Por qué Chile dejó de crecer y se endeudó, con sus causas y fuentes |
+| Conclusiones | Por qué Chile creció menos y se endeudó, con sus causas y fuentes |
 | Balance de cada gobierno | Aciertos y problemas con ocho criterios uniformes, metas fiscales, arcas fiscales y a qué tasa se endeudó cada gobierno |
 | Comparación | Los indicadores principales de los cinco gobiernos, lado a lado |
 | Ficha por gobierno | Qué recibió y qué entregó cada gobierno, en qué contexto y qué dijeron el Banco Central y el FMI |
@@ -135,7 +137,7 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 
 ![Conclusiones](dashboard/capturas/02_conclusiones.webp)
 
-![Balance de cada gobierno](dashboard/capturas/03_balance_de_cada_gobierno.webp)
+![Balance de cada gobierno](dashboard/capturas/03_balance_de_cada_gobierno.png)
 
 ![Ficha por gobierno](dashboard/capturas/05_ficha_por_gobierno.webp)
 
@@ -158,7 +160,7 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 
 ```mermaid
 flowchart LR
-    A[API del Banco Central<br/>11 series] --> B[Python<br/>extracción cruda]
+    A[API del Banco Central<br/>20 series] --> B[Python<br/>extracción cruda]
     F[FMI y Banco Mundial<br/>pares y región] --> B
     B --> C[Python<br/>limpieza y asignación<br/>por gobierno]
     C --> D[(PostgreSQL<br/>modelo estrella)]
@@ -198,11 +200,14 @@ La auditoría ([`src/analysis/auditoria.py`](src/analysis/auditoria.py)) verific
 por un camino distinto al que la produjo. Resultado: **52 de 52 verificaciones correctas.**
 
 - Cada valor del CSV es idéntico a la respuesta original de la API.
-- La asignación a gobiernos se reimplementó con otro método: 0 diferencias en 12.231 filas.
+- La asignación a gobiernos se reimplementó con otro método: 0 diferencias en 18.568 filas.
 - Las series de Chile coinciden con el FMI y con cifras publicadas por el INE.
-- 55 métricas por gobierno calculadas en Python coinciden con las vistas SQL.
-- 120 cifras de los hallazgos y 79 valores leídos en el dashboard coinciden con el cálculo
-  independiente ([valores esperados por tarjeta](docs/valores_dashboard.md)).
+- 96 métricas por gobierno calculadas en Python coinciden con las vistas SQL.
+- 142 cifras de las tablas de los hallazgos coinciden con el cálculo independiente.
+- 79 valores del dashboard, anotados a mano desde Power BI Desktop, coinciden con el cálculo
+  sin DAX ([valores esperados por tarjeta](docs/valores_dashboard.md)). La auditoría no abre
+  el informe: si el dashboard cambia, esos valores se vuelven a anotar.
+- Las verificaciones que comparan contra las vistas SQL necesitan la base PostgreSQL cargada.
 
 **La auditoría encontró un error real.** La primera versión usaba una serie de inflación
 "empalmada" por el Banco Central que difería hasta 1,3 puntos de la cifra oficial del INE en

@@ -145,7 +145,8 @@ CREATE TABLE IF NOT EXISTS economia.dim_meta_fiscal (
     meta_vigente          NUMERIC(5,2) NOT NULL,   -- % del PIB, último año completo
     resultado             NUMERIC(5,2) NOT NULL,   -- % del PIB, metodología de la fuente
     cumple_meta_vigente   VARCHAR(2)   NOT NULL CHECK (cumple_meta_vigente IN ('Sí', 'No')),
-    cumple_meta_inicial   VARCHAR(2)   NOT NULL CHECK (cumple_meta_inicial IN ('Sí', 'No')),
+    -- 'No aplica': el decreto inicial no fijaba meta para el último año completo
+    cumple_meta_inicial   VARCHAR(10)  NOT NULL CHECK (cumple_meta_inicial IN ('Sí', 'No', 'No aplica')),
     anios_cumplidos       VARCHAR(60)  NOT NULL,
     anios_incumplidos     VARCHAR(60)  NOT NULL,
     shock_extraordinario  VARCHAR(80)  NOT NULL,

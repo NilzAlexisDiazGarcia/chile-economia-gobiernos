@@ -1507,7 +1507,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación anual (%)": {
+			          "Inflación promedio (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1517,7 +1517,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación promedio (%)": {
+			          "Inflación anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

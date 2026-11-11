@@ -3,7 +3,7 @@
   "name": "e5f6a7b8c9d0e1f2a345",
   "displayName": "Balance de cada gobierno",
   "displayOption": "FitToPage",
-  "height": 1525,
+  "height": 1550,
   "width": 1920,
   "objects": {
     "background": [
@@ -34,7 +34,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9ea71d2478e041d01d0c",
+        "name": "61267ce472dc02b3f93c",
         "field": {
           "Column": {
             "Expression": {

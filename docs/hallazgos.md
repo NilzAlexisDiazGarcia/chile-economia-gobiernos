@@ -12,10 +12,10 @@ desfase) e incluyen los períodos de transición.
 ## Síntesis
 
 **Los grandes cambios de la economía chilena entre 2006 y 2026 fueron estructurales y los
-compartieron los cinco gobiernos: ninguno los produjo ni los revirtió por sí solo.** Dentro
+compartieron los cinco gobiernos, según las fuentes técnicas citadas: ninguno los revirtió.** Dentro
 de ese marco, cada gobierno tuvo aciertos y problemas propios, que se miden con las mismas
 reglas en la sección 9. El más claro de los que dependen del gobierno es la meta fiscal:
-con la meta vigente, solo Piñera I la cumplió, y con la meta del decreto inicial, ninguno.
+con la meta vigente, solo Piñera I la cumplió, y con la meta del decreto inicial, ninguno de los tres que la fijaron para su último año (Piñera I y Bachelet II la fijaron para el año siguiente).
 
 Entre 2006 y 2026 la economía chilena cambió de régimen, y ese cambio atraviesa a los
 cinco gobiernos:
@@ -246,7 +246,7 @@ o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
 | Fondo para crisis FEES (% del PIB) | ✓ 4,7 → 6,2 | ✓ 6,2 → 6,4 | ✗ 6,4 → 4,9 | ✗ 4,9 → 2,2 | ✗ 2,2 → 1,0 |
-| Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
+| Pobreza (%, CASEN; año de la encuesta) | ✓ 29,1 (2006) → 25,3 (2009) | ✓ 25,3 (2009) → 14,4 (2013) | ✓ 14,4 (2013) → 8,6 (2017) | ✗ 8,6 (2017) → 10,8 (2020) | ✓ 10,8 (2020) → 4,9 (2024) |
 | Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
 | Criterio | Quién lo controla principalmente |

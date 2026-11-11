@@ -36,3 +36,11 @@ def test_anio_evaluado_es_el_ultimo_completo_del_gobierno(fila):
 def test_cada_meta_tiene_fuente_con_enlace():
     assert METAS["url"].str.startswith("http").all()
     assert METAS[["decreto_inicial", "meta_inicial", "explicacion", "fuente"]].notna().all().all()
+
+
+def test_meta_inicial_solo_se_evalua_si_fijaba_ese_anio():
+    """Piñera I y Bachelet II fijaron su meta inicial para 2014 y 2018, el año siguiente al
+    último completo: no se les asigna cumplimiento. Los demás sí tenían meta para ese año."""
+    valores = METAS.set_index("id_gobierno")["cumple_meta_inicial"]
+    assert set(valores) <= {"Sí", "No", "No aplica"}
+    assert set(valores[valores == "No aplica"].index) == {3, 4}

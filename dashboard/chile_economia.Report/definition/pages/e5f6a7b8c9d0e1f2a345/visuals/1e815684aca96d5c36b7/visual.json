@@ -1,0 +1,320 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "1e815684aca96d5c36b7",
+  "position": {
+    "x": 960,
+    "y": 835,
+    "z": 6000,
+    "height": 325,
+    "width": 450,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Cómo se evalúa",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "13pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Crecimiento: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "sobre el promedio de Perú, Colombia, México y Brasil.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Inflación: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "en el rango de 2 % a 4 % la mayoría de los meses. La controla el Banco Central.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Desempleo: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "entregar menos del recibido.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Meta fiscal: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "balance estructural del último año igual o mejor que la meta vigente.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Deuda neta: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "entregar igual o menos deuda, descontados los fondos.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "FEES: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "entregar igual o más fondo para crisis, en % del PIB. El FRP no cuenta: recibe aportes por ley.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pobreza y salarios: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11pt",
+                      "color": "#2B2B2B"
+                    }
+                  },
+                  {
+                    "value": "menos pobreza (CASEN) y salarios que suban más que los precios.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#2B2B2B"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "La meta fiscal, la deuda y los fondos dependen principalmente del gobierno.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#6B6B6B",
+                      "fontStyle": "italic"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E3E3E3'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

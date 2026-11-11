@@ -511,7 +511,7 @@ def pagina_sensibilidad():
 # 5. Balance de cada gobierno
 # =============================================================================
 def pagina_balance():
-    p = Pagina("e5f6a7b8c9d0e1f2a345", "Balance de cada gobierno", alto=1525)
+    p = Pagina("e5f6a7b8c9d0e1f2a345", "Balance de cada gobierno", alto=1550)
     p.filtros_pagina = [{"name": nid(), "field": columna("Observaciones", "desfase_meses"),
                          "type": "Categorical",
                          "filter": filtro_in("Observaciones", "desfase_meses", ["0L"], "o"),
@@ -575,7 +575,7 @@ def pagina_balance():
     p.texto(1430, 835, 450, 325, [
         [("Lo que muestran los datos", {"fontWeight": "bold", "fontSize": "13pt", "color": TEXTO})],
         [("Meta fiscal: ", neg), ("con la meta vigente, solo Piñera I cumplió; con la meta del decreto "
-          "inicial, ninguno. Todos modificaron su meta.", nor)],
+          "inicial, ninguno de los tres que la fijaron para su último año. Todos modificaron su meta.", nor)],
         [("Contexto: ", neg), ("los incumplimientos de 2009 y 2021 coincidieron con la crisis financiera y la "
           "pandemia; los de 2017 y 2024–2025, no.", nor)],
         [("Ahorro y deuda: ", neg), ("el FEES bajó en Bachelet II, Piñera II y Boric, y la deuda bruta subió en "
@@ -609,9 +609,12 @@ def pagina_balance():
           "endeuda y de la confianza fiscal. La tasa en UF descuenta la inflación, y es la que mejor se compara "
           "entre gobiernos.", nor_g)],
     ], fondo=True)
-    p.texto(MARGEN, 1460, 1840, 52, [[(
+    p.texto(MARGEN, 1460, 1840, 75, [[(
         "Fuente: DIPRES (Cumplimiento de las metas de regla fiscal, 2022), Consejo Fiscal Autónomo, Banco Central "
-        "de Chile (BDE) y FMI. Elaboración propia.", {"fontSize": "10pt", "color": TEXTO, "fontWeight": "bold"})]],
+        "de Chile (BDE), FMI y CASEN. Elaboración propia. Recibió: último dato del gobierno anterior (desempleo y FEES: "
+        "febrero; deuda: primer trimestre del año del cambio de mando; pobreza: última CASEN, con su año). "
+        "Meta inicial \"No aplica\": el decreto la fijaba para el año siguiente al último completo.",
+        {"fontSize": "10pt", "color": TEXTO, "fontWeight": "bold"})]],
         fondo=True)
     return p
 
@@ -626,13 +629,12 @@ def pagina_conclusiones():
                          "filter": filtro_in("Observaciones", "desfase_meses", ["0L"], "o"),
                          "howCreated": "User"}]
     O, C = "Observaciones", "Comparacion"
-    p.titulo_pagina("Conclusiones: por qué Chile dejó de crecer y se endeudó")
+    p.titulo_pagina("Conclusiones: por qué Chile creció menos y se endeudó")
     p.texto(MARGEN, 85, 1840, 125, [[(
-        "Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer poco y endeudarse. Fue un cambio "
-        "estructural, que comenzó con el fin del auge del cobre y la caída de la productividad, y que ningún "
-        "gobierno revirtió. Los gobiernos no causaron ese cambio, pero sí lo agravaron: todos gastaron, en forma "
-        "permanente, más de lo que la economía generaba en forma permanente. Al mismo tiempo, la pobreza bajó con "
-        "fuerza.", {"fontSize": "15pt", "color": TEXTO, "fontWeight": "bold"})]], fondo=True)
+        "Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer menos y endeudarse. Según el Banco "
+        "Central, el FMI, la DIPRES y la CNEP, fue un cambio estructural, que comenzó con el fin del auge del cobre "
+        "y la caída de la productividad. Ningún gobierno lo revirtió: los cinco terminaron su período con déficit "
+        "estructural, y la deuda neta subió en cuatro de ellos. Al mismo tiempo, la pobreza bajó con fuerza.", {"fontSize": "15pt", "color": TEXTO, "fontWeight": "bold"})]], fondo=True)
     anio = columna(C, "anio")
     p.agregar(
         "columnChart", MARGEN, 225, 900, 455,
@@ -659,7 +661,7 @@ def pagina_conclusiones():
     tit = {"fontWeight": "bold", "fontSize": "15pt", "color": TEXTO}
     w = (1840 - 2 * 20) / 3
     p.texto(MARGEN, 695, w, 317, [
-        [("Por qué dejó de crecer", tit)],
+        [("Por qué creció menos", tit)],
         [("1. La productividad se estancó: ", neg), ("lleva unos 16 años sin aportar al crecimiento (CNEP), por la "
           "desaceleración mundial, la rigidez laboral, los permisos para invertir y la menor ley del mineral.", nor)],
         [("2. Terminó el auge del cobre: ", neg), ("la inversión minera cayó desde 2013–2014 (FMI).", nor)],
@@ -686,7 +688,7 @@ def pagina_conclusiones():
         [("Pendiente para cualquier gobierno: ", neg), ("recuperar la productividad y la inversión, porque sin eso "
           "el crecimiento seguirá cerca de 2 %, y estabilizar la deuda, que superaría el nivel prudente de 45 % del "
           "PIB hacia 2028–2029 sin consolidación fiscal (FMI y CFA).", nor)],
-        [("Ningún gobierno causó ni revirtió el cambio de fondo. El detalle de cada gobierno está en la página "
+        [("Según las fuentes, el cambio de fondo fue estructural y ningún gobierno lo revirtió. El detalle de cada gobierno está en la página "
           "siguiente.", {"fontSize": "10pt", "color": GRIS, "fontStyle": "italic"})],
     ], fondo=True)
     p.texto(MARGEN, 1022, 1840, 52, [[(

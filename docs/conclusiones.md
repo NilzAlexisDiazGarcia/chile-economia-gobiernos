@@ -1,4 +1,4 @@
-# Conclusiones: por qué Chile dejó de crecer y se endeudó
+# Conclusiones: por qué Chile creció menos y se endeudó
 
 Este documento reúne lo que muestran los datos del proyecto y **por qué ocurrió**, según las
 instituciones técnicas que lo estudiaron: el Banco Central, el FMI, la DIPRES, el Consejo
@@ -8,16 +8,16 @@ del proyecto y están verificadas por la auditoría (`python -m src.analysis.aud
 
 ## La conclusión en una frase
 
-> **Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer poco y endeudarse. Fue
-> un cambio estructural, que comenzó con el fin del auge del cobre y la caída de la
-> productividad, y que ningún gobierno revirtió. Los gobiernos no causaron ese cambio, pero sí
-> lo agravaron: todos gastaron, en forma permanente, más de lo que la economía generaba en
-> forma permanente. Al mismo tiempo, la pobreza bajó con fuerza, porque los ingresos y las
+> **Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer menos y endeudarse.
+> Según el Banco Central, el FMI, la DIPRES y la CNEP, fue un cambio estructural, que comenzó
+> con el fin del auge del cobre y la caída de la productividad. Ningún gobierno lo revirtió:
+> los cinco terminaron su período con déficit estructural, y la deuda neta subió en cuatro de
+> ellos. Al mismo tiempo, la pobreza bajó con fuerza, porque los ingresos y las
 > transferencias siguieron creciendo aun con poco crecimiento.**
 
 ---
 
-## 1. Por qué Chile dejó de crecer
+## 1. Por qué Chile creció menos
 
 ### Lo que muestran los datos
 

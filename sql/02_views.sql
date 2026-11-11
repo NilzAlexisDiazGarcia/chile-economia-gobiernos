@@ -331,6 +331,14 @@ num AS (
               ORDER BY p.anio LIMIT 1))                                                    AS pob_ini,
         (SELECT p.pobreza_pct FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno
           ORDER BY p.anio DESC LIMIT 1)                                                    AS pob_fin,
+        -- Año de cada medición: la CASEN no es anual, y lo "recibido" puede ser de años antes
+        COALESCE(
+            (SELECT p.anio FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno - 1
+              ORDER BY p.anio DESC LIMIT 1),
+            (SELECT p.anio FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno
+              ORDER BY p.anio LIMIT 1))                                                    AS pob_ini_anio,
+        (SELECT p.anio FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno
+          ORDER BY p.anio DESC LIMIT 1)                                                    AS pob_fin_anio,
         -- Salario real: variación anual promedio de los dos tramos del índice del INE
         (SELECT AVG(v.var_12m_pct) FROM economia.v_variacion_12m v
           WHERE v.id_gobierno = g.id_gobierno
@@ -390,7 +398,7 @@ FROM f
 UNION ALL
 SELECT id_gobierno, 7, 'Pobreza (%, CASEN): recibió → entregó', 'Mixto: gobierno, crecimiento y transferencias',
        'Entregar menos pobreza por ingresos que la recibida',
-       t_pob_ini || ' → ' || t_pob_fin, pob_fin < pob_ini
+       t_pob_ini || ' (' || pob_ini_anio || ') → ' || t_pob_fin || ' (' || pob_fin_anio || ')', pob_fin < pob_ini
 FROM f
 UNION ALL
 SELECT id_gobierno, 8, 'Salario real (% anual promedio)', 'Mixto: gobierno, inflación y mercado laboral',

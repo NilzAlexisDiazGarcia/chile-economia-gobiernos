@@ -3,7 +3,12 @@
 Especificación de diseño para llevar el dashboard a su versión final. Complementa
 [guia_dashboard.md](guia_dashboard.md), que explica la conexión y el modelo.
 
-> **Estado:** las 8 páginas ya están construidas según esta especificación. Las páginas
+> **Documento histórico.** Describe el diseño de la primera versión del reporte, de 8
+> páginas. El reporte actual tiene 10 páginas, generadas por
+> `dashboard/generador/generar_paginas.py`; las cifras vigentes están en
+> [valores_dashboard.md](valores_dashboard.md) y en la auditoría.
+>
+> **Estado en esa versión:** las 8 páginas ya estaban construidas según esta especificación. Las páginas
 > nuevas se generaron con código, directo en los archivos PBIR, y las existentes se
 > ajustaron al mismo diseño. Quedan pendientes dos pasos manuales en Power BI:
 > - El navegador de páginas.
