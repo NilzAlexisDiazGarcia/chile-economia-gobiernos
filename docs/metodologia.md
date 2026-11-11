@@ -86,7 +86,10 @@ estos factores.
   - Desempleo entregado menor que el recibido.
   - Balance estructural del último año completo igual o mejor que la meta vigente.
   - Deuda neta entregada igual o menor que la recibida.
-  - FEES, el fondo para crisis, entregado igual o mayor que el recibido. No se usa el total de
+  - FEES, el fondo para crisis, entregado igual o mayor que el recibido, como porcentaje del PIB.
+    El saldo en dólares se pasa a pesos con el dólar promedio del mes y se divide por el PIB
+    nominal del año anterior: así no favorece a los gobiernos más recientes solo porque la
+    economía es más grande. No se usa el total de
     los fondos soberanos porque el FRP recibe aportes obligatorios por ley y solo financia
     pensiones, y porque un fondo puede crecer con deuda: la solvencia se mide con la deuda
     neta, que descuenta estos activos de la deuda bruta.
@@ -98,6 +101,13 @@ estos factores.
 - **Cada criterio indica quién lo controla principalmente:** el gobierno, el Banco Central o
   una mezcla con el ciclo y el contexto externo.
 - **No hay puntaje total,** porque los criterios no son comparables entre sí.
+- **Costo de la deuda,** fuera de los criterios porque las tasas las fija el mercado:
+  - Tasa de cada gobierno: promedio simple de la tasa de mercado secundario de los bonos a 10
+    años, en pesos y en UF, durante su período. No está ponderada por los montos emitidos.
+  - Intereses: gasto devengado del Gobierno Central sobre el PIB nominal del mismo año.
+  - No se calcula una tasa implícita (intereses sobre deuda): el gasto en intereses puede
+    incluir partidas que no están en la deuda bruta, y con la deuda baja de 2006–2009 esa tasa
+    sale distorsionada.
 
 ## 6. Métricas del análisis SQL
 

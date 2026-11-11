@@ -1,0 +1,220 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "d5150034bab510692127",
+  "position": {
+    "x": 10,
+    "y": 260,
+    "z": 1000,
+    "height": 260,
+    "width": 1910,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Gobiernos"
+                    }
+                  },
+                  "Property": "etiqueta"
+                }
+              },
+              "queryRef": "Gobiernos.etiqueta",
+              "nativeQueryRef": "Gobierno",
+              "active": true,
+              "displayName": "Gobierno"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Crecimiento PIB %"
+                }
+              },
+              "queryRef": "Observaciones.Crecimiento PIB %",
+              "nativeQueryRef": "PIB, var. anual (%)",
+              "displayName": "PIB, var. anual (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Crecimiento IMACEC %"
+                }
+              },
+              "queryRef": "Observaciones.Crecimiento IMACEC %",
+              "nativeQueryRef": "IMACEC, var. anual (%)",
+              "displayName": "IMACEC, var. anual (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Inflacion Promedio %"
+                }
+              },
+              "queryRef": "Observaciones.Inflacion Promedio %",
+              "nativeQueryRef": "Inflación prom. (%)",
+              "displayName": "Inflación prom. (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Desempleo Promedio %"
+                }
+              },
+              "queryRef": "Observaciones.Desempleo Promedio %",
+              "nativeQueryRef": "Desempleo prom. (%)",
+              "displayName": "Desempleo prom. (%)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Desempleo Cambio pp"
+                }
+              },
+              "queryRef": "Observaciones.Desempleo Cambio pp",
+              "nativeQueryRef": "Desempleo, cambio (pp)",
+              "displayName": "Desempleo, cambio (pp)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Deuda Cambio pp"
+                }
+              },
+              "queryRef": "Observaciones.Deuda Cambio pp",
+              "nativeQueryRef": "Deuda, cambio (pp del PIB)",
+              "displayName": "Deuda, cambio (pp del PIB)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Balance Fiscal Promedio %"
+                }
+              },
+              "queryRef": "Observaciones.Balance Fiscal Promedio %",
+              "nativeQueryRef": "Balance fiscal prom. (% PIB)",
+              "displayName": "Balance fiscal prom. (% PIB)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Observaciones"
+                    }
+                  },
+                  "Property": "Cobre Promedio USD lb"
+                }
+              },
+              "queryRef": "Observaciones.Cobre Promedio USD lb",
+              "nativeQueryRef": "Cobre prom. (USD/lb)",
+              "displayName": "Cobre prom. (USD/lb)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

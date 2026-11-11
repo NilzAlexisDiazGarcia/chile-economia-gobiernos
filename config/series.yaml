@@ -126,3 +126,36 @@ bcch:
     frecuencia: MONTHLY
     codigo: "G049.RMM.IND.INE23.R.M"
     fuente_original: "INE"
+
+  # --- Costo de la deuda (agregadas el 2026-11-11) ---
+  # Tasas de mercado secundario de los bonos a 10 años: la referencia de lo que cuesta
+  # endeudarse en cada momento. Las tasas en pesos y en UF incluyen bonos del Banco Central y
+  # de la Tesorería (BCP/BTP y BCU/BTU), que se transan a tasas casi iguales. La tasa en UF
+  # descuenta la inflación: es la tasa real. Solo existe en frecuencia diaria.
+  tasa_bonos_10_pesos:
+    descripcion: "Tasa de interés de mercado secundario de los bonos en pesos a 10 años"
+    unidad: "Porcentaje anual"
+    frecuencia: MONTHLY
+    codigo: "F022.BCLP.TIS.AN10.NO.Z.M"
+    fuente_original: "Banco Central de Chile"
+  tasa_bonos_10_uf:
+    descripcion: "Tasa de interés de mercado secundario de los bonos en UF a 10 años (BCU, BTU)"
+    unidad: "Porcentaje anual"
+    frecuencia: DAILY
+    codigo: "F022.BUF.TIS.AN10.UF.Z.D"
+    fuente_original: "Banco Central de Chile"
+  # Gasto en intereses y PIB nominal: con ellos se calcula el costo efectivo de la deuda
+  # (intereses del año sobre la deuda bruta al cierre del año anterior) y los intereses como
+  # porcentaje del PIB. Ambas en millones de pesos de cada año.
+  intereses_deuda:
+    descripcion: "Gobierno Central Total, gastos de intereses de la deuda, devengado"
+    unidad: "Millones de pesos"
+    frecuencia: ANNUAL
+    codigo: "F051.A023.FLU.C.D.CLP.A"
+    fuente_original: "DIPRES"
+  pib_nominal:
+    descripcion: "Producto Interno Bruto a precios corrientes, serie histórica, referencia 2018"
+    unidad: "Miles de millones de pesos"
+    frecuencia: ANNUAL
+    codigo: "F032.PIB.FLU.N.CLP.HIST18.Z.Z.0.A"
+    fuente_original: "Banco Central de Chile"

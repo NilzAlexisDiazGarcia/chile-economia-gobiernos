@@ -1181,6 +1181,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Deuda neta (% del PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1365,7 +1375,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "PIB, var. anual (%)": {
+			          "PIB (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1431,7 +1441,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "IMACEC, var. anual (%)": {
+			          "IMACEC (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1441,7 +1451,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "IMACEC (%)": {
+			          "IMACEC, var. anual (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1487,17 +1497,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Inflación prom. (%)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Inflación promedio (%)": {
+			          "Inflación (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1508,6 +1508,16 @@ cultureInfo es-ES
 			        },
 			        {
 			          "Inflación anual (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Inflación promedio (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1553,7 +1563,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Desempleo prom. (%)": {
+			          "Desempleo (%)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1628,6 +1638,16 @@ cultureInfo es-ES
 			        {
 			          "cobre promedio USD lb": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Cobre (USD/lb)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -1755,7 +1775,7 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "Balance efectivo prom. (% PIB)": {
+			          "Balance efectivo (% PIB)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2027,7 +2047,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Crecimiento vs. pares (pp)": {
+			          "Crecimiento vs. pares, FMI (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2048,7 +2068,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Inflación vs. pares (pp)": {
+			          "Inflación vs. pares, FMI (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2237,7 +2257,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Balance vs. pares (pp)": {
+			          "Balance vs. pares, FMI (pp)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2436,7 +2456,7 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Balance estructural prom. (% PIB)": {
+			          "Balance estructural (% PIB)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2467,6 +2487,16 @@ cultureInfo es-ES
 			      "State": "Generated",
 			      "Terms": [
 			        {
+			          "Deuda neta (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Deuda neta % PIB: inicio → fin": {
 			            "State": "Suggested",
 			            "Source": {
@@ -2489,6 +2519,363 @@ cultureInfo es-ES
 			      "Terms": [
 			        {
 			          "Rango trimestral del PIB (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.fees_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "FEES Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FEES (fondo para crisis)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.frp_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "FRP Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FRP (pensiones)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.fondos_soberanos_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Fondos Soberanos Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total fondos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "observaciones.deuda_bruta_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Observaciones",
+			          "ConceptualProperty": "Deuda Bruta Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deuda bruta (% PIB)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "comparacion.crecimiento_per_capita_chile_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Comparacion",
+			          "ConceptualProperty": "Crecimiento per Capita Chile %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PIB por habitante (% anual)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.decreto_inicial": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "decreto_inicial"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Decreto inicial": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.meta_inicial": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "meta_inicial"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Meta que se fijó al asumir": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.meta_y_resultado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "Meta y resultado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Último año completo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.cumple_meta_vigente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "cumple_meta_vigente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumplió la meta vigente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.cumple_meta_inicial": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "cumple_meta_inicial"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumplió la meta inicial": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.anios_cumplidos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "anios_cumplidos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Años en que cumplió": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "metasfiscales.shock_extraordinario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MetasFiscales",
+			          "ConceptualProperty": "shock_extraordinario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Shock extraordinario": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "evaluacion.criterio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Evaluacion",
+			          "ConceptualProperty": "criterio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Criterio": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "evaluacion.resultado_evaluacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Evaluacion",
+			          "ConceptualProperty": "Resultado Evaluacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Resultado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "costodeuda.tasa_bonos_pesos_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CostoDeuda",
+			          "ConceptualProperty": "Tasa Bonos Pesos %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tasa en pesos a 10 años (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "costodeuda.tasa_bonos_uf_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CostoDeuda",
+			          "ConceptualProperty": "Tasa Bonos UF %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tasa real en UF a 10 años (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "costodeuda.intereses_recibio_entrego": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CostoDeuda",
+			          "ConceptualProperty": "Intereses Recibio Entrego"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Intereses (% PIB): recibió → dejó": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

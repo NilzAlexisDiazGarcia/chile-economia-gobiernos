@@ -45,6 +45,10 @@ RANGOS_VALIDOS = {
     "fondos_soberanos": (0, 80_000),  # millones de dólares
     "remuneraciones_reales_hist": (40, 200),  # índice
     "remuneraciones_reales": (40, 200),       # índice
+    "tasa_bonos_10_pesos": (0, 15),           # % anual
+    "tasa_bonos_10_uf": (-3, 8),              # % anual, real
+    "intereses_deuda": (100_000, 20_000_000), # millones de pesos
+    "pib_nominal": (50_000, 1_000_000),       # miles de millones de pesos
 }
 
 log = logging.getLogger("limpieza")

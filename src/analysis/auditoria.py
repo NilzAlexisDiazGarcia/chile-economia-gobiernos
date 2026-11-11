@@ -13,6 +13,7 @@ Verificaciones:
     G. Dashboard: los valores que muestra Power BI contra el cálculo sin DAX.
     H. Balance de cada gobierno: los ocho criterios, recalculados sin SQL.
     I. Datos fiscales: balance estructural y fondos soberanos contra la DIPRES, el CFA y Hacienda.
+    J. Costo de la deuda: tasas de los bonos y gasto en intereses, recalculados sin SQL.
 
 Termina con código 1 si alguna verificación falla.
 """
@@ -443,6 +444,18 @@ def pobreza_fin(g):
     return POBREZA.loc[POBREZA["id_gobierno"] == g, "pobreza_pct"].iloc[-1]
 
 
+def fees_pct_pib() -> pd.DataFrame:
+    """Saldo del FEES en % del PIB: dólares a pesos con el dólar promedio del mes, sobre el PIB
+    nominal del año anterior. Mismo criterio que la vista v_fees_pib, calculado sin SQL."""
+    f = serie("fees").copy()
+    tc = serie("tipo_cambio")
+    dolar = tc.groupby(tc["fecha"].dt.to_period("M"))["valor"].mean()
+    pib = serie("pib_nominal").assign(anio=lambda d: d["fecha"].dt.year).set_index("anio")["valor"]
+    f["pct"] = (100 * f["valor"] * f["fecha"].dt.to_period("M").map(dolar)
+                / (f["fecha"].dt.year.sub(1).map(pib) * 1000))
+    return f.dropna(subset=["pct"])
+
+
 def auditar_evaluacion() -> None:
     """La evaluación de aciertos y problemas, recalculada sin SQL a partir de los datos."""
     from src.analysis import valores_dashboard as vd
@@ -451,17 +464,17 @@ def auditar_evaluacion() -> None:
     metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv").set_index("id_gobierno")
     ipc = serie("ipc")
     salarios = pd.concat([var12("remuneraciones_reales_hist"), var12("remuneraciones_reales")])
+    fs = fees_pct_pib()
     for g in EN_ALCANCE:
-        fs = serie("fees")
-        fs_ini = fs.loc[fs["id_gobierno"] == g - 1, "valor"]
-        fs_ini = fs_ini.iloc[-1] if len(fs_ini) else fs.loc[fs["id_gobierno"] == g, "valor"].iloc[0]
+        fs_ini = fs.loc[fs["id_gobierno"] == g - 1, "pct"]
+        fs_ini = fs_ini.iloc[-1] if len(fs_ini) else fs.loc[fs["id_gobierno"] == g, "pct"].iloc[0]
         esperado.update({
             (g, 1): vd.pares("crecimiento_pib", g) >= 0,
             (g, 2): ipc.loc[ipc["id_gobierno"] == g, "valor"].between(2, 4).mean() >= 0.5,
             (g, 3): vd.final("desempleo", g) < vd.heredado("desempleo", g),
             (g, 4): metas.loc[g, "resultado"] >= metas.loc[g, "meta_vigente"],
             (g, 5): vd.final("deuda_neta", g) <= vd.heredado("deuda_neta", g),
-            (g, 6): vd.final("fees", g) >= fs_ini,
+            (g, 6): fs.loc[fs["id_gobierno"] == g, "pct"].iloc[-1] >= fs_ini,
             (g, 7): pobreza_fin(g) < pobreza_ini(g),
             (g, 8): salarios.loc[salarios["id_gobierno"] == g, "var"].mean() > 0,
         })
@@ -508,6 +521,41 @@ def auditar_fiscal() -> None:
               "todos coinciden" if not malos else "; ".join(malos))
 
 
+def auditar_costo_deuda() -> None:
+    """Tasas promedio de los bonos y gasto en intereses por gobierno, contra la vista SQL."""
+    from src.analysis import valores_dashboard as vd
+    sql = consulta("SELECT * FROM economia.v_pbi_costo_deuda").set_index("id_gobierno").astype(float)
+    pib = serie("pib_nominal").assign(anio=lambda d: d["fecha"].dt.year).set_index("anio")
+    intereses = serie("intereses_deuda").assign(anio=lambda d: d["fecha"].dt.year).set_index("anio")
+    pct = 100 * intereses["valor"] / (pib["valor"] * 1000)
+    gob_anio = pib["id_gobierno"]
+    malos = []
+    for g in EN_ALCANCE:
+        esperado = {
+            "tasa_pesos": serie("tasa_bonos_10_pesos").query("id_gobierno == @g")["valor"].mean(),
+            "tasa_uf": serie("tasa_bonos_10_uf").query("id_gobierno == @g")["valor"].mean(),
+            "intereses_ini": pct[gob_anio[gob_anio == g - 1].index.max()],
+            "intereses_fin": pct[gob_anio[gob_anio == g].index.max()],
+        }
+        malos += [f"{ETQ[g]} {k}" for k, v in esperado.items() if abs(sql.loc[g, k] - v) > 1e-6]
+    registrar(f"J. Costo de la deuda: {len(EN_ALCANCE) * 4} valores recalculados", not malos,
+              "todos coinciden" if not malos else ", ".join(malos))
+    # Cifras citadas en el reporte y los documentos
+    citas = [("Tasa real de Piñera II: 0,9 %", round(sql.loc[5, "tasa_uf"], 1) == 0.9),
+             ("Tasa real de Boric: 2,3 %", round(sql.loc[6, "tasa_uf"], 1) == 2.3),
+             ("Intereses de 2025: 1,24 % del PIB, el máximo de 2005–2025",
+              round(pct[2025], 2) == 1.24 and pct.idxmax() == 2025),
+             ("Intereses de 2008: 0,47 % del PIB, el mínimo", round(pct[2008], 2) == 0.47 and pct.idxmin() == 2008),
+             ("Piñera II sumó más deuda bruta que cualquier otro gobierno (12,6 puntos)",
+              max(EN_ALCANCE, key=lambda g: vd.final("deuda_bruta", g) - vd.heredado("deuda_bruta", g)) == 5
+              and round(vd.final("deuda_bruta", 5) - vd.heredado("deuda_bruta", 5), 1) == 12.6),
+             ("Déficit efectivo en 14 de los 17 años de 2009 a 2025",
+              (serie("balance_fiscal").assign(a=lambda d: d["fecha"].dt.year)
+               .query("2009 <= a <= 2025")["valor"] < 0).sum() == 14)]
+    for nombre, ok in citas:
+        registrar(f"J. {nombre}", bool(ok))
+
+
 def main() -> int:
     print("== A. Crudo -> limpio"); auditar_crudo()
     print("== B. Asignación"); auditar_asignacion()
@@ -519,6 +567,7 @@ def main() -> int:
     print("== G. Dashboard"); auditar_dashboard()
     print("== H. Balance de cada gobierno"); auditar_evaluacion()
     print("== I. Datos fiscales contra fuentes publicadas"); auditar_fiscal()
+    print("== J. Costo de la deuda"); auditar_costo_deuda()
     fallas = [r for r in resultados if not r[1]]
     print(f"\n{len(resultados) - len(fallas)} de {len(resultados)} verificaciones correctas.")
     return 1 if fallas else 0

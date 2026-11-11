@@ -82,10 +82,11 @@ se acabaron entre 2008 y 2014, y nada las reemplazó.
 ### Las causas, según las fuentes técnicas
 
 **1. Se gastó, en forma permanente, más de lo que entraba en forma permanente.** Es la causa
-principal y atraviesa a todos los gobiernos. Según el CFA:
-- El gasto promedió 23,8 % del PIB frente a ingresos estructurales de 22 %.
-- Hubo déficit efectivo en 13 de los 16 años desde 2008.
-- "No se ha cumplido el principio de financiar gastos permanentes con ingresos permanentes".
+principal y atraviesa a todos los gobiernos.
+- Entre 2008 y 2023, el gasto público promedió 23,8 % del PIB, frente a ingresos
+  estructurales de 22 % (CFA, informe del 23 de abril de 2024).
+- En los datos del proyecto, el balance efectivo fue negativo en 14 de los 17 años entre
+  2009 y 2025. Solo hubo superávit en 2011, 2012 y 2022.
 
 **2. El menor crecimiento redujo los ingresos estructurales.** Con menos crecimiento tendencial
 y un precio de referencia del cobre más bajo, el Fisco espera recaudar menos. Así lo explicó
@@ -103,7 +104,13 @@ ni mecanismos de corrección, las metas "han sido modificadas a discreción de l
 la meta inicial de cada gobierno se cumplió en solo 9 de 21 años. Recién en 2022 se fijó por
 primera vez un ancla de deuda (45 % del PIB), y en 2024 la ley agregó cláusulas de escape.
 
-**5. En los años recientes se sobrestimaron los ingresos.** Según el CFA, el incumplimiento de
+**5. La deuda se volvió más cara.** Piñera II fue el gobierno que más deuda sumó (12,6 puntos
+del PIB), con las tasas reales más bajas del período: 0,9 % en UF a 10 años en promedio.
+Desde 2022 las tasas subieron en todo el mundo (2,3 % real con Boric), y el gasto en intereses
+pasó de 0,47 % del PIB en 2008 a 1,24 % en 2025, el más alto desde 2005. Ese gasto no financia
+ningún servicio y reduce el espacio para todo lo demás.
+
+**6. En los años recientes se sobrestimaron los ingresos.** Según el CFA, el incumplimiento de
 2025 responde a "errores reiterados y significativos en la proyección de ingresos fiscales",
 junto con gasto por sobre lo comprometido.
 
@@ -180,6 +187,8 @@ comenzó a sentirse en 2013.
 - El FEES bajó de US$ 14.851 a 6.406 millones: llegó a 2.457 a fines de 2021 y se volvió a
   capitalizar antes del cambio de mando.
 - La pobreza subió de 8,6 % a 10,8 % en la pandemia.
+- Fue el que más deuda tomó: la deuda bruta pasó de 23,6 % a 36,2 % del PIB. Lo hizo con las
+  tasas reales más bajas del período (0,9 %), lo que contuvo el gasto en intereses.
 - Entregó la economía con la inflación subiendo (7,8 % en febrero de 2022).
 
 **Por qué:** el estallido social de 2019 y la pandemia obligaron a gastos de emergencia. El
@@ -201,6 +210,8 @@ focalizados y regresivos". Según el Banco Central, la inflación de 2021 se exp
 - Creció 0,6 puntos bajo sus pares.
 - La inflación estuvo fuera del rango meta en el 79 % de los meses, y los salarios reales cayeron
   en 2022.
+- El gasto en intereses subió de 0,86 % a 1,24 % del PIB, por la deuda heredada y las tasas más
+  altas (2,3 % real a 10 años, frente a 0,9 % con Piñera II).
 - El FEES bajó de US$ 6.406 a 3.944 millones sin una crisis, y la deuda bruta subió de 36,2 %
   a 42,4 % del PIB. El total de los fondos se mantuvo solo porque el FRP recibe aportes
   obligatorios por ley.
@@ -237,7 +248,7 @@ Los dos problemas de fondo siguen abiertos y se refuerzan entre sí:
 - DIPRES, acta del Comité Consultivo del PIB Tendencial (estimación para 2011): https://www.dipres.gob.cl/597/articles-110631_doc_pdf.pdf
 - FMI, Press Release 15/373 (2015): https://www.imf.org/external/np/sec/pr/2015/pr15373.htm
 - FMI, Press Release 26/238 (2026): https://www.imf.org/en/news/articles/2026/07/06/pr26238-chile-imf-executive-board-concludes-2026-article-iv-consultation
-- Consejo Fiscal Autónomo, sobre el aumento de la deuda: https://www.ex-ante.cl/el-sostenido-aumento-de-la-deuda-publica-la-otra-advertencia-del-consejo-fiscal-autonomo/
+- Consejo Fiscal Autónomo, *Informe sobre el ejercicio de sus funciones y atribuciones* (23 de abril de 2024), sobre el gasto y los ingresos estructurales de 2008–2023: https://cms.hacienda.cl/cfa/assets/documento/descargar/3f5997d3c7266/1713921901
 - Consejo Fiscal Autónomo, sobre el incumplimiento de 2025: https://cfachile.cl/noticias/-cfa-advierte-que-la-gran-magnitud-del-incumplimiento-de-la-meta-de-balance
 - DIPRES, *Cumplimiento de las metas de regla fiscal en Chile* (2022): http://www.dipres.gob.cl/598/articles-299473_doc_pdf.pdf
 - Ministerio de Desarrollo Social, CASEN: https://www.desarrollosocialyfamilia.gob.cl/storage/docs/ids/Informe-desarrollo-social-2022.pdf

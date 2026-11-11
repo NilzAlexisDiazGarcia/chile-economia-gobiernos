@@ -330,6 +330,20 @@ El criterio pasó a ser el FEES. Con eso, Bachelet II, Piñera II y Boric quedan
 La tabla de arcas fiscales suma la deuda bruta, y el texto aclara que la medida de solvencia es
 la deuda neta, que descuenta los fondos.
 
+## Etapa 5g. Costo de la deuda y mejoras de la revisión final
+
+- **A qué tasa se endeudó cada gobierno:** tasas de mercado de los bonos a 10 años en pesos y en
+  UF, y gasto en intereses como % del PIB (series nuevas de la BDE). Piñera II sumó más deuda
+  con las tasas reales más bajas (0,9 %); con Boric las tasas subieron (2,3 %) y los intereses
+  llegaron a 1,24 % del PIB en 2025, el máximo desde 2005.
+- **FEES en % del PIB:** el criterio de ahorro deja de usar dólares nominales. Los resultados
+  (✓ o ✗) no cambian.
+- **Fuente primaria del CFA:** se reemplazó una nota de prensa por el informe del CFA del 23 de
+  abril de 2024. El conteo de años con déficit se recalculó con los datos del proyecto: 14 de
+  los 17 años entre 2009 y 2025 (la cifra anterior, 13 de 16 desde 2008, no coincidía).
+- **Generador de páginas en el repositorio:** `dashboard/generador/`.
+- **Auditoría:** nueva sección J; 52 de 52 verificaciones correctas.
+
 ## Verificación de cifras
 
 Cada afirmación de [hallazgos.md](hallazgos.md) se revisó contra los datos antes de
@@ -347,7 +361,7 @@ PIB de Piñera I es 5,43 % en ambos.
 ### Auditoría de exactitud (`src/analysis/auditoria.py`)
 
 Un script verifica cada cifra por un camino distinto al que la produjo. Resultado actual:
-**41 de 41 verificaciones correctas.**
+**52 de 52 verificaciones correctas.**
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|

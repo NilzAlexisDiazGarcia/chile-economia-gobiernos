@@ -3,8 +3,8 @@ table MetasFiscales
 
 	column id_gobierno
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 12f3a1d7-2a36-4c9c-99fb-6efbd646aa9f
 		summarizeBy: none
 		sourceColumn: id_gobierno
@@ -121,9 +121,9 @@ table MetasFiscales
 	column url
 		dataType: string
 		lineageTag: 74cc296f-c9d8-4584-84f6-6e367df28ddc
+		dataCategory: WebUrl
 		summarizeBy: none
 		sourceColumn: url
-		dataCategory: WebUrl
 
 		annotation SummarizationSetBy = Automatic
 

@@ -399,6 +399,22 @@ table Observaciones
 		displayFolder: 2. Indicadores
 		lineageTag: 8ab3c68d-a820-43cf-872c-62a72cd3f374
 
+	measure 'Deuda Neta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_neta" )
+		displayFolder: 3. Ficha por gobierno
+		lineageTag: 939f3e6e-e702-46b7-91a0-a641e5476f80
+
+	/// Rango de la variación anual del PIB, trimestre a trimestre: muestra cuánto esconde el promedio.
+	measure 'Rango Crecimiento PIB' =
+			VAR Minimo = [Crecimiento PIB Minimo %]
+			VAR Maximo = [Crecimiento PIB Maximo %]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Minimo ),
+			        FORMAT ( Minimo, "0.0" ) & "  a  " & FORMAT ( Maximo, "0.0" )
+			    )
+		displayFolder: 3. Ficha por gobierno
+		lineageTag: e7dcd811-ceac-4de0-aaf6-c84e5ae309aa
+
 	/// Fondo de Estabilización Económica y Social: saldo recibido y entregado (millones de dólares). Los fondos existen desde marzo de 2007.
 	measure 'FEES Recibio Entrego' =
 			VAR Heredado = CALCULATE ( [Valor Heredado], Observaciones[indicador] = "fees" )
@@ -452,22 +468,6 @@ table Observaciones
 	measure 'Deuda Bruta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_bruta" )
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: f67c7584-5964-4ba5-a4b2-fab153abc16e
-
-	measure 'Deuda Neta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_neta" )
-		displayFolder: 3. Ficha por gobierno
-		lineageTag: 939f3e6e-e702-46b7-91a0-a641e5476f80
-
-	/// Rango de la variación anual del PIB, trimestre a trimestre: muestra cuánto esconde el promedio.
-	measure 'Rango Crecimiento PIB' =
-			VAR Minimo = [Crecimiento PIB Minimo %]
-			VAR Maximo = [Crecimiento PIB Maximo %]
-			RETURN
-			    IF (
-			        NOT ISBLANK ( Minimo ),
-			        FORMAT ( Minimo, "0.0" ) & "  a  " & FORMAT ( Maximo, "0.0" )
-			    )
-		displayFolder: 3. Ficha por gobierno
-		lineageTag: e7dcd811-ceac-4de0-aaf6-c84e5ae309aa
 
 	column indicador
 		dataType: string

@@ -79,12 +79,6 @@ table Comparacion
 		displayFolder: 6. Comparación con pares
 		lineageTag: 386e15ca-73ec-4ec0-bb1d-3a67f8fbe809
 
-	/// Crecimiento del PIB por habitante de Chile (FMI): PIB y población.
-	measure 'Crecimiento per Capita Chile %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "crecimiento_pib_per_capita" )
-		formatString: 0.0
-		displayFolder: 6. Comparación con pares
-		lineageTag: b1da5104-043e-4944-8cbf-ce14c0c3f9b6
-
 	/// Frase para la ficha: cuánto creció Chile frente a sus pares.
 	measure 'Texto Crecimiento vs Pares' =
 			VAR d = [Crecimiento vs Pares pp]
@@ -128,6 +122,12 @@ table Comparacion
 	measure 'Fuente Comparacion' = "Fuente: FMI, World Economic Outlook (octubre de 2026); Banco Mundial, WGI. Pares: Perú, Colombia, México y Brasil. Datos anuales: cada año se asigna al gobierno que gobernó la mayor parte de él."
 		displayFolder: 6. Comparación con pares
 		lineageTag: de0f2f51-7263-4955-b226-c85e08ee4d53
+
+	/// Crecimiento del PIB por habitante de Chile (FMI): PIB y población.
+	measure 'Crecimiento per Capita Chile %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "crecimiento_pib_per_capita" )
+		formatString: 0.0
+		displayFolder: 6. Comparación con pares
+		lineageTag: b1da5104-043e-4944-8cbf-ce14c0c3f9b6
 
 	column indicador
 		dataType: string

@@ -13,8 +13,8 @@ table Evaluacion
 
 	column id_gobierno
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 52bdee21-032d-4cd1-8942-e5f35fac91a6
 		summarizeBy: none
 		sourceColumn: id_gobierno
@@ -23,8 +23,8 @@ table Evaluacion
 
 	column orden
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 262ad0db-7846-4c6f-a4f4-9f9ca2b2144a
 		summarizeBy: none
 		sourceColumn: orden

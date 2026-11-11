@@ -85,6 +85,45 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1683.8456268910388,
+            "y": 243.57970755714177
+          },
+          "nodeIndex": "CostoDeuda",
+          "nodeLineageTag": "7c1ce759-9492-40cb-98e8-058325951c54",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1967.8456268910388,
+            "y": 255.57970755714177
+          },
+          "nodeIndex": "Evaluacion",
+          "nodeLineageTag": "1750635c-3a99-4655-b657-f21162abbd78",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2251.8456268910386,
+            "y": 241.57970755714177
+          },
+          "nodeIndex": "MetasFiscales",
+          "nodeLineageTag": "10b28f1a-c0d4-4eba-bbd0-c41b7e2aa8d7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

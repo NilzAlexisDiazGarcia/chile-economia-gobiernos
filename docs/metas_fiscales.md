@@ -90,6 +90,10 @@ millones de dólares de cada año:
   FRP subió. La ley obliga a hacer aportes al FRP y a usarlo para financiar pensiones, así que
   el total de los fondos no muestra cuánto ahorro disponible quedó.
 
+**En porcentaje del PIB,** que es como se evalúa en el balance, el FEES pasó de 4,7 % a 6,2 % con
+Bachelet I, de 6,2 % a 6,4 % con Piñera I, de 6,4 % a 4,9 % con Bachelet II, de 4,9 % a 2,2 % con
+Piñera II y de 2,2 % a 1,0 % con Boric.
+
 **Cómo leer estas cifras:**
 - **Los fondos no se leen solos.** Un fondo puede crecer con plata pedida prestada. Por eso
   la columna clave es la deuda neta, que es la deuda bruta menos los activos financieros del

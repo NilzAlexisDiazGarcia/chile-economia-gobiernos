@@ -10,6 +10,9 @@
 -- =============================================================================
 
 DROP VIEW IF EXISTS economia.v_pbi_evaluacion;
+DROP VIEW IF EXISTS economia.v_pbi_costo_deuda;
+DROP VIEW IF EXISTS economia.v_costo_deuda_anual;
+DROP VIEW IF EXISTS economia.v_fees_pib;
 DROP VIEW IF EXISTS economia.v_pbi_comparacion;
 DROP VIEW IF EXISTS economia.v_pbi_observacion;
 DROP VIEW IF EXISTS economia.v_resumen_gobierno;
@@ -211,6 +214,79 @@ GROUP BY f.indicador, f.anio, f.id_gobierno
 HAVING MAX(f.valor) FILTER (WHERE f.zona = 'CHL') IS NOT NULL;
 
 -- -----------------------------------------------------------------------------
+-- v_fees_pib: saldo mensual del FEES como porcentaje del PIB.
+--
+-- El saldo en dólares se pasa a pesos con el dólar observado promedio del mes y se
+-- divide por el PIB nominal del año anterior, el último año completo en ese momento.
+-- En porcentaje del PIB, un mismo saldo pesa menos a medida que la economía crece.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_fees_pib AS
+SELECT
+    f.fecha,
+    f.id_gobierno,
+    f.valor                                                   AS fees_millones_usd,
+    100 * f.valor * tc.dolar / (p.valor * 1000)               AS fees_pct_pib
+FROM economia.fact_observacion f
+JOIN LATERAL (
+    SELECT AVG(t.valor) AS dolar FROM economia.fact_observacion t
+     WHERE t.indicador = 'tipo_cambio' AND date_trunc('month', t.fecha) = f.fecha
+) tc ON TRUE
+JOIN economia.fact_observacion p
+  ON p.indicador = 'pib_nominal'
+ AND extract(year FROM p.fecha) = extract(year FROM f.fecha) - 1
+WHERE f.indicador = 'fees';
+
+-- -----------------------------------------------------------------------------
+-- v_costo_deuda_anual: cuánto le cuesta al Fisco su deuda, año a año.
+--
+-- intereses_pct_pib: gasto en intereses del Gobierno Central (devengado) sobre el PIB
+-- nominal del mismo año. No se calcula una tasa implícita (intereses sobre deuda) porque
+-- el gasto en intereses puede incluir partidas que no están en la deuda bruta, y con la
+-- deuda baja de 2006–2009 esa tasa sale distorsionada.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_costo_deuda_anual AS
+WITH anual AS (
+    SELECT extract(year FROM fecha)::int                            AS anio,
+           MAX(valor) FILTER (WHERE indicador = 'intereses_deuda')  AS intereses,   -- millones de pesos
+           MAX(valor) FILTER (WHERE indicador = 'pib_nominal')      AS pib,         -- miles de millones
+           MAX(id_gobierno) FILTER (WHERE indicador = 'pib_nominal') AS id_gobierno
+    FROM economia.fact_observacion
+    WHERE indicador IN ('intereses_deuda', 'pib_nominal')
+    GROUP BY 1
+)
+SELECT
+    a.anio,
+    a.id_gobierno,
+    100 * a.intereses / (a.pib * 1000)                              AS intereses_pct_pib
+FROM anual a
+WHERE a.intereses IS NOT NULL AND a.pib IS NOT NULL;
+
+-- -----------------------------------------------------------------------------
+-- v_pbi_costo_deuda: a qué tasa se endeudó cada gobierno.
+--
+-- tasa_pesos / tasa_uf: promedio de la tasa de mercado de los bonos a 10 años durante
+--   el gobierno: lo que costaba emitir deuda nueva. La tasa en UF es real (descuenta la
+--   inflación), así que se compara mejor entre gobiernos con inflaciones distintas.
+-- intereses_ini / intereses_fin: gasto en intereses (% del PIB) del último año del
+--   gobierno anterior y del último año propio. Lo mueven la deuda acumulada y las tasas.
+-- -----------------------------------------------------------------------------
+CREATE VIEW economia.v_pbi_costo_deuda AS
+SELECT
+    g.id_gobierno,
+    (SELECT AVG(o.valor) FROM economia.fact_observacion o
+      WHERE o.id_gobierno = g.id_gobierno AND o.indicador = 'tasa_bonos_10_pesos') AS tasa_pesos,
+    (SELECT AVG(o.valor) FROM economia.fact_observacion o
+      WHERE o.id_gobierno = g.id_gobierno AND o.indicador = 'tasa_bonos_10_uf')    AS tasa_uf,
+    (SELECT c.intereses_pct_pib FROM economia.v_costo_deuda_anual c
+      WHERE c.id_gobierno = g.id_gobierno - 1 ORDER BY c.anio DESC LIMIT 1)        AS intereses_ini,
+    (SELECT c.intereses_pct_pib FROM economia.v_costo_deuda_anual c
+      WHERE c.id_gobierno = g.id_gobierno ORDER BY c.anio DESC LIMIT 1)            AS intereses_fin,
+    (SELECT MAX(c.anio) FROM economia.v_costo_deuda_anual c
+      WHERE c.id_gobierno = g.id_gobierno)                                         AS anio_fin
+FROM economia.dim_gobierno g
+WHERE g.en_alcance;
+
+-- -----------------------------------------------------------------------------
 -- v_pbi_evaluacion: aciertos y problemas de cada gobierno con criterios uniformes.
 --
 -- Ocho criterios, los mismos para los cinco gobiernos, cada uno contra una referencia
@@ -235,13 +311,17 @@ num AS (
         (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'desempleo')  AS des_fin,
         (SELECT valor_heredado FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_ini,
         (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_fin,
-        -- Ahorro: solo el FEES, el fondo líquido para crisis. El FRP no se usa porque recibe
-        -- aportes obligatorios por ley y solo puede financiar pensiones. Ninguno se compara
-        -- solo: la deuda neta descuenta estos activos de la deuda bruta.
+        -- Ahorro: solo el FEES, el fondo líquido para crisis, en % del PIB. El FRP no se usa
+        -- porque recibe aportes obligatorios por ley y solo puede financiar pensiones. Ninguno
+        -- se compara solo: la deuda neta descuenta estos activos de la deuda bruta.
         -- El FEES existe desde marzo de 2007: para Bachelet I se usa su primer saldo.
-        (SELECT COALESCE(valor_heredado, valor_inicial) FROM r
-          WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fees')                      AS fs_ini,
-        (SELECT valor_final FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fees') AS fs_fin,
+        COALESCE(
+            (SELECT fp.fees_pct_pib FROM economia.v_fees_pib fp
+              WHERE fp.id_gobierno = g.id_gobierno - 1 ORDER BY fp.fecha DESC LIMIT 1),
+            (SELECT fp.fees_pct_pib FROM economia.v_fees_pib fp
+              WHERE fp.id_gobierno = g.id_gobierno ORDER BY fp.fecha LIMIT 1))              AS fs_ini,
+        (SELECT fp.fees_pct_pib FROM economia.v_fees_pib fp
+          WHERE fp.id_gobierno = g.id_gobierno ORDER BY fp.fecha DESC LIMIT 1)             AS fs_fin,
         m.meta_vigente, m.resultado, m.cumple_meta_vigente, m.anio_evaluado,
         -- Pobreza: última medición del gobierno anterior (o la primera propia) y la última propia
         COALESCE(
@@ -268,8 +348,8 @@ f AS (  -- formato con coma decimal
         replace(to_char(dn_fin, 'FM990.0'), '.', ',')       AS t_dn_fin,
         replace(to_char(meta_vigente, 'FM990.0'), '.', ',') AS t_meta,
         replace(to_char(resultado, 'FM990.0'), '.', ',')    AS t_res,
-        replace(to_char(fs_ini, 'FM999G999'), ',', '.')     AS t_fs_ini,
-        replace(to_char(fs_fin, 'FM999G999'), ',', '.')     AS t_fs_fin,
+        replace(to_char(fs_ini, 'FM990.0'), '.', ',')       AS t_fs_ini,
+        replace(to_char(fs_fin, 'FM990.0'), '.', ',')       AS t_fs_fin,
         replace(to_char(pob_ini, 'FM990.0'), '.', ',')      AS t_pob_ini,
         replace(to_char(pob_fin, 'FM990.0'), '.', ',')      AS t_pob_fin,
         replace(to_char(sal_real, 'SG0.0'), '.', ',')       AS t_sal
@@ -302,9 +382,9 @@ SELECT id_gobierno, 5, 'Deuda neta (% PIB): recibió → entregó', 'Gobierno',
        t_dn_ini || ' → ' || t_dn_fin, dn_fin <= dn_ini
 FROM f
 UNION ALL
-SELECT id_gobierno, 6, 'Fondo para crisis FEES (US$ mill.): recibió → entregó',
+SELECT id_gobierno, 6, 'Fondo para crisis FEES (% PIB): recibió → entregó',
        'Gobierno (y rentabilidad y tipo de cambio)',
-       'Entregar igual o más FEES que el recibido',
+       'Entregar un FEES igual o mayor que el recibido, como % del PIB',
        t_fs_ini || ' → ' || t_fs_fin, fs_fin >= fs_ini
 FROM f
 UNION ALL

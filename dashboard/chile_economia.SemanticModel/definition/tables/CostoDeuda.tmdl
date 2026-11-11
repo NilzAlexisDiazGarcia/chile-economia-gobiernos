@@ -1,0 +1,91 @@
+table CostoDeuda
+	lineageTag: 7c1ce759-9492-40cb-98e8-058325951c54
+
+	/// Tasa promedio de mercado de los bonos en pesos a 10 años durante el gobierno.
+	measure 'Tasa Bonos Pesos %' = AVERAGE ( CostoDeuda[tasa_pesos] )
+		formatString: 0.0
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 8bdef9af-35b7-4289-add0-9852dd039699
+
+	/// Tasa real: bonos en UF a 10 años, que descuentan la inflación.
+	measure 'Tasa Bonos UF %' = AVERAGE ( CostoDeuda[tasa_uf] )
+		formatString: 0.0
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: 1a9bf921-013d-4d55-9d12-245ce12024e1
+
+	/// Gasto en intereses (% del PIB): último año del gobierno anterior → último año propio.
+	measure 'Intereses Recibio Entrego' =
+			IF (
+			    HASONEVALUE ( Gobiernos[etiqueta] ),
+			    FORMAT ( SELECTEDVALUE ( CostoDeuda[intereses_ini] ), "0.00" ) & " → "
+			        & FORMAT ( SELECTEDVALUE ( CostoDeuda[intereses_fin] ), "0.00" )
+			)
+		displayFolder: 7. Balance de cada gobierno
+		lineageTag: e2cfc7dd-b9f9-45dc-a7e8-ca0862423de7
+
+	column id_gobierno
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9af38f10-3e9a-4108-a21d-852c8d8b27eb
+		summarizeBy: none
+		sourceColumn: id_gobierno
+
+		annotation SummarizationSetBy = Automatic
+
+	column tasa_pesos
+		dataType: double
+		formatString: 0.00
+		lineageTag: 204b49fb-01d0-486f-8d00-60fb8c5320f9
+		summarizeBy: none
+		sourceColumn: tasa_pesos
+
+		annotation SummarizationSetBy = Automatic
+
+	column tasa_uf
+		dataType: double
+		formatString: 0.00
+		lineageTag: 973069b5-e3a3-430f-8dc9-5f796a5c472b
+		summarizeBy: none
+		sourceColumn: tasa_uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column intereses_ini
+		dataType: double
+		formatString: 0.00
+		lineageTag: d5d414b5-d570-464f-bf53-cd9f3290e275
+		summarizeBy: none
+		sourceColumn: intereses_ini
+
+		annotation SummarizationSetBy = Automatic
+
+	column intereses_fin
+		dataType: double
+		formatString: 0.00
+		lineageTag: ba845d95-ba86-4c70-9546-c71dfbf71d51
+		summarizeBy: none
+		sourceColumn: intereses_fin
+
+		annotation SummarizationSetBy = Automatic
+
+	column anio_fin
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ad304b3-c57e-48b0-88f5-f88b8febaec9
+		summarizeBy: none
+		sourceColumn: anio_fin
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CostoDeuda = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("localhost", "economia_chile"),
+				  #"Navegación 1" = Origen{[Schema = "economia", Item = "v_pbi_costo_deuda"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

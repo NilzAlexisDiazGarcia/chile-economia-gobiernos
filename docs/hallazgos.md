@@ -245,7 +245,7 @@ o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
 | Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
-| Fondo para crisis FEES (US$ millones) | ✓ 7.137 → 11.237 | ✓ 11.237 → 15.774 | ✗ 15.774 → 14.851 | ✗ 14.851 → 6.406 | ✗ 6.406 → 3.944 |
+| Fondo para crisis FEES (% del PIB) | ✓ 4,7 → 6,2 | ✓ 6,2 → 6,4 | ✗ 6,4 → 4,9 | ✗ 4,9 → 2,2 | ✗ 2,2 → 1,0 |
 | Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
 | Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
@@ -325,6 +325,28 @@ Crecimiento anual promedio (FMI; por habitante = PIB dividido por la población)
   mundial de la inflación.
 - **El índice de salarios del INE tiene dos tramos sin empalmar** (hasta 2009 y desde 2010), así
   que falta la variación de 2010.
+
+## 12. Costo de la deuda: a qué tasa se endeudó cada gobierno
+
+| Gobierno | Tasa en pesos a 10 años (%) | Tasa real en UF a 10 años (%) | Intereses (% del PIB): recibió → dejó |
+|---|---:|---:|---|
+| Bachelet I | 6,2 | 3,0 | 0,81 (2005) → 0,49 (2009) |
+| Piñera I | 5,7 | 2,6 | 0,49 → 0,58 (2013) |
+| Bachelet II | 4,4 | 1,5 | 0,58 → 0,81 (2017) |
+| Piñera II | 3,9 | 0,9 | 0,81 → 0,86 (2021) |
+| Boric | 5,8 | 2,3 | 0,86 → 1,24 (2025) |
+
+- **Las tasas son el promedio del mercado secundario durante cada gobierno** (Banco Central). Son
+  lo que costaba emitir deuda nueva en ese momento. La tasa en UF descuenta la inflación, así que
+  es la que mejor se compara entre gobiernos.
+- **Piñera II fue el que más deuda tomó** (de 23,6 % a 36,2 % del PIB) **y con las tasas reales
+  más bajas** (0,9 %), en años de tasas mundiales mínimas.
+- **Boric heredó esa deuda y la siguió aumentando con tasas más altas** (2,3 % real), cuando las
+  tasas subieron en todo el mundo en 2022–2023.
+- **El gasto en intereses casi se triplicó:** de 0,47 % del PIB en 2008 a 1,24 % en 2025. Sube
+  con la deuda acumulada y con las tasas, y es gasto que no financia ningún servicio.
+- **Las tasas las fija el mercado.** El gobierno influye a través de cuánto se endeuda y de la
+  confianza en las cuentas fiscales, no directamente.
 
 ## Cómo reproducir estas cifras
 

@@ -38,12 +38,15 @@ recibió y lo que pasó en los países vecinos) y no atribuye causas.
   entre 2014 y 2025, con caídas en 2017, 2019, 2020 y 2023.
 
 **Por qué se endeudó:**
-- **El gasto superó a los ingresos permanentes:** 23,8 % del PIB frente a 22 % en promedio,
-  con déficit en 13 de 16 años desde 2008 (CFA).
+- **El gasto superó a los ingresos permanentes:** 23,8 % del PIB frente a 22 % en promedio
+  entre 2008 y 2023 (CFA). Hubo déficit efectivo en 14 de los 17 años entre 2009 y 2025.
 - **El menor crecimiento redujo la recaudación esperada.** El bajo crecimiento y la deuda se
   alimentan entre sí.
 - **Dos shocks** (la crisis de 2009 y la pandemia) y una regla fiscal cuyas metas se cambiaban a
   discreción (DIPRES).
+- **La deuda se volvió más cara.** Piñera II fue el que más deuda sumó, con las tasas reales
+  más bajas del período (0,9 % en UF a 10 años). Desde 2022 las tasas subieron en todo el mundo, y
+  el gasto en intereses llegó a 1,24 % del PIB en 2025, el más alto desde 2005.
 
 **Lo que mejoró:** la pobreza por ingresos bajó de 29,1 % en 2006 a 4,9 % en 2024, en la medición
 comparable de la CASEN. Bajó en todos los gobiernos salvo en la pandemia. Los salarios reales
@@ -86,7 +89,7 @@ a los cinco gobiernos:
 | Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
-| Fondo para crisis FEES (US$ millones) | ✓ 7.137 → 11.237 | ✓ 11.237 → 15.774 | ✗ 15.774 → 14.851 | ✗ 14.851 → 6.406 | ✗ 6.406 → 3.944 |
+| Fondo para crisis FEES (% del PIB) | ✓ 4,7 → 6,2 | ✓ 6,2 → 6,4 | ✗ 6,4 → 4,9 | ✗ 4,9 → 2,2 | ✗ 2,2 → 1,0 |
 | Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
 | Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
@@ -121,7 +124,7 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 |---|---|
 | Resumen | El cambio de régimen en cuatro cifras |
 | Conclusiones | Por qué Chile dejó de crecer y se endeudó, con sus causas y fuentes |
-| Balance de cada gobierno | Aciertos y problemas con ocho criterios uniformes, metas fiscales y arcas fiscales |
+| Balance de cada gobierno | Aciertos y problemas con ocho criterios uniformes, metas fiscales, arcas fiscales y a qué tasa se endeudó cada gobierno |
 | Comparación | Los indicadores principales de los cinco gobiernos, lado a lado |
 | Ficha por gobierno | Qué recibió y qué entregó cada gobierno, en qué contexto y qué dijeron el Banco Central y el FMI |
 | Series en el tiempo | Cada indicador mes a mes |
@@ -161,7 +164,7 @@ flowchart LR
     C --> D[(PostgreSQL<br/>modelo estrella)]
     D --> E[SQL<br/>vistas y consultas]
     E --> G[Power BI<br/>10 páginas]
-    C -.-> H[Auditoría<br/>41 verificaciones]
+    C -.-> H[Auditoría<br/>52 verificaciones]
     D -.-> H
     G -.-> H
 ```
@@ -192,7 +195,7 @@ flowchart LR
 ## Calidad de los datos
 
 La auditoría ([`src/analysis/auditoria.py`](src/analysis/auditoria.py)) verifica cada cifra
-por un camino distinto al que la produjo. Resultado: **41 de 41 verificaciones correctas.**
+por un camino distinto al que la produjo. Resultado: **52 de 52 verificaciones correctas.**
 
 - Cada valor del CSV es idéntico a la respuesta original de la API.
 - La asignación a gobiernos se reimplementó con otro método: 0 diferencias en 12.231 filas.
@@ -251,6 +254,7 @@ src/analysis/               Consultas, auditoría y valores esperados del dashbo
 sql/                        Esquema, vistas y consultas de análisis
 tests/                      Tests de la asignación y de los datos internacionales
 dashboard/                  Proyecto de Power BI (.pbip), tema y capturas
+dashboard/generador/        Script que genera las páginas del reporte (PBIR) desde código
 docs/                       Metodología, hallazgos, bitácora y auditoría
 ```
 
@@ -258,7 +262,8 @@ docs/                       Metodología, hallazgos, bitácora y auditoría
 
 - **Banco Central de Chile,** Base de Datos Estadísticos (API BDE): PIB, IMACEC, TPM, dólar,
   cobre y desempleo (INE). También las series fiscales de la DIPRES: deuda bruta y neta, y
-  balance efectivo y estructural. Saldos del FEES y del FRP (Ministerio de Hacienda).
+  balance efectivo y estructural. Saldos del FEES y del FRP (Ministerio de Hacienda). Tasas de
+  mercado de los bonos a 10 años en pesos y en UF, gasto en intereses y PIB nominal.
 - **DIPRES y Consejo Fiscal Autónomo:** metas fiscales de cada gobierno y su cumplimiento
   ([docs/metas_fiscales.md](docs/metas_fiscales.md)).
 - **INE:** IPC (variación a 12 meses oficial) e índice real de remuneraciones, vía la BDE.
