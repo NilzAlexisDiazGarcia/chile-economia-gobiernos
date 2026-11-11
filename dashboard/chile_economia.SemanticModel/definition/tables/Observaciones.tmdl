@@ -438,6 +438,21 @@ table Observaciones
 		displayFolder: 7. Balance de cada gobierno
 		lineageTag: 70f5f116-bb57-4eca-a5e1-9a8e729e7604
 
+	/// Variación anual promedio del salario real (índice del INE en sus dos tramos).
+	measure 'Salario Real Var 12m %' =
+			CALCULATE (
+			    [Var 12m Promedio],
+			    Observaciones[indicador] IN { "remuneraciones_reales_hist", "remuneraciones_reales" }
+			)
+		formatString: +0.0;-0.0;0.0
+		displayFolder: 2. Indicadores
+		lineageTag: a0321174-bab8-4efa-b2ee-a6d4e82758a2
+
+	/// Deuda bruta del Gobierno Central (% del PIB): lo que se pidió prestado, sin descontar los fondos.
+	measure 'Deuda Bruta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_bruta" )
+		displayFolder: 3. Ficha por gobierno
+		lineageTag: f67c7584-5964-4ba5-a4b2-fab153abc16e
+
 	measure 'Deuda Neta Recibio Entrego' = CALCULATE ( [Recibio Entrego], Observaciones[indicador] = "deuda_neta" )
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 939f3e6e-e702-46b7-91a0-a641e5476f80

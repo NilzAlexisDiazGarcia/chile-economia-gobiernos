@@ -80,13 +80,18 @@ estos factores.
 
 **Balance de cada gobierno** (vista `v_pbi_evaluacion`, detalle en [metas_fiscales.md](metas_fiscales.md)):
 
-- **Seis criterios uniformes,** cada uno favorable si cumple una referencia fijada de antemano:
+- **Ocho criterios uniformes,** cada uno favorable si cumple una referencia fijada de antemano:
   - Crecimiento sobre el promedio de los pares.
   - Inflación en el rango meta la mayoría de los meses.
   - Desempleo entregado menor que el recibido.
   - Balance estructural del último año completo igual o mejor que la meta vigente.
   - Deuda neta entregada igual o menor que la recibida.
-  - Fondos soberanos entregados iguales o mayores que los recibidos.
+  - FEES, el fondo para crisis, entregado igual o mayor que el recibido. No se usa el total de
+    los fondos soberanos porque el FRP recibe aportes obligatorios por ley y solo financia
+    pensiones, y porque un fondo puede crecer con deuda: la solvencia se mide con la deuda
+    neta, que descuenta estos activos de la deuda bruta.
+  - Pobreza por ingresos entregada menor que la recibida (CASEN, serie comparable).
+  - Salario real con variación anual promedio positiva.
 - **La meta fiscal se compara con la del propio gobierno:** la vigente al final y la de su
   decreto inicial. Las cifras son de la DIPRES con la metodología actual (2006–2021) y del
   CFA (2022–2025).
@@ -126,6 +131,11 @@ reciente.
 - **Cobre y dólar en términos nominales:** los niveles de períodos distantes no son
   directamente comparables; las variaciones sí.
 
+- **PIB por habitante:** se calcula con el crecimiento del PIB y de la población del FMI,
+  porque la inmigración de 2015–2019 elevó el crecimiento de la población.
+- **Pobreza:** la CASEN se mide cada dos o tres años. Cada medición se asigna al gobierno del
+  año de la encuesta, y se usa la serie comparable (metodología de 2013).
+
 **Extensiones posibles, fuera del alcance actual:**
 
 | Extensión | Para qué serviría | Disponibilidad |
@@ -133,7 +143,7 @@ reciente.
 | Tipo de cambio real | Medir competitividad, descontando la inflación de Chile y del exterior | Serie `F073.TCR.IND.199101.M` en la BDE |
 | Cobre en dólares reales | Comparar niveles entre períodos distantes | Requiere el IPC de EE.UU. |
 | Inversión (formación bruta de capital fijo) | El FMI atribuye la desaceleración de 2014 a su caída | Cuentas nacionales en la BDE |
-| Salarios reales, pobreza y desigualdad | Medir bienestar, no solo macroeconomía | Series del INE con cambios de base, y la encuesta CASEN |
+| Desigualdad y pobreza multidimensional | Completar la medición del bienestar | Encuesta CASEN |
 | Contrafactual formal (control sintético) | Estimar qué habría pasado sin cada gobierno | Requiere un panel amplio de países |
 
 ## 7. Neutralidad

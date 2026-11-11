@@ -71,13 +71,13 @@ cumplió, porque compara contra la meta actualizada en su informe de finanzas p�
 Saldos de los fondos soberanos en el último mes completo antes de cada cambio de mando, en
 millones de dólares de cada año:
 
-| Gobierno | FEES (fondo para crisis): recibió → dejó | FRP (reserva para pensiones): recibió → dejó | Total: recibió → dejó | Deuda neta: recibió → dejó (% PIB) |
-|---|---|---|---|---|
-| Bachelet I | — → 11.237 | — → 3.406 | — → 14.643 | −1,6 → −9,8 |
-| Piñera I | 11.237 → 15.774 | 3.406 → 7.499 | 14.643 → 23.273 | −9,8 → −6,2 |
-| Bachelet II | 15.774 → 14.851 | 7.499 → 10.049 | 23.273 → 24.900 | −6,2 → 5,0 |
-| Piñera II | 14.851 → 6.406 | 10.049 → 7.130 | 24.900 → 13.537 | 5,0 → 19,7 |
-| Boric | 6.406 → 3.944 | 7.130 → 10.328 | 13.537 → 14.272 | 19,7 → 26,1 |
+| Gobierno | FEES (fondo para crisis): recibió → dejó | FRP (reserva para pensiones): recibió → dejó | Total: recibió → dejó | Deuda bruta: recibió → dejó (% PIB) | Deuda neta: recibió → dejó (% PIB) |
+|---|---|---|---|---|---|
+| Bachelet I | — → 11.237 | — → 3.406 | — → 14.643 | 6,4 → 6,5 | −1,6 → −9,8 |
+| Piñera I | 11.237 → 15.774 | 3.406 → 7.499 | 14.643 → 23.273 | 6,5 → 12,7 | −9,8 → −6,2 |
+| Bachelet II | 15.774 → 14.851 | 7.499 → 10.049 | 23.273 → 24.900 | 12,7 → 23,6 | −6,2 → 5,0 |
+| Piñera II | 14.851 → 6.406 | 10.049 → 7.130 | 24.900 → 13.537 | 23,6 → 36,2 | 5,0 → 19,7 |
+| Boric | 6.406 → 3.944 | 7.130 → 10.328 | 13.537 → 14.272 | 36,2 → 42,4 | 19,7 → 26,1 |
 
 - **Bachelet I:** los fondos se crearon en 2007. En marzo de 2007 el total era de US$ 7.751
   millones y llegó a US$ 22.718 millones a fines de 2008. En 2009 se usaron unos US$ 9.000
@@ -85,10 +85,16 @@ millones de dólares de cada año:
 - **Piñera II:** el FEES bajó de US$ 12.233 millones a fines de 2019 a US$ 2.457 millones a
   fines de 2021, por su uso en la pandemia. Antes del cambio de mando se volvió a
   capitalizar, y llegó a US$ 6.406 millones en febrero de 2022.
-- **Boric:** el FEES siguió bajando, mientras el FRP subió. La ley obliga a hacer aportes al
-  FRP y a usarlo para financiar pensiones.
+- **Boric:** el FEES siguió bajando, de US$ 6.406 a 3.944 millones, sin una crisis, mientras el
+  FRP subió. La ley obliga a hacer aportes al FRP y a usarlo para financiar pensiones, así que
+  el total de los fondos no muestra cuánto ahorro disponible quedó.
 
 **Cómo leer estas cifras:**
+- **Los fondos no se leen solos.** Un fondo puede crecer con plata pedida prestada. Por eso
+  la columna clave es la deuda neta, que es la deuda bruta menos los activos financieros del
+  Fisco, incluidos estos fondos. Subió en cuatro de los cinco gobiernos.
+- **Por eso el balance evalúa el FEES y no el total:** el FEES es el colchón que el gobierno
+  puede usar; el FRP sube por aportes obligatorios.
 - **Los saldos cambian por depósitos y retiros, y también por la rentabilidad** de las
   inversiones. Una baja no significa siempre un retiro.
 - **Usar el FEES en una crisis es su propósito.** Fue creado para eso, así que una baja en

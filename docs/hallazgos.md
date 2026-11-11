@@ -3,7 +3,8 @@
 Observaciones descriptivas que salen de las consultas de `sql/analisis/`. Describen **qué
 pasó en cada período**, no **por qué**: el análisis no separa el efecto de las políticas de
 cada gobierno del ciclo externo, los eventos y las decisiones del Banco Central autónomo.
-Las reglas de asignación y las limitaciones están en [metodologia.md](metodologia.md).
+Las reglas de asignación y las limitaciones están en [metodologia.md](metodologia.md). Las
+causas de estos resultados, con sus fuentes, están en [conclusiones.md](conclusiones.md).
 
 Salvo que se diga otra cosa, las cifras usan la asignación principal (mayoría de días, sin
 desfase) e incluyen los períodos de transición.
@@ -232,7 +233,7 @@ del FMI (detalle y fuentes en [contexto_comparado.md](contexto_comparado.md)):
 
 ## 9. Balance de cada gobierno: aciertos y problemas con las mismas reglas
 
-Seis criterios, los mismos para los cinco gobiernos, cada uno frente a una referencia que
+Ocho criterios, los mismos para los cinco gobiernos, cada uno frente a una referencia que
 no elige el autor: los países pares, la meta del Banco Central, lo que cada gobierno recibió
 o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
 [metas_fiscales.md](metas_fiscales.md).
@@ -244,13 +245,15 @@ o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
 | Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
-| Fondos soberanos (US$ millones) | ✓ 7.751 → 14.643 | ✓ 14.643 → 23.273 | ✓ 23.273 → 24.900 | ✗ 24.900 → 13.537 | ✓ 13.537 → 14.272 |
+| Fondo para crisis FEES (US$ millones) | ✓ 7.137 → 11.237 | ✓ 11.237 → 15.774 | ✗ 15.774 → 14.851 | ✗ 14.851 → 6.406 | ✗ 6.406 → 3.944 |
+| Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
+| Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
 | Criterio | Quién lo controla principalmente |
 |---|---|
 | Meta fiscal, deuda neta y fondos soberanos | El gobierno |
 | Inflación | El Banco Central, que es autónomo |
-| Crecimiento y desempleo | Una mezcla del gobierno, el ciclo y el contexto externo |
+| Crecimiento, desempleo, pobreza y salarios | Una mezcla del gobierno, el ciclo y el contexto externo |
 
 **Aciertos y problemas de cada gobierno:**
 
@@ -262,25 +265,66 @@ o **la meta fiscal que el propio gobierno se fijó**. Detalle y fuentes en
   inflación en la meta y una baja del desempleo. Pero su meta se había flexibilizado al
   inicio, cuando la corrección de la Comisión Corbo elevó el déficit medido, y no habría
   cumplido la de su decreto inicial. Además, la deuda neta subió.
-- **Bachelet II:** creció levemente sobre sus pares en un contexto regional malo y aumentó
-  los fondos. Pero no cumplió su meta fiscal en 2017 (−2,0 % contra −1,05 %), sin un shock
-  extraordinario, y la deuda neta pasó a ser positiva. La inflación y el desempleo
+- **Bachelet II:** creció levemente sobre sus pares en un contexto regional malo. Pero no cumplió su meta fiscal en 2017 (−2,0 % contra −1,05 %), sin un shock
+  extraordinario, la deuda neta pasó a ser positiva y el FEES bajó levemente (en parte por
+  el tipo de cambio, porque se invierte también en euros y yenes). La inflación y el desempleo
   terminaron peor que como los recibió.
 - **Piñera II:** creció sobre sus pares en la crisis más profunda del período y tuvo inflación
   en la meta. Pero en 2021 tuvo el mayor déficit estructural desde que existe la regla
-  (−10,7 %), con la pandemia como contexto, y fue el único que entregó menos fondos
-  soberanos de los que recibió.
-- **Boric:** cumplió su meta fiscal en 2022 y los fondos se mantuvieron. Pero no la cumplió
+  (−10,7 %), con la pandemia como contexto, y entregó el FEES en menos de la mitad de lo
+  recibido, tras usarlo en la pandemia.
+- **Boric:** cumplió su meta fiscal en 2022. Pero no la cumplió
   en 2024 ni en 2025, sin un shock extraordinario: según el CFA, por errores reiterados en
   la proyección de ingresos. Tuvo crecimiento bajo sus pares e inflación fuera de la meta la
-  mayor parte del tiempo, y el desempleo subió.
+  mayor parte del tiempo, y el desempleo subió. El FEES bajó de US$ 6.406 a 3.944 millones sin
+  una crisis, mientras la deuda bruta subió de 36,2 % a 42,4 % del PIB. El total de los fondos se
+  mantuvo solo porque el FRP recibe aportes obligatorios.
 
 **Lo que no dice esta tabla:**
 - **No es un puntaje.** Los criterios no pesan lo mismo, y sumarlos sería arbitrario.
 - **Un ✗ no significa siempre una mala decisión.** Usar el ahorro en una crisis (2009, 2020)
   es el propósito de los fondos.
+- **Un fondo que crece no es por sí solo más riqueza:** puede financiarse con deuda. Por eso
+  la deuda neta, que descuenta los fondos, es la medida de solvencia.
 - **Las diferencias de crecimiento** entre la mayoría de los gobiernos están dentro de su
   incertidumbre (sección 1).
+
+## 10. Crecimiento por habitante: casi estancado desde 2014
+
+Crecimiento anual promedio (FMI; por habitante = PIB dividido por la población):
+
+| Gobierno | PIB total (%) | PIB por habitante (%) | Población (% anual) |
+|---|---:|---:|---:|
+| Bachelet I | 3,48 | 2,45 | 1,0 |
+| Piñera I | 5,40 | 4,33 | 1,0 |
+| Bachelet II | 1,80 | 0,53 | 1,3 |
+| Piñera II | 2,45 | 1,20 | 1,2 |
+| Boric | 2,03 | 1,19 | 0,8 |
+
+- **Entre 2006 y 2013 el PIB por habitante creció 3,4 % al año, y entre 2014 y 2025, 1,0 %.**
+- **Cayó en 2009, 2017, 2019, 2020 y 2023.** Desde 2014, el ingreso promedio de cada persona
+  cayó en cuatro de doce años, aunque solo 2020 fue una recesión.
+- **La inmigración de 2015–2019 hizo crecer la población entre 1,3 % y 1,6 % al año.** Por eso el
+  crecimiento por habitante de Bachelet II y Piñera II es bastante menor que el total.
+
+## 11. Bienestar: la pobreza bajó con fuerza aun con poco crecimiento
+
+| Gobierno | Pobreza por ingresos (%, CASEN): recibió → entregó | Salario real (variación anual promedio) |
+|---|---|---:|
+| Bachelet I | 29,1 (2006) → 25,3 (2009) | +2,4 % |
+| Piñera I | 25,3 → 14,4 (2013) | +3,2 % |
+| Bachelet II | 14,4 → 8,6 (2017) | +1,8 % |
+| Piñera II | 8,6 → 10,8 (2020) | +1,3 % |
+| Boric | 10,8 → 4,9 (2024) | +1,5 % |
+
+- **La pobreza bajó en cuatro de los cinco gobiernos.** Solo subió en la pandemia (2020).
+- **Las cifras son de la metodología de 2013,** la serie comparable. La CASEN 2024 adoptó una
+  metodología más exigente: con ella, la pobreza fue 20,5 % en 2022 y 17,3 % en 2024, y también
+  bajó.
+- **Los salarios reales cayeron solo en 2008 (−0,2 %) y 2022 (−1,8 %),** los dos años de alza
+  mundial de la inflación.
+- **El índice de salarios del INE tiene dos tramos sin empalmar** (hasta 2009 y desde 2010), así
+  que falta la variación de 2010.
 
 ## Cómo reproducir estas cifras
 

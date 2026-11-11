@@ -43,6 +43,8 @@ RANGOS_VALIDOS = {
     "fees": (0, 40_000),            # millones de dólares
     "frp": (0, 40_000),             # millones de dólares
     "fondos_soberanos": (0, 80_000),  # millones de dólares
+    "remuneraciones_reales_hist": (40, 200),  # índice
+    "remuneraciones_reales": (40, 200),       # índice
 }
 
 log = logging.getLogger("limpieza")

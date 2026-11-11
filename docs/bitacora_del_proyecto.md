@@ -17,6 +17,8 @@ por qué, qué problemas aparecieron y cómo se resolvieron. Complementa a
 | 5. Dashboard | Informe de 8 páginas, versionado como texto | Power BI (.pbip, TMDL, PBIR) |
 | 5b. Contexto comparado | Chile frente a sus pares y explicaciones oficiales | API del FMI y del Banco Mundial |
 | 5c. Rigor económico | Balance estructural, deuda neta e incertidumbre de los promedios | Python, SQL, DAX |
+| 5e. Balance de cada gobierno | Metas fiscales, fondos soberanos y ocho criterios uniformes | Investigación, SQL |
+| 5f. Conclusiones | PIB por habitante, bienestar y las causas del menor crecimiento y la deuda | FMI, INE, CASEN |
 
 ---
 
@@ -236,8 +238,8 @@ lo mismo que si la región crece mucho.
   - Se reintenta automáticamente.
   - Se reutiliza lo ya descargado en el día.
   - Si falla un país par, se informa y se sigue; si falla Chile, el proceso se detiene.
-- **Los datos de Colombia no se pudieron descargar.** El promedio de pares en corrupción
-  usa tres países, y así se indica en el reporte.
+- **Los datos de Colombia no se pudieron descargar al principio.** Una descarga posterior los
+  completó; si la API falla, el extractor reutiliza la última descarga disponible.
 
 ---
 
@@ -289,6 +291,45 @@ mismas reglas, fijadas antes de mirar los resultados.
 meta del decreto inicial, ninguno. Ambas lecturas se muestran, junto con el contexto de
 cada incumplimiento.
 
+## Etapa 5f. Conclusiones: por qué Chile dejó de crecer y se endeudó
+
+**Motivo:** el análisis describía bien qué pasó, pero no explicaba por qué. Una revisión con
+criterio de economista identificó además dos vacíos que podían cambiar conclusiones.
+
+**Qué se hizo:**
+- **PIB por habitante:** se calculó con el PIB y la población del FMI. Cambia la lectura: el
+  ingreso por habitante creció 3,4 % al año entre 2006 y 2013, y 1,0 % entre 2014 y 2025, con
+  caídas en 2017, 2019, 2020 y 2023. La inmigración de 2015–2019 hacía crecer el PIB total más
+  que el ingreso de cada persona.
+- **Bienestar:** la pobreza por ingresos de la CASEN, en la serie comparable, y el índice real de
+  remuneraciones del INE. La pobreza bajó de 29,1 % a 4,9 % y subió solo en la pandemia.
+- **Las causas, cada una con su fuente técnica:**
+  - Para el crecimiento: la productividad (CNEP), el fin del auge del cobre (FMI) y la caída
+    del crecimiento tendencial (DIPRES y Banco Central).
+  - Para la deuda: el gasto permanente mayor que el ingreso permanente (CFA), la relación
+    entre bajo crecimiento y recaudación (DIPRES), los shocks y las metas cambiadas a
+    discreción (DIPRES).
+- **El documento [conclusiones.md](conclusiones.md)** y una página nueva en el dashboard, con la
+  tesis, los gráficos que la respaldan y las causas.
+- **Dos criterios más** en la evaluación (pobreza y salario real) y nuevas verificaciones en
+  la auditoría.
+
+**Problema resuelto:** la auditoría falló al buscar el archivo crudo de `remuneraciones_reales`,
+porque el patrón de búsqueda también calzaba con `remuneraciones_reales_hist`. Se usó el mismo
+patrón estricto que la limpieza: la fecha justo después del nombre.
+
+**Corrección del criterio de ahorro:** el balance evaluaba el total de los fondos soberanos
+(FEES + FRP), y marcaba a Boric como favorable porque el total pasó de US$ 13.537 a 14.272
+millones. Era engañoso por dos razones:
+- **El FRP sube casi solo:** la ley obliga a hacerle aportes y solo puede financiar pensiones.
+  En cambio, el FEES, el colchón que el gobierno puede usar, bajó de US$ 6.406 a 3.944 millones.
+- **Un fondo puede crecer con deuda.** La deuda bruta subió de 36,2 % a 42,4 % del PIB en el
+  mismo período.
+
+El criterio pasó a ser el FEES. Con eso, Bachelet II, Piñera II y Boric quedan desfavorables.
+La tabla de arcas fiscales suma la deuda bruta, y el texto aclara que la medida de solvencia es
+la deuda neta, que descuenta los fondos.
+
 ## Verificación de cifras
 
 Cada afirmación de [hallazgos.md](hallazgos.md) se revisó contra los datos antes de
@@ -306,7 +347,7 @@ PIB de Piñera I es 5,43 % en ambos.
 ### Auditoría de exactitud (`src/analysis/auditoria.py`)
 
 Un script verifica cada cifra por un camino distinto al que la produjo. Resultado actual:
-**36 de 36 verificaciones correctas.**
+**41 de 41 verificaciones correctas.**
 
 | Verificación | Qué compara | Resultado |
 |---|---|---|

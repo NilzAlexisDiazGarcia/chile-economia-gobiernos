@@ -47,6 +47,7 @@ IMF_INDICADORES = {
     "LUR": ("desempleo", "% de la fuerza laboral"),
     "GGXWDG_NGDP": ("deuda_gobierno_general", "% del PIB"),
     "GGXCNL_NGDP": ("balance_gobierno_general", "% del PIB"),
+    "LP": ("poblacion", "millones de personas"),
 }
 
 WB_URL = "https://api.worldbank.org/v2/country/{pais}/indicator/{codigo}"
@@ -90,6 +91,7 @@ def extraer_banco_mundial(sesion: requests.Session) -> list[dict]:
         for pais in PAISES_WGI:
             nombre = f"bm_{indicador}_{pais}"
             cache = RAW_INT_DIR / f"{nombre}_{date.today():%Y%m%d}.json"
+            anteriores = sorted(RAW_INT_DIR.glob(f"{nombre}_*.json"))
             if cache.exists():
                 # La API del Banco Mundial falla seguido: se reutiliza lo ya descargado hoy.
                 datos = json.loads(cache.read_text(encoding="utf-8"))
@@ -102,12 +104,17 @@ def extraer_banco_mundial(sesion: requests.Session) -> list[dict]:
                     if len(datos) < 2 or not datos[1]:
                         raise RuntimeError("respuesta sin datos")
                 except (requests.RequestException, RuntimeError) as e:
-                    # El puntaje de Chile es obligatorio; lo demás se informa y se omite si falla.
-                    if pais == "CHL" and codigo == "GOV_WGI_CC.EST":
-                        raise
-                    print(f"AVISO: sin datos de {codigo} para {pais} ({type(e).__name__})")
-                    continue
-                _guardar_crudo(datos, nombre)
+                    if anteriores:
+                        # El índice es anual: una descarga de días anteriores sigue vigente.
+                        print(f"AVISO: {codigo} {pais} sin respuesta; se usa {anteriores[-1].name}")
+                        datos = json.loads(anteriores[-1].read_text(encoding="utf-8"))
+                    elif pais == "CHL" and codigo == "GOV_WGI_CC.EST":
+                        raise  # el puntaje de Chile es obligatorio
+                    else:
+                        print(f"AVISO: sin datos de {codigo} para {pais} ({type(e).__name__})")
+                        continue
+                else:
+                    _guardar_crudo(datos, nombre)
             for obs in datos[1]:
                 anio = int(obs["date"])
                 if DESDE <= anio <= HASTA and obs["value"] is not None:
@@ -120,6 +127,23 @@ def extraer_banco_mundial(sesion: requests.Session) -> list[dict]:
     return filas
 
 
+def agregar_per_capita(df: pd.DataFrame) -> pd.DataFrame:
+    """Crecimiento del PIB por habitante: (1 + crecimiento del PIB) / (1 + crecimiento de la población) - 1.
+
+    Se calcula con las dos series del FMI, para todas las zonas con ambos datos. Importa en
+    Chile porque la población creció más rápido entre 2015 y 2019, por la inmigración.
+    """
+    pib = df[df["indicador"] == "crecimiento_pib"].set_index(["zona", "anio"])["valor"]
+    pob = df[df["indicador"] == "poblacion"].set_index(["zona", "anio"])["valor"].sort_index()
+    crec_pob = pob.groupby(level="zona").pct_change() * 100
+    pc = ((1 + pib / 100) / (1 + crec_pob / 100) - 1) * 100
+    pc = pc.dropna().reset_index(name="valor")
+    pc["indicador"] = "crecimiento_pib_per_capita"
+    pc["unidad"] = "% anual"
+    pc["fuente"] = "FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población"
+    return pd.concat([df, pc], ignore_index=True)
+
+
 def main() -> int:
     with requests.Session() as sesion:
         # Reintenta ante caídas o lentitud temporal de las APIs públicas.
@@ -127,7 +151,7 @@ def main() -> int:
         sesion.mount("https://", HTTPAdapter(max_retries=reintentos))
         filas = extraer_fmi(sesion) + extraer_banco_mundial(sesion)
 
-    df = pd.DataFrame(filas)
+    df = agregar_per_capita(pd.DataFrame(filas))
     df["nombre_zona"] = df["zona"].map(ZONAS)
     # El FMI publica estimaciones para el año en curso y proyecciones para los siguientes.
     df["es_proyeccion"] = df["anio"] >= date.today().year

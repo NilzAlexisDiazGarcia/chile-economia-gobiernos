@@ -153,3 +153,15 @@ CREATE TABLE IF NOT EXISTS economia.dim_meta_fiscal (
     fuente                VARCHAR(200) NOT NULL,
     url                   TEXT         NOT NULL
 );
+
+-- -----------------------------------------------------------------------------
+-- Pobreza por ingresos (CASEN, Ministerio de Desarrollo Social), serie comparable
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS economia.dim_pobreza (
+    anio          SMALLINT     PRIMARY KEY,
+    pobreza_pct   NUMERIC(4,1) NOT NULL CHECK (pobreza_pct BETWEEN 0 AND 100),
+    metodologia   TEXT         NOT NULL,
+    fuente        VARCHAR(200) NOT NULL,
+    url           TEXT         NOT NULL,
+    id_gobierno   SMALLINT     NOT NULL REFERENCES economia.dim_gobierno (id_gobierno)
+);

@@ -75,6 +75,8 @@ table Indicadores
 			    "fees", "Fondo de Estabilización (FEES)",
 			    "frp", "Fondo de Reserva de Pensiones (FRP)",
 			    "fondos_soberanos", "Fondos soberanos (total)",
+			    "remuneraciones_reales_hist", "Salario real (hasta 2009)",
+			    "remuneraciones_reales", "Salario real (desde 2010)",
 			    Indicadores[indicador]
 			)
 		dataType: string
@@ -88,7 +90,7 @@ table Indicadores
 			    Indicadores[indicador],
 			    "pib", 1, "imacec", 2, "ipc", 3, "tpm", 4, "desempleo", 5,
 			    "deuda_bruta", 6, "deuda_neta", 7, "balance_fiscal", 8, "balance_estructural", 9,
-			    "cobre", 10, "tipo_cambio", 11, "fees", 12, "frp", 13, "fondos_soberanos", 14,
+			    "cobre", 10, "tipo_cambio", 11, "fees", 12, "frp", 13, "fondos_soberanos", 14, "remuneraciones_reales_hist", 15, "remuneraciones_reales", 16,
 			    99
 			)
 		dataType: int64

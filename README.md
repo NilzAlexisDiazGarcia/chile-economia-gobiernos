@@ -20,12 +20,39 @@ El análisis es **descriptivo y neutral**: aplica las mismas reglas a los cinco 
 compara contra referencias externas (la meta del Banco Central, lo que cada gobierno
 recibió y lo que pasó en los países vecinos) y no atribuye causas.
 
-## Lo que muestran los datos
+## La conclusión
 
-> **Los grandes cambios de la economía chilena entre 2006 y 2026 fueron estructurales y los
-> compartieron los cinco gobiernos: ninguno los produjo ni los revirtió por sí solo. Dentro
-> de ese marco, cada gobierno tuvo aciertos y problemas propios, medidos con las mismas
-> reglas para todos.**
+> **Entre 2006 y 2026, Chile pasó de crecer rápido y ahorrar a crecer poco y endeudarse. Fue
+> un cambio estructural, que comenzó con el fin del auge del cobre y la caída de la
+> productividad, y que ningún gobierno revirtió. Los gobiernos no causaron ese cambio, pero sí
+> lo agravaron: todos gastaron, en forma permanente, más de lo que la economía generaba en
+> forma permanente. Al mismo tiempo, la pobreza bajó con fuerza.**
+
+**Por qué dejó de crecer:**
+- **La productividad lleva unos 16 años estancada,** según la CNEP: por la desaceleración
+  mundial, la rigidez laboral, los permisos para invertir y la menor ley del mineral.
+- **Terminó el auge del cobre y cayó la inversión minera** (FMI).
+- **La capacidad de crecer se redujo a la mitad:** de cerca de 5 % estimado en 2011 a 2 % hoy
+  (DIPRES y Banco Central).
+- **El ingreso por habitante casi se estancó:** creció 3,4 % al año entre 2006 y 2013, y 1,0 %
+  entre 2014 y 2025, con caídas en 2017, 2019, 2020 y 2023.
+
+**Por qué se endeudó:**
+- **El gasto superó a los ingresos permanentes:** 23,8 % del PIB frente a 22 % en promedio,
+  con déficit en 13 de 16 años desde 2008 (CFA).
+- **El menor crecimiento redujo la recaudación esperada.** El bajo crecimiento y la deuda se
+  alimentan entre sí.
+- **Dos shocks** (la crisis de 2009 y la pandemia) y una regla fiscal cuyas metas se cambiaban a
+  discreción (DIPRES).
+
+**Lo que mejoró:** la pobreza por ingresos bajó de 29,1 % en 2006 a 4,9 % en 2024, en la medición
+comparable de la CASEN. Bajó en todos los gobiernos salvo en la pandemia. Los salarios reales
+subieron en casi todos los años.
+
+La explicación completa, gobierno por gobierno y con cada fuente, está en
+[docs/conclusiones.md](docs/conclusiones.md).
+
+## Lo que muestran los datos
 
 **1. La economía cambió de régimen, y el cambio atraviesa a los cinco gobiernos.**
 - El PIB creció **4,3 %** anual en promedio entre 2006 y 2014, y **2,1 %** entre 2014 y 2026.
@@ -59,7 +86,9 @@ a los cinco gobiernos:
 | Desempleo: recibió → entregó | ✗ 7,8 → 8,5 | ✓ 8,5 → 6,2 | ✗ 6,2 → 7,0 | ✗ 7,0 → 7,5 | ✗ 7,5 → 8,3 |
 | Meta fiscal propia | ✗ 0,0 → −3,4 | ✓ −1,0 → −0,5 | ✗ −1,05 → −2,0 | ✗ −4,7 → −10,7 | ✗ −1,6 → −3,6 |
 | Deuda neta (% PIB) | ✓ −1,6 → −9,8 | ✗ −9,8 → −6,2 | ✗ −6,2 → 5,0 | ✗ 5,0 → 19,7 | ✗ 19,7 → 26,1 |
-| Fondos soberanos (US$ millones) | ✓ 7.751 → 14.643 | ✓ 14.643 → 23.273 | ✓ 23.273 → 24.900 | ✗ 24.900 → 13.537 | ✓ 13.537 → 14.272 |
+| Fondo para crisis FEES (US$ millones) | ✓ 7.137 → 11.237 | ✓ 11.237 → 15.774 | ✗ 15.774 → 14.851 | ✗ 14.851 → 6.406 | ✗ 6.406 → 3.944 |
+| Pobreza (%, CASEN) | ✓ 29,1 → 25,3 | ✓ 25,3 → 14,4 | ✓ 14,4 → 8,6 | ✗ 8,6 → 10,8 | ✓ 10,8 → 4,9 |
+| Salario real (% anual) | ✓ +2,4 | ✓ +3,2 | ✓ +1,8 | ✓ +1,3 | ✓ +1,5 |
 
 **4. Aun así, no hay un "mejor gobierno".** Con cuatro años por gobierno, de las
 10 comparaciones de crecimiento entre pares de gobiernos solo 2 superan su incertidumbre:
@@ -76,7 +105,8 @@ internacional en [docs/contexto_comparado.md](docs/contexto_comparado.md).
 - **Los efectos tardan:** las políticas se notan con rezago, y el dashboard muestra cómo
   cambian las cifras si se suponen 6 o 12 meses de desfase.
 - **Hay eventos superpuestos:** el estallido social y la pandemia coinciden en 2020.
-- **No mide bienestar ni distribución,** solo indicadores macroeconómicos.
+- **Mide el bienestar de forma parcial:** pobreza por ingresos y salarios reales, pero no
+  desigualdad ni otras dimensiones de la calidad de vida.
 
 Todas las limitaciones están en [docs/metodologia.md](docs/metodologia.md).
 
@@ -84,12 +114,13 @@ Todas las limitaciones están en [docs/metodologia.md](docs/metodologia.md).
 
 ## El dashboard
 
-Nueve páginas en Power BI, con el mismo diseño, el mismo color para cada gobierno en todas
+Diez páginas en Power BI, con el mismo diseño, el mismo color para cada gobierno en todas
 las páginas y orden cronológico, nunca de "mejor" a "peor".
 
 | Página | Qué responde |
 |---|---|
 | Resumen | El cambio de régimen en cuatro cifras |
+| Conclusiones | Por qué Chile dejó de crecer y se endeudó, con sus causas y fuentes |
 | Balance de cada gobierno | Aciertos y problemas con seis criterios uniformes, metas fiscales y arcas fiscales |
 | Comparación | Los indicadores principales de los cinco gobiernos, lado a lado |
 | Ficha por gobierno | Qué recibió y qué entregó cada gobierno, en qué contexto y qué dijeron el Banco Central y el FMI |
@@ -99,20 +130,22 @@ las páginas y orden cronológico, nunca de "mejor" a "peor".
 | Sensibilidad al desfase | Cuánto cambian las conclusiones según el rezago supuesto |
 | Metodología | Las reglas del análisis y sus límites |
 
-![Balance de cada gobierno](dashboard/capturas/02_balance_de_cada_gobierno.webp)
+![Conclusiones](dashboard/capturas/02_conclusiones.webp)
 
-![Ficha por gobierno](dashboard/capturas/04_ficha_por_gobierno.webp)
+![Balance de cada gobierno](dashboard/capturas/03_balance_de_cada_gobierno.webp)
 
-![Chile frente a sus pares](dashboard/capturas/07_chile_frente_a_sus_pares.webp)
+![Ficha por gobierno](dashboard/capturas/05_ficha_por_gobierno.webp)
+
+![Chile frente a sus pares](dashboard/capturas/08_chile_frente_a_sus_pares.webp)
 
 <details>
 <summary>Ver las demás páginas</summary>
 
-![Comparación](dashboard/capturas/03_comparacion.webp)
-![Series en el tiempo](dashboard/capturas/05_series_en_el_tiempo.webp)
-![Contexto externo](dashboard/capturas/06_contexto_externo.webp)
-![Sensibilidad al desfase](dashboard/capturas/08_sensibilidad_al_desfase.webp)
-![Metodología](dashboard/capturas/09_metodologia.png)
+![Comparación](dashboard/capturas/04_comparacion.webp)
+![Series en el tiempo](dashboard/capturas/06_series_en_el_tiempo.webp)
+![Contexto externo](dashboard/capturas/07_contexto_externo.webp)
+![Sensibilidad al desfase](dashboard/capturas/09_sensibilidad_al_desfase.webp)
+![Metodología](dashboard/capturas/10_metodologia.png)
 
 </details>
 
@@ -127,8 +160,8 @@ flowchart LR
     B --> C[Python<br/>limpieza y asignación<br/>por gobierno]
     C --> D[(PostgreSQL<br/>modelo estrella)]
     D --> E[SQL<br/>vistas y consultas]
-    E --> G[Power BI<br/>9 páginas]
-    C -.-> H[Auditoría<br/>36 verificaciones]
+    E --> G[Power BI<br/>10 páginas]
+    C -.-> H[Auditoría<br/>41 verificaciones]
     D -.-> H
     G -.-> H
 ```
@@ -159,7 +192,7 @@ flowchart LR
 ## Calidad de los datos
 
 La auditoría ([`src/analysis/auditoria.py`](src/analysis/auditoria.py)) verifica cada cifra
-por un camino distinto al que la produjo. Resultado: **36 de 36 verificaciones correctas.**
+por un camino distinto al que la produjo. Resultado: **41 de 41 verificaciones correctas.**
 
 - Cada valor del CSV es idéntico a la respuesta original de la API.
 - La asignación a gobiernos se reimplementó con otro método: 0 diferencias en 12.231 filas.
@@ -228,7 +261,10 @@ docs/                       Metodología, hallazgos, bitácora y auditoría
   balance efectivo y estructural. Saldos del FEES y del FRP (Ministerio de Hacienda).
 - **DIPRES y Consejo Fiscal Autónomo:** metas fiscales de cada gobierno y su cumplimiento
   ([docs/metas_fiscales.md](docs/metas_fiscales.md)).
-- **INE:** IPC, variación a 12 meses oficial, obtenido vía la BDE.
+- **INE:** IPC (variación a 12 meses oficial) e índice real de remuneraciones, vía la BDE.
+- **Ministerio de Desarrollo Social:** pobreza por ingresos de la encuesta CASEN
+  ([`data/reference/pobreza_casen.csv`](data/reference/pobreza_casen.csv)).
+- **CNEP, Banco Central y FMI:** productividad y crecimiento tendencial, para las causas.
 - **FMI,** World Economic Outlook (octubre de 2026): comparación con países pares.
 - **Banco Mundial,** Worldwide Governance Indicators: control de la corrupción.
 - **Citas:** informes del Banco Central (IPoM y Boletín Mensual) y del FMI (consultas del

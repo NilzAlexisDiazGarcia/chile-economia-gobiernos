@@ -73,11 +73,17 @@ table Comparacion
 		displayFolder: 6. Comparación con pares
 		lineageTag: fa6d89c6-b95e-4aec-9d49-138a5866632b
 
-	/// Promedio de Perú, México y Brasil: el Banco Mundial no entregó datos de Colombia.
+	/// Promedio de Perú, Colombia, México y Brasil.
 	measure 'Control Corrupcion Pares' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "control_corrupcion" )
 		formatString: 0.00
 		displayFolder: 6. Comparación con pares
 		lineageTag: 386e15ca-73ec-4ec0-bb1d-3a67f8fbe809
+
+	/// Crecimiento del PIB por habitante de Chile (FMI): PIB y población.
+	measure 'Crecimiento per Capita Chile %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "crecimiento_pib_per_capita" )
+		formatString: 0.0
+		displayFolder: 6. Comparación con pares
+		lineageTag: b1da5104-043e-4944-8cbf-ce14c0c3f9b6
 
 	/// Frase para la ficha: cuánto creció Chile frente a sus pares.
 	measure 'Texto Crecimiento vs Pares' =
@@ -242,6 +248,8 @@ table Comparacion
 			    "deuda_gobierno_general", "Deuda bruta (gobierno general)",
 			    "balance_gobierno_general", "Balance fiscal (gobierno general)",
 			    "control_corrupcion", "Control de la corrupción",
+			    "crecimiento_pib_per_capita", "Crecimiento del PIB por habitante",
+			    "poblacion", "Población",
 			    Comparacion[indicador]
 			)
 		dataType: string

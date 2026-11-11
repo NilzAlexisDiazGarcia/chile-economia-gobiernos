@@ -30,8 +30,8 @@ así, no mide el efecto de las políticas de cada gobierno: sigue siendo una des
 - **Inflación:** el agregado de América Latina incluye a Argentina y Venezuela, cuya
   inflación muy alta lo distorsiona (13,3 % en 2022–2025). La comparación usa el promedio de
   los cuatro pares.
-- **Corrupción:** la API del Banco Mundial no entregó los datos de Colombia ni los errores
-  estándar, así que el promedio de pares usa tres países.
+- **Corrupción:** el promedio de pares usa los cuatro países. Una primera descarga no trajo
+  Colombia por fallas de la API del Banco Mundial; se completó después.
 
 Para reproducir:
 
@@ -133,13 +133,13 @@ los gobiernos.
 
 ## 6. Control de la corrupción
 
-| Gobierno | Chile | Pares (3) |
+| Gobierno | Chile | Pares (4) |
 |---|---:|---:|
-| Bachelet I | 1,42 | −0,28 |
-| Piñera I | 1,49 | −0,25 |
-| Bachelet II | 1,19 | −0,59 |
-| Piñera II | 1,16 | −0,60 |
-| Boric | 1,11 | −0,67 |
+| Bachelet I | 1,42 | −0,27 |
+| Piñera I | 1,49 | −0,28 |
+| Bachelet II | 1,19 | −0,53 |
+| Piñera II | 1,16 | −0,52 |
+| Boric | 1,11 | −0,58 |
 
 Banco Mundial, puntaje de −2,5 a 2,5 (más alto = mejor control), promedio por gobierno.
 

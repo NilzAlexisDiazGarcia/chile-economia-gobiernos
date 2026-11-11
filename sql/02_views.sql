@@ -52,7 +52,8 @@ JOIN economia.dim_gobierno    g USING (id_gobierno);
 -- -----------------------------------------------------------------------------
 CREATE VIEW economia.v_variacion_12m AS
 WITH rezagos (indicador, periodos_por_anio) AS (
-    VALUES ('pib', 4), ('imacec', 12), ('cobre', 12)
+    VALUES ('pib', 4), ('imacec', 12), ('cobre', 12),
+           ('remuneraciones_reales_hist', 12), ('remuneraciones_reales', 12)
 ),
 serie AS (
     SELECT
@@ -184,8 +185,8 @@ LEFT JOIN economia.v_variacion_12m v
 -- pares: promedio simple de los países marcados como pares en dim_zona (Perú,
 -- Colombia, México y Brasil). Promedio simple y no ponderado: cada país cuenta
 -- como una referencia, sin que Brasil o México pesen más por su tamaño.
--- n_pares: cuántos pares tienen dato ese año (el Banco Mundial no entregó
--- Colombia), para que el lector sepa sobre cuántos países se calculó.
+-- n_pares: cuántos pares tienen dato ese año, para que el lector sepa sobre
+-- cuántos países se calculó.
 -- Se excluyen las proyecciones del FMI.
 -- -----------------------------------------------------------------------------
 CREATE VIEW economia.v_pbi_comparacion AS
@@ -212,7 +213,7 @@ HAVING MAX(f.valor) FILTER (WHERE f.zona = 'CHL') IS NOT NULL;
 -- -----------------------------------------------------------------------------
 -- v_pbi_evaluacion: aciertos y problemas de cada gobierno con criterios uniformes.
 --
--- Seis criterios, los mismos para los cinco gobiernos, cada uno contra una referencia
+-- Ocho criterios, los mismos para los cinco gobiernos, cada uno contra una referencia
 -- explícita que no elige el autor. "quien_controla" indica qué actor maneja
 -- principalmente cada variable: un mal resultado en inflación, que maneja el Banco
 -- Central autónomo, no se lee igual que no cumplir la meta fiscal propia.
@@ -234,11 +235,26 @@ num AS (
         (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'desempleo')  AS des_fin,
         (SELECT valor_heredado FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_ini,
         (SELECT valor_final    FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'deuda_neta') AS dn_fin,
-        -- Los fondos existen desde marzo de 2007: para Bachelet I se usa su primer saldo.
+        -- Ahorro: solo el FEES, el fondo líquido para crisis. El FRP no se usa porque recibe
+        -- aportes obligatorios por ley y solo puede financiar pensiones. Ninguno se compara
+        -- solo: la deuda neta descuenta estos activos de la deuda bruta.
+        -- El FEES existe desde marzo de 2007: para Bachelet I se usa su primer saldo.
         (SELECT COALESCE(valor_heredado, valor_inicial) FROM r
-          WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fondos_soberanos')          AS fs_ini,
-        (SELECT valor_final FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fondos_soberanos') AS fs_fin,
-        m.meta_vigente, m.resultado, m.cumple_meta_vigente, m.anio_evaluado
+          WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fees')                      AS fs_ini,
+        (SELECT valor_final FROM r WHERE r.id_gobierno = g.id_gobierno AND indicador = 'fees') AS fs_fin,
+        m.meta_vigente, m.resultado, m.cumple_meta_vigente, m.anio_evaluado,
+        -- Pobreza: última medición del gobierno anterior (o la primera propia) y la última propia
+        COALESCE(
+            (SELECT p.pobreza_pct FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno - 1
+              ORDER BY p.anio DESC LIMIT 1),
+            (SELECT p.pobreza_pct FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno
+              ORDER BY p.anio LIMIT 1))                                                    AS pob_ini,
+        (SELECT p.pobreza_pct FROM economia.dim_pobreza p WHERE p.id_gobierno = g.id_gobierno
+          ORDER BY p.anio DESC LIMIT 1)                                                    AS pob_fin,
+        -- Salario real: variación anual promedio de los dos tramos del índice del INE
+        (SELECT AVG(v.var_12m_pct) FROM economia.v_variacion_12m v
+          WHERE v.id_gobierno = g.id_gobierno
+            AND v.indicador IN ('remuneraciones_reales_hist', 'remuneraciones_reales'))   AS sal_real
     FROM economia.dim_gobierno g
     JOIN economia.dim_meta_fiscal m USING (id_gobierno)
     WHERE g.en_alcance
@@ -253,7 +269,10 @@ f AS (  -- formato con coma decimal
         replace(to_char(meta_vigente, 'FM990.0'), '.', ',') AS t_meta,
         replace(to_char(resultado, 'FM990.0'), '.', ',')    AS t_res,
         replace(to_char(fs_ini, 'FM999G999'), ',', '.')     AS t_fs_ini,
-        replace(to_char(fs_fin, 'FM999G999'), ',', '.')     AS t_fs_fin
+        replace(to_char(fs_fin, 'FM999G999'), ',', '.')     AS t_fs_fin,
+        replace(to_char(pob_ini, 'FM990.0'), '.', ',')      AS t_pob_ini,
+        replace(to_char(pob_fin, 'FM990.0'), '.', ',')      AS t_pob_fin,
+        replace(to_char(sal_real, 'SG0.0'), '.', ',')       AS t_sal
     FROM num
 )
 SELECT id_gobierno, 1 AS orden, 'Crecimiento vs. pares (pp)' AS criterio,
@@ -283,7 +302,18 @@ SELECT id_gobierno, 5, 'Deuda neta (% PIB): recibió → entregó', 'Gobierno',
        t_dn_ini || ' → ' || t_dn_fin, dn_fin <= dn_ini
 FROM f
 UNION ALL
-SELECT id_gobierno, 6, 'Fondos soberanos (US$ mill.): recibió → entregó', 'Gobierno (y rentabilidad de los mercados)',
-       'Entregar igual o más ahorro que el recibido (FEES + FRP)',
+SELECT id_gobierno, 6, 'Fondo para crisis FEES (US$ mill.): recibió → entregó',
+       'Gobierno (y rentabilidad y tipo de cambio)',
+       'Entregar igual o más FEES que el recibido',
        t_fs_ini || ' → ' || t_fs_fin, fs_fin >= fs_ini
+FROM f
+UNION ALL
+SELECT id_gobierno, 7, 'Pobreza (%, CASEN): recibió → entregó', 'Mixto: gobierno, crecimiento y transferencias',
+       'Entregar menos pobreza por ingresos que la recibida',
+       t_pob_ini || ' → ' || t_pob_fin, pob_fin < pob_ini
+FROM f
+UNION ALL
+SELECT id_gobierno, 8, 'Salario real (% anual promedio)', 'Mixto: gobierno, inflación y mercado laboral',
+       'Que los salarios suban más que los precios',
+       t_sal || ' %', sal_real > 0
 FROM f;

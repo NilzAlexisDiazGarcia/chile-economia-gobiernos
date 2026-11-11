@@ -235,6 +235,31 @@ fuente,indicador,unidad,zona,anio,valor,nombre_zona,es_proyeccion
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",CHL,2023,1.0570234,Chile,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",CHL,2024,1.1425214,Chile,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",CHL,2025,1.0992872,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2000,-0.6252783,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2002,-0.235209,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2003,-0.1809985,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2004,-0.0731881,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2005,-0.0996347,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2006,-0.2038926,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2007,-0.2644655,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2008,-0.2288895,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2009,-0.2879776,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2010,-0.374115,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2011,-0.2029364,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2012,-0.4079967,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2013,-0.4406799,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2014,-0.3709047,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2015,-0.3168336,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2016,-0.3685615,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2017,-0.40964,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2018,-0.3177104,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2019,-0.2722205,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2020,-0.2565109,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2021,-0.2699708,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2022,-0.2582072,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2023,-0.2953488,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2024,-0.2821944,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",COL,2025,-0.3085373,Colombia,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",MEX,2000,-0.0528131,México,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",MEX,2002,-0.3286603,México,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",MEX,2003,-0.3277092,México,False
@@ -285,6 +310,131 @@ fuente,indicador,unidad,zona,anio,valor,nombre_zona,es_proyeccion
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",PER,2023,-0.6484931,Perú,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",PER,2024,-0.710741,Perú,False
 "Banco Mundial, Worldwide Governance Indicators",control_corrupcion,"puntaje (-2,5 a 2,5)",PER,2025,-0.7553078,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2000,0.2008729,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2002,0.2008252,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2003,0.2008252,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2004,0.1795034,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2005,0.1795034,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2006,0.1769023,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2007,0.1761655,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2008,0.1761655,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2009,0.1741166,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2010,0.1736504,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2011,0.156885,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2012,0.1587323,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2013,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2014,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2015,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2016,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2017,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2018,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2019,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2020,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2021,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2022,0.1597599,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2023,0.1630377,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2024,0.1634233,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",BRA,2025,0.1620348,Brasil,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2000,0.2008729,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2002,0.2008252,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2003,0.2008252,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2004,0.1800184,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2005,0.1795034,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2006,0.1775734,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2007,0.1775734,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2008,0.1761655,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2009,0.1761655,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2010,0.1805899,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2011,0.1619459,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2012,0.1619459,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2013,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2014,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2015,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2016,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2017,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2018,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2019,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2020,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2021,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2022,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2023,0.1630377,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2024,0.1634233,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",CHL,2025,0.1620348,Chile,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2000,0.2008729,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2002,0.2008252,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2003,0.2008252,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2004,0.176595,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2005,0.1761087,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2006,0.1749985,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2007,0.1736504,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2008,0.1736504,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2009,0.1736504,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2010,0.1736504,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2011,0.156885,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2012,0.1587323,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2013,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2014,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2015,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2016,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2017,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2018,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2019,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2020,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2021,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2022,0.1597599,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2023,0.1616341,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2024,0.1620098,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",COL,2025,0.1620348,Colombia,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2000,0.2008729,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2002,0.2008252,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2003,0.2008252,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2004,0.1787337,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2005,0.1787337,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2006,0.1761655,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2007,0.1761655,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2008,0.1761655,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2009,0.1736504,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2010,0.1736504,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2011,0.156885,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2012,0.1587323,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2013,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2014,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2015,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2016,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2017,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2018,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2019,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2020,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2021,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2022,0.1597599,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2023,0.1616341,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2024,0.1620098,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",MEX,2025,0.1620348,México,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2000,0.2180729,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2002,0.218012,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2003,0.218012,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2004,0.1882439,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2005,0.1882439,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2006,0.1860216,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2007,0.1844049,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2008,0.1736504,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2009,0.1736504,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2010,0.1736504,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2011,0.156885,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2012,0.1587323,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2013,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2014,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2015,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2016,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2017,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2018,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2019,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2020,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2021,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2022,0.1597599,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2023,0.1616341,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2024,0.1620098,Perú,False
+"Banco Mundial, Worldwide Governance Indicators",control_corrupcion_error,"puntaje (-2,5 a 2,5)",PER,2025,0.1620348,Perú,False
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,BRA,2000,4.4,Brasil,False
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,BRA,2001,1.4,Brasil,False
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,BRA,2002,3.1,Brasil,False
@@ -474,6 +624,188 @@ fuente,indicador,unidad,zona,anio,valor,nombre_zona,es_proyeccion
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,WEOWORLD,2024,3.5,Mundo,False
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,WEOWORLD,2025,3.5,Mundo,False
 "FMI, World Economic Outlook (octubre de 2026)",crecimiento_pib,% anual,WEOWORLD,2026,3.1,Mundo,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2001,0.07781971028903989,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2002,1.8206552547592736,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2003,-0.09840884782057469,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2004,4.593625115822753,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2005,2.0607380415916587,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2006,2.8814461300557426,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2007,5.022529940514819,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2008,4.069516293412079,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2009,-1.051039477362381,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2010,6.6306117104580675,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2011,3.2524431711009827,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2012,1.120559414380451,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2013,2.195550803856894,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2014,-0.2927454173327182,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2015,-4.259493389458713,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2016,-3.9962976769737923,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2017,0.638527961327795,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2018,1.1508388652441193,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2019,0.5326349206349112,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2020,-3.884827767551924,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2021,4.331626242241948,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2022,2.629252168469587,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2023,2.7944051583646212,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2024,2.9675939863771594,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2025,1.8987972130202868,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,BRA,2026,1.8559002904614763,Brasil,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2001,2.0182192485846517,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2002,2.070552303385087,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2003,3.6056667925953967,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2004,5.635793541952361,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2005,4.781059390048181,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2006,4.969615455156817,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2007,4.180928740085976,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2008,2.7733245414219176,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2009,-2.115111242954637,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2010,4.811773341162651,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2011,5.119790758500464,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2012,5.124618836660733,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2013,2.246998861047844,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2014,0.7159839990985573,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2015,1.027446393762177,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2016,0.4793029520092196,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2017,-0.08301825469908541,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2018,2.375173296363431,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2019,-0.9111134453781422,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2020,-7.056768558951976,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2021,10.404641089108924,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2022,1.1093453171279632,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2023,-0.18691030572991485,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2024,2.0356109324759064,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2025,1.819633677696264,Chile,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,CHL,2026,0.030876879559316173,Chile,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2001,0.41002874722613214,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2002,1.223727462894697,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2003,2.6070631056022586,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2004,4.01080017490163,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2005,3.132328661931272,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2006,5.439943087502952,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2007,5.476898192643986,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2008,2.162440302313695,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2009,-0.0012061730377044277,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2010,3.369334936260948,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2011,5.779485107624627,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2012,2.863354962001674,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2013,4.098386706283685,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2014,3.5180198840099486,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2015,2.003670596363949,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2016,0.9750032030749312,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2017,0.14049220776481963,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2018,0.8162252890712374,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2019,0.8224471617135132,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2020,-9.063069354070786,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2021,9.263188371774579,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2022,6.1249172842133826,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2023,-0.2289259996935744,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2024,0.5754516471838445,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2025,1.9191977077363864,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,COL,2026,1.5282233749695617,Colombia,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2001,-1.8531502198751215,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2002,-1.5949161666683032,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2003,-0.18824188129898944,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2004,2.2350630174047925,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2005,0.7562126895488408,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2006,3.3283354652132946,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2007,0.5592583463423839,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2008,-0.6750323519896462,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2009,-7.754036981332391,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2010,3.4207361706577677,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2011,1.8993387492915126,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2012,2.182817357128952,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2013,-0.3967047943945534,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2014,1.271344662078966,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2015,1.5930006210774117,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2016,0.7958960084798461,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2017,0.9281782700337304,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2018,1.0131591479094704,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2019,-1.3551628725946396,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2020,-9.109457214392124,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2021,5.363916174999805,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2022,2.919622809919886,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2023,2.176986311816065,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2024,0.6259922584937128,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2025,-0.32364078070287183,México,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,MEX,2026,0.7146242383208934,México,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2001,-0.6238442822384505,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2002,4.390255194636827,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2003,3.2212731608879164,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2004,4.094827586206873,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2005,5.418065074669931,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2006,6.680329335958479,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2007,7.778518597539286,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2008,8.413787985865717,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2009,0.44339125855712425,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2010,7.51491653016414,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2011,5.516705874212979,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2012,5.345605056160485,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2013,5.077083262329141,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2014,1.4491626148028125,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2015,2.1002803364036815,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2016,2.4309239719948694,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2017,0.676615871375974,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2018,2.062480197706096,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2019,0.390165260962938,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2020,-12.251820633850297,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2021,11.996016346299365,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2022,1.6857202742761368,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2023,-1.3862263200023928,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2024,2.4761799929552852,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2025,2.375285535761007,Perú,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,PER,2026,1.980462118378279,Perú,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2001,-0.8713186420628127,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2002,-1.116257108511709,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2003,0.7999406608328874,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2004,4.688681141371642,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2005,3.1282750277395133,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2006,4.3287557125547105,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2007,4.23147326441462,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2008,2.460046167886465,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2009,-3.5547610079908476,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2010,4.852386369593686,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2011,3.3384916067892068,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2012,1.782938398346734,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2013,1.702199719961861,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2014,0.33060632375749854,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2015,-0.543241654523785,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2016,-1.6649186843891939,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2017,0.45841751115240914,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2018,0.2146830917874265,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2019,-0.6988275209416805,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2020,-7.668129445392291,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2021,6.760590056742255,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2022,3.6868180072620937,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2023,1.6415590533124025,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2024,1.6482296862670776,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2025,1.7826639133310174,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WE,2026,1.6112323430310438,América Latina y el Caribe,True
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2001,0.8326314246845712,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2002,1.467011227615278,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2003,2.0414290477042574,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2004,3.9705582525304317,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2005,3.3992966042663886,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2006,4.0053048509342215,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2007,4.100151995110424,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2008,1.6240706520492365,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2009,-1.6151488084879984,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2010,4.01680764288197,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2011,3.0909190638130024,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2012,1.9017400494358627,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2013,2.1128846071956753,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2014,2.1391241562050967,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2015,2.279689107711236,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2016,1.9568452063869257,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2017,2.6904395275384685,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2018,2.510760755692054,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2019,1.9155791614533513,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2020,-3.621797854306663,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2021,5.823278652991504,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2022,2.9391857587753867,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2023,2.325075838853441,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2024,2.518728330273934,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2025,2.62855466608507,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026); cálculo propio con PIB y población",crecimiento_pib_per_capita,% anual,WEOWORLD,2026,2.8093449379992697,Mundo,True
 "FMI, World Economic Outlook (octubre de 2026)",desempleo,% de la fuerza laboral,BRA,2000,10.5,Brasil,False
 "FMI, World Economic Outlook (octubre de 2026)",desempleo,% de la fuerza laboral,BRA,2001,10.6,Brasil,False
 "FMI, World Economic Outlook (octubre de 2026)",desempleo,% de la fuerza laboral,BRA,2002,10.6,Brasil,False
@@ -986,3 +1318,192 @@ fuente,indicador,unidad,zona,anio,valor,nombre_zona,es_proyeccion
 "FMI, World Economic Outlook (octubre de 2026)",inflacion_promedio,% anual,WEOWORLD,2024,5.8,Mundo,False
 "FMI, World Economic Outlook (octubre de 2026)",inflacion_promedio,% anual,WEOWORLD,2025,4.1,Mundo,False
 "FMI, World Economic Outlook (octubre de 2026)",inflacion_promedio,% anual,WEOWORLD,2026,4.7,Mundo,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2000,174.696,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2001,177.004,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2002,179.228,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2003,181.378,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2004,183.47,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2005,185.518,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2006,187.535,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2007,189.459,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2008,191.335,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2009,193.174,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2010,194.749,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2011,196.159,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2012,197.671,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2013,199.227,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2014,200.811,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2015,202.404,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2016,203.872,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2017,205.212,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2018,206.529,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2019,207.9,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2020,209.165,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2021,210.104,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2022,210.863,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2023,211.695,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2024,212.584,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2025,213.421,Brasil,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,BRA,2026,214.142,Brasil,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2000,15.366,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2001,15.544,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2002,15.716,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2003,15.882,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2004,16.042,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2005,16.198,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2006,16.357,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2007,16.517,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2008,16.682,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2009,16.855,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2010,17.03,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2011,17.205,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2012,17.381,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2013,17.56,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2014,17.749,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2015,17.955,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2016,18.191,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2017,18.461,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2018,18.754,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2019,19.04,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2020,19.236,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2021,19.392,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2022,19.582,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2023,19.756,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2024,19.904,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2025,20.037,Chile,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,CHL,2026,20.151,Chile,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2000,39.153,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2001,39.656,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2002,40.156,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2003,40.662,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2004,41.166,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2005,41.672,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2006,42.17,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2007,42.659,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2008,43.134,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2009,43.609,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2010,44.086,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2011,44.553,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2012,45.002,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2013,45.435,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2014,45.866,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2015,46.314,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2016,46.83,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2017,47.419,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2018,48.258,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2019,49.396,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2020,50.408,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2021,51.117,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2022,51.683,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2023,52.216,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2024,52.696,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2025,53.048,Colombia,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,COL,2026,53.399,Colombia,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2000,99.369,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2001,100.739,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2002,102.167,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2003,103.588,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2004,104.971,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2005,106.371,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2006,107.886,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2007,109.539,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2008,111.276,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2009,113.03,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2010,114.756,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2011,116.446,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2012,118.061,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2013,119.598,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2014,121.049,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2015,122.368,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2016,123.587,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2017,124.777,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2018,125.996,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2019,127.216,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2020,128.209,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2021,128.983,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2022,129.961,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2023,131.135,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2024,132.274,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2025,133.367,México,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,MEX,2026,134.407,México,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2000,26.39,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2001,26.715,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2002,26.999,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2003,27.255,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2004,27.492,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2005,27.722,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2006,27.935,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2007,28.122,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2008,28.3,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2009,28.485,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2010,28.693,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2011,28.906,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2012,29.113,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2013,29.341,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2014,29.616,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2015,29.964,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2016,30.423,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2017,30.974,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2018,31.562,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2019,32.131,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2020,32.626,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2021,33.035,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2022,33.397,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2023,33.731,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2024,34.068,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2025,34.409,Perú,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,PER,2026,34.753,Perú,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2000,505.287,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2001,512.277,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2002,519.096,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2003,525.791,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2004,532.377,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2005,538.942,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2006,545.509,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2007,552.148,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2008,558.83,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2009,565.521,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2010,572.25,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2011,578.682,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2012,585.033,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2013,591.348,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2014,597.651,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2015,603.92,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2016,609.846,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2017,615.562,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2018,621.0,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2019,626.621,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2020,631.834,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2021,636.21,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2022,640.586,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2023,645.366,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2024,650.139,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2025,654.721,América Latina y el Caribe,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WE,2026,659.159,América Latina y el Caribe,True
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2000,5980.95,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2001,6079.851,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2002,6159.723,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2003,6265.879,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2004,6345.999,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2005,6425.828,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2006,6505.819,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2007,6587.054,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2008,6669.757,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2009,6752.135,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2010,6835.432,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2011,6902.339,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2012,7003.824,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2013,7092.106,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2014,7193.543,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2015,7279.37,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2016,7368.127,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2017,7454.914,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2018,7534.127,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2019,7614.293,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2020,7687.119,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2021,7750.805,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2022,7815.62,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2023,7890.085,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2024,7965.606,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2025,8033.244,Mundo,False
+"FMI, World Economic Outlook (octubre de 2026)",poblacion,millones de personas,WEOWORLD,2026,8055.955,Mundo,True

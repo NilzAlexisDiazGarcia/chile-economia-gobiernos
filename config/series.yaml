@@ -109,3 +109,20 @@ bcch:
     frecuencia: MONTHLY
     codigo: "F051.C19.STO.C.Z.USD.M"
     fuente_original: "Ministerio de Hacienda"
+
+  # --- Bienestar (agregadas el 2026-11-11) ---
+  # El INE publica el índice real de remuneraciones en dos tramos que no se empalman entre sí:
+  # el histórico (base enero 2006 = 100) hasta 2009 y el empalmado (base 2023 = 100) desde 2010.
+  # Solo se usan sus variaciones anuales, que sí son comparables. Falta la variación de 2010.
+  remuneraciones_reales_hist:
+    descripcion: "Índice general de remuneraciones real, INE (enero 2006 = 100), tramo hasta 2009"
+    unidad: "Índice"
+    frecuencia: MONTHLY
+    codigo: "F049.RMU.IND.INE1.82.M"
+    fuente_original: "INE"
+  remuneraciones_reales:
+    descripcion: "Índice real de remuneraciones, serie empalmada, INE (base 2023 = 100), desde 2010"
+    unidad: "Índice"
+    frecuencia: MONTHLY
+    codigo: "G049.RMM.IND.INE23.R.M"
+    fuente_original: "INE"

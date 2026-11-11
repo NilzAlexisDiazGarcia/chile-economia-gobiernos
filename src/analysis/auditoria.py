@@ -58,7 +58,7 @@ def serie(ind: str) -> pd.DataFrame:
 # -----------------------------------------------------------------------------
 def auditar_crudo() -> None:
     for ind, meta in CONFIG.items():
-        ruta = sorted((RAW_DIR / "bcch").glob(f"{ind}_*.json"))[-1]
+        ruta = sorted((RAW_DIR / "bcch").glob(f"{ind}_[0-9]*.json"))[-1]  # fecha justo tras el nombre
         crudo = json.loads(ruta.read_text(encoding="utf-8"))
         codigo_ok = crudo["Series"]["seriesId"] == meta["codigo"]
         obs = pd.DataFrame(crudo["Series"]["Obs"])
@@ -187,9 +187,11 @@ def resumen_pandas() -> pd.DataFrame:
     filas = []
     for ind in CONFIG:
         s = serie(ind)
-        v = var12(ind) if ind in ("pib", "imacec", "cobre") else None
+        v = var12(ind) if ind in ("pib", "imacec", "cobre", "remuneraciones_reales_hist", "remuneraciones_reales") else None
         for g in EN_ALCANCE:
             sg = s[s["id_gobierno"] == g]
+            if sg.empty:  # tramos de series que no cubren todo el período (índice de salarios)
+                continue
             anterior = s[s["id_gobierno"] == g - 1]
             filas.append({
                 "id_gobierno": g, "indicador": ind,
@@ -212,7 +214,7 @@ def auditar_resumen(pd_res: pd.DataFrame) -> None:
         d = (u[f"{c}_pd"].astype(float) - u[f"{c}_sql"].astype(float)).abs().max(skipna=True)
         peor = max(peor, d if pd.notna(d) else 0)
     # La base guarda 6 decimales (NUMERIC(14,6)): diferencias menores a 1e-5 son de almacenamiento.
-    registrar("E. Métricas por gobierno: pandas = vista SQL", len(u) == len(CONFIG) * len(EN_ALCANCE) and peor < 1e-5,
+    registrar("E. Métricas por gobierno: pandas = vista SQL", len(u) == len(pd_res) == len(sql) and peor < 1e-5,
               f"{len(u)} combinaciones gobierno-indicador, dif. máx. {peor:.1e}")
 
 
@@ -286,6 +288,18 @@ def auditar_documentos(res: pd.DataFrame) -> None:
         calc = desfase_pandas(meses)
         for g, p in zip(gobs, valores):
             chequeos.append((f"IMACEC desfase {meses} {g}", p, float(calc[G[g]]), 0.005))
+    # Crecimiento por habitante (sección 10) y bienestar (sección 11)
+    pc = INT[(INT["zona"] == "CHL") & (INT["indicador"] == "crecimiento_pib_per_capita")].set_index("anio")["valor"]
+    for g, (a0, p_pc) in zip(gobs, [(2006, 2.45), (2010, 4.33), (2014, 0.53), (2018, 1.20), (2022, 1.19)]):
+        chequeos.append((f"PIB por habitante {g}", p_pc, pc.loc[a0:a0 + 3].mean(), 0.005))
+    chequeos += [("PIB por habitante 2006-2013", 3.4, pc.loc[2006:2013].mean(), 0.05),
+                 ("PIB por habitante 2014-2025", 1.0, pc.loc[2014:2025].mean(), 0.05)]
+    sal = pd.concat([var12("remuneraciones_reales_hist"), var12("remuneraciones_reales")])
+    for g, (p_ini, p_fin, p_sal) in zip(gobs, [(29.1, 25.3, 2.4), (25.3, 14.4, 3.2), (14.4, 8.6, 1.8),
+                                                (8.6, 10.8, 1.3), (10.8, 4.9, 1.5)]):
+        chequeos += [(f"Pobreza recibida {g}", p_ini, pobreza_ini(G[g]), 0.001),
+                     (f"Pobreza entregada {g}", p_fin, pobreza_fin(G[g]), 0.001),
+                     (f"Salario real {g}", p_sal, sal.loc[sal["id_gobierno"] == G[g], "var"].mean(), 0.05)]
     # Inflación en rango meta (sección 3)
     ipc = serie("ipc")
     en_rango = ipc["valor"].between(2, 4)
@@ -414,6 +428,21 @@ def auditar_dashboard() -> None:
               "todos coinciden" if not malos else "; ".join(malos))
 
 
+POBREZA = pd.read_csv(REFERENCE_DIR / "pobreza_casen.csv")
+POBREZA["id_gobierno"] = POBREZA["anio"].map(lambda a: gobierno_en(pd.Timestamp(f"{a}-07-01")))
+
+
+def pobreza_ini(g):
+    """Última medición del gobierno anterior; si no hay, la primera del propio gobierno."""
+    previa = POBREZA[POBREZA["id_gobierno"] == g - 1]
+    propia = POBREZA[POBREZA["id_gobierno"] == g]
+    return (previa if len(previa) else propia.iloc[:1])["pobreza_pct"].iloc[-1]
+
+
+def pobreza_fin(g):
+    return POBREZA.loc[POBREZA["id_gobierno"] == g, "pobreza_pct"].iloc[-1]
+
+
 def auditar_evaluacion() -> None:
     """La evaluación de aciertos y problemas, recalculada sin SQL a partir de los datos."""
     from src.analysis import valores_dashboard as vd
@@ -422,7 +451,7 @@ def auditar_evaluacion() -> None:
     metas = pd.read_csv(REFERENCE_DIR / "metas_fiscales.csv").set_index("id_gobierno")
     ipc = serie("ipc")
     for g in EN_ALCANCE:
-        fs = serie("fondos_soberanos")
+        fs = serie("fees")
         fs_ini = fs.loc[fs["id_gobierno"] == g - 1, "valor"]
         fs_ini = fs_ini.iloc[-1] if len(fs_ini) else fs.loc[fs["id_gobierno"] == g, "valor"].iloc[0]
         esperado.update({
@@ -431,11 +460,14 @@ def auditar_evaluacion() -> None:
             (g, 3): vd.final("desempleo", g) < vd.heredado("desempleo", g),
             (g, 4): metas.loc[g, "resultado"] >= metas.loc[g, "meta_vigente"],
             (g, 5): vd.final("deuda_neta", g) <= vd.heredado("deuda_neta", g),
-            (g, 6): vd.final("fondos_soberanos", g) >= fs_ini,
+            (g, 6): vd.final("fees", g) >= fs_ini,
+            (g, 7): pobreza_fin(g) < pobreza_ini(g),
+            (g, 8): pd.concat([var12("remuneraciones_reales_hist"), var12("remuneraciones_reales")])
+                      .loc[lambda d: d["id_gobierno"] == g, "var"].mean() > 0,
         })
     malos = [f"{ETQ[r.id_gobierno]} criterio {r.orden}" for r in sql.itertuples()
              if bool(r.favorable) != bool(esperado[(r.id_gobierno, r.orden)])]
-    registrar(f"H. Balance de cada gobierno: {len(sql)} evaluaciones recalculadas", not malos and len(sql) == 30,
+    registrar(f"H. Balance de cada gobierno: {len(sql)} evaluaciones recalculadas", not malos and len(sql) == 40,
               "todas coinciden" if not malos else ", ".join(malos))
 
 
