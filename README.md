@@ -7,6 +7,8 @@ crisis externas y lo que pasaba al mismo tiempo en países comparables.
 
 **Python · PostgreSQL · SQL · Power BI · Git**
 
+[![Tests](https://github.com/NilzAlexisDiazGarcia/chile-economia-gobiernos/actions/workflows/tests.yml/badge.svg)](https://github.com/NilzAlexisDiazGarcia/chile-economia-gobiernos/actions/workflows/tests.yml)
+
 ![Página de resumen del dashboard](dashboard/capturas/01_resumen.webp)
 
 ---
@@ -122,6 +124,9 @@ Todas las limitaciones están en [docs/metodologia.md](docs/metodologia.md).
 
 Diez páginas en Power BI, con el mismo diseño, el mismo color para cada gobierno en todas
 las páginas y orden cronológico, nunca de "mejor" a "peor".
+
+Para verlo sin instalar Power BI ni PostgreSQL, las diez páginas están en
+[PDF](dashboard/chile_economia.pdf).
 
 | Página | Qué responde |
 |---|---|
