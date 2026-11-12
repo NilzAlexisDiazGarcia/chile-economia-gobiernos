@@ -363,6 +363,14 @@ primarias, llevó a estas correcciones:
   que como la recibió; bajó de 3,2 % a 2,0 %. Lo que subió fue el desempleo.
 - **Cifras desactualizadas** del README y de esta bitácora (series, filas, cifras
   verificadas y páginas), y guías antiguas marcadas como históricas.
+- **Dígitos perdidos en el PDF:** un reemplazo de espacios antes de "%" borró el dígito
+  anterior en 17 textos del generador ("4,□ %" en vez de "4,3 %"). Se recuperaron desde la
+  versión previa y un test rechaza desde entonces caracteres de control en el informe.
+- **Un decimal en todo el informe:** 22 medidas mostraban dos decimales y el resto, uno.
+  Ahora todas usan uno, salvo la TPM (se mueve de a 0,25), el cobre en USD/lb, el gasto en
+  intereses y el índice de corrupción. Cada cifra se redondea desde el valor completo: el
+  crecimiento de Piñera II es 2,647 → 2,6, no 2,65 → 2,7. Power BI muestra −0,006 como
+  "-0,0". Los valores verificados del dashboard se leyeron del PDF exportado.
 
 ## Verificación de cifras
 
@@ -391,7 +399,7 @@ Un script verifica cada cifra por un camino distinto al que la produjo. Resultad
 | D. Fuentes independientes | Chile contra el FMI (2006–2025) y la inflación contra 14 cifras publicadas por el INE | Diferencias de 0,23 pp o menos; las excepciones están explicadas |
 | E. Recálculo sin SQL | 96 métricas por gobierno calculadas en pandas contra las vistas SQL | Idénticas |
 | F. Documentos | 142 cifras de las tablas de hallazgos, las afirmaciones de la Síntesis y 15 diferencias contra los pares | Todas coinciden |
-| G. Dashboard | 79 valores leídos en Power BI (Resumen, Comparación y dos Fichas), contra la lógica de cada medida reproducida en Python (`valores_dashboard.py`) | Todos coinciden |
+| G. Dashboard | 89 valores leídos en Power BI (Resumen, Comparación y dos Fichas), contra la lógica de cada medida reproducida en Python (`valores_dashboard.py`) | Todos coinciden |
 | H. Balance de cada gobierno | Las 40 evaluaciones (ocho criterios por cinco gobiernos), recalculadas en pandas contra la vista SQL | Todas coinciden |
 | I. Datos fiscales | Balance estructural de la BDE contra la DIPRES y el CFA (20 años), 4 saldos de los fondos soberanos y los resultados de las metas fiscales | Coinciden; las diferencias de 2009 y 2022 se deben a la versión de las cifras y están explicadas |
 | J. Costo de la deuda | 20 valores de tasas e intereses recalculados sin SQL, y 6 cifras citadas en los documentos | Todos coinciden |

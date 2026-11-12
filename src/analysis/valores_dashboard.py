@@ -82,22 +82,22 @@ def ficha(g: int) -> dict[str, str]:
         return f"{fmt(heredado(ind, g), dec)}  →  {fmt(final(ind, g), dec)}"
     cambio_des = final("desempleo", g) - heredado("desempleo", g)
     return {
-        "Crecimiento del PIB (% anual)": fmt(var_prom("pib", g), 2),
+        "Crecimiento del PIB (% anual)": fmt(var_prom("pib", g)),
         "Rango trimestral del PIB (%)": f"{fmt(v.min())}  a  {fmt(v.max())}",
-        "Inflación promedio (%)": fmt(ipc.mean(), 2),
-        "Meses en el rango meta": f"{ipc.between(2, 4).mean() * 100:.0f}%",
+        "Inflación promedio (%)": fmt(ipc.mean()),
+        "Meses en el rango meta": f"{ipc.between(2, 4).mean() * 100:.0f} %",
         "Desempleo (%): inicio → fin": rec("desempleo"),
         "Cambio del desempleo": ("+" if cambio_des > 0 else "") + fmt(cambio_des) + " pp",
         "Deuda bruta % PIB: inicio → fin": rec("deuda_bruta"),
         "Deuda neta % PIB: inicio → fin": rec("deuda_neta"),
-        "Balance efectivo prom. % PIB": fmt(promedio("balance_fiscal", g), 2),
-        "Balance estructural prom. % PIB": fmt(promedio("balance_estructural", g), 2),
+        "Balance efectivo prom. % PIB": fmt(promedio("balance_fiscal", g)),
+        "Balance estructural prom. % PIB": fmt(promedio("balance_estructural", g)),
         "TPM (%): inicio → fin": rec("tpm", 2),
         "Dólar (CLP): inicio → fin": rec("tipo_cambio", 0),
         "Cobre prom. (USD/lb)": fmt(promedio("cobre", g), 2),
         "Crecimiento vs. pares, FMI (pp)": fmt(pares("crecimiento_pib", g), 1, True) + " pp",
         "Inflación vs. pares, FMI (pp)": fmt(pares("inflacion_promedio", g), 1, True) + " pp",
-        "Balance vs. pares, FMI (pp)": fmt(pares("balance_gobierno_general", g), 2, True),
+        "Balance vs. pares, FMI (pp)": fmt(pares("balance_gobierno_general", g), 1, True),
         "Eventos del período": "; ".join(eventos_del_periodo(g)) or "Sin shocks puntuales registrados",
     }
 
@@ -105,15 +105,15 @@ def ficha(g: int) -> dict[str, str]:
 def comparacion(g: int) -> dict[str, str]:
     """Lo que muestra cada columna de la matriz de Comparación."""
     return {
-        "PIB, var. anual (%)": fmt(var_prom("pib", g), 2),
-        "IMACEC, var. anual (%)": fmt(var_prom("imacec", g), 2),
-        "Inflación prom. (%)": fmt(promedio("ipc", g), 2),
-        "Desempleo prom. (%)": fmt(promedio("desempleo", g), 2),
-        "Desempleo, cambio (pp)": fmt(final("desempleo", g) - heredado("desempleo", g), 2),
-        "Deuda bruta, cambio (pp)": fmt(final("deuda_bruta", g) - heredado("deuda_bruta", g), 2),
+        "PIB, var. anual (%)": fmt(var_prom("pib", g)),
+        "IMACEC, var. anual (%)": fmt(var_prom("imacec", g)),
+        "Inflación prom. (%)": fmt(promedio("ipc", g)),
+        "Desempleo prom. (%)": fmt(promedio("desempleo", g)),
+        "Desempleo, cambio (pp)": fmt(final("desempleo", g) - heredado("desempleo", g)),
+        "Deuda bruta, cambio (pp)": fmt(final("deuda_bruta", g) - heredado("deuda_bruta", g)),
         "Deuda neta, cambio (pp)": fmt(final("deuda_neta", g) - heredado("deuda_neta", g), 1, True),
-        "Balance efectivo prom. (% PIB)": fmt(promedio("balance_fiscal", g), 2),
-        "Balance estructural prom. (% PIB)": fmt(promedio("balance_estructural", g), 2),
+        "Balance efectivo prom. (% PIB)": fmt(promedio("balance_fiscal", g)),
+        "Balance estructural prom. (% PIB)": fmt(promedio("balance_estructural", g)),
         "Cobre prom. (USD/lb)": fmt(promedio("cobre", g), 2),
         "Dólar prom. (CLP)": f"{promedio('tipo_cambio', g):.0f}",
     }
@@ -128,7 +128,7 @@ def resumen() -> dict[str, str]:
         "Crecimiento del PIB": f"{fmt(a)} % → {fmt(b)} %",
         "Deuda bruta": f"{heredado('deuda_bruta', 2):.0f} % → {final('deuda_bruta', 6):.0f} %",
         "Desempleo": f"{fmt(heredado('desempleo', 2))} % → {fmt(final('desempleo', 6))} %",
-        "Meses con inflación entre 2 % y 4 %": f"{ipc.between(2, 4).mean() * 100:.0f}%",
+        "Meses con inflación entre 2 % y 4 %": f"{ipc.between(2, 4).mean() * 100:.0f} %",
     }
 
 

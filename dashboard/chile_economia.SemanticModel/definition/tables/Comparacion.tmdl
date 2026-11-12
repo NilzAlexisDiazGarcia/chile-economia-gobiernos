@@ -3,50 +3,50 @@ table Comparacion
 
 	/// Crecimiento promedio anual de Chile según el FMI. Difiere levemente del dato mensual del Banco Central.
 	measure 'Crecimiento Chile Anual %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "crecimiento_pib" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: ba38ef82-b788-4c9b-90f5-6d0439c341c5
 
 	/// Promedio simple de Perú, Colombia, México y Brasil.
 	measure 'Crecimiento Pares %' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "crecimiento_pib" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 236e17ff-ab99-4cbe-b385-83dea1f7f0af
 
 	measure 'Crecimiento America Latina %' = CALCULATE ( AVERAGE ( Comparacion[america_latina] ), Comparacion[indicador] = "crecimiento_pib" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: f6b1fa3b-1b69-40a2-be59-4d31990babab
 
 	measure 'Crecimiento Mundo %' = CALCULATE ( AVERAGE ( Comparacion[mundo] ), Comparacion[indicador] = "crecimiento_pib" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: c2e885b7-6a74-441c-a40c-14870b5a9bd7
 
 	/// Chile menos el promedio de los pares, en puntos porcentuales. Positivo: Chile creció más.
 	measure 'Crecimiento vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "crecimiento_pib" )
-		formatString: +0.00;-0.00;0.00
+		formatString: +0.0;-0.0;0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 0ef22d3a-7c07-4754-b5f0-3434fb6c63c4
 
 	measure 'Inflacion Chile Anual %' = CALCULATE ( AVERAGE ( Comparacion[chile] ), Comparacion[indicador] = "inflacion_promedio" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 0711eae4-0a5f-478a-9ac5-99e06514a8db
 
 	measure 'Inflacion Pares %' = CALCULATE ( AVERAGE ( Comparacion[pares] ), Comparacion[indicador] = "inflacion_promedio" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 2b3f57c4-f060-4c68-ac82-72e33497fcb7
 
 	measure 'Inflacion Mundo %' = CALCULATE ( AVERAGE ( Comparacion[mundo] ), Comparacion[indicador] = "inflacion_promedio" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 1ed2915d-db93-473c-95b9-b645afe863d2
 
 	/// Chile menos el promedio de los pares. Negativo: Chile tuvo menos inflación.
 	measure 'Inflacion vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "inflacion_promedio" )
-		formatString: +0.00;-0.00;0.00
+		formatString: +0.0;-0.0;0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 4551afb7-6865-4d3e-803b-c3f0b8ec5bbf
 
@@ -63,7 +63,7 @@ table Comparacion
 
 	/// Balance del gobierno general de Chile menos el de los pares. Positivo: Chile tuvo mejor balance.
 	measure 'Balance vs Pares pp' = CALCULATE ( AVERAGE ( Comparacion[diferencia_pares] ), Comparacion[indicador] = "balance_gobierno_general" )
-		formatString: +0.00;-0.00;0.00
+		formatString: +0.0;-0.0;0.0
 		displayFolder: 6. Comparación con pares
 		lineageTag: 5774a136-02a7-400c-b8bf-d4b416958f6a
 

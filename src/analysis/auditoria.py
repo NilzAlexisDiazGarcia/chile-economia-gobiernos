@@ -369,40 +369,45 @@ def auditar_documentos(res: pd.DataFrame) -> None:
     registrar(f"F. Chile − pares: {total} cifras", not malos, "todas coinciden" if not malos else "; ".join(malos))
 
 
-# Valores leídos en el dashboard de Power BI (capturas del 11-11-2026, desfase 0).
-# Se excluyen la TPM y los eventos, cuyo formato cambió después de esas capturas.
+# Valores que muestra el dashboard de Power BI, leídos del texto del PDF exportado el 11-11-2026
+# (desfase 0), después de unificar las cifras a un decimal. La ficha de Bachelet I es la que trae
+# el PDF; la de Piñera II conserva las capturas anteriores para los campos que no cambiaron y, en
+# los que cambiaron, toma las mismas medidas leídas en la Comparación, Chile frente a sus pares y
+# el Balance. Se excluyen la TPM y los eventos, cuyo formato cambió después de esas capturas.
 DASHBOARD_LEIDO = {
     "ficha": {
-        2: {"Crecimiento del PIB (% anual)": "3,23", "Rango trimestral del PIB (%)": "-2,8  a  6,3",
-            "Inflación promedio (%)": "4,33", "Meses en el rango meta": "38%",
+        2: {"Crecimiento del PIB (% anual)": "3,2", "Rango trimestral del PIB (%)": "-2,8  a  6,3",
+            "Inflación promedio (%)": "4,3", "Meses en el rango meta": "38 %",
             "Desempleo (%): inicio → fin": "7,8  →  8,5", "Cambio del desempleo": "+0,7 pp",
             "Deuda bruta % PIB: inicio → fin": "6,4  →  6,5", "Deuda neta % PIB: inicio → fin": "-1,6  →  -9,8",
-            "Balance efectivo prom. % PIB": "3,67", "Balance estructural prom. % PIB": "-0,40",
+            "Balance efectivo prom. % PIB": "3,7", "Balance estructural prom. % PIB": "-0,4",
             "Dólar (CLP): inicio → fin": "531  →  513", "Cobre prom. (USD/lb)": "2,98",
             "Crecimiento vs. pares, FMI (pp)": "-0,3 pp", "Inflación vs. pares, FMI (pp)": "+0,1 pp",
-            "Balance vs. pares, FMI (pp)": "+5,01"},
-        5: {"Crecimiento del PIB (% anual)": "2,65", "Rango trimestral del PIB (%)": "-15,0  a  18,4",
-            "Inflación promedio (%)": "3,29", "Meses en el rango meta": "75%",
+            "Balance vs. pares, FMI (pp)": "+5,0"},
+        5: {"Crecimiento del PIB (% anual)": "2,6", "Rango trimestral del PIB (%)": "-15,0  a  18,4",
+            "Inflación promedio (%)": "3,3", "Meses en el rango meta": "75 %",
             "Desempleo (%): inicio → fin": "7,0  →  7,5", "Cambio del desempleo": "+0,5 pp",
             "Deuda bruta % PIB: inicio → fin": "23,6  →  36,2", "Deuda neta % PIB: inicio → fin": "5,0  →  19,7",
-            "Balance efectivo prom. % PIB": "-4,88", "Balance estructural prom. % PIB": "-4,03",
+            "Balance efectivo prom. % PIB": "-4,9", "Balance estructural prom. % PIB": "-4,0",
             "Dólar (CLP): inicio → fin": "605  →  804", "Cobre prom. (USD/lb)": "3,23",
             "Crecimiento vs. pares, FMI (pp)": "+1,1 pp", "Inflación vs. pares, FMI (pp)": "-0,6 pp",
-            "Balance vs. pares, FMI (pp)": "-0,01"},
+            "Balance vs. pares, FMI (pp)": "-0,0"},
     },
     "comparacion": {
-        "PIB, var. anual (%)": ["3,23", "5,43", "1,90", "2,65", "1,64"],
-        "IMACEC, var. anual (%)": ["3,35", "5,38", "1,85", "2,64", "1,77"],
-        "Inflación prom. (%)": ["4,33", "2,54", "3,64", "3,29", "6,72"],
-        "Desempleo prom. (%)": ["8,13", "7,02", "6,63", "8,58", "8,41"],
-        "Desempleo, cambio (pp)": ["0,73", "-2,35", "0,83", "0,49", "0,83"],
-        "Deuda bruta, cambio (pp)": ["0,15", "6,22", "10,86", "12,62", "6,21"],
-        "Balance efectivo prom. (% PIB)": ["3,67", "0,20", "-2,32", "-4,88", "-1,73"],
+        "PIB, var. anual (%)": ["3,2", "5,4", "1,9", "2,6", "1,6"],
+        "IMACEC, var. anual (%)": ["3,3", "5,4", "1,9", "2,6", "1,8"],
+        "Inflación prom. (%)": ["4,3", "2,5", "3,6", "3,3", "6,7"],
+        "Desempleo prom. (%)": ["8,1", "7,0", "6,6", "8,6", "8,4"],
+        "Desempleo, cambio (pp)": ["0,7", "-2,3", "0,8", "0,5", "0,8"],
+        "Deuda bruta, cambio (pp)": ["0,1", "6,2", "10,9", "12,6", "6,2"],
+        "Deuda neta, cambio (pp)": ["-8,2", "+3,6", "+11,2", "+14,7", "+6,4"],
+        "Balance efectivo prom. (% PIB)": ["3,7", "0,2", "-2,3", "-4,9", "-1,7"],
+        "Balance estructural prom. (% PIB)": ["-0,4", "-1,0", "-0,8", "-4,0", "-2,3"],
         "Cobre prom. (USD/lb)": ["2,98", "3,59", "2,65", "3,23", "4,19"],
         "Dólar prom. (CLP)": ["533", "495", "640", "734", "905"],
     },
     "resumen": {"Crecimiento del PIB": "4,3 % → 2,1 %", "Deuda bruta": "6 % → 42 %",
-                "Desempleo": "7,8 % → 8,3 %", "Meses con inflación entre 2 % y 4 %": "48%"},
+                "Desempleo": "7,8 % → 8,3 %", "Meses con inflación entre 2 % y 4 %": "48 %"},
 }
 
 

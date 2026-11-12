@@ -66,37 +66,37 @@ table Observaciones
 
 	/// Variación anual promedio del PIB trimestral (%).
 	measure 'Crecimiento PIB %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "pib" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: aade441f-b6ea-43d8-8505-8a13b71c2cb0
 
 	/// Variación anual promedio del IMACEC mensual (%).
 	measure 'Crecimiento IMACEC %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "imacec" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: 8b77cf6a-fbde-4300-831a-f41e6426072e
 
 	/// Inflación anual promedio (IPC, variación en 12 meses, %).
 	measure 'Inflacion Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "ipc" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: cb6cf1de-b507-4ff6-b0fc-849d3fff4b76
 
 	/// Tasa de desempleo promedio (%).
 	measure 'Desempleo Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "desempleo" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: 1281718b-3cc3-4dbb-9d8a-e31c77f7ff71
 
 	/// Cambio de la tasa de desempleo entre lo heredado y el final del mandato (puntos porcentuales).
 	measure 'Desempleo Cambio pp' = CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "desempleo" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: 74c20f18-1d64-4ec1-90f0-53c862ccaef9
 
 	/// Cambio de la deuda bruta entre lo heredado y el final del mandato (puntos porcentuales del PIB).
 	measure 'Deuda Cambio pp' = CALCULATE ( [Cambio vs Heredado], Observaciones[indicador] = "deuda_bruta" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: 844e438d-f61e-451e-a9a1-f6529ac3d4c5
 
@@ -108,7 +108,7 @@ table Observaciones
 
 	/// Variación anual promedio del precio del cobre (%).
 	measure 'Cobre Var 12m %' = CALCULATE ( [Var 12m Promedio], Observaciones[indicador] = "cobre" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: f3b9a444-fef0-418c-85aa-6ac64d8ce85f
 
@@ -131,7 +131,7 @@ table Observaciones
 
 	/// Balance fiscal promedio del Gobierno Central (% del PIB). Negativo = déficit.
 	measure 'Balance Fiscal Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_fiscal" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: 562cb14a-91db-4174-8782-7178bd7e8a2a
 
@@ -215,13 +215,13 @@ table Observaciones
 
 	/// Inflación anual más alta registrada en el contexto (%).
 	measure 'Inflacion Maxima %' = CALCULATE ( MAX ( Observaciones[valor] ), Observaciones[indicador] = "ipc" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 8e193c33-522a-43e0-b7f4-4f1f8f26f98a
 
 	/// Inflación promedio menos la meta de 3 % (puntos porcentuales). Positivo = sobre la meta.
 	measure 'Inflacion Brecha vs Meta pp' = [Inflacion Promedio %] - [Meta Inflacion %]
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 6bc48f33-68d8-4c49-bdb2-b20841b179d1
 
@@ -241,7 +241,7 @@ table Observaciones
 			VAR Total = CALCULATE ( [Periodos], Observaciones[indicador] = "ipc" )
 			RETURN
 			    DIVIDE ( Total - [Meses Inflacion Fuera de Rango], Total )
-		formatString: 0%
+		formatString: 0 %
 		displayFolder: 3. Ficha por gobierno
 		lineageTag: 034608ba-5e98-4bf4-944d-f98bcddb61ed
 
@@ -377,7 +377,7 @@ table Observaciones
 
 	/// Balance estructural promedio (% del PIB): la meta de la regla fiscal. Descuenta el efecto del ciclo y del cobre.
 	measure 'Balance Estructural Promedio %' = CALCULATE ( [Valor Promedio], Observaciones[indicador] = "balance_estructural" )
-		formatString: 0.00
+		formatString: 0.0
 		displayFolder: 2. Indicadores
 		lineageTag: cee98c46-eee2-4e54-9890-e80c11b5b76e
 

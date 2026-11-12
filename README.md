@@ -210,9 +210,9 @@ por un camino distinto al que la produjo. Resultado: **52 de 52 verificaciones c
 - Las series de Chile coinciden con el FMI y con cifras publicadas por el INE.
 - 96 métricas por gobierno calculadas en Python coinciden con las vistas SQL.
 - 142 cifras de las tablas de los hallazgos coinciden con el cálculo independiente.
-- 79 valores del dashboard, anotados a mano desde Power BI Desktop, coinciden con el cálculo
-  sin DAX ([valores esperados por tarjeta](docs/valores_dashboard.md)). La auditoría no abre
-  el informe: si el dashboard cambia, esos valores se vuelven a anotar.
+- 89 valores del dashboard, leídos de Power BI Desktop y del PDF exportado, coinciden con el
+  cálculo sin DAX ([valores esperados por tarjeta](docs/valores_dashboard.md)). La auditoría
+  no abre el informe: si el dashboard cambia, esos valores se vuelven a leer.
 - Las verificaciones que comparan contra las vistas SQL necesitan la base PostgreSQL cargada.
 
 **La auditoría encontró un error real.** La primera versión usaba una serie de inflación
