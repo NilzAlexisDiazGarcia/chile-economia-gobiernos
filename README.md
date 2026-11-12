@@ -184,7 +184,7 @@ flowchart LR
 | Carga | Modelo estrella con restricciones y carga transaccional | `src/load/`, `sql/01_schema.sql` |
 | Análisis | Vistas reutilizables y ocho consultas por tema | `sql/02_views.sql`, `sql/analisis/` |
 | Dashboard | Proyecto `.pbip`: modelo y páginas versionados como texto | `dashboard/` |
-| Calidad | 44 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
+| Calidad | 163 tests y una auditoría que verifica cada cifra por un camino independiente | `tests/`, `src/analysis/auditoria.py` |
 
 ### Decisiones clave
 

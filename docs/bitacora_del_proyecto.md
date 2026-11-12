@@ -13,7 +13,7 @@ por qué, qué problemas aparecieron y cómo se resolvieron. Complementa a
 | 1. Extracción | 20 series del Banco Central, crudas y sin modificar (11 en la primera versión) | Python, API BDE |
 | 2. Limpieza | 18.568 observaciones en formato largo (12.231 en la primera versión), cada una con su gobierno | pandas, pytest |
 | 3. Carga | Modelo estrella en PostgreSQL, con carga transaccional | PostgreSQL, psycopg |
-| 4. Análisis | 4 vistas y 8 consultas de análisis | SQL |
+| 4. Análisis | 9 vistas (4 en la primera versión) y 8 consultas de análisis | SQL |
 | 5. Dashboard | Informe de 10 páginas (8 en la primera versión), versionado como texto | Power BI (.pbip, TMDL, PBIR) |
 | 5b. Contexto comparado | Chile frente a sus pares y explicaciones oficiales | API del FMI y del Banco Mundial |
 | 5c. Rigor económico | Balance estructural, deuda neta e incertidumbre de los promedios | Python, SQL, DAX |
@@ -128,7 +128,9 @@ fecha. `asignar_gobierno.py` aplica la regla de mayoría de días.
 
 ## Etapa 4. Análisis SQL (`sql/02_views.sql`, `sql/analisis/`)
 
-**Qué se hizo:** cuatro vistas reutilizables y ocho consultas de análisis.
+**Qué se hizo:** cuatro vistas reutilizables y ocho consultas de análisis. Las etapas
+siguientes sumaron otras cinco vistas, para la comparación con pares, los fondos soberanos, el
+costo de la deuda y el balance de cada gobierno.
 
 | Vista | Para qué sirve |
 |---|---|
