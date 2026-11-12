@@ -294,7 +294,7 @@ def pagina_resumen():
         ("Crecimiento PIB Antes y Despues 2014", "Crecimiento del PIB (% anual): 2006–14 → 2014–26"),
         ("Deuda 2006 a 2026", "Deuda bruta (% del PIB): 2006 → 2026"),
         ("Desempleo 2006 a 2026", "Desempleo (%): 2006 → 2026"),
-        ("% Meses Inflacion en Rango", "Meses con inflación entre  % y  %"),
+        ("% Meses Inflacion en Rango", "Meses con inflación entre 2 % y 4 %"),
     ]
     for i, (m, etq) in enumerate(tarjetas):
         p.tarjeta(MARGEN + i * (w + 20), 210, w, 170, medida(O, m), etq, tam=32)
@@ -313,14 +313,14 @@ def pagina_resumen():
     p.texto(1160, 400, 720, 610, [
         [("Lo que muestran los datos", {"fontWeight": "bold", "fontSize": "18pt", "color": TEXTO})],
         "",
-        [("1. Menos crecimiento. ", neg), ("El PIB creció 4, % anual en promedio entre 2006 y 2014, "
-          "y 2, % entre 2014 y 2026. Ningún período posterior a 2014 promedia más de  %.", nor)],
+        [("1. Menos crecimiento. ", neg), ("El PIB creció 4,3 % anual en promedio entre 2006 y 2014, "
+          "y 2,1 % entre 2014 y 2026. Ningún período posterior a 2014 promedia más de 3 %.", nor)],
         "",
-        [("2. Más deuda. ", neg), ("La deuda bruta pasó de  % a 4 % del PIB y subió en los cinco "
+        [("2. Más deuda. ", neg), ("La deuda bruta pasó de 6 % a 42 % del PIB y subió en los cinco "
           "períodos. Desde 2009 solo hubo superávit fiscal en 2011, 2012 y 2022.", nor)],
         "",
         [("3. Inflación más volátil. ", neg), ("Estuvo dentro del rango meta del Banco Central en el "
-          "4 % de los meses. Sus dos máximos (2008 y 2022) coinciden con alzas mundiales de precios.", nor)],
+          "48 % de los meses. Sus dos máximos (2008 y 2022) coinciden con alzas mundiales de precios.", nor)],
         "",
         [("Lo que distingue a cada gobierno es el punto de partida y el contexto. El reporte no "
           "estima cuánto de cada resultado se debe a las políticas de cada gobierno.",
@@ -391,7 +391,7 @@ def pagina_ficha():
                               "Y": {"projections": [proy(medida(O, "Inflacion Promedio %"), "Inflación anual (%)")]}}},
         objects={"y1AxisReferenceLine": linea_ref([(3, "", "solid"), (2, "", "dashed"), (4, "", "dashed")]),
                  "dataPoint": [{"properties": {"fill": color("#2B2B2B")}}]},
-        vco=contenedor(titulo="Inflación anual vs. meta del Banco Central:  %, rango  % a  %"))
+        vco=contenedor(titulo="Inflación anual vs. meta del Banco Central: 3 %, rango 2 % a 4 %"))
 
     p.tarjeta_larga(1240, 280, 640, 200, medida(O, "Eventos del Periodo"),
                     "Eventos externos y nacionales del período", tam=12)
@@ -562,7 +562,7 @@ def pagina_balance():
     p.texto(960, 835, 450, 325, [
         [("Cómo se evalúa", {"fontWeight": "bold", "fontSize": "13pt", "color": TEXTO})],
         [("Crecimiento: ", neg), ("sobre el promedio de Perú, Colombia, México y Brasil.", nor)],
-        [("Inflación: ", neg), ("en el rango de  % a  % la mayoría de los meses. La controla el Banco Central.", nor)],
+        [("Inflación: ", neg), ("en el rango de 2 % a 4 % la mayoría de los meses. La controla el Banco Central.", nor)],
         [("Desempleo: ", neg), ("entregar menos del recibido.", nor)],
         [("Meta fiscal: ", neg), ("balance estructural del último año igual o mejor que la meta vigente.", nor)],
         [("Deuda neta: ", neg), ("entregar igual o menos deuda, descontados los fondos.", nor)],
@@ -600,10 +600,10 @@ def pagina_balance():
     nor_g = {"fontSize": "12pt", "color": TEXTO}
     p.texto(960, 1175, 920, 270, [
         [("A qué tasa se endeudó cada gobierno", {"fontWeight": "bold", "fontSize": "15pt", "color": TEXTO})],
-        [("Piñera II fue el que más deuda tomó, ", neg_g), ("de 23, % a 36, % del PIB, con las tasas reales más "
-          "bajas del período (0, % en UF), en años de tasas mundiales mínimas.", nor_g)],
+        [("Piñera II fue el que más deuda tomó, ", neg_g), ("de 23,6 % a 36,2 % del PIB, con las tasas reales más "
+          "bajas del período (0,9 % en UF), en años de tasas mundiales mínimas.", nor_g)],
         [("Boric heredó esa deuda y la siguió aumentando con tasas más altas, ", neg_g), ("cuando las tasas "
-          "subieron en todo el mundo en 2022–2023. El gasto en intereses llegó a 1,2 % del PIB en 2025, el "
+          "subieron en todo el mundo en 2022–2023. El gasto en intereses llegó a 1,24 % del PIB en 2025, el "
           "mayor del período.", nor_g)],
         [("Cómo leerlo: ", neg_g), ("las tasas las fija el mercado; el gobierno influye a través de cuánto se "
           "endeuda y de la confianza fiscal. La tasa en UF descuenta la inflación, y es la que mejor se compara "
@@ -645,7 +645,7 @@ def pagina_conclusiones():
         objects={"y1AxisReferenceLine": linea_ref([(0, "", "solid")]),
                  "categoryAxis": [{"properties": {"axisType": s("Categorical")}}],
                  "labels": [{"properties": {"show": lit("false")}}]},
-        vco=contenedor(titulo="El ingreso por habitante casi se estancó: 3, % anual en 2006–2013 y 1, % en 2014–2025"))
+        vco=contenedor(titulo="El ingreso por habitante casi se estancó: 3,4 % anual en 2006–2013 y 1,0 % en 2014–2025"))
     fecha = columna(O, "fecha")
     p.agregar(
         "lineChart", 980, 225, 900, 455,
@@ -653,7 +653,7 @@ def pagina_conclusiones():
                               "Series": {"projections": [proy(GOB, "Gobierno")]},
                               "Y": {"projections": [proy(medida(O, "Valor Promedio"), "Deuda neta (% del PIB)")]}}},
         objects={"y1AxisReferenceLine": linea_ref([(0, "", "solid")])},
-        vco=contenedor(titulo="Chile pasó de acreedor neto a deudor neto: deuda neta de −1 % a 2 % del PIB"),
+        vco=contenedor(titulo="Chile pasó de acreedor neto a deudor neto: deuda neta de −19 % a 26 % del PIB"),
         filtros=[{"name": nid(), "field": columna("Indicadores", "indicador"), "type": "Categorical",
                   "filter": filtro_in("Indicadores", "indicador", ["'deuda_neta'"], "i"), "howCreated": "User"}])
     neg = {"fontWeight": "bold", "fontSize": "12pt", "color": TEXTO}
@@ -671,22 +671,22 @@ def pagina_conclusiones():
     ], fondo=True)
     p.texto(MARGEN + w + 20, 695, w, 317, [
         [("Por qué se endeudó", tit)],
-        [("1. Gasto permanente mayor que el ingreso permanente: ", neg), ("23, % y 2 % del PIB en 2008–2023 (CFA); "
+        [("1. Gasto permanente mayor que el ingreso permanente: ", neg), ("23,8 % y 22 % del PIB en 2008–2023 (CFA); "
           "déficit en 14 de 17 años desde 2009.", nor)],
         [("2. El menor crecimiento redujo la recaudación esperada: ", neg), ("crecer poco y endeudarse se "
           "alimentan entre sí (DIPRES).", nor)],
-        [("3. Dos shocks: ", neg), ("la crisis de 2009 y la pandemia (déficit estructural de −10, % en 2021).", nor)],
+        [("3. Dos shocks: ", neg), ("la crisis de 2009 y la pandemia (déficit estructural de −10,7 % en 2021).", nor)],
         [("4. Metas fiscales cambiadas a discreción: ", neg), ("la meta inicial de cada gobierno se cumplió en 9 de 21 "
           "años (DIPRES).", nor)],
-        [("5. Deuda más cara: ", neg), ("intereses de 0,4 % del PIB en 2008 a 1,2 % en 2025 (BCCh).", nor)],
+        [("5. Deuda más cara: ", neg), ("intereses de 0,47 % del PIB en 2008 a 1,24 % en 2025 (BCCh).", nor)],
         [("6. Ingresos sobrestimados: ", neg), ("en 2024–2025, según el CFA.", nor)],
     ], fondo=True)
     p.texto(MARGEN + 2 * (w + 20), 695, w, 317, [
         [("Lo que mejoró y lo que queda pendiente", tit)],
-        [("La pobreza bajó de 29, % a 4, % ", neg), ("entre 2006 y 2024 (CASEN, serie comparable). Bajó en todos "
+        [("La pobreza bajó de 29,1 % a 4,9 % ", neg), ("entre 2006 y 2024 (CASEN, serie comparable). Bajó en todos "
           "los gobiernos salvo en la pandemia, y los salarios reales subieron casi todos los años.", nor)],
         [("Pendiente para cualquier gobierno: ", neg), ("recuperar la productividad y la inversión, porque sin eso "
-          "el crecimiento seguirá cerca de  %, y estabilizar la deuda, que superaría el nivel prudente de 4 % del "
+          "el crecimiento seguirá cerca de 2 %, y estabilizar la deuda, que superaría el nivel prudente de 45 % del "
           "PIB hacia 2028–2029 sin consolidación fiscal (FMI y CFA).", nor)],
         [("Según las fuentes, el cambio de fondo fue estructural y ningún gobierno lo revirtió. El detalle de cada gobierno está en la página "
           "siguiente.", {"fontSize": "10pt", "color": GRIS, "fontStyle": "italic"})],
